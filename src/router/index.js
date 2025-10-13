@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '../views/LoginView.vue'
 import SignupView from '../views/SignupView.vue'
 import DashboardView from '../views/DashboardView.vue'
+import Test2 from '@/views/test2.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -9,6 +10,7 @@ const router = createRouter({
     { path: '/', redirect: '/login' },
     { path: '/login', component: LoginView, meta: { guestOnly: true } },
     { path: '/signup', component: SignupView, meta: { guestOnly: true } },
+    { path: '/compare', component: Test2, meta: { requiresAuth: true } },
     { path: '/dashboard', component: DashboardView, meta: { requiresAuth: true } },
     // Catch all redirect
     { path: '/:pathMatch(.*)*', redirect: '/' }
@@ -16,7 +18,7 @@ const router = createRouter({
 })
 
 // Navigation Guard to protect routes
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, from, next) => { //temp disable this
   const isAuthenticated = !!localStorage.getItem('authToken')
 
   if (to.meta.requiresAuth && !isAuthenticated) {
