@@ -18,11 +18,12 @@
 
 <template>
   <div>
-    <header class="shadow-sm">
-      <div class="contsiner py-4">
-        <h1 class="display-5 fw-bold">Dashboard</h1>
-      </div>
-    </header>
+  <header class="shadow-sm">
+    <div class="d-flex justify-content-between align-items-center py-4">
+      <h1 class="display-5 fw-bold mb-0">Dashboard</h1>
+      <p class="text-muted small mb-0">Welcome! You are successfully logged in.</p>
+    </div>
+  </header>
 
     <main>
       <div class="contsiner py-5">
