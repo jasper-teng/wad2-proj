@@ -50,6 +50,12 @@ const router = createRouter({
         component: () => import('../views/GESObjectView.vue'),
         meta: { requiresAuth: true }
     },
+    {
+        path: '/map',
+        name: 'map',
+        component: () => import('../views/MapView.vue'),
+        meta: { requiresAuth: true }
+    },
     // Catch-all redirect
     {
         path: '/:pathMatch(.*)*',
