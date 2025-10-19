@@ -71,7 +71,7 @@ export function useSchoolMap() {
     // Initialize the map coordinates
     const center = { lat: 1.3621, lng: 103.8198 }
     const CUSTOM_BOUNDS = {
-      north: 1.5,
+      north: 1.54,
       south: 1.22,
       west: 103.55,
       east: 104.08,
@@ -98,12 +98,14 @@ export function useSchoolMap() {
 
     // Fetch and display school markers from gov.data.sg API
     const datasetId = 'd_688b934f82c1059ed0a6993d2a829089'
-    const url = `https://data.gov.sg/api/action/datastore_search?resource_id=${datasetId}`
+    const url = `https://data.gov.sg/api/action/datastore_search?resource_id=${datasetId}&limit=500`
 
     fetch(url)
       .then(res => res.json())
       .then(data => {
         const allSchools = data.result.records
+
+        console.log(`Fetched ${allSchools.length} schools from API.`)
 
         allSchools.forEach(school => {
               const location = SCHOOL_COORDINATES[school.school_name]
@@ -145,6 +147,9 @@ export function useSchoolMap() {
 
               // Marker click event to open info window and set as source/destination
               marker.addListener('click', () => {
+                // Close all other info windows
+                allInfoWindows.forEach(({ infoW }) => infoW.close())
+
                 // If an input (school / destination) is active, set its value to the school name
                 if (activeInputId.value) {
                   const activeInput = activeInputId.value === 'source' ? source : destination
@@ -165,6 +170,7 @@ export function useSchoolMap() {
         })
       })
   }
+
 
   // ==========Function to get distances for different travel modes==========
   async function getDistanceOfTargets() {

@@ -1,4 +1,8 @@
 {
+  "SCHOOL OF SCIENCE AND TECHNOLOGY, SINGAPORE": {
+    "lat": 1.313653,
+    "lng": 103.774264
+  },
   "Singapore University of Technolngy and Design (SUTD)": {
     "lat": 1.3198,
     "lng": 103.9644
@@ -718,6 +722,10 @@
   "MEE TOH SCHOOL": {
     "lat": 1.3948814,
     "lng": 103.908544845972
+  },
+  "MAYFLOWER PRIMARY SCHOOL": {
+    "lat": 1.3766349,
+    "lng": 103.8432028
   },
   "MAYFLOWER SECONDARY SCHOOL": {
     "lat": 1.36906525,
