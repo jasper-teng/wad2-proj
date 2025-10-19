@@ -4,45 +4,39 @@ import { useRoute } from 'vue-router'
 import NavbarView from './views/NavbarView.vue'
 
 const route = useRoute()
-
-// This computed property will hide the navbar on the login and signup routes
-const showNavbar = computed(() => {
-  return !['/login', '/signup'].includes(route.path)
-})
+const isAuthPage = computed(() => route.path === '/login' || route.path === '/signup')
 </script>
 
 <template>
-  <!-- The NavbarView will only be rendered if showNavbar is true -->
-  <NavbarView v-if="showNavbar" />
-
-  <router-view v-slot="{ Component }">
-    <transition name="fade" mode="out-in">
-      <component :is="Component" />
-    </transition>
-  </router-view>
+  <NavbarView v-if="!isAuthPage" />
+  <main class="flex-shrink-0">
+    <!-- 
+      By adding the :key="route.fullPath", we are telling Vue to treat each route as a unique component.
+      This forces a complete remount of the component when the route changes, fixing the navigation issue.
+    -->
+    <router-view :key="route.fullPath" v-slot="{ Component }">
+        <transition name="fade" mode="out-in">
+            <component :is="Component" />
+        </transition>
+    </router-view>
+  </main>
 </template>
 
 <style>
-/* Global styles for smooth transitions */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease;
+/* A little custom transition for smoother route changes */
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.2s ease;
 }
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
+.fade-enter-from, .fade-leave-to {
+    opacity: 0;
 }
-
-/* Ensure the app takes full height */
-html,
-body,
-#app {
-  height: 100%;
+body, #app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
-#app > div {
-  /* Target the direct child rendered by the router */
-  height: 100%;
+.flex-shrink-0 {
+    flex-shrink: 0;
 }
 </style>
 
