@@ -58,7 +58,7 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
   onMounted(() => {
     // Load Google Maps script
     initMap()
-    
+
     // Add event listener for clicks outside input fields
     document.addEventListener('click', handleDocumentClick);
   })
@@ -165,8 +165,6 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
                       infoW.close()
                     }
                   })
-                  // Fetch and display distances
-                  getDistanceOfTargets()
                 }
                 // Open the info window
                 infoWindow.open({ anchor: marker, map })
@@ -183,7 +181,7 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
     inputMsg.value.innerHTML = ''
 
     // Get coordinates for source and destination
-    const sourceCoord = L_COORDINATES[source.value]
+    const sourceCoord = SCHOOL_COORDINATES[source.value]
     const destinationCoord = SCHOOL_COORDINATES[destination.value]
 
     // Initialize Directions Service
@@ -277,7 +275,7 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
 
 <template>
     <!-- SchoolFinders (School distance mapping) from Nic -->
-  <div id="#bodybg">
+  <div id="bodybg">
     <div class="container py-6 my-5 rounded-4 shadow-lg">
       <h1 class="text-center mb-4">SchoolFinders</h1>
       <br>
