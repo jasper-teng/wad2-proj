@@ -50,6 +50,12 @@ const router = createRouter({
         component: () => import('../views/GESObjectView.vue'),
         meta: { requiresAuth: true }
     },
+    {
+        path: '/cca-finder',
+        name: 'cca-finder',
+        component: () => import('../views/CCAFinderView.vue'),
+        meta: { requiresAuth: true }
+    },
     // Catch-all redirect
     {
         path: '/:pathMatch(.*)*',
