@@ -50,6 +50,12 @@ const router = createRouter({
         component: () => import('../views/GESObjectView.vue'),
         meta: { requiresAuth: true }
     },
+    {
+        path: '/comparison',
+        name: 'comparison',
+        component: () => import('../views/ComparisonView.vue'),
+        meta: { requiresAuth: true }
+    },
     // Catch-all redirect
     {
         path: '/:pathMatch(.*)*',
