@@ -271,6 +271,7 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
     })
   }
 
+
 </script>
 
 <template>

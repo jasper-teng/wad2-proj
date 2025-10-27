@@ -56,6 +56,12 @@ const router = createRouter({
         component: () => import('../views/MapView.vue'),
         meta: { requiresAuth: true }
     },
+    {
+        path: '/school-comparer',
+        name: 'school-comparer',
+        component: () => import('../views/SchoolComparerView.vue'),
+        meta: { requiresAuth: true }
+    },
     // Catch-all redirect
     {
         path: '/:pathMatch(.*)*',
