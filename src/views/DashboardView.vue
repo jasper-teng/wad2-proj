@@ -7,6 +7,21 @@ const router = useRouter()
 // --- CONFIGURABLE APP STRUCTURE ---
 // You can easily add new groups or new apps here.
 const appGroups = ref([
+  // --- New Group for Comparison Tool ---
+  {
+    name: 'School Comparison Tools',
+    apps: [
+      {
+        name: 'School Comparison',
+        description: 'Compare schools side-by-side based on various criteria.',
+        path: '/comparison',
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-layout-split mb-3" viewBox="0 0 16 16">
+                 <path d="M0 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm8.5-1v12H14a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM7.5 2V14H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/>
+               </svg>`,
+      }
+    ]
+  },
+  // --- Existing GES Group ---
   {
     name: 'Graduate Employment Survey (GES)',
     apps: [
@@ -15,9 +30,9 @@ const appGroups = ref([
         description: 'Explore GES statistics for local universities.',
         path: '/ges',
         icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-mortarboard-fill mb-3" viewBox="0 0 16 16">
-          <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/>
-          <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466z"/>
-        </svg>`,
+                 <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/>
+                 <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466z"/>
+               </svg>`,
       },
       {
         name: 'News Management',
@@ -47,9 +62,10 @@ const appGroups = ref([
         icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-geo-alt-fill mb-3" viewBox="0 0 16 16">
   <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
 </svg>`
-      }
-    ]
-  }
+      },
+    ],
+  },
+])
   // Example of how to add a new group:
   // {
   //   name: 'Administrative Tools',
@@ -62,7 +78,7 @@ const appGroups = ref([
   //     }
   //   ]
   // }
-])
+
 
 function navigateTo(path) {
   router.push(path)

@@ -1,7 +1,7 @@
-<script setup>
+<script setup defer>
 
 // useSchoolMap.js: logic for school map functionality
-import { ref, onMounted, watch, onBeforeUnmount } from 'vue'
+import { ref, onMounted, watch, onBeforeUnmount, computed } from 'vue'
 import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
 
 // Composable function to manage school map interactions
@@ -17,6 +17,8 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
 
   const allInfoWindows = []
   const allMarkerRoutes = []
+
+  const homeMarker = ref(null)
 
   // ==========Function to set active input (source/destination)==========
   function setActiveInput(id) {
@@ -222,6 +224,19 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
                 </div>
               </div>
             `
+
+            // Save distance data to session storage
+            const sessionDistanceData = {
+              source: source.value,
+              destination: destination.value,
+              icon: icon,
+              mode: mode,
+              distance: distance.text,
+              duration: duration.text
+            };
+            let savedDistances = JSON.parse(sessionStorage.getItem("distances")) || [];
+            savedDistances.push(sessionDistanceData);
+            sessionStorage.setItem("distances", JSON.stringify(savedDistances));
           } else {
             console.warn(`${mode} directions failed: ${status}`)
           }
@@ -246,10 +261,14 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
         const markerContent = document.createElement('div')
         markerContent.style.backgroundImage = `url(home.png)`
         markerContent.style.backgroundSize = 'cover'
-        markerContent.style.width = '48px'
-        markerContent.style.height = '48px'
+        markerContent.style.width = '68px'
+        markerContent.style.height = '68px'
 
-        const homeMarker = new google.maps.marker.AdvancedMarkerElement({
+        if (homeMarker.value) {
+          homeMarker.value.setMap(null)
+        }
+
+        homeMarker.value = new google.maps.marker.AdvancedMarkerElement({
           position: location,
           map,
           content: markerContent,
@@ -257,7 +276,7 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
         })
 
         // Get distance of home marker when clicked
-        homeMarker.addListener('click', () => {
+        homeMarker.value.addListener('click', () => {
           if (activeInputId.value) {
             const activeInput = activeInputId.value === 'source' ? source : destination
             activeInput.value = address
@@ -271,6 +290,41 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
     })
   }
 
+  const distances = ref([])
+
+  // Group distances by "source → destination"
+  const groupedDistances = computed(() => {
+    const grouped = {}
+    distances.value.forEach(item => {
+      const key = `${item.source} → ${item.destination}`
+      if (!grouped[key]) grouped[key] = []
+      grouped[key].push(item)
+    })
+    return grouped
+  })
+
+  // Load distances from sessionStorage
+  const loadFromSession = () => {
+    distances.value = JSON.parse(sessionStorage.getItem("distances")) || []
+  }
+
+  // Clear sessionStorage and reset state
+  const clearStorage = () => {
+    sessionStorage.removeItem("distances")
+    distances.value = []
+  }
+
+  // Get a mode-specific distance string
+  const getDistance = (records, mode) => {
+    const found = records.find(r => r.mode.toLowerCase() === mode.toLowerCase())
+    return found ? `${found.mode} Distance ${found.distance} \n(${found.duration})` : '—'
+  }
+
+  // Load distances on component mount
+  onMounted(() => {
+    loadFromSession()
+  })
+
 </script>
 
 <template>
@@ -281,7 +335,7 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
       <br>
         <div class="row">
           <div class="col-md-3">
-            <form @submit="handleSubmit">
+            <form @submit.prevent="handleSubmit()">
               <div class="mb-3">
                 <label for="home" class="form-label">Where is your home?</label>
                 <input
@@ -343,14 +397,99 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
         </div>
       </div>
     </div>
+    <div class="container py-5">
+      <div id="compareSection">
+        <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+          <h3 class="mb-2 mb-md-0">Compare Distances</h3>
+          <div>
+            <button class="btn btn-danger me-2" @click="clearStorage">
+              <i class="fas fa-trash-alt me-1"></i> Clear All
+            </button>
+            <button class="btn btn-secondary" @click="loadFromSession">
+              <i class="fas fa-sync-alt me-1"></i> Reload
+            </button>
+          </div>
+        </div>
+
+        <div v-for="(records, route) in groupedDistances" :key="route" class="distance-card">
+          <h5 class="route-title">{{ route }}</h5>
+          <div class="row text-center g-3">
+            <div class="col-4 distance-mode walking">
+              <i class="fas fa-person-walking fa-2x mb-2"></i>
+              <div>{{ getDistance(records, 'Walking') }}</div>
+            </div>
+            <div class="col-4 distance-mode transit">
+              <i class="fas fa-subway fa-2x mb-2"></i>
+              <div>{{ getDistance(records, 'Transit') }}</div>
+            </div>
+            <div class="col-4 distance-mode driving">
+              <i class="fas fa-car fa-2x mb-2"></i>
+              <div>{{ getDistance(records, 'Driving') }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped>
+  #compareSection {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .distance-card {
+    background-color: #cce5ff;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 75, 173, 0.25);
+  }
+
+  .distance-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 75, 173, 0.35);
+  }
+
+  .route-title {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #002244;
+  }
+
+  .distance-mode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease;
+  }
+
+  .distance-mode.walking:hover {
+    background-color: orange;
+  }
+
+  .distance-mode.transit:hover {
+    background-color: pink;
+  }
+
+  .distance-mode.driving:hover {
+    background-color: red;
+  }
+
+  .distance-mode i {
+    color: #004aad;
+  }
+
   #bodybg {
       background: linear-gradient(135deg, #1e3c72, #2a5298);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #f0f8ff;
+      color: #0b4b82;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -365,6 +504,14 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
       text-shadow: 2px 2px 6px rgba(0, 0, 80, 0.7);
       letter-spacing: 2px;
       margin-bottom: 3rem;
+  }
+
+  h3 {
+      font-weight: 700;
+      color: #cce5ff;
+      text-shadow: 1px 1px 4px rgba(0, 0, 80, 0.6);
+      letter-spacing: 1.5px;
+      margin-bottom: 2rem;
   }
 
   .container {
