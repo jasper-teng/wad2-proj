@@ -1,238 +1,209 @@
-<script>
+<script setup>
+import { ref, reactive, onMounted, computed } from 'vue'
 import SearchBar from '../components/SearchBar.vue'
 import FilterPanel from '../components/FilterPanel.vue'
 import SchoolTable from '../components/SchoolTable.vue'
-import LoadingSpinner from '../components/LoadingSpinner.vue'
 
-export default {
-    components: {
-        SearchBar,
-        FilterPanel,
-        SchoolTable,
-        LoadingSpinner
-    },
-    data() {
-        return {
-            allSchools: [],
-            filteredSchools: [],
-            allCCAs: new Set(),
-            ccaCategoryMapping: new Map(),
-            userLocation: null,
-            isLoading: false,
-            resultsCount: 0,
-            currentSortOrder: 'none',
-            selectedFilters: {
-                level: '',
-                category: '',
-                cca: ''
-            }
-        }
-    },
-    computed: {
-        allLevels() {
-            const levels = new Set()
-            this.allSchools.forEach(school => {
-                if (school.school_section) {
-                    levels.add(school.school_section)
-                }
-            })
-            return Array.from(levels).sort()
-        },
-        allCategories() {
-            return Array.from(this.allCCAs).sort()
-        },
-        allSpecificCCAs() {
-            if (!this.selectedFilters.category) {
-                const ccas = new Set()
-                this.allSchools.forEach(school => {
-                    if (school.cca_grouping_desc) {
-                        ccas.add(school.cca_grouping_desc)
-                    }
-                })
-                return Array.from(ccas).sort()
-            } else {
-                const specificCCAs = this.ccaCategoryMapping.get(this.selectedFilters.category) || new Set()
-                return Array.from(specificCCAs).sort()
-            }
-        }
-    },
-    methods: {
-        async loadSchoolData() {
-            this.isLoading = true
+const isLoading = ref(false)
+const error = ref('')
+const allSchools = ref([])
+const userLocation = ref(null)
+const currentSortOrder = ref('none')
 
-            try {
-                const response = await fetch('http://localhost/api-proxy.php')
+const selectedFilters = reactive({
+  level: '',
+  category: '',
+  cca: ''
+})
 
-                if (!response.ok) {
-                    throw new Error(`HTTP ${response.status}: ${response.statusText}`)
-                }
-
-                const data = await response.json()
-                console.log('API Response:', data)
-
-                // Handle different API response formats
-                let records = []
-                if (data.success && data.result && data.result.records) {
-                    records = data.result.records
-                } else if (data.data && Array.isArray(data.data)) {
-                    records = data.data
-                } else if (Array.isArray(data)) {
-                    records = data
-                }
-
-                if (records.length > 0) {
-                    this.allSchools = records
-                    console.log(`Loaded ${this.allSchools.length} schools`)
-
-                    // Build CCA sets and mappings
-                    this.allSchools.forEach(school => {
-                        if (school.cca_generic_name) {
-                            const ccas = school.cca_generic_name.split(',')
-                            ccas.forEach(cca => {
-                                this.allCCAs.add(cca.trim())
-                            })
-                        }
-
-                        // Build mapping between CCA categories and specific CCAs
-                        if (school.cca_generic_name && school.cca_grouping_desc) {
-                            const categories = school.cca_generic_name.split(',').map(c => c.trim())
-                            const specificCCA = school.cca_grouping_desc.trim()
-
-                            categories.forEach(category => {
-                                if (!this.ccaCategoryMapping.has(category)) {
-                                    this.ccaCategoryMapping.set(category, new Set())
-                                }
-                                this.ccaCategoryMapping.get(category).add(specificCCA)
-                            })
-                        }
-                    })
-
-                    console.log(`Found ${this.allCCAs.size} unique CCAs`)
-                    this.filterSchools()
-                } else {
-                    throw new Error('No school records found in API response')
-                }
-            } catch (error) {
-                console.error('Error fetching school data:', error)
-                alert(`Error loading school data: ${error.message}`)
-            } finally {
-                this.isLoading = false
-            }
-        },
-        filterSchools() {
-            let filtered = this.allSchools
-
-            // Filter by education level
-            if (this.selectedFilters.level) {
-                filtered = filtered.filter(school =>
-                    school.school_section === this.selectedFilters.level
-                )
-            }
-
-            // Filter by CCA category
-            if (this.selectedFilters.category) {
-                filtered = filtered.filter(school =>
-                    school.cca_generic_name &&
-                    school.cca_generic_name.toLowerCase().includes(this.selectedFilters.category.toLowerCase())
-                )
-            }
-
-            // Filter by specific CCA
-            if (this.selectedFilters.cca) {
-                filtered = filtered.filter(school =>
-                    school.cca_grouping_desc === this.selectedFilters.cca
-                )
-            }
-
-            this.filteredSchools = filtered
-            this.resultsCount = filtered.length
-        },
-        handleFilterChange(filters) {
-            this.selectedFilters = { ...filters }
-            this.currentSortOrder = 'none'
-            this.filterSchools()
-        },
-        handleLocationChange(location) {
-            this.userLocation = location
-        },
-        handleSortChange(sortOrder) {
-            this.currentSortOrder = sortOrder
-        },
-        handleClearFilters() {
-            this.selectedFilters = {
-                level: '',
-                category: '',
-                cca: ''
-            }
-            this.userLocation = null
-            this.currentSortOrder = 'none'
-            this.filterSchools()
-        },
-        searchSchools() {
-            if (this.allSchools.length === 0) {
-                this.loadSchoolData()
-            } else {
-                this.filterSchools()
-            }
-        }
-    },
-    mounted() {
-        console.log('CCA Finder mounted, loading school data...')
-        this.loadSchoolData()
+const allLevels = computed(() => {
+  const levels = new Set()
+  allSchools.value.forEach((school) => {
+    if (school.school_section) {
+      levels.add(school.school_section)
     }
+  })
+  return Array.from(levels).sort()
+})
+
+const allCategories = computed(() => {
+  const categories = new Set()
+  allSchools.value.forEach((school) => {
+    if (school.cca_generic_name && school.cca_generic_name !== 'na') {
+      categories.add(school.cca_generic_name)
+    }
+  })
+  return Array.from(categories).sort()
+})
+
+const allSpecificCCAsData = computed(() => {
+  const ccaMap = new Map()
+
+  allSchools.value.forEach((school) => {
+    const ccaName = school.cca_grouping_desc
+    const category = school.cca_generic_name
+
+    if (ccaName && ccaName !== 'na' && category && category !== 'na') {
+      if (!ccaMap.has(ccaName)) {
+        ccaMap.set(ccaName, category)
+      }
+    }
+  })
+
+  const ccaArray = Array.from(ccaMap.entries()).map(([name, category]) => ({
+    name,
+    category
+  }))
+
+  return ccaArray.sort((a, b) => a.name.localeCompare(b.name))
+})
+
+const filteredSchools = computed(() => {
+  let filtered = allSchools.value
+
+  if (selectedFilters.level) {
+    filtered = filtered.filter((school) => school.school_section === selectedFilters.level)
+  }
+
+  if (selectedFilters.category) {
+    filtered = filtered.filter((school) => school.cca_generic_name === selectedFilters.category)
+  }
+
+  if (selectedFilters.cca) {
+    filtered = filtered.filter((school) => school.cca_grouping_desc === selectedFilters.cca)
+  }
+
+  return filtered.map((school) => ({
+    school_name: school.School_name,
+    school_section: school.school_section,
+    cca: school.cca_grouping_desc,
+    _id: school._id
+  }))
+})
+
+async function loadSchoolData() {
+  isLoading.value = true
+  error.value = ''
+
+  try {
+    const datasetId = 'd_9aba12b5527843afb0b2e8e4ed6ac6bd'
+    const apiUrl = `https://data.gov.sg/api/action/datastore_search?resource_id=${datasetId}&limit=10000`
+
+    const response = await fetch(apiUrl)
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`)
+    }
+
+    const data = await response.json()
+    console.log('API Response:', data)
+
+    let records = []
+    if (data.success && data.result && data.result.records) {
+      records = data.result.records
+    } else if (data.data && Array.isArray(data.data)) {
+      records = data.data
+    } else if (Array.isArray(data)) {
+      records = data
+    }
+
+    if (records.length > 0) {
+      allSchools.value = records
+      console.log(`Loaded ${allSchools.value.length} school records`)
+    } else {
+      throw new Error('No school records found in API response')
+    }
+  } catch (err) {
+    console.error('Error fetching school data:', err)
+    error.value = `Error loading school data: ${err.message}`
+  } finally {
+    isLoading.value = false
+  }
 }
+
+function handleLocationChange(location) {
+  userLocation.value = location
+  console.log('Location updated:', location)
+}
+
+function handleFilterChange(filters) {
+  selectedFilters.level = filters.level
+  selectedFilters.category = filters.category
+  selectedFilters.cca = filters.cca
+  console.log('Filters updated:', filters)
+}
+
+function handleSortChange(sortOrder) {
+  currentSortOrder.value = sortOrder
+  console.log('Sort order changed:', sortOrder)
+}
+
+onMounted(() => {
+  loadSchoolData()
+})
 </script>
 
 <template>
-    <div class="container mt-4">
-        <h1 class="text-center mb-4">Singapore School CCA Finder</h1>
+  <div class="cca-finder-container">
+    <div class="container py-5">
+      <div class="header-section mb-5">
+        <h1 class="display-5 fw-bold mb-2">Singapore School CCA Finder</h1>
+        <p class="text-muted">Find schools based on Co-Curricular Activities and location</p>
+      </div>
 
-        <div class="search-section">
-            <SearchBar
-                @location-change="handleLocationChange"
-                @clear-location="userLocation = null"
-            />
-
-            <FilterPanel
-                :all-levels="allLevels"
-                :all-categories="allCategories"
-                :all-specific-ccas="allSpecificCCAs"
-                :selected-filters="selectedFilters"
-                @filter-change="handleFilterChange"
-            />
-
-            <div class="row">
-                <div class="col-md-12">
-                    <button type="button" class="btn btn-primary" @click="searchSchools">
-                        Search Schools
-                    </button>
-                    <button type="button" class="btn btn-secondary ms-2" @click="handleClearFilters">
-                        Clear All Filters
-                    </button>
-                    <span class="ms-3 text-muted">
-                        Showing {{ resultsCount }} result(s)
-                    </span>
-                </div>
-            </div>
-        </div>
-
-        <LoadingSpinner v-if="isLoading" />
-
-        <SchoolTable
-            v-else
-            :schools="filteredSchools"
-            :user-location="userLocation"
-            :current-sort-order="currentSortOrder"
-            @sort-change="handleSortChange"
+      <div class="content-card mb-4">
+        <h5 class="mb-4">Filters</h5>
+        <SearchBar @location-change="handleLocationChange" />
+        <FilterPanel
+          :all-levels="allLevels"
+          :all-categories="allCategories"
+          :all-specific-c-c-as="allSpecificCCAsData"
+          :selected-filters="selectedFilters"
+          @filter-change="handleFilterChange"
         />
+      </div>
+
+      <div v-if="error" class="alert alert-danger shadow-sm" role="alert">
+        {{ error }}
+      </div>
+
+      <div v-if="isLoading" class="text-center py-5">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-3 text-muted">Loading school data...</p>
+      </div>
+
+      <div v-else>
+        <SchoolTable
+          :schools="filteredSchools"
+          :user-location="userLocation"
+          :current-sort-order="currentSortOrder"
+          @sort-change="handleSortChange"
+        />
+      </div>
     </div>
+  </div>
 </template>
 
 <style scoped>
-.search-section {
-    background-color: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    margin-bottom: 2rem;
+.cca-finder-container {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.header-section {
+  text-align: center;
+}
+
+.content-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.container {
+  max-width: 1200px;
 }
 </style>
