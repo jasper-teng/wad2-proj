@@ -16,7 +16,7 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
   const inputMsg = ref(null)
 
   const allInfoWindows = []
-  const allMarkerRoutes = []
+  let allMarkerRoutes = []
 
   const homeMarker = ref(null)
 
@@ -50,16 +50,22 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
 
 
   // Watch for changes in source and destination to update distances
-  watch([source, destination], () => {
-    if (source.value && destination.value) {
+  watch([source, destination], ([src, dest]) => {
+    if (src && dest) {
       getDistanceOfTargets()
     }
   })
 
   // Initialize Google Maps when component is mounted
-  onMounted(() => {
+  onMounted(async () => {
     // Load Google Maps script
     initMap()
+
+    // Get Home coordinates from session (if present)
+    loadHomeCoords()
+
+    // Get route data from session
+    loadSavedRoutesFromSession()
 
     // Add event listener for clicks outside input fields
     document.addEventListener('click', handleDocumentClick);
@@ -69,6 +75,36 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
   onBeforeUnmount(() => {
     document.removeEventListener('click', handleDocumentClick);
   });
+
+  // Remove all route overlays (DirectionsRenderer and Polyline) from the map
+  function clearAllRoutes() {
+    allMarkerRoutes.forEach(route => {
+      try {
+        // DirectionsRenderer instances: have setDirections / setMap
+        if (typeof route.setDirections === 'function' || (route.savedResult)) {
+          try { route.setMap(null) } catch (e) {}
+          try { route.setDirections({ routes: [] }) } catch (e) {}
+          try { google.maps.event.clearInstanceListeners(route) } catch (e) {}
+          return
+        }
+    
+        // Polyline instances: have getPath()
+        if (typeof route.getPath === 'function') {
+          try { route.setMap(null) } catch (e) {}
+          try { google.maps.event.clearInstanceListeners(route) } catch (e) {}
+          return
+        }
+    
+        // Fallback
+        if (route && typeof route.setMap === 'function') {
+          try { route.setMap(null) } catch (e) {}
+        }
+      } catch (e) {
+        console.warn('clearAllRoutes: failed to remove route', e)
+      }
+    })
+    allMarkerRoutes.length = 0
+  }
 
   // ==========Function to initialize Google Map and load school markers==========
   function initMap() {
@@ -136,17 +172,34 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
                 content: `
                   <div style="
                     font-family: Arial, sans-serif;
-                    padding: 10px; 
-                    max-width: 250px;
-                    color: #333;
+                    padding: 12px;
+                    max-width: 280px;
+                    background-color: #f0f8ff; /* very light blue background */
+                    border-left: 4px solid #007bff; /* blue accent */
+                    border-radius: 8px;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                    color: #1a1a1a;
                   ">
-                    <strong>${school.school_name}</strong>
-                    <p>URL Address: ${school.url_address}</p>
-                    <p>Address: ${school.address}</p>
-                    <p>MRT: ${school.mrt_desc}</p>
-                    <p>Bus: ${school.bus_desc}</p>
-                  </div>`
-              })
+                    <h3 style="
+                      margin: 0 0 6px 0;
+                      font-size: 16px;
+                      color: #007bff;
+                    ">${school.school_name}</h3>
+                    <p style="margin: 4px 0; font-size: 14px;">
+                      <strong>URL:</strong> <a href="${school.url_address}" target="_blank" style="color:#0056b3; text-decoration:underline;">${school.url_address}</a>
+                    </p>
+                    <p style="margin: 4px 0; font-size: 14px;">
+                      <strong>Address:</strong> ${school.address}
+                    </p>
+                    <p style="margin: 4px 0; font-size: 14px;">
+                      <strong>MRT:</strong> ${school.mrt_desc}
+                    </p>
+                    <p style="margin: 4px 0; font-size: 14px;">
+                      <strong>Bus:</strong> ${school.bus_desc}
+                    </p>
+                  </div>
+                `
+              });
 
               // Track all info windows
               allInfoWindows.push({ name: school.school_name, infoW: infoWindow })
@@ -179,30 +232,57 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
   // ==========Function to get distances for different travel modes==========
   async function getDistanceOfTargets() {
     // Clear previous routes and messages
-    allMarkerRoutes.forEach(route => route.setMap(null))
-    inputMsg.value.innerHTML = ''
+    clearAllRoutes();
+    inputMsg.value.innerHTML = '';
 
-    // Get coordinates for source and destination
-    const sourceCoord = SCHOOL_COORDINATES[source.value]
-    const destinationCoord = SCHOOL_COORDINATES[destination.value]
+    const directionsService = new google.maps.DirectionsService();
 
-    // Initialize Directions Service
-    const directionsService = new google.maps.DirectionsService()
+    // Normalize origin and destination
+    const normalizeLocation = (input) => {
+      if (!input) return null;
+
+      // Case 1: School name lookup
+      const schoolCoords = SCHOOL_COORDINATES[input];
+      if (schoolCoords) return schoolCoords;
+
+      // Case 2: Home name (string match)
+      const savedHomeName = JSON.parse(sessionStorage.getItem("home name") || "null");
+      if (input === savedHomeName) {
+        const homeCoords = JSON.parse(sessionStorage.getItem("home"));
+        return homeCoords && typeof homeCoords.lat === "number" && typeof homeCoords.lng === "number"
+          ? homeCoords
+          : null;
+      }
+
+      // Case 3: Plain address string (fallback)
+      if (typeof input === "string") return input.trim();
+
+      // Case 4: LatLngLiteral already
+      if (input.lat && input.lng) return input;
+
+      return null;
+    };
+
+    const originPoint = normalizeLocation(source.value);
+    const destinationPoint = normalizeLocation(destination.value);
+
+    if (!originPoint || !destinationPoint) {
+      console.warn("Invalid origin or destination", { originPoint, destinationPoint });
+      return;
+    }
 
     // Define travel modes with colors and icons
     const travelModes = [
       { mode: 'TRANSIT', color: 'pink', icon: 'subway' },
       { mode: 'DRIVING', color: 'red', icon: 'car' },
       { mode: 'WALKING', color: 'orange', icon: 'person-walking' }
-    ]
+    ];
 
-    // Fetch and render routes for each travel mode
     for (const { mode, color, icon } of travelModes) {
-      // Request directions
       directionsService.route(
         {
-          origin: sourceCoord,
-          destination: destinationCoord,
+          origin: originPoint,
+          destination: destinationPoint,
           travelMode: mode
         },
         (response, status) => {
@@ -210,12 +290,13 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
             const renderer = new google.maps.DirectionsRenderer({
               map,
               polylineOptions: { strokeColor: color, strokeWeight: 5 }
-            })
-            renderer.setDirections(response)
-            allMarkerRoutes.push(renderer)
+            });
+            renderer.routeName = `${source.value} → ${destination.value}`;
+            renderer.savedResult = response;
+            renderer.setDirections(response);
+            allMarkerRoutes.push(renderer);
 
-            const { distance, duration } = response.routes[0].legs[0]
-            // Append distance and duration info to the message container
+            const { distance, duration } = response.routes[0].legs[0];
             inputMsg.value.innerHTML += `
               <div class="distance-item">
                 <i class="fas fa-${icon} icon"></i>
@@ -223,30 +304,66 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
                   ${mode} distance: <strong>${distance.text} (${duration.text})</strong>
                 </div>
               </div>
-            `
+            `;
 
-            // Save distance data to session storage
             const sessionDistanceData = {
+              path: response.routes[0].overview_path.map(p => ({ lat: p.lat(), lng: p.lng() })),
               source: source.value,
               destination: destination.value,
-              icon: icon,
-              mode: mode,
+              icon,
+              mode,
               distance: distance.text,
               duration: duration.text
             };
-            let savedDistances = JSON.parse(sessionStorage.getItem("distances")) || [];
+            const savedDistances = JSON.parse(sessionStorage.getItem("distances")) || [];
             savedDistances.push(sessionDistanceData);
             sessionStorage.setItem("distances", JSON.stringify(savedDistances));
           } else {
-            console.warn(`${mode} directions failed: ${status}`)
+            console.warn(`${mode} directions failed: ${status}`);
           }
         }
-      )
+      );
     }
   }
 
+  // ==========Function to load the homes address if present in session==========
+  function loadHomeCoords() {
+    const homeItem = sessionStorage.getItem("home")
+    const homeName = sessionStorage.getItem("home name")
+    if (!homeItem) return
+    const position = JSON.parse(homeItem);
+    const homeAddressName = JSON.parse(homeName)
+    const markerContent = document.createElement('div')
+    markerContent.style.backgroundImage = `url(home.png)`
+    markerContent.style.backgroundSize = 'cover'
+    markerContent.style.width = '68px'
+    markerContent.style.height = '68px'
+    homeMarker.value = new google.maps.marker.AdvancedMarkerElement({
+                        position: position,
+                        map,
+                        content: markerContent,
+                        title: 'Home Location',
+                        zIndex: 1000
+                      })
+  
+    map.setCenter(homeMarker.value.position);
+    map.setZoom(15);
+
+    // Get distance of home marker when clicked
+    homeMarker.value.addListener('click', () => {
+      if (activeInputId.value) {
+        const activeInput = activeInputId.value === 'source' ? source : destination
+        activeInput.value = homeAddressName
+        if (source.value && destination.value) {
+          getDistanceOfTargets()
+        }
+      }
+    })
+  }
+
   // ==========Function to handle home address submission==========
-  function handleSubmit() {
+  function handleHomeSubmit() {
+    if (sessionStorage.getItem("home") != null) return
     const address = homeAddress.value.trim()
     if (!address) {
       alert('Please input a home address')
@@ -268,6 +385,10 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
           homeMarker.value.setMap(null)
         }
 
+        const loc = { lat: location.lat(), lng: location.lng() };
+        sessionStorage.setItem("home", JSON.stringify(loc));
+        sessionStorage.setItem("home name", JSON.stringify(address));
+
         homeMarker.value = new google.maps.marker.AdvancedMarkerElement({
           position: location,
           map,
@@ -275,12 +396,17 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
           title: 'Home Location'
         })
 
+        map.setCenter(homeMarker.value.position);
+        map.setZoom(15);
+
         // Get distance of home marker when clicked
         homeMarker.value.addListener('click', () => {
           if (activeInputId.value) {
             const activeInput = activeInputId.value === 'source' ? source : destination
             activeInput.value = address
-            getDistanceOfTargets()
+            if (source.value && destination.value) {
+              getDistanceOfTargets()
+            }
           }
         })
       } else {
@@ -293,49 +419,158 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
   const distances = ref([])
 
   // Group distances by "source → destination"
-  const groupedDistances = computed(() => {
+  const selectedTravelMode = ref('WALKING')
+
+  const sortedGroupedDistances = computed(() => {
     const grouped = {}
     distances.value.forEach(item => {
       const key = `${item.source} → ${item.destination}`
       if (!grouped[key]) grouped[key] = []
       grouped[key].push(item)
     })
-    return grouped
+
+    // Helper to parse duration strings like "1 hr 15 mins" to total minutes
+    const parseDurationToMinutes = durationStr => {
+      const hrMatch = durationStr.match(/(\d+)\s*hr/);
+      const minMatch = durationStr.match(/(\d+)\s*min/);
+      return (hrMatch ? parseInt(hrMatch[1]) * 60 : 0) + (minMatch ? parseInt(minMatch[1]) : 0);
+    };
+
+    // Convert grouped object to array for sorting
+    const groupedEntries = Object.entries(grouped)
+
+    // Sort groups by selected mode's duration ascending; put those missing mode at end
+    groupedEntries.sort((a, b) => {
+      const aRecords = a[1]
+      const bRecords = b[1]
+      const mode = selectedTravelMode.value.toUpperCase()
+
+      const aMatch = aRecords.find(r => r.mode.toUpperCase() === mode)
+      const bMatch = bRecords.find(r => r.mode.toUpperCase() === mode)
+
+      if (!aMatch) return 1 // put a after b if a doesn't have mode
+      if (!bMatch) return -1 // put b after a if b doesn't have mode
+
+      return parseDurationToMinutes(aMatch.duration) - parseDurationToMinutes(bMatch.duration)
+    })
+
+    // Convert back to object for template iteration keeping grouping structure
+    const sortedGrouped = {}
+    groupedEntries.forEach(([key, val]) => { sortedGrouped[key] = val })
+
+    return sortedGrouped
   })
 
-  // Load distances from sessionStorage
-  const loadFromSession = () => {
-    distances.value = JSON.parse(sessionStorage.getItem("distances")) || []
-  }
-
-  // Clear sessionStorage and reset state
+  // C===========lear sessionStorage and reset state===========
   const clearStorage = () => {
     sessionStorage.removeItem("distances")
     distances.value = []
   }
 
-  // Get a mode-specific distance string
+  // ===========Get a mode-specific distance string===========
   const getDistance = (records, mode) => {
     const found = records.find(r => r.mode.toLowerCase() === mode.toLowerCase())
     return found ? `${found.mode} Distance ${found.distance} \n(${found.duration})` : '—'
   }
 
-  // Load distances on component mount
-  onMounted(() => {
-    loadFromSession()
-  })
+  // ===========Displays a route on the map===========
+  const displayRoute = (routeName, mode = null) => {
+    inputMsg.value.innerHTML = '';
 
+    // Clear all existing routes from the map
+    clearAllRoutes();
+
+    loadSavedRoutesFromSession();
+
+    // Filter routes that match routeName and mode
+    const savedDistances = JSON.parse(sessionStorage.getItem("distances")) || [];
+    const matchingRoutes = savedDistances.filter(item => {
+      const matchRoute = `${item.source} → ${item.destination}` === routeName;
+      const matchMode = mode ? item.mode === mode : true;
+      return matchRoute && matchMode;
+    });
+
+    // If no matching routes, exit
+    if (!matchingRoutes.length) return;
+
+    // Show the matching polylines on the map
+    const bounds = new google.maps.LatLngBounds();
+    allMarkerRoutes.forEach(polyline => {
+      const matchRoute = polyline.routeName === routeName;
+      const matchMode = mode ? polyline.travelMode === mode : true;
+
+      if (matchRoute && matchMode) {
+        polyline.setMap(map);
+        polyline.getPath().forEach(latlng => bounds.extend(latlng));
+      } else {
+        polyline.setMap(null);
+      }
+    });
+
+    // Fit map to visible polylines
+    if (!bounds.isEmpty()) {
+      map.fitBounds(bounds);
+      google.maps.event.addListenerOnce(map, 'bounds_changed', () => {
+        if (map.getZoom() > 14) map.setZoom(14);
+      });
+    }
+
+    // Display distance cards
+    const icons = { WALKING: 'person-walking', DRIVING: 'car', TRANSIT: 'subway' };
+    matchingRoutes.forEach(item => {
+      const icon = icons[item.mode?.toUpperCase()] || 'question';
+      inputMsg.value.innerHTML += `
+        <div class="distance-item">
+          <i class="fas fa-${icon} icon"></i>
+          <div class="distance-text">
+            ${item.mode} distance: <strong>${item.distance} (${item.duration})</strong>
+          </div>
+        </div>
+      `;
+    });
+
+    // Scroll to map
+    const mapEl = document.getElementById('map'); 
+    if (mapEl) mapEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  // ===========Reload saved routes from session===========
+  const loadSavedRoutesFromSession = () => {
+    clearAllRoutes();
+    const savedDistances = JSON.parse(sessionStorage.getItem("distances")) || [];
+
+    allMarkerRoutes.length = 0;
+
+    const modeColors = { WALKING: 'orange', TRANSIT: 'pink', DRIVING: 'red' };
+
+    savedDistances.forEach(item => {
+      const path = item.path.map(p => new google.maps.LatLng(p.lat, p.lng));
+
+      const polyline = new google.maps.Polyline({
+        path,
+        strokeColor: modeColors[item.mode?.toUpperCase()] || 'yellow',
+        strokeWeight: 5,
+        map: null
+      });
+
+      polyline.routeName = `${item.source} → ${item.destination}`;
+      polyline.travelMode = item.mode;
+
+      allMarkerRoutes.push(polyline);
+    });
+
+    distances.value = savedDistances;
+  };
 </script>
 
 <template>
     <!-- SchoolFinders (School distance mapping) from Nic -->
   <div id="bodybg">
-    <div class="container py-6 my-5 rounded-4 shadow-lg">
-      <h1 class="text-center mb-4">SchoolFinders</h1>
+    <div class="container py-2 my-4 rounded-4 shadow-lg">
       <br>
         <div class="row">
           <div class="col-md-3">
-            <form @submit.prevent="handleSubmit()">
+            <form @submit.prevent="handleHomeSubmit()">
               <div class="mb-3">
                 <label for="home" class="form-label">Where is your home?</label>
                 <input
@@ -351,7 +586,7 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
                 type="submit"
                 class="btn btn-primary mb-4"
               >
-                Submit
+                Find Home Address
               </button>
             </form>
 
@@ -397,32 +632,74 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
         </div>
       </div>
     </div>
-    <div class="container py-5">
+    <div class="container py-4">
       <div id="compareSection">
         <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
-          <h3 class="mb-2 mb-md-0">Compare Distances</h3>
+        <div class="mb-3 d-flex align-items-center">
+          <label for="travelModeSelect" style="
+            font-weight: 700; 
+            color: #004aad; 
+            margin-right: 0.75rem;
+            text-shadow: 1px 1px 2px rgba(0,0,80,0.4);
+          ">
+            Travel Mode:
+          </label>
+          <select 
+            id="travelModeSelect"
+            v-model="selectedTravelMode" 
+            class="form-select"
+            style="
+              width: 220px;
+              border: 2px solid #004aad;
+              border-radius: 0.5rem;
+              background-color: #cce5ff;
+              color: #002244;
+              font-weight: 600;
+              padding: 0.45rem 0.75rem;
+              box-shadow: 0 3px 8px rgb(0 75 173 / 0.2);
+              transition: all 0.3s ease;
+            "
+          >
+            <option value="WALKING">🚶 Walking</option>
+            <option value="TRANSIT">🚇 Transit</option>
+            <option value="DRIVING">🚗 Driving</option>
+          </select>
+        </div>
           <div>
             <button class="btn btn-danger me-2" @click="clearStorage">
               <i class="fas fa-trash-alt me-1"></i> Clear All
             </button>
-            <button class="btn btn-secondary" @click="loadFromSession">
+            <button class="btn btn-secondary" @click="loadSavedRoutesFromSession">
               <i class="fas fa-sync-alt me-1"></i> Reload
             </button>
           </div>
         </div>
-
-        <div v-for="(records, route) in groupedDistances" :key="route" class="distance-card">
+        <div 
+          v-for="(records, route) in sortedGroupedDistances" 
+          :key="route" 
+          class="distance-card"
+          @click="displayRoute(route)"
+        >
           <h5 class="route-title">{{ route }}</h5>
           <div class="row text-center g-3">
-            <div class="col-4 distance-mode walking">
+            <div 
+              class="col-4 distance-mode walking"
+              @click.stop="displayRoute(route, 'WALKING')"
+            >
               <i class="fas fa-person-walking fa-2x mb-2"></i>
               <div>{{ getDistance(records, 'Walking') }}</div>
             </div>
-            <div class="col-4 distance-mode transit">
+            <div 
+              class="col-4 distance-mode transit"
+              @click.stop="displayRoute(route, 'TRANSIT')"
+            >
               <i class="fas fa-subway fa-2x mb-2"></i>
               <div>{{ getDistance(records, 'Transit') }}</div>
             </div>
-            <div class="col-4 distance-mode driving">
+            <div 
+              class="col-4 distance-mode driving"
+              @click.stop="displayRoute(route, 'DRIVING')"
+            >
               <i class="fas fa-car fa-2x mb-2"></i>
               <div>{{ getDistance(records, 'Driving') }}</div>
             </div>
@@ -500,7 +777,7 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
 
   h1 {
       font-weight: 800;
-      color: #cce5ff;
+      color: #0872e2;
       text-shadow: 2px 2px 6px rgba(0, 0, 80, 0.7);
       letter-spacing: 2px;
       margin-bottom: 3rem;
