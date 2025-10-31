@@ -22,7 +22,7 @@ const appGroups = ref([
       {
         name: 'School Comparer',
         description: 'Compare schools side-by-side based on various criteria.',
-        path: '/schoolcompare',
+        path: '/school-comparer',
         icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-layout-split mb-3" viewBox="0 0 16 16">
                  <path d="M0 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm8.5-1v12H14a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM7.5 2V14H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/>
                </svg>`,
@@ -59,13 +59,6 @@ const appGroups = ref([
           <path d="M2 3h10v2H2zm0 3h4v3H2zm0 4h4v1H2zm0 2h4v1H2zm5-6h2v1H7zm3 0h2v1h-2zM7 8h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2z"/>
         </svg>`,
       },
-      // Example of how to add a new app:
-      // {
-      //   name: 'User Analytics',
-      //   description: 'View user engagement and metrics.',
-      //   path: '/analytics',
-      //   icon: `<svg>...</svg>`
-      // }
     ],
   },
   {
