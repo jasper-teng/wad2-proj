@@ -12,9 +12,33 @@ const appGroups = ref([
     name: 'School Comparison Tools',
     apps: [
       {
-        name: 'School Comparison',
+        name: 'School Comparison (Joes)',
         description: 'Compare schools side-by-side based on various criteria.',
         path: '/comparison',
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-layout-split mb-3" viewBox="0 0 16 16">
+                 <path d="M0 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm8.5-1v12H14a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM7.5 2V14H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/>
+               </svg>`,
+      },
+      {
+        name: 'School Comparer (Felicia)',
+        description: 'Compare schools side-by-side based on various criteria.',
+        path: '/school-comparer',
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-layout-split mb-3" viewBox="0 0 16 16">
+                 <path d="M0 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm8.5-1v12H14a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM7.5 2V14H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/>
+               </svg>`,
+      },
+      {
+        name: 'School CCA Comparison',
+        description: 'CCA Comparison across all schools.',
+        path: '/cca-finder',
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-layout-split mb-3" viewBox="0 0 16 16">
+                 <path d="M0 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm8.5-1v12H14a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM7.5 2V14H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/>
+               </svg>`,
+      },
+      {
+        name: 'Unique Programmes',
+        description: 'Explore the unique programmes each school has.',
+        path: '/distanceProgramme',
         icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-layout-split mb-3" viewBox="0 0 16 16">
                  <path d="M0 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm8.5-1v12H14a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM7.5 2V14H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/>
                </svg>`,
@@ -39,13 +63,39 @@ const appGroups = ref([
         description: 'Upload, analyze, and manage news articles. Used for job sentiment analysis.',
         path: '/news',
         icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-newspaper mb-3" viewBox="0 0 16 16">
-                 <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5z"/>
-                 <path d="M2 3h10v2H2zm0 3h4v3H2zm0 4h4v1H2zm0 2h4v1H2zm5-6h2v1H7zm3 0h2v1h-2zM7 8h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2z"/>
-               </svg>`,
+          <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5z"/>
+          <path d="M2 3h10v2H2zm0 3h4v3H2zm0 4h4v1H2zm0 2h4v1H2zm5-6h2v1H7zm3 0h2v1h-2zM7 8h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2z"/>
+        </svg>`,
+      },
+    ],
+  },
+  {
+    name: 'Distance Tracking Map',
+    apps: [
+      {
+        name: 'Map Viewer',
+        description: 'Visualize and track distances on an interactive map.',
+        path: '/map',
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-geo-alt-fill mb-3" viewBox="0 0 16 16">
+  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+</svg>`
       },
     ],
   },
 ])
+  // Example of how to add a new group:
+  // {
+  //   name: 'Administrative Tools',
+  //   apps: [
+  //     {
+  //       name: 'Settings',
+  //       description: 'Configure application settings.',
+  //       path: '/settings',
+  //       icon: `<svg>...</svg>`
+  //     }
+  //   ]
+  // }
+
 
 function navigateTo(path) {
   router.push(path)

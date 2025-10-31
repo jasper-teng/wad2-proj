@@ -51,9 +51,31 @@ const router = createRouter({
         meta: { requiresAuth: true }
     },
     {
+        path: '/map',
+        name: 'map',
+        component: () => import('../views/MapView.vue'),
+        meta: { requiresAuth: true }
+    },
+    {
         path: '/comparison',
         name: 'comparison',
         component: () => import('../views/ComparisonView.vue'),
+    },
+    {
+        path: '/cca-finder',
+        name: 'cca-finder',
+        component: () => import('../views/CCAFinderView.vue'),
+    },
+    {
+        path: '/school-comparer',
+        name: 'school-comparer',
+        component: () => import('../views/SchoolComparerView.vue'),
+        meta: { requiresAuth: true }
+    },
+    {
+        path: '/distanceProgramme',
+        name: 'distanceProgramme',
+        component: () => import('../views/distProg.vue'),
         meta: { requiresAuth: true }
     },
     // Catch-all redirect
