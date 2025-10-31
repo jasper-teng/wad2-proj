@@ -12,7 +12,7 @@ const appGroups = ref([
     name: 'School Comparison Tools',
     apps: [
       {
-        name: 'School Comparison',
+        name: 'School Comparison (Joes)',
         description: 'Compare schools side-by-side based on various criteria.',
         path: '/comparison',
         icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-layout-split mb-3" viewBox="0 0 16 16">
@@ -20,7 +20,7 @@ const appGroups = ref([
                </svg>`,
       },
       {
-        name: 'School Comparer',
+        name: 'School Comparer (Felicia)',
         description: 'Compare schools side-by-side based on various criteria.',
         path: '/school-comparer',
         icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-layout-split mb-3" viewBox="0 0 16 16">
@@ -29,8 +29,16 @@ const appGroups = ref([
       },
       {
         name: 'School CCA Comparison',
-        description: 'Compare schools by CCA.',
+        description: 'CCA Comparison across all schools.',
         path: '/cca-finder',
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-layout-split mb-3" viewBox="0 0 16 16">
+                 <path d="M0 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm8.5-1v12H14a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM7.5 2V14H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/>
+               </svg>`,
+      },
+      {
+        name: 'Unique Programmes',
+        description: 'Explore the unique programmes each school has.',
+        path: '/distanceProgramme',
         icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-layout-split mb-3" viewBox="0 0 16 16">
                  <path d="M0 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm8.5-1v12H14a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM7.5 2V14H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/>
                </svg>`,
