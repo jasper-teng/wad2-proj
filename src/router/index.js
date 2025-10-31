@@ -72,6 +72,12 @@ const router = createRouter({
         component: () => import('../views/SchoolComparerView.vue'),
         meta: { requiresAuth: true }
     },
+    {
+        path: '/distanceProgramme',
+        name: 'distanceProgramme',
+        component: () => import('../views/distProg.vue'),
+        meta: { requiresAuth: true }
+    },
     // Catch-all redirect
     {
         path: '/:pathMatch(.*)*',
