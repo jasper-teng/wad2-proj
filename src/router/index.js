@@ -60,6 +60,11 @@ const router = createRouter({
         path: '/comparison',
         name: 'comparison',
         component: () => import('../views/ComparisonView.vue'),
+    },
+    {
+        path: '/cca-finder',
+        name: 'cca-finder',
+        component: () => import('../views/CCAFinderView.vue'),
         meta: { requiresAuth: true }
     },
     // Catch-all redirect
