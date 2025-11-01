@@ -17,6 +17,9 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
 
   const allInfoWindows = []
   let allMarkerRoutes = []
+  const allMarkers = ref([])
+  const allSchools = ref([]);
+
 
   const homeMarker = ref(null)
 
@@ -55,6 +58,7 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
       getDistanceOfTargets()
     }
   })
+
 
   // Initialize Google Maps when component is mounted
   onMounted(async () => {
@@ -145,11 +149,11 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
     fetch(url)
       .then(res => res.json())
       .then(data => {
-        const allSchools = data.result.records
+        allSchools.value = data.result.records;
 
-        console.log(`Fetched ${allSchools.length} schools from API.`)
+        console.log(`Fetched ${allSchools.value.length} schools from API.`)
 
-        allSchools.forEach(school => {
+        allSchools.value.forEach(school => {
               const location = SCHOOL_COORDINATES[school.school_name]
               if (!location || !location.lat || !location.lng) {
                 console.warn(`Missing coordinates for ${school.school_name}, skipping marker creation.`)
@@ -224,6 +228,8 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
                 // Open the info window
                 infoWindow.open({ anchor: marker, map })
               })
+              // Store marker + school name
+              allMarkers.value.push({ schoolName: school.school_name, marker })
         })
       })
   }
@@ -561,11 +567,216 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
 
     distances.value = savedDistances;
   };
+
+/*  ===========Filter Code=========== */
+const sharedFilters = ref({
+  type: '',
+  coed: '',
+  region: ''
+});
+
+const hasActiveFilters = computed(() => {
+  return Object.values(sharedFilters.value).some(value => value !== '');
+});
+
+function getSchoolType(school) {
+  if (!school || !school.mainlevel_code) return 'Educational Institution';
+  
+  switch(school.mainlevel_code) {
+    case 'PRIMARY':
+      return 'Primary School';
+    case 'SECONDARY':
+      return 'Secondary School';
+    case 'SECONDARY (S1-S4)':
+      return 'Secondary School';
+    case 'SECONDARY (S1-S5)':
+      return 'Secondary School';
+    case 'JUNIOR COLLEGE':
+      return 'Junior College';
+    case 'MIXED LEVEL (S1-JC2)':
+      return 'Secondary School / Junior College';
+    default:
+      return 'Educational Institution';
+  }
+}
+
+function getCoedStatus(schoolOrName) {
+  let name = '';
+
+  if (!schoolOrName) return 'true';
+  if (typeof schoolOrName === 'string') {
+    name = schoolOrName;
+  } else if (typeof schoolOrName === 'object') {
+    name = schoolOrName.school_name || schoolOrName.name || '';
+  }
+
+  name = name.toUpperCase();
+
+  const boysKeywords = ['BOYS', 'ST. JOSEPH', 'ANGLO-CHINESE', "BOY'S", 'ANGLO CHINESE'];
+  const girlsKeywords = ['GIRLS', 'CHIJ', 'METHODIST GIRLS', "GIRL'S"];
+
+  if (boysKeywords.some(k => name.includes(k))) return 'false';
+  if (girlsKeywords.some(k => name.includes(k))) return 'false';
+  return 'true';
+}
+
+function getSchoolRegion(coords) {
+  if (!coords || !coords.lat || !coords.lng) return '';
+  
+  if (coords.lat > 1.4) return 'NORTH';
+  if (coords.lat < 1.3) return 'SOUTH';
+  if (coords.lng > 103.9) return 'EAST';
+  if (coords.lng < 103.7) return 'WEST';
+  return 'CENTRAL';
+}
+
+function updateMarkers() {
+  if (!allMarkers.value || !map) return;
+  
+  allMarkers.value.forEach(({ schoolName, marker }) => {
+    const school = allSchools.value?.find(s => s.school_name === schoolName);
+    if (!school) return;
+
+    let isVisible = true;
+
+    if (sharedFilters.value.type) {
+      const schoolType = getSchoolType(school);
+      isVisible = isVisible && schoolType.split(' / ').includes(sharedFilters.value.type);
+    }
+
+    if (sharedFilters.value.coed) {
+      isVisible = isVisible && getCoedStatus(school) === sharedFilters.value.coed;
+    }
+
+    if (sharedFilters.value.region) {
+      const coords = SCHOOL_COORDINATES[schoolName];
+      isVisible = isVisible && getSchoolRegion(coords) === sharedFilters.value.region;
+    }
+
+    marker.setMap(isVisible ? map : null);
+  });
+}
+
+const filteredSchools = computed(() => {
+  return (allSchools.value || []).filter(school => {
+    let isVisible = true;
+
+    // Type filter
+    if (sharedFilters.value.type) {
+      isVisible = isVisible && getSchoolType(school) === sharedFilters.value.type;
+    }
+
+    // Co-ed filter - pass the whole school (getCoedStatus handles strings/objects)
+    if (sharedFilters.value.coed) {
+      isVisible = isVisible && getCoedStatus(school) === sharedFilters.value.coed;
+    }
+
+    // Region filter
+    if (sharedFilters.value.region) {
+      const coords = SCHOOL_COORDINATES[school.school_name];
+      isVisible = isVisible && getSchoolRegion(coords) === sharedFilters.value.region;
+    }
+
+    return isVisible;
+  });
+});
+
+function clearSharedFilters() {
+  sharedFilters.value = {
+    type: '',
+    coed: '',
+    region: ''
+  };
+  updateMarkers();
+}
+
+function resetSelections() {
+  clearSharedFilters();
+  source.value = '';
+  destination.value = '';
+  if (inputMsg.value) {
+    inputMsg.value.innerHTML = '';
+  }
+  clearAllRoutes();
+}
+
+watch(sharedFilters, () => {
+  updateMarkers();
+}, { deep: true });
+
 </script>
 
 <template>
-    <!-- SchoolFinders (School distance mapping) from Nic -->
+  <!-- SchoolFinders (School distance mapping) from Nic -->
   <div id="bodybg">
+    <!-- Filters (School distance mapping) from Felicia -->
+    <div class="row mb-4 justify-content-center">
+      <div class="col-12 col-md-10">
+        <div class="card">
+          <div class="card-header bg-info text-white">
+            <h5 class="mb-0 text-center">🔍 Filter Schools</h5>
+          </div>
+          <div class="card-body">
+            <div class="row g-3 align-items-end">
+              <div class="col-md-3">
+                <label class="form-label">School Type</label>
+                <select class="form-select" v-model="sharedFilters.type" @change="updateMarkers">
+                  <option value="">All Types</option>
+                  <option value="Primary School">Primary School</option>
+                  <option value="Secondary School">Secondary School</option>
+                  <option value="Junior College">Junior College</option>
+                  <option value="Educational Institution">Other</option>
+                </select>
+              </div>
+
+              <div class="col-md-3">
+                <label class="form-label">Co-educational</label>
+                <select class="form-select" v-model="sharedFilters.coed" @change="updateMarkers">
+                  <option value="">All</option>
+                  <option value="true">Co-ed Only</option>
+                  <option value="false">Single Gender</option>
+                </select>
+              </div>
+
+              <div class="col-md-3">
+                <label class="form-label">Region</label>
+                <select class="form-select" v-model="sharedFilters.region" @change="updateMarkers">
+                  <option value="">All Regions</option>
+                  <option value="NORTH">North</option>
+                  <option value="SOUTH">South</option>
+                  <option value="EAST">East</option>
+                  <option value="WEST">West</option>
+                  <option value="CENTRAL">Central</option>
+                </select>
+              </div>
+
+              <div class="col-md-3 d-flex gap-2">
+                <button class="btn btn-outline-secondary w-50" @click="clearSharedFilters">
+                  🗑️ Clear
+                </button>
+                <button class="btn btn-outline-info w-50" @click="resetSelections">
+                  🔄 Reset
+                </button>
+              </div>
+            </div>
+
+            <!-- Filter Status -->
+            <div class="mt-4 text-center">
+              <div class="alert alert-light mb-0">
+                <strong>Filtered Results:</strong> {{ filteredSchools.length }} schools
+                <span v-if="hasActiveFilters" class="text-info">
+                  (from {{ allSchools.length }} total)
+                </span>
+                <div class="mt-2">
+                  <span v-if="hasActiveFilters" class="badge bg-info">Filters Active</span>
+                  <span v-else class="badge bg-secondary">No Filters</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="container py-2 my-4 rounded-4 shadow-lg">
       <br>
         <div class="row">
