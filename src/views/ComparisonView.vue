@@ -1,6 +1,11 @@
 <script setup>
-import { ref, reactive, computed, onMounted } from 'vue';
+import { ref, computed, onMounted, watch } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
+
 import axios from 'axios';
+
+const router = useRouter();
+const route = useRoute();
 
 // --- Constants ---
 const DATA_GOV_BASE_URL = 'https://api-production.data.gov.sg/v2/public/api/datasets';
@@ -104,6 +109,8 @@ onMounted(async () => {
     allSchools.value = schools.sort((a, b) => a.school_name.localeCompare(b.school_name));
     allSubjectsData.value = subjects;
     allCcasData.value = ccas;
+
+    console.log(allSchools.value[0])
 
   } catch (err) {
     error.value = 'Could not load initial school data. Please refresh the page.';
@@ -259,6 +266,33 @@ function formatMotherTongue(info) {
     .filter(lang => lang && lang !== 'na')
     .join(', ') || 'N/A';
 }
+
+function handleInputBlur(slot) {
+  window.setTimeout(() => {
+    slot.showSchoolResults = false;
+  }, 200);
+}
+
+function updateURLParams() {
+  const params = new URLSearchParams();
+
+  comparisonSlots.value.forEach((slot, index) => {
+    if (slot.schoolName) {
+      params.set(`school${index + 1}`, slot.schoolName);
+    }
+  });
+
+  const newUrl = `${window.location.pathname}?${params.toString()}`;
+  window.history.replaceState(null, '', newUrl);
+}
+
+watch(
+  () => comparisonSlots.value.map(slot => slot.schoolName),
+  () => {
+    updateURLParams();
+  },
+  { deep: true }
+);
 </script>
 
 <template>
@@ -288,7 +322,6 @@ function formatMotherTongue(info) {
     <div v-if="!isLoadingMasterList" class="row g-3 flex-grow-1 comparison-grid-scrollable">
       <div v-for="slot in comparisonSlots" :key="slot.id" :class="columnClass" class="mb-3 d-flex flex-column">
         <div class="card h-100 shadow-sm d-flex flex-column">
-
           <!-- Card Header: School Selector (fixed within card) -->
           <div class="card-header p-3 flex-shrink-0">
             <div class="d-flex justify-content-between align-items-center">
@@ -302,7 +335,7 @@ function formatMotherTongue(info) {
                     placeholder="Search for a school..."
                     v-model="slot.schoolSearch"
                     @focus="slot.showSchoolResults = true"
-                    @blur="() => setTimeout(() => slot.showSchoolResults = false, 200)"
+                    @blur="handleInputBlur(slot)"
                   >
                   <div
                     class="dropdown-menu w-100 shadow-lg"
@@ -329,6 +362,7 @@ function formatMotherTongue(info) {
 
               <!-- Clear Slot Button -->
               <button v-if="slot.schoolName" @click="clearSlot(slot)" class="btn btn-sm btn-outline-secondary" title="Clear School">
+                Clear
                 <i class="bi bi-arrow-counterclockwise"></i>
               </button>
 
