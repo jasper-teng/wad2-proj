@@ -1,0 +1,103 @@
+.top-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1051; /* Ensure it's above the overlay */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.navbar {
+  /* Make the navbar completely transparent */
+  background: transparent !important;
+}
+
+.navbar-logo {
+  height: 45px;
+  filter: none;
+}
+
+.overlay-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f8f9fa;
+  background-image: radial-gradient(#FFA18D 3px, transparent 1px);
+  background-size: 50px 50px;
+  animation: move-dots 4s linear infinite;
+  background-color: #fff;
+  z-index: 1050;
+  overflow-y: auto;
+}
+
+@keyframes move-dots {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 50px -50px; /* Creates a 45-degree angle movement */
+  }
+}
+
+.btn-outline {
+  position: relative; /* Needed for the pseudo-element */
+  z-index: 1; /* Ensure text is above the pseudo-element */
+  border: 2px solid #FFA18D;
+  background-color: #fff;
+  color: #FFA18D;
+  overflow: hidden; /* Keeps the pseudo-element contained */
+  transition: border-color 0.4s ease;
+  border: 2px solid #FFA18D;
+  color: #FFA18D;
+  transition: all 0.3s ease;
+}
+
+.btn-outline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #FFA18D;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.btn-outline:hover,
+.btn-outline:focus {
+  color: #fff;
+}
+.btn-outline:hover::before,
+.btn-outline:focus::before {
+  opacity: 1;
+}
+
+.top-header .nav-item {
+  transition: opacity 0.3s ease;
+}
+
+.icon {
+  color:#56bdb6;
+}
+
+.app-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  cursor: pointer;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}

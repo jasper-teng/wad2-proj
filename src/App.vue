@@ -41,7 +41,7 @@ watch(() => route.fullPath, checkAssistantMessage)
       </div>
     </transition>
   <NavbarView v-if="!isAuthPage" />
-  <main class="flex-shrink-0">
+  <main class="flex-shrink-0" :class="{ 'content-with-navbar': !isAuthPage }">
     <!-- 
       By adding the :key="route.fullPath", we are telling Vue to treat each route as a unique component.
       This forces a complete remount of the component when the route changes, fixing the navigation issue.
@@ -63,6 +63,11 @@ watch(() => route.fullPath, checkAssistantMessage)
 .fade-enter-from, .fade-leave-to {
     opacity: 0;
 }
+
+.content-with-navbar {
+  padding-top: 50px; /* Adjust this value to match your navbar's height */
+}
+
 body, #app {
     display: flex;
     flex-direction: column;
@@ -107,4 +112,3 @@ body, #app {
   opacity: 0;
 }
 </style>
-

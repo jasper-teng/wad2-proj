@@ -4,6 +4,7 @@ import router from './router'
 
 // Import your custom global CSS file
 import './assets/global.css'
+import './assets/navbar.css'
 
 // /* Google Maps API */  
 // const script = document.createElement('script');

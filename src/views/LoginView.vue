@@ -2,7 +2,7 @@
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import axios from 'axios';
-import logoImage from "../assets/schoolfinders white.png";
+import logoImage from "../assets/schoolfinders black.png";
 
 const router = useRouter()
 
@@ -88,7 +88,7 @@ const toggleForm = (showRegister) => {
     <main class="form-signin w-100" style="max-width: 400px">
       <transition name="fade" mode="out-in">
         <!-- Login Form -->
-        <form v-if="!isRegistering" key="login" @submit.prevent="handleLogin" class="p-4 p-md-5 glass-card assymetric-border">
+        <form v-if="!isRegistering" key="login" @submit.prevent="handleLogin" class="p-4 p-md-5 glass-card dark-text">
           <h2 class="mb-4 text-center">Sign In</h2>
 
           <div class="form-floating mb-3">
@@ -115,15 +115,15 @@ const toggleForm = (showRegister) => {
           </div>
           <div v-if="loginError" class="alert alert-danger text-center p-2">{{ loginError }}</div>
           <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-          <hr class="my-4" />
-          <p class="text-center">
+
+          <p class="text-center mt-4">
             Don't have an account?
             <a href="#" @click.prevent="toggleForm(true)">Create one</a>
           </p>
         </form>
 
         <!-- Signup Form -->
-        <form v-else key="signup" @submit.prevent="handleSignup" class="p-4 p-md-5 glass-card assymetric-border">
+        <form v-else key="signup" @submit.prevent="handleSignup" class="p-4 p-md-5 glass-card">
           <h2 class="mb-4 text-center">Create Account</h2>
 
           <div class="form-floating mb-3">
