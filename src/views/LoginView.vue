@@ -2,6 +2,7 @@
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import axios from 'axios'
+import logoImage from "../assets/schoolfinders white.png"
 
 const router = useRouter()
 const form = reactive({ email: '', password: '' })
@@ -37,10 +38,15 @@ const handleLogin = async () => {
 </script>
 
 <template>
-  <div class="d-flex align-items-center py-4 bg-body-tertiary">
-    <main class="form-signin w-100 m-auto" style="max-width: 400px">
-      <form @submit.prevent="handleLogin" class="p-4 p-md-5 border rounded-3 bg-light">
-        <h2 class="fw-bold mb-4 text-center">Sign in to your account</h2>
+  <div class="d-flex flex-column align-items-center py-4 mt-5">
+    
+    <div class="text-center">
+      <img :src="logoImage" alt="Schoolfinders Logo" class="mb-3 logo" style="max-width: 50%; height: auto;">
+    </div>
+
+    <main class="form-signin w-100 mt-5" style="max-width: 400px">
+      <form @submit.prevent="handleLogin" class="p-4 p-md-5 glass-card">
+        <h2 class="mb-4 text-center">Sign in</h2>
 
         <div class="form-floating mb-3">
           <input
@@ -70,7 +76,7 @@ const handleLogin = async () => {
 
         <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
         <hr class="my-4" />
-        <p class="text-center text-body-secondary">
+        <p class="text-center">
           Don't have an account?
           <router-link to="/signup">Create one</router-link>
         </p>
@@ -78,10 +84,3 @@ const handleLogin = async () => {
     </main>
   </div>
 </template>
-
-<style scoped>
-.form-signin {
-  padding: 1rem;
-}
-</style>
-

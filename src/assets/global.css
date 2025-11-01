@@ -1,0 +1,93 @@
+/* src/assets/styles/global.css */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400..700&display=swap');
+
+/* Set a background color for the whole app to see changes easily */
+body {
+  /* A gradient background helps showcase the glass effect */
+  /* background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%); */
+  background-image: url("testbg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;;
+  color: #313131;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+}
+
+label {
+  color: #999999
+}
+
+/* Style for all anchor tags */
+a {
+  text-decoration: none; /* Remove underline */
+  background: linear-gradient(90deg, #1db2ea, #8be9e3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.8; /* Slightly fade the gradient on hover */
+}
+
+
+.logo {
+  filter: drop-shadow(4px 4px 6px rgba(255, 255, 255, 0.4))
+}
+
+.tag {
+  background: linear-gradient(45deg, rgba(29, 178, 234, 1), rgba(139, 233, 227, 1));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  padding: 5px;
+  border-radius: 10px 10px 10px 0 ;
+  width: 75%;
+}
+
+.btn-primary{
+  background: linear-gradient(90deg, rgba(153,242,200, 1) 0%, rgba(86,189,182, 1), rgba(153,242,200, 1) 100%);
+  background-size: 200% auto;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  font-weight: 600;
+  transition: background-position 0.6s ease, box-shadow 0.6s ease;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-position: 100% left;
+  color: #fff;
+  box-shadow: 0 12px 35px 0 rgba(31, 38, 135, 0.3);
+}
+
+.alert-danger {
+  background: linear-gradient(135deg, rgba(255, 74, 95, 1), rgba(255, 189, 171, 1));
+  backdrop-filter: blur(15px);
+  border: none;
+  -webkit-backdrop-filter: blur(15px);
+  color: #fff; /* White text for better contrast on a blurred background */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Add a subtle shadow to text for readability */
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: #fff; /* Use white text for better readability on varied backgrounds */
+  position: relative;
+  overflow: hidden;
+  border: 0.5px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0 30px 0 30px; /* top-left, top-right, bottom-right, bottom-left */
+}
+
+/* Reduce font size for floating form inputs */
+.form-floating > .form-control {
+  font-size: 1rem;
+}
