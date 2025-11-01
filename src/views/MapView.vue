@@ -636,33 +636,17 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
       <div id="compareSection">
         <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
         <div class="mb-3 d-flex align-items-center">
-          <label for="travelModeSelect" style="
-            font-weight: 700; 
-            color: #004aad; 
-            margin-right: 0.75rem;
-            text-shadow: 1px 1px 2px rgba(0,0,80,0.4);
-          ">
+          <label for="travelModeSelect">
             Travel Mode:
           </label>
           <select 
             id="travelModeSelect"
             v-model="selectedTravelMode" 
             class="form-select"
-            style="
-              width: 220px;
-              border: 2px solid #004aad;
-              border-radius: 0.5rem;
-              background-color: #cce5ff;
-              color: #002244;
-              font-weight: 600;
-              padding: 0.45rem 0.75rem;
-              box-shadow: 0 3px 8px rgb(0 75 173 / 0.2);
-              transition: all 0.3s ease;
-            "
           >
-            <option value="WALKING">🚶 Walking</option>
-            <option value="TRANSIT">🚇 Transit</option>
-            <option value="DRIVING">🚗 Driving</option>
+            <option value="WALKING">Walking</option>
+            <option value="TRANSIT">Transit</option>
+            <option value="DRIVING">Driving</option>
           </select>
         </div>
           <div>
@@ -711,217 +695,264 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
 </template>
 
 <style scoped>
-  #compareSection {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
+#bodybg {
+  background: #f8f8f8;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  color: #111;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
 
-  .distance-card {
-    background-color: #cce5ff;
-    border-radius: 0.75rem;
-    padding: 1rem;
-    box-shadow: 0 4px 12px rgba(0, 75, 173, 0.25);
-  }
+.container {
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 2.5rem 3rem;
+  max-width: 90%;
+  transition: box-shadow 0.3s ease;
+}
+.container:hover {
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+}
 
-  .distance-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(0, 75, 173, 0.35);
-  }
+label {
+  font-weight: 600;
+  color: #1c1c1e;
+}
 
-  .route-title {
-    text-align: center;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #002244;
-  }
+input.form-control {
+  border: 1px solid #ccc;
+  border-radius: 0.6rem;
+  background-color: #f9f9f9;
+  font-size: 1.05rem;
+  color: #111;
+  padding: 0.6rem 0.8rem;
+  transition: all 0.3s ease;
+}
 
-  .distance-mode {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem;
-    font-weight: 600;
-    border-radius: 0.5rem;
-    transition: background-color 0.2s ease;
-  }
+input.form-control:focus {
+  border-color: #007aff;
+  box-shadow: 0 0 0 4px rgba(0,122,255,0.15);
+  background-color: #fff;
+  color: #000;
+}
 
-  .distance-mode.walking:hover {
-    background-color: orange;
-  }
+/* ===== Buttons ===== */
+button.btn-primary {
+  background-color: #000;
+  border: none;
+  border-radius: 0.7rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.7rem 1.4rem;
+  transition: background-color 0.3s ease, transform 0.15s ease;
+}
 
-  .distance-mode.transit:hover {
-    background-color: pink;
-  }
+button.btn-primary:hover {
+  background-color: #1c1c1e;
+  transform: scale(1.02);
+}
 
-  .distance-mode.driving:hover {
-    background-color: red;
-  }
+button.btn-danger {
+  background-color: #ff3b30;
+  border: none;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+button.btn-danger:hover {
+  opacity: 0.85;
+}
 
-  .distance-mode i {
-    color: #004aad;
-  }
+button.btn-secondary {
+  background-color: #e5e5ea;
+  border: none;
+  color: #111;
+  font-weight: 600;
+}
+button.btn-secondary:hover {
+  background-color: #d1d1d6;
+}
 
-  #bodybg {
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #0b4b82;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      padding-top: 3rem;
-      padding-bottom: 3rem;
-  }
+/* ===== Distance Info ===== */
+#inputMsg {
+  min-height: 70px;
+  font-size: 1rem;
+  color: #1c1c1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
 
-  h1 {
-      font-weight: 800;
-      color: #0872e2;
-      text-shadow: 2px 2px 6px rgba(0, 0, 80, 0.7);
-      letter-spacing: 2px;
-      margin-bottom: 3rem;
-  }
+.distance-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #f2f2f7;
+  border-radius: 0.6rem;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  color: #111;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  animation: fadeIn 0.5s ease forwards;
+}
 
-  h3 {
-      font-weight: 700;
-      color: #cce5ff;
-      text-shadow: 1px 1px 4px rgba(0, 0, 80, 0.6);
-      letter-spacing: 1.5px;
-      margin-bottom: 2rem;
-  }
+.icon {
+  font-size: 1.4rem;
+  color: #007aff;
+}
 
+#map {
+  height: 40rem;
+  width: 100%;
+  border-radius: 1rem;
+  background: #f2f2f7;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s ease;
+}
+#map:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+/* ===== Route Comparison Section ===== */
+#compareSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.distance-card {
+  background-color: #fff;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
+}
+.distance-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+}
+
+.route-title {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #000;
+  letter-spacing: 0.3px;
+}
+
+.distance-mode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  font-weight: 500;
+  color: #111;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.distance-mode.walking:hover {
+  background-color: orange;
+}
+
+.distance-mode.transit:hover {
+  background-color: pink;
+}
+
+.distance-mode.driving:hover {
+  background-color: red;
+}
+
+.distance-mode:hover {
+  background-color: #f2f2f7;
+  transform: scale(1.05);
+}
+
+.distance-mode i {
+  color: #007aff;
+}
+
+select.form-select {
+  border: 1px solid #ccc;
+  border-radius: 0.6rem;
+  background-color: #f9f9f9;
+  color: #111;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.3s ease;
+}
+
+select.form-select:focus {
+  border-color: #007aff;
+  box-shadow: 0 0 0 3px rgba(0,122,255,0.15);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 576px) {
   .container {
-      background: #ffffffdd;
-      border-radius: 1rem;
-      box-shadow: 0 8px 24px rgb(0 0 0 / 0.15);
-      padding: 2.5rem 3rem;
-      max-width: 90%;
+    padding: 2rem 1.5rem;
   }
-
-  label {
-      font-weight: 600;
-      color: #003366;
-  }
-
-  input.form-control {
-      border: 2px solid #004aad;
-      transition: border-color 0.3s ease;
-      font-size: 1.15rem;
-      background-color: #f0f8ff;
-      color: #003366;
-  }
-
-  input.form-control:focus {
-      border-color: #003366;
-      box-shadow: 0 0 8px #003366aa;
-      background-color: #ffffff;
-      color: #002244;
-  }
-
-  button.btn-primary {
-      background-color: #004aad;
-      border-color: #003366;
-      font-weight: 700;
-      font-size: 1.25rem;
-      transition: background-color 0.3s ease, border-color 0.3s ease;
-  }
-
-  button.btn-primary:hover {
-      background-color: #003366;
-      border-color: #002244;
-  }
-
   #inputMsg {
-      min-height: 70px;
-      font-size: 1.1rem;
-      color: #003366;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      margin-top: 2rem;
+    justify-content: center !important;
   }
+}
 
-  .distance-item {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      background-color: #cce5ff;
-      border-radius: 0.5rem;
-      padding: 0.6rem 1.2rem;
-      box-shadow: 0 3px 8px rgb(0 75 173 / 0.3);
-      font-weight: 700;
-      color: #002244;
-      animation: fadeIn 0.6s ease forwards;
-  }
-
-  .icon {
-      font-size: 1.6rem;
-      animation: bounce 1.2s infinite alternate;
-      color: #004aad;
-  }
-
-  #map {
-      height: 40rem;
-      width: 100%;
-      border-radius: 1rem;
-      box-shadow: 0 8px 24px rgb(0 0 0 / 0.2);
-      background: #e1ecff;
-  }
-
-      
-  @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-  }
-
-  @keyframes bounce {
-      0% {transform: translateY(0);}
-      100% {transform: translateY(-8px);}
-  }
-
-  @media (max-width: 576px) {
-      .container {
-          padding: 2rem 1.5rem;
-      }
-      #inputMsg {
-          justify-content: center !important;
-      }
-  }
-
-  /* Remove Default UI options for map, main.js disableDefaultUI: true does not work */
-  .gm-ui-hover-effect, 
-  .gm-style .gm-style-mtc, 
-  .gm-style .gm-style-cc {
-    display: none !important;
-  }
+/* ===== Hide Google Map UI Controls ===== */
+.gm-ui-hover-effect, 
+.gm-style .gm-style-mtc, 
+.gm-style .gm-style-cc {
+  display: none !important;
+}
 </style>
 
 <style>
-  .icon {
-      font-size: 1.6rem;
-      animation: bounce 1.2s infinite alternate;
-      color: #004aad;
-  }
+.icon {
+  font-size: 1.5rem;
+  color: #007aff; 
+  animation: gentleBounce 1.8s ease-in-out infinite alternate;
+  transition: color 0.3s ease;
+}
 
-  .distance-item {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      background-color: #cce5ff;
-      border-radius: 0.5rem;
-      padding: 0.6rem 1.2rem;
-      box-shadow: 0 3px 8px rgb(0 75 173 / 0.3);
-      font-weight: 700;
-      color: #002244;
-      animation: fadeIn 0.6s ease forwards;
-  }
-  
-  @keyframes bounce {
-      0% {transform: translateY(0);}
-      100% {transform: translateY(-8px);}
-  }
+.distance-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background-color: #f2f2f7;
+  border-radius: 0.75rem;
+  padding: 0.7rem 1.2rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04);
+  font-weight: 500;
+  color: #1c1c1e;
+  animation: fadeIn 0.5s ease forwards;
+  transition: all 0.3s ease;
+}
+
+.distance-item:hover {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gentleBounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
+}
 </style>
 

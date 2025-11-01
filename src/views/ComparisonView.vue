@@ -329,6 +329,7 @@ function formatMotherTongue(info) {
 
               <!-- Clear Slot Button -->
               <button v-if="slot.schoolName" @click="clearSlot(slot)" class="btn btn-sm btn-outline-secondary" title="Clear School">
+                Clear
                 <i class="bi bi-arrow-counterclockwise"></i>
               </button>
 
