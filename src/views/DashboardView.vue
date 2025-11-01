@@ -38,6 +38,7 @@
       </div>
       <h2 class="modal-title">Assistant Console</h2>
       <p class="modal-sub">Type a query and press Enter</p>
+      <p v-if="pcModalError" class="modal-error">{{ pcModalError }}</p>
 
       <div class="pc-input-row">
         <input
@@ -45,7 +46,7 @@
           v-model="chatInput"
           type="text"
           class="pc-input"
-          placeholder="e.g. show GES"
+          placeholder="e.g. show GES  data for SMU, Information Systems"
           @keyup.enter="submitPcQuery"
         />
         <button class="btn primary" @click="submitPcQuery">Search</button>
@@ -60,6 +61,7 @@ import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import axios from 'axios'
 
 const router = useRouter()
 
@@ -160,6 +162,8 @@ const chatInput = ref('')
 const pcModal = ref({ visible: false })
 const insidePcModal = ref(false)
 const pcInputRef = ref(null)
+const pcModalLoading = ref(false)
+const pcModalError = ref('')
 
 /* ---------- Navbar height handling ---------- */
 function updateNavOffset () {
@@ -423,7 +427,7 @@ function onCanvasClick (event) {
   renderPcScreen()
 }
 
-/* ---------------- Keyboard input for PC chat (canvas focus) ---------------- */
+/* ----------------TODO Keyboard input for PC chat (canvas focus) ---------------- */
 function onKeyDown (e) {
   if (!pcFocused || modal.value.visible || pcModal.value.visible) return
   if (e.key === 'Escape') {
@@ -433,8 +437,8 @@ function onKeyDown (e) {
   }
   if (e.key === 'Enter') {
     pcFocused = false
-    renderPcScreen()
-    router.push('/ges') // mock search -> route
+    renderPcScreen() // Render screen without caret
+    submitPcQuery() // Call the new API logic
     return
   }
   if (e.key === 'Backspace') {
@@ -489,9 +493,46 @@ function onPcModalMouseleave () {
   insidePcModal.value = false
   closePcModal()
 }
-function submitPcQuery () {
-  closePcModal()
-  router.push('/ges')
+
+async function submitPcQuery () {
+  if (pcModalLoading.value || !chatInput.value.trim()) return
+
+  pcModalLoading.value = true
+  pcModalError.value = ''
+
+  const token = localStorage.getItem('authToken')
+  if (!token) {
+    pcModalError.value = 'Authentication is required.'
+    pcModalLoading.value = false
+    return
+  }
+
+  const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || ''
+  const payload = { prompt: chatInput.value }
+  const config = {
+    headers: { Authorization: `Bearer ${token}` }
+  }
+
+  try {
+    const response = await axios.post(`${apiBaseUrl}/api/ai/route-from-prompt`, payload, config)
+    const { action_type, api_route, message } = response.data
+
+    if (action_type === 'API_CALL' && api_route) {
+      // Store message for the next page to display
+      sessionStorage.setItem('ai_assistant_message', message || 'Here is the data you requested.')
+      
+      chatInput.value = '' // Clear input
+      closePcModal()
+      router.push(api_route)
+    } else {
+      pcModalError.value = message || "I'm not sure how to handle that request."
+    }
+
+  } catch (err) {
+    pcModalError.value = err.response?.data?.message || 'An error occurred while contacting the assistant.'
+  } finally {
+    pcModalLoading.value = false
+  }
 }
 
 /* ---------------- Shared helpers ---------------- */
