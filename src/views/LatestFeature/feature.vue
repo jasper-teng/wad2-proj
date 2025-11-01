@@ -1,0 +1,690 @@
+<script>
+    import axios from 'axios'
+    import accordion1 from './subcomponents/accordion.vue';
+    import accordion2 from './subcomponents/accordion2.vue';
+    import filterCard from './subcomponents/filterCard.vue';
+    import mainCard from './subcomponents/mainCard.vue';
+
+
+        // --- ADDED: Data Cleaning Function ---
+    // This function will clean the data as it's fetched from the API
+    function fixApiDataErrors(inputText) {
+        if (typeof inputText !== 'string' || !inputText) {
+            return inputText;
+        }
+        let cleanedText = inputText;
+        const fixes = [
+            // --- Specific Fixes Targeting Encoding Errors from Doc ---
+
+            // 1. "Paying it Forward: WDL  s..." -> "Paying it Forward: WDL’s..."
+            [/Paying it Forward: WDL \uFFFD s Glocal Leadership Programme/g, "Paying it Forward: WDL’s Glocal Leadership Programme"],
+            
+            // 2. "St Hilda  s Secondary" -> "St. Hilda's Secondary School"
+            [/St Hilda \uFFFD s Secondary/g, "St. Hilda's Secondary School"],
+            
+            // 3. "St Andrew  s Secondary" -> "St Andrew's Secondary School"
+            [/St Andrew \uFFFD s Secondary/g, "St Andrew's Secondary School"],
+            
+            // 4. "Create    Connect    Innovate..." -> "Create – Connect – Innovate..."
+            [/Create\s+\uFFFD\s+Connect\s+\uFFFD\s+Innovate \(Emerging Technologies\)/g, "Create – Connect – Innovate (Emerging Technologies)"],
+            
+            // 5. "Becoming Persons for Others  Developing..." -> "Becoming Persons for Others – Developing..."
+            [/Becoming Persons for Others \uFFFD Developing Leadership through and for the Community/g, "Becoming Persons for Others – Developing Leadership through and for the Community"],
+            
+            // 6. "Game for Life (GfL)  Empowering..." -> "Game for Life (GfL) – “Empowering...”"
+            [/Game for Life \(GfL\) \uFFFD \uFFFD(Empowering our Active Sportsmen)\uFFFD/g, 'Game for Life (GfL) – “$1”'],
+            
+            // 7. "Made In Montfort  Design..." -> "Made In Montfort – Design..."
+            [/Made In Montfort \uFFFD Design, Code, Make/g, "Made In Montfort – Design, Code, Make"],
+            
+            // 8. "Its B.a.S.i.C!  Being..." -> "It’s B.a.S.i.C! – Being..."
+            [/It\uFFFDs B\.a\.S\.i\.C! \uFFFD Being a Servant Leader in the Community/g, "It’s B.a.S.i.C! – Being a Servant Leader in the Community"],
+            
+            // 9. "Education For Life  Developing..." -> "Education For Life – Developing..."
+            [/Education For Life \uFFFD Developing Portable Skills through and for Real World Problem Solving/g, "Education For Life – Developing Portable Skills through and for Real World Problem Solving"],
+            
+            // 10. "Beattys Leaders..." -> "Beatty’s Leaders..."
+            [/Beatty\uFFFDs Leaders for Life Programme/g, "Beatty’s Leaders for Life Programme"]
+        ];
+        for (const [regex, replacement] of fixes) {
+            cleanedText = cleanedText.replace(regex, replacement);
+        }
+        return cleanedText;
+    }
+    // --- END: Data Cleaning Function ---
+
+    export default{
+        components: {accordion1,filterCard,mainCard,accordion2},
+        data(){
+            return {
+                schools: [],
+                url: "https://data.gov.sg/api/action/datastore_search?resource_id=d_db1faeea02c646fa3abccfa5aba99214&limit=300",
+                isModalOpen: false,
+                selectedSchool:null,
+                compareList: [],
+                isCompareModalOpen: false,
+                suggestionPool: new Set(),
+
+                // --- NEW: State for Filtering & Pagination ---
+                searchQuery: '',       // You can connect this to your filterCard
+                filterLevel: 'all',    // You can connect this to your filterCard
+                currentPage: 1,
+                itemsPerPage: 9, // 9 items = 3 rows on your 3-column grid
+                // --- ADDED: showSaved state ---
+                showSaved: false,
+                // --- NEW: Added loading and error states ---
+                isLoading: true,
+                error: null,
+            }
+        },
+
+        computed: {
+            /**
+             * First, filter the list based on search.
+             * (You can add your level/programme filters here too)
+             */
+            filteredSchools() {
+                const query = this.searchQuery.toLowerCase().trim();
+                
+                // Start with the full list
+                let filtered = this.schools;
+
+                // 1. Apply Search Query Filter
+                if (query) {
+                    filtered = filtered.filter(school => {
+                        return (
+                            (school.name && school.name.toLowerCase().includes(query)) ||
+                            (school.alp_domain && school.alp_domain.toLowerCase().includes(query)) ||
+                            (school.alp_title && school.alp_title.toLowerCase().includes(query)) ||
+                            (school.llp_domain && school.llp_domain.toLowerCase().includes(query)) ||
+                            (school.llp_title && school.llp_title.toLowerCase().includes(query))
+                        );
+                    });
+                }
+                
+                // 2. Apply School Level Filter
+                if (this.filterLevel !== 'all') {
+                    filtered = filtered.filter(school => {
+                        // IDs <= 102 are secondary, IDs >= 103 are primary
+                        return (this.filterLevel === 'secondary' && school.id <= 102) ||
+                            (this.filterLevel === 'primary' && school.id >= 103);
+                    });
+                }
+
+                
+
+                // 3. Apply "Show Saved" Filter
+                if (this.showSaved) {
+                    filtered = filtered.filter(school => school.isSaved); // Assumes you've added 'isSaved' to your school object
+                }
+
+                return filtered;
+            },
+
+            totalPages() {
+                return Math.ceil(this.filteredSchools.length / this.itemsPerPage);
+            },
+
+            /**
+             * Get just the schools for the current page
+             */
+            paginatedSchools() {
+                const start = (this.currentPage - 1) * this.itemsPerPage;
+                const end = start + this.itemsPerPage;
+                return this.filteredSchools.slice(start, end);
+            },
+
+            /**
+             * Helper for "Showing 1-9 of 300" text
+             */
+            totalResults() {
+                return this.filteredSchools.length;
+            },
+            startResult() {
+                // Prevent showing "1" when there are 0 results
+                if (this.totalResults === 0) return 0;
+                return (this.currentPage - 1) * this.itemsPerPage + 1;
+            },
+            endResult() {
+                const end = this.currentPage * this.itemsPerPage;
+                return Math.min(end, this.totalResults);
+            },
+
+            visiblePages() {
+                const pages = [];
+                const current = this.currentPage;
+                const total = this.totalPages;
+                
+                // Show current page and one page on each side
+                for (let i = Math.max(1, current - 1); i <= Math.min(total, current + 1); i++) {
+                    pages.push(i);
+                }
+                
+                return pages;
+            }
+        },
+
+        // --- NEW: Watcher to reset page on filter change ---
+        watch: {
+            // When any of these filters change, go back to page 1
+            searchQuery() {
+                this.currentPage = 1;
+            },
+            filterLevel() {
+                this.currentPage = 1;
+            },
+            showSaved() {
+                this.currentPage = 1;
+            }
+        },
+
+        methods: {
+            async getSchools(){
+                this.isLoading = true
+                this.error = null
+                try {
+
+                    let response = await axios.get(this.url)
+                    // console.log(response.data.result.records)
+    
+                    let result = response.data.result.records
+                    for (const data of result){
+                        let school = {}
+                        school.id = data._id
+                        school.name = fixApiDataErrors(data.school_name)
+                        school.alp_domain = fixApiDataErrors(data.alp_domain)
+                        school.alp_title = fixApiDataErrors(data.alp_title)
+                        school.llp_domain = fixApiDataErrors(data.llp_domain1)
+                        school.llp_title = fixApiDataErrors(data.llp_title)
+                        // --- END: Modification ---
+                        school.isSaved = false
+                        this.schools.push(school)
+                    }
+                
+                    console.log(this.schools)
+
+                } catch(err){
+                    console.log("Failed to get schools:", err)
+                    this.error  = "Could not load school data. Please try again later.";
+                } finally{
+                    this.isLoading = false;
+                }
+            },
+            saveCard(sch){
+                if (sch.isSaved){
+                    sch.isSaved = false
+                }
+
+                else{
+                    sch.isSaved = true
+                }
+            },
+
+            openModal(sch){
+                this.selectedSchool = sch
+                this.isModalOpen = true
+            },
+
+            closeModal() {
+                this.isModalOpen = false;    
+                this.selectedSchool = null;  
+            },
+
+            handleCompareAdd(school) {
+                console.log('Compare add:', school.name);
+                
+                // Don't add if list is full or school is already in
+                if (this.compareList.length >= 2 || this.compareList.find(s => s.id === school.id)) {
+                    console.log('Compare list full or school already added.');
+                    return;
+                }
+                
+                this.compareList.push(school);
+                
+                // Update isCompareDisabled for all schools
+                this.updateCompareDisabledState();
+            },
+
+
+            // --- UPDATED: handleShareClick with navigator.share ---
+            handleShareClick(school) {
+                console.log('Share:', school.name);
+                const baseUrl = window.location.origin + window.location.pathname;
+                const shareUrl = `${baseUrl}?school_name=${encodeURIComponent(school.name)}`;
+                
+                const shareData = {
+                    title: `Check out ${school.name}`,
+                    text: `Look at the distinctive programmes at ${school.name}:`,
+                    url: shareUrl
+                };
+
+                // Check if Web Share API is available
+                if (navigator.share) {
+                    navigator.share(shareData)
+                        .then(() => console.log('Successful share'))
+                        .catch((error) => console.log('Error sharing:', error));
+                } else {
+                    // Fallback for desktop: copy to clipboard
+                    console.log('Web Share not supported, falling back to clipboard.');
+                    navigator.clipboard.writeText(shareUrl).then(() => {
+                        alert('Link copied to clipboard!'); // Using alert for simplicity
+                    }).catch(err => {
+                        console.error('Failed to copy text: ', err);
+                    });
+                }
+            },
+
+            // --- NEW: Helper method to update disabled state ---
+            updateCompareDisabledState() {
+                const isFull = this.compareList.length >= 2;
+                this.schools = this.schools.map(s => {
+                    const isInList = this.compareList.find(item => item.id === s.id);
+                    s.isCompareDisabled = isFull || !!isInList;
+                    return s;
+                });
+            },
+
+            // --- NEW: Add to compare from modal button ---
+            addCompareAndClose() {
+                if (this.selectedSchool) {
+                    this.handleCompareAdd(this.selectedSchool);
+                }
+                this.closeModal();
+            },
+
+            openCompareModal(){
+                if (this.compareList.length===2){
+                    this.isCompareModalOpen = true
+                }
+            },
+
+            closeCompareModal(){
+                this.isCompareModalOpen = false
+            },
+
+            clearCompareList(){
+                this.compareList=[];
+                this.updateCompareDisabledState();
+            },
+
+            removeSchoolFromCompare(schoolId) {
+                // filter() creates a new array *without* the matching item
+                this.compareList = this.compareList.filter(s => s.id !== schoolId);
+                this.updateCompareDisabledState();
+            },
+
+            // --- ADDED: Pagination Methods ---
+            nextPage() {
+                if (this.currentPage < this.totalPages) {
+                    this.currentPage++;
+                }
+            },
+            prevPage() {
+                if (this.currentPage > 1) {
+                    this.currentPage--;
+                }
+            },
+            goToPage(page) {
+                if (page >= 1 && page <= this.totalPages) {
+                    this.currentPage = page;
+                    // Scroll to top of results
+                    this.scrollToCards();
+                }
+            },
+            
+            nextPage() {
+                if (this.currentPage < this.totalPages) {
+                    this.currentPage++;
+                    this.scrollToCards();
+                }
+            },
+            
+            prevPage() {
+                if (this.currentPage > 1) {
+                    this.currentPage--;
+                    this.scrollToCards();
+                }
+            },
+
+                scrollToCards() {
+                this.$nextTick(() => {
+                    if (this.$refs.schoolCardsGrid) {
+                        const element = this.$refs.schoolCardsGrid;
+                        const offset = 100; // Adjust this value to leave some space above the cards
+                        const elementPosition = element.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            }
+        },
+
+        
+        mounted(){
+            this.getSchools()
+        }
+        
+    }
+</script>
+
+<template>
+
+    <!-- Loading State -->
+    <div v-if="isLoading" class="text-center py-5">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-3 text-muted">Loading school data...</p>
+    </div>
+
+    <!-- Error State -->
+    <div v-else-if="error" class="alert alert-danger text-center">
+        <h5>{{ error }}</h5>
+        <button class="btn btn-primary mt-2" @click="getSchools">Retry</button>
+    </div>
+
+    <!-- No Results -->
+    <div v-else-if="totalResults === 0" class="text-center py-5">
+        <p class="text-muted">No schools match your filters.</p>
+    </div>
+
+    <div class="container-fluid px-3 my-4 my-md-5">
+        <h1 style="font-size: 2.25rem;">Distinctive Programmes</h1>
+        <p style="font-size: 1.125rem;  color: rgb(75 85 99);">Find programmes in Primary and Secondary Schools</p>
+        <div class="row">
+            <accordion1></accordion1>
+        </div>
+
+        <div class="row">
+            <accordion2></accordion2>
+        </div>
+
+        <div class="row">
+            <filterCard 
+            v-model:filterLevel="filterLevel" 
+            v-model:showSaved="showSaved"
+            v-model:searchQuery="searchQuery"
+            ></filterCard>
+        </div>
+        
+        <div class="cards-grid" ref="schoolCardsGrid">
+            <mainCard v-for="school in paginatedSchools" 
+                v-bind:mainCard="school" 
+                :isSaved="school.isSaved" 
+                :isCompareDisabled="school.isCompareDisabled" 
+                v-bind:key="school.id" 
+                @save-toggle="saveCard(school)"
+                @click="openModal(school)" 
+                @share-link="handleShareClick(school)"
+                @compare-add="handleCompareAdd(school)">
+            
+                <template #slotMainCard1>
+                    <span 
+                        v-if="school.alp_domain" 
+                        class="badge bg-primary-subtle text-primary-emphasis rounded-pill me-2" 
+                    >
+                        ALP
+                    </span>
+                </template>
+
+                <template #slotMainCard2>
+                    <span 
+                        v-if="school.llp_domain"
+                        class="badge bg-success-subtle text-success-emphasis rounded-pill me-2"
+                    >
+                        LLP
+                    </span>
+                </template>
+            </mainCard>
+        </div>
+        <div v-if="isModalOpen">
+            
+            <div class="modal fade show" style="display: block;" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" v-if="selectedSchool">{{ selectedSchool.name }}</h5>
+                            <button type="button" class="btn-close" @click="closeModal"></button>
+                        </div>
+
+                        <div class="modal-body" v-if="selectedSchool">
+                            <div v-if="selectedSchool.alp_domain">
+                                <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill me-2">ALP</span>
+                                <h4 class="modal-subtitle" >{{ selectedSchool.alp_domain }}</h4>
+                                <p class="modal-text">{{ selectedSchool.alp_title }}</p>
+                            </div>
+                            <div v-if="selectedSchool.llp_domain" class="mt-4">
+                                <span class="badge bg-success-subtle text-success-emphasis rounded-pill me-2">LLP</span>
+                                <h4 class="modal-subtitle">{{ selectedSchool.llp_domain }}</h4>
+                                <p class="modal-text">{{ selectedSchool.llp_title }}</p>
+                            </div>
+                            
+                            <hr>
+                            <h5 class="mt-4 aboutSchool">About the School</h5>
+                            <p class="modal-text">(Placeholder for more details about the school...)</p>
+                        </div>
+
+                        <div class="modal-footer">
+                            
+                            <button 
+                                type="button" 
+                                class="btn btn-primary" 
+                                @click="addCompareAndClose"
+                                :disabled="selectedSchool && selectedSchool.isCompareDisabled"
+                            >
+                                {{ selectedSchool && selectedSchool.isCompareDisabled ? 'Compare List Full' : 'Add to Compare' }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-backdrop fade show"></div>
+        </div>
+
+                <!-- 
+          --- NEW: Compare Bar ---
+          Shows at the bottom when compareList has items
+        -->
+        <div v-if="compareList.length > 0" class="fixed-bottom bg-white border-top shadow-lg p-3">
+            <div class="container-fluid px-3">
+                <div class="row align-items-end">
+                    <!-- Title -->
+                    <div class="col-12 col-md-auto">
+                        <h5 class="fw-semibold mb-2">Compare Schools ({{ compareList.length }}/2)</h5>
+                    </div>
+                    <!-- Slots -->
+                    <div class="col-12 col-md">
+                        <div class="row g-2">
+                            <!-- Slot 1 -->
+                            <div class="col-6">
+                                <div v-if="compareList[0]" class="d-flex justify-content-between align-items-center p-2 bg-light rounded">
+                                    <span class="text-truncate small me-2">{{ compareList[0].name }}</span>
+                                    <button class="btn-close small" style="font-size: 0.65rem;" @click="removeSchoolFromCompare(compareList[0].id)"></button>
+                                </div>
+                                <div v-else class="p-2 bg-light rounded text-muted small fst-italic">
+                                    Select a school...
+                                </div>
+                            </div>
+                            <!-- Slot 2 -->
+                            <div class="col-6">
+                                <div v-if="compareList[1]" class="d-flex justify-content-between align-items-center p-2 bg-light rounded">
+                                    <span class="text-truncate small me-2">{{ compareList[1].name }}</span>
+                                    <button class="btn-close small" style="font-size: 0.65rem;" @click="removeSchoolFromCompare(compareList[1].id)"></button>
+                                </div>
+                                <div v-else class="p-2 bg-light rounded text-muted small fst-italic">
+                                    Select a school...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Buttons -->
+                    <div class="col-12 col-md-auto d-flex gap-2 mt-3 mt-md-0">
+                        <button class="btn btn-primary" :disabled="compareList.length !== 2" @click="openCompareModal">Compare</button>
+                        <button class="btn btn-outline-secondary" @click="clearCompareList">Clear</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                <!-- 
+          --- NEW: Compare Modal ("Compare Table") ---
+        -->
+        <div v-if="isCompareModalOpen">
+            <!-- Modal Container -->
+            <div class="modal fade show" style="display: block;" tabindex="-1">
+                <!-- MODAL-LG makes it wider -->
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Comparing Schools</h5>
+                            <button type="button" class="btn-close" @click="closeCompareModal"></button>
+                        </div>
+                        <div class="modal-body" v-if="compareList.length === 2">
+                            
+                            <!-- This is the side-by-side layout -->
+                            <div class="row">
+                                <!-- Column 1: School 1 -->
+                                <div class="col-6">
+                                    <h5 class="fw-bold mb-3 border-bottom pb-2">{{ compareList[0].name }}</h5>
+                                    
+                                    <div v-if="compareList[0].alp_domain" style="min-height: 150px;">
+                                        <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill me-2">ALP</span>
+                                        <h4 class="modal-subtitle">{{ compareList[0].alp_domain }}</h4>
+                                        <p class="modal-text">{{ compareList[0].alp_title }}</p>
+                                    </div>
+                                    <div v-else style="min-height: 150px;">
+                                        <p class="modal-text fst-italic">No ALP information available.</p>
+                                    </div>
+
+                                    <div v-if="compareList[0].llp_domain" class="mt-4" style="min-height: 150px;">
+                                        <span class="badge bg-success-subtle text-success-emphasis rounded-pill me-2">LLP</span>
+                                        <h4 class="modal-subtitle">{{ compareList[0].llp_domain }}</h4>
+                                        <p class="modal-text">{{ compareList[0].llp_title }}</p>
+                                    </div>
+                                    <div v-else style="min-height: 150px;">
+                                        <p class="modal-text fst-italic">No LLP information available.</p>
+                                    </div>
+                                    
+                                    <hr>
+                                    <h5 class="mt-4 aboutSchool">About the School</h5>
+                                    <p class="modal-text">(Placeholder for school 1 details...)</p>
+                                </div>
+                                
+                                <!-- Column 2: School 2 -->
+                                <div class="col-6 border-start">
+                                    <h5 class="fw-bold mb-3 border-bottom pb-2">{{ compareList[1].name }}</h5>
+
+                                    <div v-if="compareList[1].alp_domain" style="min-height: 150px;">
+                                        <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill me-2">ALP</span>
+                                        <h4 class="modal-subtitle">{{ compareList[1].alp_domain }}</h4>
+                                        <p class="modal-text">{{ compareList[1].alp_title }}</p>
+                                    </div>
+                                    <div v-else style="min-height: 150px;">
+                                        <p class="modal-text fst-italic">No ALP information available.</p>
+                                    </div>
+
+                                    <div v-if="compareList[1].llp_domain" class="mt-4" style="min-height: 150px;">
+                                        <span class="badge bg-success-subtle text-success-emphasis rounded-pill me-2">LLP</span>
+                                        <h4 class="modal-subtitle">{{ compareList[1].llp_domain }}</h4>
+                                        <p class="modal-text">{{ compareList[1].llp_title }}</p>
+                                    </div>
+                                    <div v-else style="min-height: 150px;">
+                                        <p class="modal-text fst-italic">No LLP information available.</p>
+                                    </div>
+                                    
+                                    <hr>
+                                    <h5 class="mt-4 aboutSchool">About the School</h5>
+                                    <p class="modal-text">(Placeholder for school 2 details...)</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-backdrop fade show"></div>
+
+        </div>
+
+        <!-- --- ADDED: Pagination Controls --- -->
+        <div v-if="totalResults > 0" class="row mt-5">
+            <div class="col-12 d-flex flex-column flex-md-row justify-content-between align-items-center">
+                
+                <!-- Page Info -->
+                <p class="text-muted small mb-3 mb-md-0">
+                    Showing <strong>{{ startResult }}</strong> to <strong>{{ endResult }}</strong> of <strong>{{ totalResults }}</strong> results
+                </p>
+
+                <!-- Buttons -->
+                <nav>
+                    <ul class="pagination mb-0">
+                        <li class="page-item" :class="{ 'disabled': currentPage === 1 }">
+                            <button class="page-link" @click="prevPage">Previous</button>
+                        </li>
+                        <li class="page-item active" aria-current="page">
+                            <span class="page-link">{{ currentPage }} / {{ totalPages }}</span>
+                        </li>
+                        <li class="page-item" :class="{ 'disabled': currentPage === totalPages }">
+                            <button class="page-link" @click="nextPage">Next</button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- --- END: Pagination Controls --- -->
+
+    </div>
+
+</template>
+
+<style scoped>
+
+    .modal-subtitle{
+        font-size: 16px; 
+        font-weight: 600; 
+        color: #374151; 
+        margin-top: 0.25rem;
+    }
+
+    .modal-text{
+        font-size: 14px; 
+        color: #4b5563;
+    }
+
+    .aboutSchool{
+        font-size: 16px; 
+        font-weight: 600; 
+        color: #374151;
+    }
+
+    .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    }
+
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.5rem;
+    }
+
+    /* Medium screens and up: 2 columns */
+    @media (min-width: 768px) {
+        .cards-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    /* Large screens and up: 3 columns */
+    @media (min-width: 992px) {
+        .cards-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+</style>
