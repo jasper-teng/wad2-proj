@@ -15,7 +15,7 @@
             }
         },
 
-        emits: ['compare-add', 'save-toggle', 'share-link'],
+        emits: ['compare-add', 'save-toggle', 'share-link','card-click'],
         data() {
             return {
                 bookmarkIconOutline: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>`,
@@ -29,8 +29,7 @@
 
 <template>
     
-    <div class="col">
-        <div class="card h-100 d-flex flex-column">
+        <div class="card h-100 d-flex flex-column" @click="$emit('card-click')">
 
             <div class="card-body flex-grow-1 ">
         
@@ -77,7 +76,6 @@
                 </div>
             </div>
         </div>
-    </div>
 </template>
 
 <style scoped>
@@ -90,6 +88,7 @@
         border: 1px solid #e5e7eb; 
         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); 
         transition: box-shadow 0.3s ease;
+        cursor: pointer; /* ⭐ ADD THIS: Makes it clear the card is clickable */
     }
 
     .card:hover {

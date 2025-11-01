@@ -75,6 +75,8 @@
                 // --- NEW: Added loading and error states ---
                 isLoading: true,
                 error: null,
+
+                summaryData: [],
             }
         },
 
@@ -296,6 +298,7 @@
                 if (this.compareList.length===2){
                     this.isCompareModalOpen = true
                 }
+                console.log(this.compareList)
             },
 
             closeCompareModal(){
@@ -360,7 +363,11 @@
                         });
                     }
                 });
-            }
+            },
+                getSchoolSummary(schoolId) {
+                    const summaryEntry = this.summaryData.find(item => item.id === schoolId);
+                    return summaryEntry ? summaryEntry.Summary : '(No summary available for this school yet.)';
+                },
         },
 
         
@@ -418,7 +425,7 @@
                 :isCompareDisabled="school.isCompareDisabled" 
                 v-bind:key="school.id" 
                 @save-toggle="saveCard(school)"
-                @click="openModal(school)" 
+                @card-click="openModal(school)" 
                 @share-link="handleShareClick(school)"
                 @compare-add="handleCompareAdd(school)">
             
@@ -465,7 +472,7 @@
                             
                             <hr>
                             <h5 class="mt-4 aboutSchool">About the School</h5>
-                            <p class="modal-text">(Placeholder for more details about the school...)</p>
+                            <p class="modal-text">{{ getSchoolSummary(selectedSchool.id) }}</p>
                         </div>
 
                         <div class="modal-footer">
@@ -572,7 +579,7 @@
                                     
                                     <hr>
                                     <h5 class="mt-4 aboutSchool">About the School</h5>
-                                    <p class="modal-text">(Placeholder for school 1 details...)</p>
+                                    <p class="modal-text">{{ getSchoolSummary(compareList[0].id) }}</p>
                                 </div>
                                 
                                 <!-- Column 2: School 2 -->
@@ -599,7 +606,7 @@
                                     
                                     <hr>
                                     <h5 class="mt-4 aboutSchool">About the School</h5>
-                                    <p class="modal-text">(Placeholder for school 2 details...)</p>
+                                    <p class="modal-text">{{ getSchoolSummary(compareList[1].id) }}</p>
                                 </div>
                             </div>
 
