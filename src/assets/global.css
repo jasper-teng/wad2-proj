@@ -38,7 +38,20 @@ a:hover {
 
 
 .logo {
-  filter: drop-shadow(4px 4px 6px rgba(255, 255, 255, 0.4))
+  /* Mobile-first: 100% width on small screens */
+  width: 100%;
+  max-width: 350px; /* Prevent it from being too large on mobile */
+  height: auto;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
+  transition: width 0.3s ease-in-out;
+}
+
+/* Tablet and Desktop: 50% width */
+@media (min-width: 768px) {
+  .logo {
+    width: 100%;
+    max-width: 700px;
+  }
 }
 
 .tag {
@@ -84,6 +97,9 @@ a:hover {
   position: relative;
   overflow: hidden;
   border: 0.5px solid rgba(255, 255, 255, 0.05);
+}
+
+.assymetric-border{
   border-radius: 0 30px 0 30px; /* top-left, top-right, bottom-right, bottom-left */
 }
 
