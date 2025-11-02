@@ -1,30 +1,64 @@
+<template>
+  <div class="simple-dashboard">
+    <!-- Header with AI Assistant -->
+    <div class="dashboard-header">
+      <div class="container">
+        <h1 class="dashboard-title">Dashboard</h1>
+        <div class="ai-assistant-card">
+          <div class="ai-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 4h18a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1h-7v2h3a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2h3v-2H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm1 2v9h16V6H4z"/>
+            </svg>
+          </div>
+          <div class="ai-content">
+            <h3>Assistant Console</h3>
+            <div class="ai-input-group">
+              <input
+                v-model="chatInput"
+                type="text"
+                class="ai-input"
+                placeholder="e.g. show GES data for SMU, Information Systems"
+                @keyup.enter="submitQuery"
+              />
+              <button class="btn-primary" @click="submitQuery" :disabled="loading">
+                {{ loading ? 'Searching...' : 'Search' }}
+              </button>
+            </div>
+            <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- App Groups -->
+    <div class="container">
+      <div v-for="group in appGroups" :key="group.name" class="app-group">
+        <h2 class="group-title">{{ group.name }}</h2>
+        <div class="app-grid">
+          <div
+            v-for="app in group.apps"
+            :key="app.name"
+            class="app-card"
+            @click="openRoute(app.path)"
+          >
+            <div class="app-icon" v-html="app.icon"></div>
+            <h3 class="app-name">{{ app.name }}</h3>
+            <p class="app-description">{{ app.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import logoImage from '../assets/schoolfinders black.png'
+import axios from 'axios'
+import '@/assets/dashboard.css'
 
 const router = useRouter()
 
-const handleLogout = () => {
-  // Clear all authentication data from local storage
-  localStorage.removeItem('authToken')
-  localStorage.removeItem('user')
-  router.push('/login')
-}
-
-const isOverlayVisible = ref(false)
-
-const toggleOverlay = () => {
-  isOverlayVisible.value = !isOverlayVisible.value
-}
-
-const navigateTo = (path) => {
-  router.push(path)
-  isOverlayVisible.value = false
-}
-
-// --- CONFIGURABLE APP STRUCTURE ---
-// Copied from DashboardView for the overlay menu
 const appGroups = ref([
   {
     name: 'School Comparison Tools',
@@ -78,48 +112,50 @@ const appGroups = ref([
     ],
   },
 ])
+
+const chatInput = ref('')
+const loading = ref(false)
+const errorMessage = ref('')
+
+async function submitQuery() {
+  if (loading.value || !chatInput.value.trim()) return
+
+  loading.value = true
+  errorMessage.value = ''
+
+  const token = localStorage.getItem('authToken')
+  if (!token) {
+    errorMessage.value = 'Authentication is required.'
+    loading.value = false
+    return
+  }
+
+  const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || ''
+  const payload = { prompt: chatInput.value }
+  const config = {
+    headers: { Authorization: `Bearer ${token}` }
+  }
+
+  try {
+    const response = await axios.post(`${apiBaseUrl}/api/ai/route-from-prompt`, payload, config)
+    const { action_type, api_route, message } = response.data
+
+    if (action_type === 'API_CALL' && api_route) {
+      sessionStorage.setItem('ai_assistant_message', message || 'Here is the data you requested.')
+      chatInput.value = ''
+      router.push(api_route)
+    } else {
+      errorMessage.value = message || "I'm not sure how to handle that request."
+    }
+
+  } catch (err) {
+    errorMessage.value = err.response?.data?.message || 'An error occurred while contacting the assistant.'
+  } finally {
+    loading.value = false
+  }
+}
+
+function openRoute(path) {
+  if (path) router.push(path)
+}
 </script>
-
-<template>
-  <header class="top-header">
-    <!-- Logo is now inside the header container -->
-    <a href="#" class="navbar-brand logo-container" @click.prevent="toggleOverlay">
-      <img :src="logoImage" alt="Schoolfinders Logo" class="navbar-logo" />
-    </a>
-
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item" :class="{ 'invisible': !isOverlayVisible }">
-              <button @click="handleLogout" class="btn btn-outline">Sign Out</button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Fullscreen Overlay -->
-  <transition name="fade">
-    <div v-if="isOverlayVisible" class="overlay-menu">
-      <div class="container py-5 mt-5">
-
-        <div v-for="group in appGroups" :key="group.name" class="mb-5">
-          <h2 class="mb-3 fw-bolder">{{ group.name }}</h2>
-          <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 justify-content-start">
-            <div v-for="app in group.apps" :key="app.name" class="col ">
-              <div class="glass-card h-100 shadow-sm app-card " @click="navigateTo(app.path)">
-                <div class="card-body p-4 text-center">
-                  <div v-html="app.icon" class="icon mb-4"></div>
-                  <h5 class="fw-bolder">{{ app.name }}</h5>
-                  <p>{{ app.description }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </transition>
-</template>
