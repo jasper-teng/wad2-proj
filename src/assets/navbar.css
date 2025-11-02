@@ -83,7 +83,18 @@
   transition: opacity 0.3s ease;
 }
 
-.icon {
+.navbaricon {
+  color: #FFA18D;
+  transition: color 0.3s ease;
+}
+
+
+.app-card{
+  border-color: #FFA18D;
+  transition: all 0.3s;
+}
+
+.app-card:hover .navbaricon {
   color: #56bdb6;
 }
 
@@ -91,6 +102,11 @@
   transform: translateY(-5px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
   cursor: pointer;
+  border-color: #56bdb6;
+}
+
+.app-card:not(hover){
+    transition: all 0.3s;
 }
 
 .fade-enter-active,

@@ -740,7 +740,7 @@ watch(sharedFilters, () => {
       <!-- Map Section -->
       <div class="row justify-content-center mb-4">
         <div class="col-12 col-xl-11">
-          <div class="glass-card assymetric rounded-4 shadow-lg map-only-container position-relative">
+          <div class="glass-card assymetric-border shadow-lg map-only-container position-relative">
             <div class="d-flex flex-column" style="height: 40rem;">
               <div
                 id="map"

@@ -111,7 +111,7 @@ const appGroups = ref([
             <div v-for="app in group.apps" :key="app.name" class="col ">
               <div class="glass-card h-100 shadow-sm app-card " @click="navigateTo(app.path)">
                 <div class="card-body p-4 text-center">
-                  <div v-html="app.icon" class="icon mb-4"></div>
+                  <div v-html="app.icon" class="navbaricon mb-4"></div>
                   <h5 class="fw-bolder">{{ app.name }}</h5>
                   <p>{{ app.description }}</p>
                 </div>
