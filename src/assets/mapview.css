@@ -326,13 +326,13 @@ button.btn-secondary:hover {
   align-items: center;
   gap: 0.65rem;
   padding: 0.7rem 1.2rem;
-  background-color: #f2f2f7;
+  background-color: #ffecf2;
   border-radius: 0.75rem;
   font-weight: 500;
   color: #1c1c1e;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.04);
   animation: fadeIn 0.5s ease forwards;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .distance-item:hover {
@@ -343,7 +343,7 @@ button.btn-secondary:hover {
 
 .icon {
   font-size: 1.5rem;
-  color: #007aff;
+  color: #FFA18D;
   animation: gentleBounce 1.8s ease-in-out infinite alternate;
   transition: color 0.3s ease;
 }
@@ -357,7 +357,8 @@ button.btn-secondary:hover {
 
 .distance-card {
   padding: 1rem;
-  background-color: #fff;
+  background-color: #FFFCFF;
+  border: 2px solid #FFA18D;
   border-radius: 0.75rem;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
   transition: all 0.25s ease;
@@ -389,24 +390,30 @@ button.btn-secondary:hover {
 }
 
 .distance-mode:hover {
-  background-color: #f2f2f7;
+  background-color: #ffecf2;
   transform: scale(1.05);
 }
 
 .distance-mode.walking:hover {
-  background-color: orange;
+  border-color: orange;
+  border-width: 2px;
+  border-style: solid;
 }
 
 .distance-mode.transit:hover {
-  background-color: pink;
+  border-color: pink;
+  border-width: 2px;
+  border-style: solid;
 }
 
 .distance-mode.driving:hover {
-  background-color: red;
+  border-color: red;
+  border-width: 2px;
+  border-style: solid;
 }
 
 .distance-mode i {
-  color: #007aff;
+  color: #FFA18D;
 }
 
 /* ===== Animations ===== */

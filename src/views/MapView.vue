@@ -3,8 +3,8 @@
 // useSchoolMap.js: logic for school map functionality
 import { ref, onMounted, watch, onBeforeUnmount, computed } from 'vue'
 import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
-import schoolIcon from '@/assets/school.png'
-import homeIcon from '@/assets/home.png'
+import schoolIcon from '@/assets/school-Icon.png'
+import homeIcon from '@/assets/home-Icon.png'
 import '@/assets/mapview.css'
 
 // Composable function to manage school map interactions
@@ -22,9 +22,11 @@ import '@/assets/mapview.css'
   let allMarkerRoutes = []
   const allMarkers = ref([])
   const allSchools = ref([]);
+  const routedSchools = ref([]);
 
   const isDrawerOpen = ref(false)
   const homeMarker = ref(null)
+  const showHomeForm = ref(true)
 
   // Toggle drawer function
   function toggleDrawer() {
@@ -35,10 +37,10 @@ import '@/assets/mapview.css'
   function setActiveInput(id) {
     activeInputId.value = id
     if (id === 'source') {
-      sourceInput.value.style.border = '2px solid blue'
+      sourceInput.value.style.border = '2px solid pink'
       destinationInput.value.style.border = ''
     } else {
-      destinationInput.value.style.border = '2px solid blue'
+      destinationInput.value.style.border = '2px solid pink'
       sourceInput.value.style.border = ''
     }
   }
@@ -205,26 +207,35 @@ import '@/assets/mapview.css'
                     font-family: Arial, sans-serif;
                     padding: 12px;
                     max-width: 280px;
-                    background-color: #f0f8ff; /* very light blue background */
-                    border-left: 4px solid #007bff; /* blue accent */
+                    background-color: #ffe6f2; /* light pink background */
+                    border-left: 4px solid #e91e63; /* deep pink accent */
                     border-radius: 8px;
-                    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-                    color: #1a1a1a;
+                    box-shadow: 0 4px 12px rgba(233, 30, 99, 0.2); /* pinkish shadow */
+                    color: #4a0033; /* dark plum text for contrast */
                   ">
                     <h3 style="
                       margin: 0 0 6px 0;
                       font-size: 16px;
-                      color: #007bff;
-                    ">${school.school_name}</h3>
+                      color: #d81b60; /* rich pink header */
+                    ">
+                      ${school.school_name}
+                    </h3>
+
                     <p style="margin: 4px 0; font-size: 14px;">
-                      <strong>URL:</strong> <a href="${school.url_address}" target="_blank" style="color:#0056b3; text-decoration:underline;">${school.url_address}</a>
+                      <strong>URL:</strong>
+                      <a href="${school.url_address}" target="_blank" style="color:#ad1457; text-decoration:underline;">
+                        ${school.url_address}
+                      </a>
                     </p>
+
                     <p style="margin: 4px 0; font-size: 14px;">
                       <strong>Address:</strong> ${school.address}
                     </p>
+
                     <p style="margin: 4px 0; font-size: 14px;">
                       <strong>MRT:</strong> ${school.mrt_desc}
                     </p>
+
                     <p style="margin: 4px 0; font-size: 14px;">
                       <strong>Bus:</strong> ${school.bus_desc}
                     </p>
@@ -306,9 +317,9 @@ import '@/assets/mapview.css'
 
     // Define travel modes with colors and icons
     const travelModes = [
-      { mode: 'TRANSIT', color: 'pink', icon: 'subway' },
+      { mode: 'TRANSIT', color: 'orange', icon: 'subway' },
       { mode: 'DRIVING', color: 'red', icon: 'car' },
-      { mode: 'WALKING', color: 'orange', icon: 'person-walking' }
+      { mode: 'WALKING', color: 'pink', icon: 'person-walking' }
     ];
 
     for (const { mode, color, icon } of travelModes) {
@@ -442,6 +453,14 @@ import '@/assets/mapview.css'
             }
           }
         })
+
+        // Update Source
+        source.value = address
+        sourceInput.value = address;
+
+        // Hide Get Home Address
+        showHomeForm.value = !showHomeForm.value;
+
       } else {
         console.error('Home geocode failed:', status)
         alert('Could not find the address. Please check and try again.')
@@ -510,10 +529,18 @@ import '@/assets/mapview.css'
   const displayRoute = (routeName, mode = null) => {
     inputMsg.value.innerHTML = '';
 
+    // Open Drawer
+    if (!isDrawerOpen.value){
+      toggleDrawer()
+    }
+
     // Clear all existing routes from the map
     clearAllRoutes();
 
     loadSavedRoutesFromSession();
+
+    // Clear Routed Schools
+    routedSchools.value = []
 
     // Filter routes that match routeName and mode
     const savedDistances = JSON.parse(sessionStorage.getItem("distances")) || [];
@@ -525,6 +552,15 @@ import '@/assets/mapview.css'
 
     // If no matching routes, exit
     if (!matchingRoutes.length) return;
+
+    // Save Routed Schools if they are filtered out
+    for (const route of matchingRoutes) {
+      routedSchools.value.push(route.destination);
+      routedSchools.value.push(route.source);
+    }
+
+    // Update the filtered displayed markers
+    updateMarkers()
 
     // Show the matching polylines on the map
     const bounds = new google.maps.LatLngBounds();
@@ -574,7 +610,7 @@ import '@/assets/mapview.css'
 
     allMarkerRoutes.length = 0;
 
-    const modeColors = { WALKING: 'orange', TRANSIT: 'pink', DRIVING: 'red' };
+    const modeColors = { WALKING: 'pink', TRANSIT: 'orange', DRIVING: 'red' };
 
     savedDistances.forEach(item => {
       const path = item.path.map(p => new google.maps.LatLng(p.lat, p.lng));
@@ -680,12 +716,16 @@ function updateMarkers() {
       isVisible = isVisible && getSchoolRegion(coords) === sharedFilters.value.region;
     }
 
+    if (routedSchools.value.includes(schoolName)) {
+      isVisible = true;
+    }
+
     marker.setMap(isVisible ? map : null);
   });
 }
 
 const filteredSchools = computed(() => {
-  return (allSchools.value || []).filter(school => {
+  const originalFiltered = (allSchools.value || []).filter(school => {
     let isVisible = true;
 
     // Type filter
@@ -693,7 +733,7 @@ const filteredSchools = computed(() => {
       isVisible = isVisible && getSchoolType(school) === sharedFilters.value.type;
     }
 
-    // Co-ed filter - pass the whole school (getCoedStatus handles strings/objects)
+    // Co-ed filter
     if (sharedFilters.value.coed) {
       isVisible = isVisible && getCoedStatus(school) === sharedFilters.value.coed;
     }
@@ -706,6 +746,16 @@ const filteredSchools = computed(() => {
 
     return isVisible;
   });
+
+  // Add routed schools back in
+  const routedSchoolsIN = (allSchools.value || []).filter(school =>
+    routedSchools.value.includes(school.school_name)
+  );
+
+  const combined = [...originalFiltered, ...routedSchoolsIN];
+  return combined.filter((school, index, self) =>
+    index === self.findIndex(s => s.school_name === school.school_name)
+  );
 });
 
 function clearSharedFilters() {
@@ -730,6 +780,24 @@ function resetSelections() {
 watch(sharedFilters, () => {
   updateMarkers();
 }, { deep: true });
+
+// Fix resetHomeAddress
+function resetHomeAddress() {
+  sessionStorage.removeItem("home");
+  sessionStorage.removeItem("home name");
+  showHomeForm.value = !showHomeForm.value;
+  source.value = "";
+  sourceInput.value = "";
+}
+
+// X button to remove distance card
+function removeRoute(routeKey) {
+  const [source, destination] = routeKey.split(' → ');
+
+  distances.value = distances.value.filter(
+    d => !(d.source === source && d.destination === destination)
+  );
+}
 
 </script>
 
@@ -763,7 +831,7 @@ watch(sharedFilters, () => {
                   <h5 class="drawer-title">Map Controls</h5>
 
                   <!-- Home Address Form -->
-                  <form @submit.prevent="handleHomeSubmit()">
+                  <form v-if="showHomeForm" @submit.prevent="handleHomeSubmit()">
                     <div class="mb-3">
                       <label for="home" class="form-label">Where is your home?</label>
                       <input
@@ -782,6 +850,15 @@ watch(sharedFilters, () => {
                       Find Home Address
                     </button>
                   </form>
+
+                  <!-- Reset Home Address -->
+                  <button
+                    v-if="!showHomeForm"
+                    @click="resetHomeAddress()"
+                    class="btn btn-primary w-100 mb-4"
+                  >
+                    Reset Home Address
+                  </button>
 
                   <!-- Source Input -->
                   <div class="mb-3">
@@ -939,11 +1016,17 @@ watch(sharedFilters, () => {
                   :key="route"
                   class="col-12"
                 >
-                  <div
-                    class="distance-card"
-                    @click="displayRoute(route)"
-                  >
-                    <h5 class="route-title">{{ route }}</h5>
+                  <div class="distance-card">
+                    <div class="d-flex justify-content-between align-items-start">
+                      <h5 class="route-title">{{ route }}</h5>
+                      <!-- Remove button -->
+                      <button 
+                        type="button" 
+                        class="btn-close" 
+                        aria-label="Close"
+                        @click.stop="removeRoute(route)"
+                      ></button>
+                    </div>
                     <div class="row text-center g-2 g-md-3">
                       <div
                         class="col-4 distance-mode walking"
