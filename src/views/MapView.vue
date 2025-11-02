@@ -3,6 +3,9 @@
 // useSchoolMap.js: logic for school map functionality
 import { ref, onMounted, watch, onBeforeUnmount, computed } from 'vue'
 import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
+import schoolIcon from '@/assets/school.png'
+import homeIcon from '@/assets/home.png'
+import '@/assets/mapview.css'
 
 // Composable function to manage school map interactions
   let map
@@ -20,8 +23,13 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
   const allMarkers = ref([])
   const allSchools = ref([]);
 
-
+  const isDrawerOpen = ref(false)
   const homeMarker = ref(null)
+
+  // Toggle drawer function
+  function toggleDrawer() {
+    isDrawerOpen.value = !isDrawerOpen.value
+  }
 
   // ==========Function to set active input (source/destination)==========
   function setActiveInput(id) {
@@ -60,8 +68,27 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
   })
 
 
+  // Wait for Google Maps API to load
+  function waitForGoogleMaps() {
+    return new Promise((resolve) => {
+      if (window.google && window.google.maps) {
+        resolve()
+      } else {
+        const checkInterval = setInterval(() => {
+          if (window.google && window.google.maps) {
+            clearInterval(checkInterval)
+            resolve()
+          }
+        }, 100)
+      }
+    })
+  }
+
   // Initialize Google Maps when component is mounted
   onMounted(async () => {
+    // Wait for Google Maps to load
+    await waitForGoogleMaps()
+
     // Load Google Maps script
     initMap()
 
@@ -129,7 +156,7 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
       center,
       disableDefaultUI: true,
       scaleControl: true,
-      mapId: 'f41a3f2d53c48eebef372bfa',
+      mapId: '8d43aa63b6c723647e82b411',
       gestureHandling: 'greedy',
       restriction: {
         latLngBounds: CUSTOM_BOUNDS,
@@ -160,7 +187,7 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
                 return
               }
               const iconEle = document.createElement('img')
-              iconEle.src = 'school.png'
+              iconEle.src = schoolIcon
               iconEle.style.width = '48px'
               iconEle.style.height = '48px'
 
@@ -340,7 +367,7 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
     const position = JSON.parse(homeItem);
     const homeAddressName = JSON.parse(homeName)
     const markerContent = document.createElement('div')
-    markerContent.style.backgroundImage = `url(home.png)`
+    markerContent.style.backgroundImage = `url(${homeIcon})`
     markerContent.style.backgroundSize = 'cover'
     markerContent.style.width = '68px'
     markerContent.style.height = '68px'
@@ -382,7 +409,7 @@ import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
       if (status === 'OK') {
         const location = results[0].geometry.location
         const markerContent = document.createElement('div')
-        markerContent.style.backgroundImage = `url(home.png)`
+        markerContent.style.backgroundImage = `url(${homeIcon})`
         markerContent.style.backgroundSize = 'cover'
         markerContent.style.width = '68px'
         markerContent.style.height = '68px'
@@ -709,67 +736,238 @@ watch(sharedFilters, () => {
 <template>
   <!-- SchoolFinders (School distance mapping) from Nic -->
   <div id="bodybg">
-    <!-- Filters (School distance mapping) from Felicia -->
-    <div class="row mb-4 justify-content-center">
-      <div class="col-12 col-md-10">
-        <div class="card">
-          <div class="card-header bg-info text-white">
-            <h5 class="mb-0 text-center">🔍 Filter Schools</h5>
-          </div>
-          <div class="card-body">
-            <div class="row g-3 align-items-end">
-              <div class="col-md-3">
-                <label class="form-label">School Type</label>
-                <select class="form-select" v-model="sharedFilters.type" @change="updateMarkers">
-                  <option value="">All Types</option>
-                  <option value="Primary School">Primary School</option>
-                  <option value="Secondary School">Secondary School</option>
-                  <option value="Junior College">Junior College</option>
-                  <option value="Educational Institution">Other</option>
-                </select>
-              </div>
+    <div class="container">
+      <!-- Map Section -->
+      <div class="row justify-content-center mb-4">
+        <div class="col-12 col-xl-11">
+          <div class="glass-card assymetric rounded-4 shadow-lg map-only-container position-relative">
+            <div class="d-flex flex-column" style="height: 40rem;">
+              <div
+                id="map"
+                class="flex-grow-1 w-100"
+                style="height: 100%; border-radius: 0.5rem; box-shadow: 0 5px 15px rgba(8, 66, 152, 0.3); background: #f0f7ff;"
+              ></div>
 
-              <div class="col-md-3">
-                <label class="form-label">Co-educational</label>
-                <select class="form-select" v-model="sharedFilters.coed" @change="updateMarkers">
-                  <option value="">All</option>
-                  <option value="true">Co-ed Only</option>
-                  <option value="false">Single Gender</option>
-                </select>
-              </div>
+              <!-- Drawer Toggle Button -->
+              <button
+                class="drawer-toggle-btn btn"
+                @click="toggleDrawer"
+                :class="{ 'drawer-open': isDrawerOpen }"
+              >
+                <i :class="isDrawerOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
+              </button>
 
-              <div class="col-md-3">
-                <label class="form-label">Region</label>
-                <select class="form-select" v-model="sharedFilters.region" @change="updateMarkers">
-                  <option value="">All Regions</option>
-                  <option value="NORTH">North</option>
-                  <option value="SOUTH">South</option>
-                  <option value="EAST">East</option>
-                  <option value="WEST">West</option>
-                  <option value="CENTRAL">Central</option>
-                </select>
-              </div>
+              <!-- Side Drawer -->
+              <div class="side-drawer" :class="{ 'open': isDrawerOpen }">
+                <div class="drawer-content">
+                  <h5 class="drawer-title">Map Controls</h5>
 
-              <div class="col-md-3 d-flex gap-2">
-                <button class="btn btn-outline-secondary w-50" @click="clearSharedFilters">
-                  🗑️ Clear
-                </button>
-                <button class="btn btn-outline-info w-50" @click="resetSelections">
-                  🔄 Reset
-                </button>
+                  <!-- Home Address Form -->
+                  <form @submit.prevent="handleHomeSubmit()">
+                    <div class="mb-3">
+                      <label for="home" class="form-label">Where is your home?</label>
+                      <input
+                        v-model="homeAddress"
+                        type="text"
+                        id="home"
+                        name="home"
+                        class="form-control"
+                        placeholder="Key in your home address!"
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      class="btn btn-primary w-100 mb-4"
+                    >
+                      Find Home Address
+                    </button>
+                  </form>
+
+                  <!-- Source Input -->
+                  <div class="mb-3">
+                    <label for="source" class="form-label">Source</label>
+                    <input
+                      type="text"
+                      id="source"
+                      name="source"
+                      class="form-control"
+                      ref="sourceInput"
+                      v-model="source"
+                      @focus="setActiveInput('source')"
+                      placeholder="Choose a source!"
+                    />
+                  </div>
+
+                  <!-- Destination Input -->
+                  <div class="mb-3">
+                    <label for="destination" class="form-label">Destination</label>
+                    <input
+                      type="text"
+                      id="destination"
+                      name="destination"
+                      class="form-control"
+                      ref="destinationInput"
+                      v-model="destination"
+                      @focus="setActiveInput('destination')"
+                      placeholder="Choose a destination!"
+                    />
+                  </div>
+
+                  <!-- Distance Info -->
+                  <div
+                    id="inputMsg"
+                    ref="inputMsg"
+                    class="mt-3 d-flex flex-column gap-2"
+                  ></div>
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
 
-            <!-- Filter Status -->
-            <div class="mt-4 text-center">
-              <div class="alert alert-light mb-0">
-                <strong>Filtered Results:</strong> {{ filteredSchools.length }} schools
-                <span v-if="hasActiveFilters" class="text-info">
-                  (from {{ allSchools.length }} total)
-                </span>
-                <div class="mt-2">
-                  <span v-if="hasActiveFilters" class="badge bg-info">Filters Active</span>
-                  <span v-else class="badge bg-secondary">No Filters</span>
+      <!-- Filters Section -->
+      <div class="row justify-content-center mb-4">
+        <div class="col-12 col-xl-11">
+          <div class="filter-card glass-card rounded-4 shadow">
+            <div class="filter-header">
+              <h5 class="mb-0 text-center">Filter Schools</h5>
+            </div>
+            <div class="filter-body">
+              <div class="row g-3 align-items-end">
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <label class="filter-label d-block">School Type</label>
+                  <select class="filter-select" v-model="sharedFilters.type" @change="updateMarkers">
+                    <option value="">All Types</option>
+                    <option value="Primary School">Primary School</option>
+                    <option value="Secondary School">Secondary School</option>
+                    <option value="Junior College">Junior College</option>
+                    <option value="Educational Institution">Other</option>
+                  </select>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <label class="filter-label d-block">Co-educational</label>
+                  <select class="filter-select" v-model="sharedFilters.coed" @change="updateMarkers">
+                    <option value="">All</option>
+                    <option value="true">Co-ed Only</option>
+                    <option value="false">Single Gender</option>
+                  </select>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <label class="filter-label d-block">Region</label>
+                  <select class="filter-select" v-model="sharedFilters.region" @change="updateMarkers">
+                    <option value="">All Regions</option>
+                    <option value="NORTH">North</option>
+                    <option value="SOUTH">South</option>
+                    <option value="EAST">East</option>
+                    <option value="WEST">West</option>
+                    <option value="CENTRAL">Central</option>
+                  </select>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <div class="d-flex gap-2">
+                    <button class="filter-btn filter-btn-clear flex-fill" @click="clearSharedFilters">
+                      Clear
+                    </button>
+                    <button class="filter-btn filter-btn-reset flex-fill" @click="resetSelections">
+                      Reset
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Filter Status -->
+              <div class="row mt-4">
+                <div class="col-12">
+                  <div class="filter-status text-center">
+                    <strong>Filtered Results:</strong> {{ filteredSchools.length }} schools
+                    <span v-if="hasActiveFilters" class="filter-detail">
+                      (from {{ allSchools.length }} total)
+                    </span>
+                    <div class="mt-2">
+                      <span v-if="hasActiveFilters" class="filter-badge active">Filters Active</span>
+                      <span v-else class="filter-badge">No Filters</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Route Comparison Section -->
+      <div class="row justify-content-center">
+        <div class="col-12 col-xl-11">
+          <div class="py-4">
+            <div id="compareSection">
+              <div class="row mb-4 g-3 align-items-center">
+                <div class="col-12 col-md-6 col-lg-4">
+                  <div class="d-flex align-items-center gap-2">
+                    <label for="travelModeSelect" class="mb-0 text-nowrap fw-semibold">
+                      Travel Mode:
+                    </label>
+                    <select
+                      id="travelModeSelect"
+                      v-model="selectedTravelMode"
+                      class="form-select"
+                    >
+                      <option value="WALKING">Walking</option>
+                      <option value="TRANSIT">Transit</option>
+                      <option value="DRIVING">Driving</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-8">
+                  <div class="d-flex justify-content-md-end gap-2">
+                    <button class="btn btn-danger" @click="clearStorage">
+                      <i class="fas fa-trash-alt me-1"></i> Clear All
+                    </button>
+                    <button class="btn btn-secondary" @click="loadSavedRoutesFromSession">
+                      <i class="fas fa-sync-alt me-1"></i> Reload
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row g-3">
+                <div
+                  v-for="(records, route) in sortedGroupedDistances"
+                  :key="route"
+                  class="col-12"
+                >
+                  <div
+                    class="distance-card"
+                    @click="displayRoute(route)"
+                  >
+                    <h5 class="route-title">{{ route }}</h5>
+                    <div class="row text-center g-2 g-md-3">
+                      <div
+                        class="col-4 distance-mode walking"
+                        @click.stop="displayRoute(route, 'WALKING')"
+                      >
+                        <i class="fas fa-person-walking fa-2x mb-2"></i>
+                        <div class="small">{{ getDistance(records, 'Walking') }}</div>
+                      </div>
+                      <div
+                        class="col-4 distance-mode transit"
+                        @click.stop="displayRoute(route, 'TRANSIT')"
+                      >
+                        <i class="fas fa-subway fa-2x mb-2"></i>
+                        <div class="small">{{ getDistance(records, 'Transit') }}</div>
+                      </div>
+                      <div
+                        class="col-4 distance-mode driving"
+                        @click.stop="displayRoute(route, 'DRIVING')"
+                      >
+                        <i class="fas fa-car fa-2x mb-2"></i>
+                        <div class="small">{{ getDistance(records, 'Driving') }}</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -777,393 +975,6 @@ watch(sharedFilters, () => {
         </div>
       </div>
     </div>
-    <div class="container py-2 my-4 rounded-4 shadow-lg">
-      <br>
-        <div class="row">
-          <div class="col-md-3">
-            <form @submit.prevent="handleHomeSubmit()">
-              <div class="mb-3">
-                <label for="home" class="form-label">Where is your home?</label>
-                <input
-                  v-model="homeAddress"
-                  type="text"
-                  id="home"
-                  name="home"
-                  class="form-control"
-                  placeholder="Key in your home address!"
-                />
-              </div>
-              <button
-                type="submit"
-                class="btn btn-primary mb-4"
-              >
-                Find Home Address
-              </button>
-            </form>
-
-            <div class="mb-3">
-              <label for="source" class="form-label">Source</label>
-              <input
-                type="text"
-                id="source"
-                name="source"
-                class="form-control"
-                ref="sourceInput"
-                v-model="source"
-                @focus="setActiveInput('source')"
-                placeholder="Choose a source!"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="destination" class="form-label">Destination</label>
-              <input
-                type="text"
-                id="destination"
-                name="destination"
-                class="form-control"
-                ref="destinationInput"
-                v-model="destination"
-                @focus="setActiveInput('destination')"
-                placeholder="Choose a destination!"
-              />
-            </div>
-            <div
-              id="inputMsg"
-              ref="inputMsg"
-              class="mt-3 d-flex justify-content-start align-items-center gap-3"
-            ></div>
-          </div>
-
-        <div class="col-md-9 d-flex flex-column">
-          <div
-            id="map"
-            class="flex-grow-1"
-            style="height: 40rem; border-radius: 0.5rem; box-shadow: 0 5px 15px rgba(8, 66, 152, 0.3); background: #f0f7ff;"
-          ></div>
-        </div>
-      </div>
-    </div>
-    <div class="container py-4">
-      <div id="compareSection">
-        <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
-        <div class="mb-3 d-flex align-items-center">
-          <label for="travelModeSelect">
-            Travel Mode:
-          </label>
-          <select 
-            id="travelModeSelect"
-            v-model="selectedTravelMode" 
-            class="form-select"
-          >
-            <option value="WALKING">Walking</option>
-            <option value="TRANSIT">Transit</option>
-            <option value="DRIVING">Driving</option>
-          </select>
-        </div>
-          <div>
-            <button class="btn btn-danger me-2" @click="clearStorage">
-              <i class="fas fa-trash-alt me-1"></i> Clear All
-            </button>
-            <button class="btn btn-secondary" @click="loadSavedRoutesFromSession">
-              <i class="fas fa-sync-alt me-1"></i> Reload
-            </button>
-          </div>
-        </div>
-        <div 
-          v-for="(records, route) in sortedGroupedDistances" 
-          :key="route" 
-          class="distance-card"
-          @click="displayRoute(route)"
-        >
-          <h5 class="route-title">{{ route }}</h5>
-          <div class="row text-center g-3">
-            <div 
-              class="col-4 distance-mode walking"
-              @click.stop="displayRoute(route, 'WALKING')"
-            >
-              <i class="fas fa-person-walking fa-2x mb-2"></i>
-              <div>{{ getDistance(records, 'Walking') }}</div>
-            </div>
-            <div 
-              class="col-4 distance-mode transit"
-              @click.stop="displayRoute(route, 'TRANSIT')"
-            >
-              <i class="fas fa-subway fa-2x mb-2"></i>
-              <div>{{ getDistance(records, 'Transit') }}</div>
-            </div>
-            <div 
-              class="col-4 distance-mode driving"
-              @click.stop="displayRoute(route, 'DRIVING')"
-            >
-              <i class="fas fa-car fa-2x mb-2"></i>
-              <div>{{ getDistance(records, 'Driving') }}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
-
-<style scoped>
-#bodybg {
-  background: #f8f8f8;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
-  color: #111;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-.container {
-  background: #ffffff;
-  border-radius: 1rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  padding: 2.5rem 3rem;
-  max-width: 90%;
-  transition: box-shadow 0.3s ease;
-}
-.container:hover {
-  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
-}
-
-label {
-  font-weight: 600;
-  color: #1c1c1e;
-}
-
-input.form-control {
-  border: 1px solid #ccc;
-  border-radius: 0.6rem;
-  background-color: #f9f9f9;
-  font-size: 1.05rem;
-  color: #111;
-  padding: 0.6rem 0.8rem;
-  transition: all 0.3s ease;
-}
-
-input.form-control:focus {
-  border-color: #007aff;
-  box-shadow: 0 0 0 4px rgba(0,122,255,0.15);
-  background-color: #fff;
-  color: #000;
-}
-
-/* ===== Buttons ===== */
-button.btn-primary {
-  background-color: #000;
-  border: none;
-  border-radius: 0.7rem;
-  font-weight: 600;
-  font-size: 1.1rem;
-  padding: 0.7rem 1.4rem;
-  transition: background-color 0.3s ease, transform 0.15s ease;
-}
-
-button.btn-primary:hover {
-  background-color: #1c1c1e;
-  transform: scale(1.02);
-}
-
-button.btn-danger {
-  background-color: #ff3b30;
-  border: none;
-  font-weight: 600;
-  transition: opacity 0.3s ease;
-}
-button.btn-danger:hover {
-  opacity: 0.85;
-}
-
-button.btn-secondary {
-  background-color: #e5e5ea;
-  border: none;
-  color: #111;
-  font-weight: 600;
-}
-button.btn-secondary:hover {
-  background-color: #d1d1d6;
-}
-
-/* ===== Distance Info ===== */
-#inputMsg {
-  min-height: 70px;
-  font-size: 1rem;
-  color: #1c1c1e;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  margin-top: 1.5rem;
-}
-
-.distance-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  background-color: #f2f2f7;
-  border-radius: 0.6rem;
-  padding: 0.6rem 1rem;
-  font-weight: 600;
-  color: #111;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-  animation: fadeIn 0.5s ease forwards;
-}
-
-.icon {
-  font-size: 1.4rem;
-  color: #007aff;
-}
-
-#map {
-  height: 40rem;
-  width: 100%;
-  border-radius: 1rem;
-  background: #f2f2f7;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  transition: box-shadow 0.3s ease;
-}
-#map:hover {
-  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-}
-
-/* ===== Route Comparison Section ===== */
-#compareSection {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.distance-card {
-  background-color: #fff;
-  border-radius: 0.75rem;
-  padding: 1rem;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
-  transition: all 0.25s ease;
-}
-.distance-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 3px 12px rgba(0,0,0,0.12);
-}
-
-.route-title {
-  text-align: center;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #000;
-  letter-spacing: 0.3px;
-}
-
-.distance-mode {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem;
-  font-weight: 500;
-  color: #111;
-  border-radius: 0.5rem;
-  transition: background-color 0.2s ease, transform 0.15s ease;
-}
-
-.distance-mode.walking:hover {
-  background-color: orange;
-}
-
-.distance-mode.transit:hover {
-  background-color: pink;
-}
-
-.distance-mode.driving:hover {
-  background-color: red;
-}
-
-.distance-mode:hover {
-  background-color: #f2f2f7;
-  transform: scale(1.05);
-}
-
-.distance-mode i {
-  color: #007aff;
-}
-
-select.form-select {
-  border: 1px solid #ccc;
-  border-radius: 0.6rem;
-  background-color: #f9f9f9;
-  color: #111;
-  font-weight: 600;
-  padding: 0.5rem 0.75rem;
-  transition: all 0.3s ease;
-}
-
-select.form-select:focus {
-  border-color: #007aff;
-  box-shadow: 0 0 0 3px rgba(0,122,255,0.15);
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 576px) {
-  .container {
-    padding: 2rem 1.5rem;
-  }
-  #inputMsg {
-    justify-content: center !important;
-  }
-}
-
-/* ===== Hide Google Map UI Controls ===== */
-.gm-ui-hover-effect, 
-.gm-style .gm-style-mtc, 
-.gm-style .gm-style-cc {
-  display: none !important;
-}
-</style>
-
-<style>
-.icon {
-  font-size: 1.5rem;
-  color: #007aff; 
-  animation: gentleBounce 1.8s ease-in-out infinite alternate;
-  transition: color 0.3s ease;
-}
-
-.distance-item {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  background-color: #f2f2f7;
-  border-radius: 0.75rem;
-  padding: 0.7rem 1.2rem;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04);
-  font-weight: 500;
-  color: #1c1c1e;
-  animation: fadeIn 0.5s ease forwards;
-  transition: all 0.3s ease;
-}
-
-.distance-item:hover {
-  background-color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transform: translateY(-2px);
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes gentleBounce {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-5px); }
-}
-</style>
 

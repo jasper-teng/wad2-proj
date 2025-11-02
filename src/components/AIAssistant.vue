@@ -117,6 +117,7 @@ async function submitQuery() {
   try {
     const response = await axios.post(`${apiBaseUrl}/api/ai/route-from-prompt`, payload, config)
     const { action_type, api_route, message } = response.data
+    console.log(response);
 
     if (action_type === 'API_CALL' && api_route) {
       // Add assistant response to chat log

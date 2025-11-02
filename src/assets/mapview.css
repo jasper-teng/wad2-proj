@@ -1,0 +1,546 @@
+/* ================================================
+   MapView Styles
+   ================================================ */
+
+/* ===== Base Layout ===== */
+#bodybg {
+  color: #111;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 3rem 0;
+}
+
+/* ===== Glass Card Effects ===== */
+.glass-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+}
+
+.map-only-container {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.map-only-container #map {
+  border-radius: 1rem;
+  margin: 0;
+}
+
+/* ===== Filter Section ===== */
+.filter-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.filter-header {
+  background: linear-gradient(135deg, #FFA18D 0%, #56bdb6 100%);
+  padding: 20px;
+}
+
+.filter-header h5 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 22px;
+  margin: 0;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.filter-body {
+  padding: 24px;
+}
+
+.filter-label {
+  font-weight: 600;
+  color: #313131;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.filter-select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid #FFA18D;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #313131;
+  font-size: 15px;
+  font-family: "IBM Plex Sans", sans-serif;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.filter-select:focus {
+  border-color: #56bdb6;
+  box-shadow: 0 0 0 3px rgba(86, 189, 182, 0.1);
+}
+
+/* Filter Buttons */
+.filter-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: "IBM Plex Sans", sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn-clear {
+  background: #ffffff;
+  color: #313131;
+  border: 2px solid #FFA18D;
+}
+
+.filter-btn-clear:hover {
+  background: #FFA18D;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 161, 141, 0.3);
+}
+
+.filter-btn-reset {
+  background: #56bdb6;
+  color: #fff;
+}
+
+.filter-btn-reset:hover {
+  background: #4aa8a2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(86, 189, 182, 0.3);
+}
+
+/* Filter Status */
+.filter-status {
+  background: rgba(255, 161, 141, 0.05);
+  padding: 16px;
+  border: 2px solid rgba(255, 161, 141, 0.2);
+  border-radius: 10px;
+  color: #313131;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.filter-detail {
+  color: #56bdb6;
+  font-weight: 500;
+}
+
+.filter-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  background: #999999;
+  color: #fff;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.filter-badge.active {
+  background: linear-gradient(135deg, #FFA18D 0%, #56bdb6 100%);
+  animation: pulse 2s infinite;
+}
+
+/* ===== Side Drawer ===== */
+.side-drawer {
+  position: absolute;
+  top: 0;
+  left: -350px;
+  width: 350px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem 0 0 1rem;
+  overflow: hidden;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.side-drawer.open {
+  left: 0;
+}
+
+.drawer-content {
+  padding: 1.5rem;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.drawer-title {
+  font-weight: 700;
+  color: #1c1c1e;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+/* Drawer Toggle Button */
+.drawer-toggle-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 10%;
+  background: #000;
+  color: white;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: left 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  z-index: 1001;
+}
+
+.drawer-toggle-btn:hover {
+  transform: scale(1.1);
+  background: #ff8c75 !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.drawer-toggle-btn.drawer-open {
+  left: 365px;
+}
+
+.drawer-toggle-btn i {
+  transition: transform 0.3s ease;
+}
+
+/* ===== Map ===== */
+#map {
+  width: 100%;
+  height: 40rem;
+  border-radius: 1rem;
+  background: #f2f2f7;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+#map:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Form Elements ===== */
+label {
+  font-weight: 600;
+  color: #1c1c1e;
+}
+
+input.form-control {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 0.6rem;
+  background-color: #f9f9f9;
+  color: #111;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+}
+
+input.form-control:focus {
+  border-color: #007aff;
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.15);
+}
+
+select.form-select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.6rem;
+  background-color: #f9f9f9;
+  color: #111;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+select.form-select:focus {
+  border-color: #56bdb6;
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.15);
+}
+
+/* ===== Buttons ===== */
+button.btn-primary {
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 0.7rem;
+  background-color: #000;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.15s ease;
+}
+
+button.btn-primary:hover {
+  background-color: #1c1c1e;
+  transform: scale(1.02);
+}
+
+button.btn-danger {
+  border: none;
+  background-color: #ff3b30;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+
+button.btn-danger:hover {
+  opacity: 0.85;
+}
+
+button.btn-secondary {
+  border: none;
+  background-color: #e5e5ea;
+  color: #111;
+  font-weight: 600;
+}
+
+button.btn-secondary:hover {
+  background-color: #d1d1d6;
+}
+
+/* ===== Distance Information ===== */
+#inputMsg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  min-height: 70px;
+  margin-top: 1.5rem;
+  color: #1c1c1e;
+  font-size: 1rem;
+}
+
+.distance-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.7rem 1.2rem;
+  background-color: #f2f2f7;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  color: #1c1c1e;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  animation: fadeIn 0.5s ease forwards;
+  transition: all 0.3s ease;
+}
+
+.distance-item:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: #007aff;
+  animation: gentleBounce 1.8s ease-in-out infinite alternate;
+  transition: color 0.3s ease;
+}
+
+/* ===== Route Comparison Section ===== */
+#compareSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.distance-card {
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+}
+
+.distance-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.route-title {
+  margin-bottom: 1rem;
+  color: #000;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-align: center;
+}
+
+.distance-mode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  color: #111;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.distance-mode:hover {
+  background-color: #f2f2f7;
+  transform: scale(1.05);
+}
+
+.distance-mode.walking:hover {
+  background-color: orange;
+}
+
+.distance-mode.transit:hover {
+  background-color: pink;
+}
+
+.distance-mode.driving:hover {
+  background-color: red;
+}
+
+.distance-mode i {
+  color: #007aff;
+}
+
+/* ===== Animations ===== */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 161, 141, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(255, 161, 141, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gentleBounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+/* ================================================
+   Responsive Design
+   ================================================ */
+
+/* Tablet (≤768px) */
+@media (max-width: 768px) {
+  #bodybg {
+    padding: 2rem 0;
+  }
+
+  #map {
+    height: 30rem;
+  }
+
+  .filter-header h5 {
+    font-size: 18px;
+  }
+
+  .filter-body {
+    padding: 16px;
+  }
+
+  .distance-card {
+    padding: 0.875rem;
+  }
+
+  .route-title {
+    font-size: 1.1rem;
+  }
+
+  /* Drawer adjustments */
+  .side-drawer {
+    width: 300px;
+    left: -300px;
+  }
+
+  .drawer-toggle-btn.drawer-open {
+    left: 315px;
+  }
+}
+
+/* Mobile (≤576px) */
+@media (max-width: 576px) {
+  #map {
+    height: 25rem;
+  }
+
+  #inputMsg {
+    justify-content: center !important;
+  }
+
+  .filter-label {
+    font-size: 13px;
+  }
+
+  .filter-select {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .filter-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .distance-mode i {
+    font-size: 1.5rem !important;
+  }
+
+  .distance-mode div {
+    font-size: 0.75rem;
+  }
+
+  /* Drawer adjustments */
+  .side-drawer {
+    width: 280px;
+    left: -280px;
+  }
+
+  .drawer-content {
+    padding: 1rem;
+  }
+
+  .drawer-title {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .drawer-toggle-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
+  }
+
+  .drawer-toggle-btn.drawer-open {
+    left: 295px;
+  }
+}
+
+/* ===== Hide Google Map UI Controls ===== */
+.gm-ui-hover-effect,
+.gm-style .gm-style-mtc,
+.gm-style .gm-style-cc {
+  display: none !important;
+}
