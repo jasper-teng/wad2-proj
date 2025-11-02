@@ -4,29 +4,7 @@
     <div class="dashboard-header">
       <div class="container">
         <h1 class="dashboard-title">Dashboard</h1>
-        <div class="ai-assistant-card">
-          <div class="ai-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M3 4h18a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1h-7v2h3a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2h3v-2H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm1 2v9h16V6H4z"/>
-            </svg>
-          </div>
-          <div class="ai-content">
-            <h3>Assistant Console</h3>
-            <div class="ai-input-group">
-              <input
-                v-model="chatInput"
-                type="text"
-                class="ai-input"
-                placeholder="e.g. show GES data for SMU, Information Systems"
-                @keyup.enter="submitQuery"
-              />
-              <button class="btn-primary" @click="submitQuery" :disabled="loading">
-                {{ loading ? 'Searching...' : 'Search' }}
-              </button>
-            </div>
-            <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
-          </div>
-        </div>
+        <AIAssistant />
       </div>
     </div>
 
@@ -54,7 +32,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import axios from 'axios'
+import AIAssistant from '@/components/AIAssistant.vue'
 import '@/assets/dashboard.css'
 
 const router = useRouter()
@@ -112,48 +90,6 @@ const appGroups = ref([
     ],
   },
 ])
-
-const chatInput = ref('')
-const loading = ref(false)
-const errorMessage = ref('')
-
-async function submitQuery() {
-  if (loading.value || !chatInput.value.trim()) return
-
-  loading.value = true
-  errorMessage.value = ''
-
-  const token = localStorage.getItem('authToken')
-  if (!token) {
-    errorMessage.value = 'Authentication is required.'
-    loading.value = false
-    return
-  }
-
-  const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || ''
-  const payload = { prompt: chatInput.value }
-  const config = {
-    headers: { Authorization: `Bearer ${token}` }
-  }
-
-  try {
-    const response = await axios.post(`${apiBaseUrl}/api/ai/route-from-prompt`, payload, config)
-    const { action_type, api_route, message } = response.data
-
-    if (action_type === 'API_CALL' && api_route) {
-      sessionStorage.setItem('ai_assistant_message', message || 'Here is the data you requested.')
-      chatInput.value = ''
-      router.push(api_route)
-    } else {
-      errorMessage.value = message || "I'm not sure how to handle that request."
-    }
-
-  } catch (err) {
-    errorMessage.value = err.response?.data?.message || 'An error occurred while contacting the assistant.'
-  } finally {
-    loading.value = false
-  }
-}
 
 function openRoute(path) {
   if (path) router.push(path)
