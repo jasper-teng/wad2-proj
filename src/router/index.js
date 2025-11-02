@@ -79,9 +79,9 @@ const router = createRouter({
         meta: { requiresAuth: true }
     },
     {
-        path: '/distanceProgramme',
-        name: 'distanceProgramme',
-        component: () => import('../views/distProg.vue'),
+        path: '/distinctProgramme',
+        name: 'distinctProgramme',
+        component: () => import('../views/LatestFeature/feature.vue'),
         meta: { requiresAuth: true }
     },
     // Catch-all redirect
