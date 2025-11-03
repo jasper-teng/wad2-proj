@@ -59,7 +59,7 @@ export default {
 
 <template>
   <div class="mb-4">
-    <label for="addressInput" class="form-label">Enter your address</label>
+    <label for="addressInput" class="form-label fw-semibold">Address</label>
     <input
       ref="addressInput"
       type="text"
