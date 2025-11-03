@@ -1,0 +1,1423 @@
+[
+    {
+        "sch_id": 1,
+        "alp_description": "The 'Design Thinking Through Innovation and Technology' ALP integrates STEM and Design Thinking (DT). Secondary 1 students learn fundamentals using tools like Qdee robots and Microsoft Makecode. Secondary 2 students apply these skills to solve real-world problems themed around 'Inclusivity' using AI and Huskylens, often interacting with industry partners.",
+        "llp_description": "The 'Nurturing Mindful Leaders through Community Outreach' LLP is a 2-tiered program. Tier 1 equips all students with lifeskills and Design Thinking to solve community issues, integrating with Values in Action (VIA). Tier 2 provides further development for student leaders to lead and serve."
+    },
+    {
+        "sch_id": 2,
+        "alp_description": "The 'Critical Social Inquiry and Media Literacy' ALP develops students into critical thinkers and discerning media users. Students analyze real-life societal issues (e.g., sustainability), learn to create digital media (like infographics or videos) to advocate for change, and are trained to distinguish reliable information from fake news.",
+        "llp_description": "The 'Character Development Through Outdoor Learning Experience (OLE)' LLP is a broad-based program for Secondary 1-3 students. It uses physical challenges and real-world outdoor experiences to build teamwork, mental and emotional resilience, and leadership. It also fosters an appreciation for the environment."
+    },
+    {
+        "sch_id": 3,
+        "alp_description": "The 'Environment Sustainability through STEM' ALP equips students with scientific inquiry skills through hands-on activities. The curriculum is based on three main themes: Biodiversity, Energy and Resources, and Electronics & Coding, enabling students to apply STEM concepts to sustainability challenges.",
+        "llp_description": "The 'Integrated Arts Programme' LLP exposes all lower secondary students to a broad range of arts, including drama, visual arts, dance, and music. In Secondary 2, students can specialize in dance or drama. The program provides various platforms for performance, such as the school's 'Night of Music, Arts and Dance (NOMAD)'."
+    },
+    {
+        "sch_id": 4,
+        "alp_description": "The ALP, titled 'Developing Effective Communicators through Drama, Debates and Public Speaking,' is a signature programme aimed at honing essential communication skills. It leverages drama, debates, and public speaking platforms to build confidence and effectiveness in communication across different real-world scenarios.",
+        "llp_description": "The LLP, 'Building Character through Sports and Outdoor Education,' is one of the school's distinctive programmes. It uses physical education, sports (like Water-polo), and outdoor adventure activities to instill core values, resilience, and all-round character development in students."
+    },
+    {
+        "sch_id": 5,
+        "alp_description": "The 'Speak English with grAce and Knowledge (SPEAK)' ALP integrates language arts with technology-enabled, authentic experiences to hone students' communication skills, critical thinking, and confidence in expressing themselves.",
+        "llp_description": "The 'DINAN Leadership Programme' (LLP) focuses on Community Youth Leadership. It prepares students for real-world impact by fostering collaborative, self-directed learners who are future-ready through values-driven community service and leadership roles."
+    },
+    {
+        "sch_id": 6,
+        "alp_description": "The Applied Learning Programme in 'Chemical and Applied Sciences (Fragrance)' aims to develop the students' passion for STEM (Science, Technology, Engineering, and Mathematics) by imbuing them with practical skills in these areas. Students accepted via DSA in this area are generally expected to join the CurioSTÉ Club.",
+        "llp_description": "The LLP, 'i-LEAD @ Bartley to develop as Leaders for Others,' is a Community Youth Leadership programme that focuses on character and leadership development through service and community outreach initiatives."
+    },
+    {
+        "sch_id": 7,
+        "alp_description": "The ALP, 'Beattyians Think.Create.Innovate - Programming for smart living,' is a STEM-focused programme undergirded by Design Thinking. It develops digital literacy through coding (e.g., Micro:bit) and guides students to create solutions for 'Smart Living' issues using a 'Head, Heart and Hand' experiential approach.",
+        "llp_description": "The 'Beatty’s Leaders for Life Programme' is centered around developing students' agility, critical thinking, and purpose-driven stewardship through various frameworks like SHARP and The Five Practices of Exemplary Leadership, preparing them for real-world challenges."
+    },
+    {
+        "sch_id": 8,
+        "alp_description": "The STEM ALP in 'Design and Aeronautical Engineering' focuses on the Future of Transportation. It equips students with skills in aeronautical engineering and prepares them for potential careers in the tech and transportation sectors.",
+        "llp_description": "The 'PAssion Programme' LLP focuses on Music and Performing Arts. This program integrates various performing arts disciplines into the curriculum to foster creativity and character development."
+    },
+    {
+        "sch_id": 9,
+        "alp_description": "The Interdisciplinary ALP, 'Project S.H.I.N.E.,' fosters innovation and empathy through projects centered on Design Thinking. It encourages students to tackle real-world challenges collaboratively, aligning with the MOE Innovation Programme.",
+        "llp_description": "The 'SHAPE@BDS: A School of Healthy And Physically Educated Enthusiasts' LLP promotes sports, outdoor adventure, and games. The program uses expedition-based and water activities (like kayaking) to build physical resilience, teamwork, and leadership skills."
+    },
+    {
+        "sch_id": 10,
+        "alp_description": "The ALP, 'Global Awareness for the 21st Century @ BV,' aims to nurture confident communicators and critical thinkers. It includes the learning of core values, social and emotional competencies, and citizenship dispositions.",
+        "llp_description": "The LLP, 'Good Values @ BV,' aims to engender positive attitudes and character traits in students through a structured curriculum in Character and Citizenship Education (CCE) and CCA activities."
+    },
+    {
+        "sch_id": 11,
+        "alp_description": "The current ALP focuses on 'STEM-Sustainable Living,' guiding students through the design thinking process to address environmental issues (food, water, energy). Students in Secondary 2 learn to develop energy-efficient systems using Microbit technology.",
+        "llp_description": "The LLP, 'Level-wide thematic approach to VIA,' aims to develop students into Community Youth Leaders. It uses a thematic, spiral approach where Values in Action (VIA) projects progress from 'Love Our School' (Sec 1) to national and environmental issues (Sec 3/4)."
+    },
+    {
+        "sch_id": 12,
+        "alp_description": "The ALP, 'Exploring Possibilities in Materials Science,' focuses on STEM and Sustainability. It provides hands-on opportunities for students to investigate the properties and applications of different materials.",
+        "llp_description": "The 'INSPIRE @ BLS' LLP focuses on Music & Performing Arts. It leverages creative arts (such as Choir, Band, Dance, and Theatre) to nurture values, self-expression, and appreciation for the arts."
+    },
+    {
+        "sch_id": 13,
+        "alp_description": "The ALP is integrated into the 'Bowen ChANgeMakers' programme. It focuses on 'Nurturing Creativity, Empathy and Enterprise through Social Entrepreneurship,' using Design Thinking to identify problems and design solutions for the school environment and community.",
+        "llp_description": "The LLP is integrated into the 'Bowen ChANgeMakers' programme. It focuses on 'Community Youth Leadership,' using Service Learning where students interact with partners (like VWOs) to develop empathy, social responsibility, and leadership."
+    },
+    {
+        "sch_id": 14,
+        "alp_description": "The 'Broadrick Entrepreneurship in STEM (B.E.S.)' program emphasizes innovation and enterprise, teaching students to apply STEM concepts to identify real-world problems and design sustainable, entrepreneurial solutions, fostering a spirit of curiosity and creation.",
+        "llp_description": "The 'Nurturing Confidence And REsilience (CARE) through Aesthetic, Community and Youth Leadership' LLP uses the Arts (Aesthetics) and student leadership platforms to develop character, confidence, and resilience through service to the school and wider community."
+    },
+    {
+        "sch_id": 15,
+        "alp_description": "The ALP, 'Developing Proactive Problem-Solvers who care for our World through STEM,' focuses on urban sustainability, using Robotics and Design Thinking to challenge students to create solutions for modern city living issues.",
+        "llp_description": "The 'Developing Community Youth Leadership (CYL) through VIA' LLP focuses on building core values through community projects, nurturing students to be respectful, responsible, and resilient leaders committed to serving the community."
+    },
+    {
+        "sch_id": 16,
+        "alp_description": "The 'Creative Robotics and Engineering' ALP allows students to explore emerging technologies through hands-on robotics and coding projects, emphasizing creativity and innovative problem-solving in a real-world context.",
+        "llp_description": "The 'Character Development & Leadership through Sports' LLP leverages various sports and outdoor education activities to instill discipline, teamwork, resilience, and leadership qualities, promoting a healthy and active lifestyle."
+    },
+    {
+        "sch_id": 17,
+        "alp_description": "The 'Clean Energy and Environmental Technology' ALP, focusing on STEM and Sustainability, involves students in projects related to renewable energy, smart grid technology, and environmental conservation to promote responsible citizenship.",
+        "llp_description": "The 'Learning the Arts, Living the Values' LLP uses visual arts, music, and performance platforms to cultivate appreciation for the arts, develop self-expression, and reinforce positive character traits and school values."
+    },
+    {
+        "sch_id": 18,
+        "alp_description": "The 'Digital Media in Visual Arts' ALP equips students with skills in digital photography, videography, and graphic design, allowing them to communicate ideas effectively and creatively through multimedia.",
+        "llp_description": "The 'GRC GEMS in action' (Gracious, Responsible, Confident, Global, Enterprising, Moral) LLP focuses on developing the whole student by giving them opportunities to lead and serve the community, embodying the GEMS values."
+    },
+    {
+        "sch_id": 19,
+        "alp_description": "The 'SOAR @ CCSS' (Student Centered Opportunities for AeRospace industries) ALP focuses on the Future of Transportation, specifically in aerospace, providing students with hands-on learning in drone technology, flight principles, and basic aeronautical engineering.",
+        "llp_description": "The 'Service and Leadership through School to Nation' LLP develops student leaders through Values in Action (VIA) projects that serve the school community, local neighborhood, and, eventually, the nation."
+    },
+    {
+        "sch_id": 20,
+        "alp_description": "The 'Art of Communication through Theatre and Debates' ALP uses drama and debate to develop critical thinking, persuasive communication, and self-confidence, allowing students to articulate their ideas clearly and empathetically.",
+        "llp_description": "The 'Empathy and Critical Thinking through Community Problem Solving' LLP engages students in identifying and solving community issues through a problem-solving framework, fostering empathy and active citizenship."
+    },
+    {
+        "sch_id": 21,
+        "alp_description": "The 'Education For Life – Developing Portable Skills through and for Real World Problem Solving' Interdisciplinary ALP focuses on equipping students with transferrable 21st-century skills like complex problem-solving, collaboration, and digital literacy through project-based learning.",
+        "llp_description": "The LLP, 'Developing Self-directed, Confident and Resilient Leaders, Learners and Ladies through Sports & Hockey,' uses sports (with a focus on Hockey) and outdoor education to build character, resilience, and leadership skills."
+    },
+    {
+        "sch_id": 22,
+        "alp_description": "The 'Applied Learning Programme (ALP) in Health Science and Technology @ CHR' explores health science concepts and technologies, encouraging students to develop innovative solutions related to health, wellness, and medical technology.",
+        "llp_description": "The 'Leadership through Outdoor Adventure Learning' LLP uses progressive outdoor challenges (like rock climbing, trekking) to build resilience, teamwork, self-management, and leadership skills in students."
+    },
+    {
+        "sch_id": 23,
+        "alp_description": "The 'Technology in Sustainability' ALP challenges students to apply technology and engineering principles to solve issues related to environmental sustainability and resource management.",
+        "llp_description": "The 'Student Leadership Development Programme' LLP is a tiered approach focusing on developing students' leadership potential, emphasizing values like integrity, respect, and responsibility through service to the community."
+    },
+    {
+        "sch_id": 24,
+        "alp_description": "The 'Food Science and Technology' ALP provides students with practical, hands-on experiences in food science, covering topics like food processing, nutrition, and innovation, preparing them for future studies or careers in this field.",
+        "llp_description": "The 'HeARTs for the Arts' LLP focuses on nurturing an appreciation for the performing arts. It provides a platform for students to develop their talents in music, dance, and drama, fostering creativity and self-expression."
+    },
+    {
+        "sch_id": 25,
+        "alp_description": "The 'Mastery through Application and Research in STEM (MARS)' ALP develops critical thinking and problem-solving skills through hands-on STEM projects, focusing on emerging technologies and real-world applications.",
+        "llp_description": "The 'Learning for Life: Community Youth Leadership' LLP aims to develop students into active citizens and leaders. It focuses on service-learning projects and community engagement to instill a sense of social responsibility."
+    },
+    {
+        "sch_id": 26,
+        "alp_description": "The 'Aeronautics Applied Learning Programme' focuses on the Future of Transportation. Students learn about the principles of flight, drone technology, and aeronautical engineering through hands-on projects and industry collaborations.",
+        "llp_description": "The 'Inspired North Stars Inspire Actions' LLP is a Community Youth Leadership program that develops students' character and leadership skills, encouraging them to initiate and lead community service projects."
+    },
+    {
+        "sch_id": 27,
+        "alp_description": "The 'Environmental Sciences and Sustainability' ALP uses a STEM approach to explore environmental issues. Students engage in projects related to conservation, renewable energy, and sustainable practices.",
+        "llp_description": "The 'Character Development through Water and Adventure Sports' LLP uses outdoor education, with a focus on water sports like kayaking and dragon boating, to build resilience, teamwork, and leadership."
+    },
+    {
+        "sch_id": 28,
+        "alp_description": "The 'Activating the Joy of Learning through Broadcast Journalism' ALP equips students with media literacy and communication skills. Students learn to research, script, film, and edit news reports and digital content.",
+        "llp_description": "The 'Nurturing Confident Communicators and Gracious Citizens through the Arts' LLP provides broad-based exposure to various performing arts, helping students build confidence, creativity, and social-emotional competencies."
+    },
+    {
+        "sch_id": 29,
+        "alp_description": "The 'FSciTech' ALP develops students as young scientists through Food Science and Technology. Students explore food chemistry, nutrition, and sustainable food production in a hands-on, inquiry-based environment.",
+        "llp_description": "The 'Every Dunearnite a Community Youth Leader' LLP is a comprehensive program that provides all students with opportunities to learn leadership skills and apply them through Values-in-Action (VIA) and community service."
+    },
+    {
+        "sch_id": 30,
+        "alp_description": "The '21st Century Innovators through Health Science' ALP explores topics in health and wellness, medical technology, and sports science, encouraging students to apply STEM skills to real-world healthcare challenges.",
+        "llp_description": "The 'Community Youth Leadership' LLP focuses on developing students' character and leadership through active service. Students plan and execute VIA projects, working with community partners to address local needs."
+    },
+    {
+        "sch_id": 31,
+        "alp_description": "The 'Growing the Edgefield Mindset (G.E.M)' ALP focuses on Business & Entrepreneurship. It uses a Design Thinking framework to nurture an innovative and entrepreneurial spirit, guiding students to develop and pitch business ideas.",
+        "llp_description": "The 'Character Education Through Sports (Anchored on Taekwondo)' LLP uses sports, particularly Taekwondo, as a platform to instill discipline, respect, resilience, and other core values."
+    },
+    {
+        "sch_id": 32,
+        "alp_description": "The 'Effective Communicators with a Heart' ALP focuses on Languages. It aims to develop confident and empathetic communicators through various platforms like public speaking, debate, and journalism.",
+        "llp_description": "The 'Strengthening Resilience, Character and Leadership through Sports Education' LLP uses a variety of sports and outdoor activities to build students' physical and mental resilience, teamwork, and leadership skills."
+    },
+    {
+        "sch_id": 33,
+        "alp_description": "The 'Innovations in Science & Technology for Sustain-Ability' ALP integrates STEM concepts to tackle sustainability issues. Students work on projects involving robotics, coding, and green technology to create innovative solutions.",
+        "llp_description": "The 'Values Through Dance' LLP uses dance (including modern, cultural, and hip-hop) as a medium to develop character, discipline, confidence, and an appreciation for the arts."
+    },
+    {
+        "sch_id": 34,
+        "alp_description": "The 'Forensic Science@Fuhua' ALP engages students in STEM by having them solve simulated crime scenarios. Students learn to apply scientific principles, conduct experiments (like chemical analysis and DNA profiling), and use data loggers, developing critical thinking and inquiry skills.",
+        "llp_description": "The 'Leadership through Service' LLP is a school-wide program that develops students' character and leadership competencies. It is structured around the 'Five Practices of Exemplary Leadership' and provides opportunities for students to lead and serve the community."
+    },
+    {
+        "sch_id": 35,
+        "alp_description": "The 'GESS Probes' ALP focuses on STEM and Sustainability. It is an inquiry-based program where students use 'probes' (sensors and data-loggers) to investigate real-world issues, particularly related to the environment and sustainable living.",
+        "llp_description": "The 'GESS LIFE Programme' (Leadership, Inspiration, Fulfilment, Empathy) focuses on Community Youth Leadership. It aims to develop students' character and leadership skills through service-learning projects, outdoor adventure, and community engagement."
+    },
+    {
+        "sch_id": 36,
+        "alp_description": "The 'Sustainability - Promoting a Better World' ALP uses a STEM approach to explore environmental and sustainability challenges. Students engage in projects related to energy, water, and food sustainability, often involving coding and design thinking.",
+        "llp_description": "The 'Nurturing Confident, Compassionate and Courageous Leaders' LLP focuses on developing students' leadership potential through a structured, tiered program that includes self-leadership, peer-leadership, and community leadership."
+    },
+    {
+        "sch_id": 37,
+        "alp_description": "The 'Design, Technology and Engineering (DTE)' ALP integrates these disciplines to solve authentic problems. Students learn 3D modelling, electronics, and coding, applying their skills to projects in areas like urban sustainability and smart living.",
+        "llp_description": "The 'Character Development through Outdoor and Adventure Education' LLP uses outdoor activities like hiking, kayaking, and high-element courses to build resilience, teamwork, confidence, and leadership skills in students."
+    },
+    {
+        "sch_id": 38,
+        "alp_description": "The 'Confident & Persuasive Communicators: Debate & New Media' ALP focuses on developing students' language and communication skills. Students learn the fundamentals of debate, argumentation, and how to create persuasive content for new media platforms.",
+        "llp_description": "The 'Rise to Lead' LLP is a Community Youth Leadership program that aims to develop students' character and leadership competencies through active participation in school and community service projects."
+    },
+    {
+        "sch_id": 39,
+        "alp_description": "The 'Sustainability' ALP focuses on STEM and environmental science. Students participate in hands-on activities, such as maintaining a vertical farm, learning about food sustainability, and exploring green technologies.",
+        "llp_description": "The 'Act Up! Speak Up!' LLP uses drama and theatre as a platform for students to build confidence, empathy, and effective communication skills, while also exploring social issues and community stories."
+    },
+    {
+        "sch_id": 40,
+        "alp_description": "The 'Robotics and Engineering' ALP focuses on smart city solutions and urban landscapes. Students learn coding, electronics, and engineering design principles to build and program robots that can solve real-world problems.",
+        "llp_description": "The 'Developing Leadership Competencies in Every HaiSian' LLP is a comprehensive program designed to nurture leadership in all students, focusing on service, responsibility, and making a positive impact on the community."
+    },
+    {
+        "sch_id": 41,
+        "alp_description": "The 'Broadening Learning Horizons through Flight and Aerospace' ALP exposes students to the aviation industry. Students learn about aerodynamics, flight simulation, and drone technology through hands-on, inquiry-based projects.",
+        "llp_description": "The 'Arts E3: Engage, Excite, Empower!' LLP provides students with broad exposure to various performing and visual arts. It aims to develop their creativity, confidence, and appreciation for different art forms."
+    },
+    {
+        "sch_id": 42,
+        "alp_description": "The 'Journalism and Broadcasting' ALP develops students into effective communicators and critical thinkers. Students learn media literacy, news writing, and digital media production, producing content for school-based platforms.",
+        "llp_description": "The 'Good Samaritan Programme (GSP)' is a Community Youth Leadership LLP rooted in the school's values. It focuses on developing empathy and a heart for service through structured Values-in-Action (VIA) and community outreach."
+    },
+    {
+        "sch_id": 43,
+        "alp_description": "The 'Promoting Communication Skills using Authentic Learning as a Platform' ALP focuses on developing students into confident and effective communicators through various language arts and media-related activities.",
+        "llp_description": "The 'Values in action, a Hougean way of life' LLP embeds community service and leadership into the school curriculum, encouraging students to actively contribute to the community and practice school values."
+    },
+    {
+        "sch_id": 44,
+        "alp_description": "The 'Technology for Active Living' ALP focuses on Health Science and Technology. Students learn to design and code assistive technologies, such as devices for the elderly, using principles of Design Thinking and computing.",
+        "llp_description": "The 'Community and Youth Leadership in Hua Yi' LLP develops students into active citizens. It is a tiered program where all students participate in Values-in-Action (VIA), and selected students are further trained to lead these community projects."
+    },
+    {
+        "sch_id": 45,
+        "alp_description": "The 'Developing Application-based Learning through Food Science' ALP allows students to explore the science behind food, including nutrition, food processing, and sustainable food sources, through hands-on lab work and inquiry projects.",
+        "llp_description": "The 'Cultivating Community Champions through Youth Leadership' LLP focuses on developing students' leadership skills and sense of civic responsibility through active involvement in planning and executing community service."
+    },
+    {
+        "sch_id": 46,
+        "alp_description": "The 'Design for Smart and Sustainable Urban Living' ALP challenges students to use STEM and Design Thinking to create innovative solutions for modern urban challenges, focusing on sustainability and smart technology.",
+        "llp_description": "The 'Sporty at Heart, Sporting in Mind' LLP uses sports and outdoor education to build character, resilience, and a growth mindset. It emphasizes the values of sportsmanship and teamwork."
+    },
+    {
+        "sch_id": 47,
+        "alp_description": "The 'Harnessing Technology, Communication and the Visual Arts in Authentic Contexts' ALP integrates aesthetics with technology. Students learn skills in digital art, media production, and visual communication.",
+        "llp_description": "The 'LLP @ JWSS - Community Youth Leadership' program provides a structured framework for students to develop leadership skills through service, teamwork, and taking initiative in school and community projects."
+    },
+    {
+        "sch_id": 48,
+        "alp_description": "The 'Real World Learning through Electronics' ALP focuses on emerging technologies. Students get hands-on experience with electronics, coding (e.g., Arduino), and systems thinking to build and program their own electronic devices.",
+        "llp_description": "The 'Sports for Life' LLP aims to promote a lifelong passion for sports and healthy living. It exposes students to a wide range of sports and outdoor activities to develop physical fitness, resilience, and sportsmanship."
+    },
+    {
+        "sch_id": 49,
+        "alp_description": "The 'Developing Confident, Competent and Empathetic Communicators' ALP focuses on Languages. It provides students with training in public speaking, debate, and media literacy to help them articulate their thoughts clearly and persuasively.",
+        "llp_description": "The 'Developing Self-Directed & Intrinsically Motivated Learners through PASSION' LLP is a leadership program based on the school's PASSION values (Perseverance, hArd work, Self-discipline, Sincerity, IntegrOty, kNowledge)."
+    },
+    {
+        "sch_id": 50,
+        "alp_description": "The 'Developing Computational Thinking through Robotics' ALP uses robotics (like Lego Mindstorms) as a platform to teach students coding, logical reasoning, and problem-solving skills in a hands-on STEM environment.",
+        "llp_description": "The 'EVOKE!@KR (Educational Values of Olympism at Kent Ridge)' LLP uses sports and outdoor education to instill values like respect, friendship, and excellence, developing students' character and leadership."
+    },
+    {
+        "sch_id": 51,
+        "alp_description": "The 'Design Innovation for Sustainable Living' ALP is an interdisciplinary program where students use Design Thinking and STEM skills to create innovative solutions for environmental and sustainability challenges.",
+        "llp_description": "The 'Nurturing a Leader in Every Kranjian through Community and Youth Leadership' LLP is a school-wide program that develops leadership competencies through service-learning, student-initiated projects, and mentorship."
+    },
+    {
+        "sch_id": 52,
+        "alp_description": "The '(P.A.C.E) Media Literacy Programme' (Participate, Access/Analyse, Create, Evaluate) ALP develops students into discerning consumers and creators of media, focusing on critical thinking and effective communication.",
+        "llp_description": "The 'It’s B.a.S.i.C! – Being a Servant Leader in the Community' LLP focuses on Community Youth Leadership, encouraging students to develop a 'heart to serve' through active community involvement and servant leadership principles."
+    },
+    {
+        "sch_id": 53,
+        "alp_description": "The 'Design and Engineering' ALP provides students with a foundation in STEM by engaging them in hands-on projects. Students learn to use Design Thinking to create solutions to real-world problems.",
+        "llp_description": "The 'Student Leadership, Sports & Outdoor Education' LLP uses outdoor adventure and sports as the primary platform to develop character, resilience, teamwork, and leadership skills."
+    },
+    {
+        "sch_id": 54,
+        "alp_description": "The 'Smart City & Assistive Technologies' ALP focuses on STEM for urban landscapes. Students learn coding, electronics, and design principles to create prototypes (e.g., using Micro:bit) that address real-world challenges related to smart living.",
+        "llp_description": "The 'Learning through the ARTS' (LttA) LLP provides a broad-based arts education for all lower secondary students, covering visual arts, music, and drama. It aims to develop cultural awareness, creativity, and character."
+    },
+    {
+        "sch_id": 55,
+        "alp_description": "The 'Eco-Sustainability through Inquiry-based Learning' ALP is a STEM program. Students investigate environmental issues, conduct research, and apply scientific inquiry to develop sustainable solutions for the community.",
+        "llp_description": "The 'HEART' LLP (HEalthy and Active youth for the community through outdooR and health promoTing curriculum) focuses on developing community leadership and promoting health through sports and outdoor education."
+    },
+    {
+        "sch_id": 56,
+        "alp_description": "The 'Developing confidence and curiosity through effective communication' ALP is a Languages program. It uses various platforms like broadcasting, journalism, and public speaking to build students' communication skills.",
+        "llp_description": "The 'Developing a Zest for Life through Music, Performing and Visual Arts' LLP provides all students with exposure to the arts. It aims to build character, social-emotional competencies, and an appreciation for aesthetics."
+    },
+    {
+        "sch_id": 57,
+        "alp_description": "The 'Applied Learning Programme in Visual Communication' leverages the school's niche in the arts. Students learn digital and media literacy, design principles, and visual storytelling to create compelling content.",
+        "llp_description": "The LLP focuses on 'developing leaders of sound character' who are anchored in values. It is a Community Youth Leadership program that provides opportunities for students to lead and serve."
+    },
+    {
+        "sch_id": 58,
+        "alp_description": "The 'Made In Montfort – Design, Code, Make' ALP is a STEM program focusing on emerging technologies. Students learn Design Thinking, coding, and digital fabrication (like 3D printing) to create their own innovative prototypes.",
+        "llp_description": "The 'Student Leadership through Outdoor Adventure & Sports' LLP uses outdoor education and sports as a context to develop leadership, resilience, teamwork, and character in every student."
+    },
+    {
+        "sch_id": 59,
+        "alp_description": "The 'Emerging Technologies' ALP is a STEM program where students explore areas like AI, data analytics, and smart devices. It is integrated into the Sec 1 and 2 curriculum, culminating in a project using Design Thinking.",
+        "llp_description": "The 'Enhancing Expression, Creativity and Aesthetics Appreciation (ECAA) through the ARTS' LLP is a comprehensive arts education program that aims to develop students' creativity, confidence, and cultural awareness."
+    },
+    {
+        "sch_id": 60,
+        "alp_description": "The 'ALP in Art' leverages aesthetics to develop critical thinking and communication. Students learn various art forms and digital media skills to express their ideas and perspectives on real-world issues.",
+        "llp_description": "The 'Character Education through Sports' LLP uses a wide range of sports and physical activities to instill values such as resilience, integrity, and teamwork, promoting a healthy and active lifestyle."
+    },
+    {
+        "sch_id": 61,
+        "alp_description": "The 'Digital Communicators, Change Makers' ALP is an interdisciplinary program that equips students with skills in media literacy, digital media production, and communication to advocate for social change.",
+        "llp_description": "The 'Nurturing Leaders of the Future through SPARK' LLP is a Community Youth Leadership program that develops students' leadership skills through service-learning, mentorship, and student-initiated projects."
+    },
+    {
+        "sch_id": 62,
+        "alp_description": "The 'Farm-to-Table' ALP is a STEM program focused on urban landscapes. Students learn about sustainable urban farming, food science, and entrepreneurship by managing the school's high-tech indoor farm.",
+        "llp_description": "The 'Nurturing Creative Problem Solvers through the Arts & Design' LLP uses visual arts and design as a platform to teach Design Thinking, helping students develop creativity and innovative solutions."
+    },
+    {
+        "sch_id": 63,
+        "alp_description": "The 'Northbrooks Aerospace Programme (Applied Learning In Aerospace)' is a STEM ALP focused on the Future of Transportation. Students get hands-on experience with flight simulation, drone technology, and aeronautical engineering.",
+        "llp_description": "The 'Northbrooks Outdoor Education: Adventure, Character, Environment (A.C.E.) Programme' LLP uses outdoor adventure to build character, resilience, and environmental consciousness in students."
+    },
+    {
+        "sch_id": 64,
+        "alp_description": "The 'Eldertech - Technology for Adaptive Aging' ALP is a STEM program focusing on Health Science. Students use Design Thinking and technology (like Micro:bit) to create solutions that assist the elderly, fostering empathy and innovation.",
+        "llp_description": "The 'Game for Life (GfL) – ‘Empowering our Active Sportsmen’' LLP uses sports and outdoor education to develop character, resilience, and leadership. It aims to instill values and build a strong sense of sportsmanship."
+    },
+    {
+        "sch_id": 65,
+        "alp_description": "The 'ARTopIA' ALP is an Aesthetics-focused program that integrates Art, Design, Media, and Technology. Students learn to express their creativity and communicate ideas through various digital and traditional art forms.",
+        "llp_description": "The 'Community OutReach Education (CORE) Programme' is a Community Youth Leadership LLP. It develops students' leadership skills and social responsibility through planning and executing Values-in-Action (VIA) projects."
+    },
+    {
+        "sch_id": 66,
+        "alp_description": "The 'Business and Enterprise' ALP focuses on entrepreneurship. Students learn business fundamentals, financial literacy, and marketing, often culminating in a project where they develop and pitch a business idea.",
+        "llp_description": "The 'Sports For Life@Outram' LLP promotes physical health and character building through sports. It provides broad-based exposure to various sports and outdoor activities to develop resilience and teamwork."
+    },
+    {
+        "sch_id": 67,
+        "alp_description": "The 'Effective Communicators who impact with the heart and mind' ALP is a Languages program. It hones students' public speaking, debate, and media literacy skills, often integrating drama and storytelling.",
+        "llp_description": "The 'Nurturing Crestian Leaders of Tomorrow through Music and the Performing Arts' LLP uses the arts as a platform to build confidence, discipline, creativity, and leadership skills."
+    },
+    {
+        "sch_id": 68,
+        "alp_description": "The 'Eye on the World: Stories through Journalism' ALP is a Humanities program. Students learn the principles of journalism, media ethics, and digital storytelling to research and report on global and local issues.",
+        "llp_description": "The 'Cultural Fusion' LLP focuses on Music and Performing Arts, celebrating diversity by exposing students to various cultural art forms, music, and dance, fostering appreciation and creativity."
+    },
+    {
+        "sch_id": 69,
+        "alp_description": "The 'Coding and Making' ALP is a STEM program focusing on emerging technologies. Students learn computational thinking, coding (e.g., Python), and digital fabrication to create their own projects and solutions.",
+        "llp_description": "The 'PRIDE of the Community: Developing An Altruist' LLP is a Community Youth Leadership program. It aims to develop students' character and sense of service through active community engagement and VIA projects."
+    },
+    {
+        "sch_id": 70,
+        "alp_description": "The 'Applied food science & processing' ALP is a STEM program where students explore the science of food. They conduct experiments related to food chemistry, nutrition, and sustainable food technology.",
+        "llp_description": "The 'Becoming Persons for Others – Developing Leadership through and for the Community' LLP focuses on nurturing servant leaders through a structured leadership program and active community service."
+    },
+    {
+        "sch_id": 71,
+        "alp_description": "The 'Deepening Reflection and Developing Critical Thinking through Media' ALP is a Languages program. It focuses on media literacy, helping students to critically analyze and reflect on media messages.",
+        "llp_description": "The 'Developing Community Leaders with the Heart to Serve through Uniformed Groups' LLP uses the structure and activities of its Uniformed Groups (like NCC, NPCC) as the main platform for leadership development."
+    },
+    {
+        "sch_id": 72,
+        "alp_description": "The 'Food and Health Science' ALP is a STEM program that allows students to explore the science of nutrition, food technology, and wellness through inquiry-based projects and hands-on experiments.",
+        "llp_description": "The 'Community Youth Leadership' LLP focuses on developing students' character and leadership skills. It is a tiered program that includes service-learning projects and leadership training."
+    },
+    {
+        "sch_id": 73,
+        "alp_description": "The 'Applied Learning Programme in Environment Education' is a STEM program focused on sustainability. Students learn about environmental science and use technology to design solutions for conservation issues.",
+        "llp_description": "The 'Serving with values, developing a community of confident leaders and learners' LLP is a Community Youth Leadership program that integrates values education with service-learning projects."
+    },
+    {
+        "sch_id": 74,
+        "alp_description": "The 'Environmental Sustainability' ALP is a Humanities-based program. It uses geographical and social inquiry to help students understand complex environmental issues and propose sustainable solutions.",
+        "llp_description": "The 'Dare to Serve – QUEST Leadership Development through Community Youth Leadership' LLP develops students into confident and caring leaders through a structured program (QUEST: QUeenstown EStablishes leaders) and active community service."
+    },
+    {
+        "sch_id": 75,
+        "alp_description": "The 'Sustainability (Water & Food)' ALP is a STEM program. Students learn about sustainable practices related to water conservation and food production, using technology to design and test innovative solutions.",
+        "llp_description": "The 'QSS Sports and Outdoor Education (SOE) Programme' uses a variety of sports and outdoor adventures to build students' physical fitness, mental resilience, teamwork, and leadership skills."
+    },
+    {
+        "sch_id": 76,
+        "alp_description": "The 'Create – Connect – Innovate (Emerging Technologies)' ALP is a STEM program where students learn coding, robotics, and Design Thinking to create technology-based solutions for real-world problems.",
+        "llp_description": "The 'Empowering every Regenite to be a Responsible and Confident Leader, Committed to Excellence' LLP is a whole-school leadership program that provides tiered training and opportunities for students to lead and serve."
+    },
+    {
+        "sch_id": 77,
+        "alp_description": "The 'Global Citizenship Education through Critical Social Inquiry' ALP is a Humanities program. It develops students' critical thinking and global awareness by having them research and discuss contemporary social issues.",
+        "llp_description": "The 'Arts for Life' LLP provides broad exposure to Music and Performing Arts. It aims to develop students' creativity, confidence, and appreciation for the arts as a lifelong pursuit."
+    },
+    {
+        "sch_id": 78,
+        "alp_description": "The 'Critical & Inventive Thinking (CIT) through Media Literacy' ALP is a Humanities program. Students learn to critically analyze media, understand its impact, and create their own media content responsibly.",
+        "llp_description": "The 'Youth Leadership in Service of the Community' LLP focuses on developing students' leadership skills through active participation and planning of Values-in-Action (VIA) and community service projects."
+    },
+    {
+        "sch_id": 79,
+        "alp_description": "The 'Health Science & Technology' ALP is a STEM program. Students explore topics related to health, wellness, and medical technology, using scientific inquiry to understand health issues and design solutions.",
+        "llp_description": "The 'Building Character through Sports & Outdoor Adventure' LLP uses physical challenges and adventure activities to instill values like resilience, perseverance, and teamwork in students."
+    },
+    {
+        "sch_id": 80,
+        "alp_description": "The 'Researching Society through Media Literacy' ALP is a Humanities program. It teaches students to be discerning consumers of media and equips them with research and communication skills to inquire into social issues.",
+        "llp_description": "The 'Nurturing Confident and Compassionate Leaders' LLP is a Community Youth Leadership program that focuses on character development and provides opportunities for students to lead in service of others."
+    },
+    {
+        "sch_id": 81,
+        "alp_description": "The 'Real-world Explorations in ICT' ALP is a STEM program focusing on the Future of Transportation. Students explore coding, data, and technology, applying their skills to challenges in areas like logistics and mobility.",
+        "llp_description": "The 'Project Ablaze: Harnessing Student Leadership in the Service of Community' LLP is a leadership program where students are trained to initiate, plan, and execute service-learning projects for the community."
+    },
+    {
+        "sch_id": 82,
+        "alp_description": "The 'Health and Food Science' ALP is a STEM program. Students learn about nutrition, food safety, and food technology through hands-on experiments and inquiry-based projects.",
+        "llp_description": "The 'GEARing Springfielders for Success' LLP is a Community Youth Leadership program that aims to develop students' leadership potential and character through various school and community-based activities."
+    },
+    {
+        "sch_id": 83,
+        "alp_description": "The 'Saints Engineering Design Programme' is a STEM ALP focused on the Future of Transportation. Students learn engineering and design principles, often through hands-on projects related to mobility or aerospace.",
+        "llp_description": "The 'Sports for Life' LLP promotes a healthy lifestyle and builds character through sports. It provides all students with exposure to a variety of sports and outdoor education activities."
+    },
+    {
+        "sch_id": 84,
+        "alp_description": "The 'Future of Transportation (Flight & Aerospace)' ALP is a STEM program. Students learn about the principles of flight, drone technology, and aerospace engineering through hands-on activities and industry-related projects.",
+        "llp_description": "The 'Integrated Character and Citizenship Education of growing Community Youth Leaders through Service and Leadership.' LLP focuses on developing students into leaders who serve the community, grounded in the school's values."
+    },
+    {
+        "sch_id": 85,
+        "alp_description": "The 'The Hildan Approach to Teaching Thinking through English Language Learning' ALP is a Languages program. It focuses on developing critical thinking and effective communication skills through the English language curriculum.",
+        "llp_description": "The 'Develop a Whole Person through Sports and Outdoor Education' LLP uses a wide array of sports and outdoor activities to build students' character, resilience, teamwork, and leadership skills."
+    },
+    {
+        "sch_id": 86,
+        "alp_description": "The 'Emerging Technologies' ALP is a STEM program where students engage with coding, data analytics, and artificial intelligence, applying these skills to create innovative solutions for real-world problems.",
+        "llp_description": "The 'Music & Music Technology' LLP provides students with opportunities in both traditional music performance and modern music production, fostering creativity and technical skills in the sonic arts."
+    },
+    {
+        "sch_id": 87,
+        "alp_description": "The 'Applied Sciences for Sustainable Development' ALP is a STEM program. Students use scientific inquiry and Design Thinking to create solutions for environmental challenges, focusing on sustainability.",
+        "llp_description": "The 'Thoughtful Leadership Programme' is a Community Youth Leadership LLP. It is a structured program designed to nurture students into thoughtful and effective leaders who are grounded in values and serve the community."
+    },
+    {
+        "sch_id": 88,
+        "alp_description": "The 'Creative Engineering : Inter-disciplinary Authentic Problem Solving' ALP is a STEM program. It challenges students to apply engineering and design principles to solve real-world problems in a creative and interdisciplinary way.",
+        "llp_description": "The 'Creative Expressions: Character development through visual and performing arts' LLP uses various art forms as a platform to develop students' character, confidence, and creative expression."
+    },
+    {
+        "sch_id": 89,
+        "alp_description": "The 'Sustainability Education @ USS' ALP is a STEM program. It focuses on environmental science and green technologies, empowering students to design and advocate for sustainable solutions.",
+        "llp_description": "The 'Lead through Outdoor and Sporting Adventures' LLP uses sports and outdoor education to build character, leadership, and resilience. It emphasizes teamwork and overcoming challenges."
+    },
+    {
+        "sch_id": 90,
+        "alp_description": "The 'Effective Communication and Critical Thinking through Media Literacy' ALP is a Humanities program. It equips students with the skills to critically analyze media and communicate their ideas persuasively.",
+        "llp_description": "The 'STAR (Sportsmanship, Teamwork and Resilience) through Sports and Music' LLP is an interdisciplinary program that uses both sports and music as platforms to develop character and key life skills."
+    },
+    {
+        "sch_id": 91,
+        "alp_description": "The 'Innovation & Social Entrepreneurship' ALP is a Business-focused program. Students learn to identify social issues and apply Design Thinking and business principles to create sustainable entrepreneurial solutions.",
+        "llp_description": "The 'Arts for Life!' LLP provides broad exposure to Music and Performing Arts. It aims to nurture an appreciation for the arts, develop creativity, and build students' confidence."
+    },
+    {
+        "sch_id": 92,
+        "alp_description": "The 'Speech Communication Arts' ALP is a Languages program. It focuses on developing students' confidence and eloquence in public speaking, drama, and interpersonal communication.",
+        "llp_description": "The 'Active Citizenship for Social Change' LLP is a Community Youth Leadership program. It empowers students to become active citizens who identify community needs and lead projects to create positive social change."
+    },
+    {
+        "sch_id": 93,
+        "alp_description": "The 'STEM for Sustainable Living in the Community' ALP focuses on applying STEM principles to environmental and community issues, such as green energy, urban farming, and waste reduction.",
+        "llp_description": "The 'Learners and Leaders for Life' LLP is a Community Youth Leadership program. It provides a tiered approach to leadership training, encouraging students to take initiative and serve the community."
+    },
+    {
+        "sch_id": 94,
+        "alp_description": "The 'Robotics Education & Enterprise (TREE)' ALP is a STEM program. It develops computational thinking and engineering skills as students learn to build, program, and apply robots to solve real-world problems, fostering innovation.",
+        "llp_description": "The 'Student Leadership Development through Involvement in the Community' LLP focuses on nurturing students into confident and caring leaders by providing opportunities to plan and execute community service projects."
+    },
+    {
+        "sch_id": 95,
+        "alp_description": "The 'Real Food, Real Science' ALP is a STEM program focusing on Health and Food Science. Students explore the science of food, nutrition, and sustainable food practices through hands-on experiments and inquiry projects.",
+        "llp_description": "The 'Paying it Forward: WDL’s Glocal Leadership Programme' LLP develops students' leadership skills with a 'glocal' (global and local) perspective, encouraging them to lead service projects that make a positive impact."
+    },
+    {
+        "sch_id": 96,
+        "alp_description": "The ALP 'To nurture inquiring minds and inventive thinkers through technology' is a STEM program. It uses coding, robotics, and other emerging technologies to develop students' problem-solving skills and inventive thinking.",
+        "llp_description": "The 'Character Development through the Arts, Media and Design' LLP uses aesthetics as a platform to cultivate creativity, build confidence, and instill values, allowing students to explore various forms of self-expression."
+    },
+    {
+        "sch_id": 97,
+        "alp_description": "The 'ALP in Sonic Arts (Music, Media & Technology)' is an Aesthetics program. Students learn about music production, sound engineering, and media technology, blending creativity with technical skills to create their own sonic art.",
+        "llp_description": "The 'Leading with Empathy, Serving with Compassion through the Arts' LLP is an interdisciplinary leadership program. It uses the arts to develop empathy and encourages students to use their creative talents to lead and serve the community."
+    },
+    {
+        "sch_id": 98,
+        "alp_description": "The 'Marine Robotics' ALP is a STEM program focused on the Future of Transportation. Students learn to design, build, and program underwater robots, applying engineering and coding skills to explore marine-related challenges.",
+        "llp_description": "The 'gRowing Values Through Sports and Outdoor Experiences' LLP uses a variety of sports (with a focus on rowing) and outdoor activities to build character, resilience, discipline, and teamwork."
+    },
+    {
+        "sch_id": 99,
+        "alp_description": "The 'Coding, Design, Thinking and Robotics (CODER)' ALP is a STEM program. It equips students with 21st-century skills by teaching them computational thinking and robotics to create solutions for real-world problems.",
+        "llp_description": "The 'M.E.L.O.D.Y. (Music Empowered Leaners, Our Dynamic Yuhuans)' LLP is a Music and Performing Arts program. It aims to develop students' musical talents, build their confidence, and foster an appreciation for the arts."
+    },
+    {
+        "sch_id": 100,
+        "alp_description": "The 'STEM for the Strategic Development of a Sustainable and Smart City (S4TEM@YI)' ALP focuses on urban solutions. Students use STEM and Design Thinking to address challenges related to sustainability and smart city development.",
+        "llp_description": "The 'Nurturing Honourable Leaders for Tomorrow (YI LEAD+)' LLP is a Community Youth Leadership program. It is a structured program that aims to develop students' character and leadership skills based on the school's values."
+    },
+    {
+        "sch_id": 101,
+        "alp_description": "The 'Fostering Innovation through Design Thinking' ALP is a Business-focused program. It teaches students to apply the Design Thinking process to identify needs and create innovative solutions, fostering an entrepreneurial mindset.",
+        "llp_description": "The 'YUYING C.A.R.E.S (Collaborate, Act, Reflect, Empathise, Serve)' LLP is a Community Youth Leadership program. It develops students into socially responsible leaders through active community service and reflection."
+    },
+    {
+        "sch_id": 102,
+        "alp_description": "The 'Future of Transportation' ALP is a STEM program. Students explore aerospace technology, drone programming, and automotive engineering, applying scientific principles to real-world transportation challenges.",
+        "llp_description": "The 'Outdoor Education for Character & Leadership Development' LLP uses outdoor adventure activities (like trekking and camping) as the primary platform to build students' resilience, teamwork, and leadership skills."
+    },
+    {
+        "sch_id": 103,
+        "alp_description": "The 'Design Thinking for Sustainability (DTS @ Admiralty)' ALP is a STEM program. It empowers students to be problem-solvers who use the Design Thinking process to create innovative solutions for environmental challenges.",
+        "llp_description": "The 'High Performance Mind-set for Personal Leadership' LLP is a leadership program. It focuses on developing students' personal leadership, resilience, and a growth mindset through various school activities."
+    },
+    {
+        "sch_id": 104,
+        "alp_description": "The 'Sustainability Education – Nurturing Students to be Stewards of Our Environment' ALP is a STEM program. It develops students' awareness of environmental issues through inquiry-based learning and hands-on projects related to sustainability.",
+        "llp_description": "The '3Rs – Leader U Development programme' (Ready, Respectful, Responsible) is a Community Service & Student Leadership LLP. It focuses on developing students' character and leadership skills through service to the community."
+    },
+    {
+        "sch_id": 105,
+        "alp_description": "The 'iDARE @ ATS' (Innovate, Design, Apply, Refine, Exhibit) ALP is an Innovation & Enterprise program. It develops students into inventive thinkers who apply the Design Thinking process to create solutions for real-world problems.",
+        "llp_description": "The 'L.E.A.D.: Character and Leadership Development through Outdoor Education Programme' LLP uses outdoor activities and challenges to build students' resilience, teamwork, and leadership skills."
+    },
+    {
+        "sch_id": 106,
+        "alp_description": "The 'Science, Design Technology & Design Thinking at ALPS (SDT2@ALPS)' ALP is a STEM program. It integrates these disciplines to nurture students as innovators who can create and design solutions for everyday challenges.",
+        "llp_description": "The 'Cultural Intelligence (CQ) – The Code of Life' LLP is a leadership program. It aims to develop students' social-emotional skills and cultural awareness, enabling them to lead and interact effectively in a diverse society."
+    },
+    {
+        "sch_id": 107,
+        "alp_description": "The 'Empowering Learners to be Environmental Activists (ELEA)' ALP is an interdisciplinary program. It integrates science and social studies to empower students to take action and advocate for environmental sustainability.",
+        "llp_description": "The 'A.G.P.S Arts (Aspire, Grow, Passion and Serve through the Arts)' LLP is a Performing Arts program. It aims to develop students' character, creativity, and confidence through broad-based exposure to music, dance, and drama."
+    },
+    {
+        "sch_id": 108,
+        "alp_description": "The 'Eureka!' ALP is a STEM program focusing on Material Science. It nurtures students' curiosity and inquiry skills by having them investigate the properties of different materials and invent new products.",
+        "llp_description": "The 'VIVACE! - Values Inculcation Via Arts and Creative Experiences' LLP is a Performing Arts program. It provides students with exposure to various art forms to develop their creativity and instill positive values."
+    },
+    {
+        "sch_id": 109,
+        "alp_description": "The 'Nurturing Problem Solvers through Computational Thinking' ALP is a STEM program. It equips students with logical reasoning and problem-solving skills through coding and robotics activities.",
+        "llp_description": "The 'Nurturing and Developing 21st Century Leaders through Enrichment and Lifeskills (ENL) Programmes' LLP focuses on building students' leadership competencies and essential life skills through various workshops and service projects."
+    },
+    {
+        "sch_id": 110,
+        "alp_description": "The 'POISE@AMKP' (Programme to develop Outstanding, Inspired and SEnsitive communicators) ALP is a Languages program. It aims to develop students into confident and articulate speakers through various language arts activities.",
+        "llp_description": "The 'Nurturing the Confident AMKPian' LLP is a leadership program. It focuses on building students' confidence, resilience, and social-emotional skills through a variety of school programs and activities."
+    },
+    {
+        "sch_id": 111,
+        "alp_description": "The 'Creative Thinkers' ALP is an interdisciplinary program. It integrates Design Thinking and inquiry-based learning to develop students' creativity and critical thinking skills in solving real-world problems.",
+        "llp_description": "The 'All for Sports, Sports for All @ ACS(Junior)' LLP is a Sports & Outdoor Education program. It aims to promote a healthy lifestyle, sportsmanship, and character development through active participation in sports."
+    },
+    {
+        "sch_id": 112,
+        "alp_description": "The 'Dream it, Do it' ALP is a Languages program. It focuses on developing students' communication and creative expression skills through storytelling, drama, and public speaking.",
+        "llp_description": "The 'Building Character Through Sports' LLP uses a variety of sports and physical activities as a platform to instill values such as discipline, resilience, and teamwork."
+    },
+    {
+        "sch_id": 113,
+        "alp_description": "The 'Beacon Environmental Stewardship' ALP is a STEM program. It focuses on sustainability, teaching students about environmental science and empowering them to take action and lead green initiatives.",
+        "llp_description": "The 'BEACON FUTURE READY PROGRAMME (BFRP) - Beacon At Your Service (BAYS)' LLP is a Community Service & Student Leadership program. It develops students' leadership skills through active service to the school and community."
+    },
+    {
+        "sch_id": 114,
+        "alp_description": "The 'Environmental Education (E2@BGPS)' ALP is an interdisciplinary program. It integrates environmental themes into the curriculum to develop students as responsible citizens and advocates for sustainability.",
+        "llp_description": "The 'Sports and Aesthetics To Reinforce Values Education (STRIVE @ BGPS)' LLP is an interdisciplinary program. It uses both sports and arts to provide a holistic education, build character, and instill values."
+    },
+    {
+        "sch_id": 115,
+        "alp_description": "The 'E2SL@BPS (Environment Education in Sustainable Living)' ALP is a STEM program. It focuses on teaching students about sustainability and green practices through hands-on, inquiry-based projects.",
+        "llp_description": "The 'Bendemeer’s TEMPO (Towards Enhancement of Music and Performing Arts Opportunities)' LLP is a Performing Arts program. It aims to develop students' creativity, confidence, and appreciation for music and the arts."
+    },
+    {
+        "sch_id": 116,
+        "alp_description": "The 'Aspiring Confident Engineers (ACE)@BRPS' ALP is a STEM program. It focuses on Material Science, allowing students to explore, experiment, and invent with different materials, fostering engineering and design skills.",
+        "llp_description": "The 'Leader for Life' LLP is a Community Service & Student Leadership program. It is a school-wide initiative to develop leadership competencies and character in every student through various roles and responsibilities."
+    },
+    {
+        "sch_id": 117,
+        "alp_description": "The 'Thinking curriculum through Habits of Mind @ BLGPS' ALP is an interdisciplinary program. It focuses on developing students into self-directed learners by explicitly teaching thinking skills and positive learning habits.",
+        "llp_description": "The 'Empowering the next generation of Eco Stewards through Environment Education' LLP is a leadership program. It focuses on developing students as environmental leaders who advocate for sustainability within the school and community."
+    },
+    {
+        "sch_id": 118,
+        "alp_description": "The 'CAR2E : Critical & Appreciative Reading to Respond Empathetically' ALP is a Languages program. It aims to develop students into thoughtful readers and effective communicators who can respond to texts with empathy.",
+        "llp_description": "The 'i2 Can Dance!' LLP is a Performing Arts program. It provides all students with exposure to various dance forms, aiming to build confidence, creativity, and a joy for the arts."
+    },
+    {
+        "sch_id": 119,
+        "alp_description": "The 'Inquiry-based Learning supported by Thinking Routines' ALP is an interdisciplinary program. It focuses on developing students' critical thinking and curiosity by teaching them structured thinking routines to explore complex topics.",
+        "llp_description": "The 'Music for Everyone - Building Empathy and Resilience' LLP is a Performing Arts program. It uses music education as a platform to develop students' social-emotional skills, empathy, and resilience."
+    },
+    {
+        "sch_id": 120,
+        "alp_description": "The 'Inspiring Reflective and Innovative Self-directed learners (IRIS)' ALP is an interdisciplinary program. It focuses on developing students' metacognitive skills, encouraging them to be reflective and innovative in their learning.",
+        "llp_description": "The 'Arts Alive! - Nurturing Confident Leaders through the Arts' LLP is a Performing Arts program. It uses drama, dance, and music to build students' confidence, creative expression, and leadership skills."
+    },
+    {
+        "sch_id": 121,
+        "alp_description": "The 'Curating My Learning' and 'Ready for Tomorrow' ALP is an ICT program. It develops students' digital literacy and self-directed learning skills, teaching them to use technology to curate and manage their own learning.",
+        "llp_description": "The 'Immersing in Canberra Experience through Musical Theatre Education' LLP is a Performing Arts program. It provides a unique experience in musical theatre, integrating drama, music, and dance to build confidence and teamwork."
+    },
+    {
+        "sch_id": 122,
+        "alp_description": "The 'MAKE@CCPS' ALP is a STEM program focused on sustainability. It provides a maker-space environment where students learn through hands-on tinkering and apply Design Thinking to create sustainable solutions.",
+        "llp_description": "The 'Nurturing Physically Fit, Adventurous, Courageous and Empowered Leaders through Sports (PACE@CCPS)' LLP uses sports and outdoor education to build character, resilience, and leadership skills."
+    },
+    {
+        "sch_id": 123,
+        "alp_description": "The 'Thinking Curriculum @Cantonment Primary School (TC@CPS)' ALP is an interdisciplinary program. It embeds thinking routines and inquiry-based learning across all subjects to develop students into critical thinkers.",
+        "llp_description": "The 'PAVE (Performing Arts for Values and Excellence)' LLP is a Performing and Visual Arts program. It uses the arts as a platform to instill values, build character, and develop students' creative talents."
+    },
+    {
+        "sch_id": 124,
+        "alp_description": "The 'Nature-based Education towards Environmental Sustainability' ALP is a STEM program. It uses the school's natural environment and biodiversity to teach students about sustainability and environmental science through hands-on, outdoor learning.",
+        "llp_description": "The 'Holistic Education through the ARTS at Casuarina Primary School (HEARTS@CAPS)' LLP is a Visual Arts & Design program. It focuses on developing students' creativity, aesthetic awareness, and character through a broad-based arts education."
+    },
+    {
+        "sch_id": 125,
+        "alp_description": "The 'Coding in Environmental Solutions (CODES)' ALP is a STEM program. It integrates coding and computational thinking with sustainability education, where students design and code solutions for environmental problems.",
+        "llp_description": "The 'Values Infused Through Active Learning in Sports (VITALS)' LLP is a Sports & Outdoor Education program. It uses a variety of sports and physical activities to instill core values, sportsmanship, and resilience."
+    },
+    {
+        "sch_id": 126,
+        "alp_description": "The 'Creative and Inventive Thinking (CIT) Programme' is an interdisciplinary ALP. It is designed to develop students into curious and creative thinkers by teaching them specific thinking routines and problem-solving skills.",
+        "llp_description": "The 'Upstanding Leaders @ Cedar Primary School' LLP is a Community Service & Student Leadership program. It focuses on developing students' character and leadership competencies based on the school's 'Upstander' values."
+    },
+    {
+        "sch_id": 127,
+        "alp_description": "The 'ECO@CKP' ALP is a STEM program focused on sustainability. It provides students with opportunities to learn about environmental science and conservation through hands-on activities and projects.",
+        "llp_description": "The 'Sports, Outdoor, Athletics & Recreation @ Changkat Primary (SOAR@CKP)' LLP is a Sports & Outdoor Education program. It aims to develop students' physical skills, character, and resilience through a wide range of sporting activities."
+    },
+    {
+        "sch_id": 128,
+        "alp_description": "The 'Confident, Competent and Respectful Communicators' ALP is a Languages program. It focuses on developing students' communication skills, including public speaking and interpersonal skills, grounded in the school's values.",
+        "llp_description": "The 'Community Student Leadership' LLP focuses on developing students into leaders who serve. It provides opportunities for students to take on leadership roles and contribute to the community."
+    },
+    {
+        "sch_id": 129,
+        "alp_description": "The 'Future-ready K-Champs' ALP is an interdisciplinary program. It focuses on developing 21st-century competencies, such as critical thinking and digital literacy, through technology-enabled and inquiry-based learning.",
+        "llp_description": "The 'ArtsONE+ : Purposeful Learning of Music and Performing Arts Using the Self-regulated Approach' LLP is a Performing Arts program. It aims to develop students' artistic talents and self-regulation skills."
+    },
+    {
+        "sch_id": 130,
+        "alp_description": "The 'Drama and Literary Arts for LifE! (D’LitE)' ALP is a Languages program. It uses drama and literary arts to build students' confidence, creativity, and effective communication skills.",
+        "llp_description": "The 'PROACTIVE Leader in Me Development Programme' LLP is a Community Service & Student Leadership program. It is based on 'The 7 Habits of Highly Effective People' to develop personal and interpersonal leadership skills."
+    },
+    {
+        "sch_id": 131,
+        "alp_description": "The 'LEAPS (Learn, Engage, Articulate & Perform!)' ALP is a Languages program. It focuses on developing students into confident and articulate communicators through various performance and language arts activities.",
+        "llp_description": "The 'SPARK (Sports for Active and Resilient Kids)' LLP is a Sports & Outdoor Education program. It aims to build students' physical fitness, resilience, and character through active participation in sports."
+    },
+    {
+        "sch_id": 132,
+        "alp_description": "The 'STEM in Sustainability' ALP focuses on developing students as eco-stewards. Students learn about environmental science and use STEM skills to design projects that promote sustainability.",
+        "llp_description": "The 'Character Lives In My Behaviour (CLIMB)' LLP is a Community Service & Student Leadership program. It focuses on character formation and leadership development through service and values-based education."
+    },
+    {
+        "sch_id": 133,
+        "alp_description": "The 'Trash to Treasure' ALP is a STEM program focused on sustainability. It encourages students to apply creativity and scientific principles to upcycle waste materials, fostering innovation and environmental responsibility.",
+        "llp_description": "The 'IJSports' LLP is a Sports & Outdoor Education program. It focuses on developing students' physical skills, sportsmanship, and resilience through a variety of sports and games."
+    },
+    {
+        "sch_id": 134,
+        "alp_description": "The 'Maker's Fantasy - Innovations in Math and Science for a Sustainable Earth' ALP is a STEM program. It uses 'Maker' activities and Design Thinking to help students apply Math and Science concepts to create innovative solutions for environmental sustainability.",
+        "llp_description": "The 'A Leader in Every St Nicks Girl' LLP is a comprehensive student leadership program. It focuses on developing the character and leadership potential of every student, providing tiered training and opportunities to lead and serve."
+    },
+    {
+        "sch_id": 135,
+        "alp_description": "The 'Chongfu Design Thinkers' Programme' is an Innovation & Enterprise ALP. It equips all students with the Design Thinking framework, nurturing them to become creative problem-solvers and innovators who can empathize with user needs.",
+        "llp_description": "The 'Growing Character through Sports and Outdoor Education' LLP uses physical activities, sports, and outdoor adventure as the primary platform to instill school values, build resilience, and develop teamwork."
+    },
+    {
+        "sch_id": 136,
+        "alp_description": "The 'EPIC - Empowering Pupils to Innovate for the Community' ALP is an Innovation & Enterprise program. It teaches students to apply innovation and Design Thinking skills to identify and solve real-world community problems.",
+        "llp_description": "The 'Chong Zheng Community Leaders (CZCL)' LLP is a Community Service & Student Leadership program. It aims to develop students into active and compassionate leaders who contribute positively to their community."
+    },
+    {
+        "sch_id": 137,
+        "alp_description": "The 'A Sustainable Environment with Robotics' ALP is a STEM program. It combines sustainability education with robotics (e.g., Lego WeDo/Spike Prime), where students build and program robots to solve environmental challenges.",
+        "llp_description": "The 'Leading through C.A.R.E' LLP is a Community Service & Student Leadership program. It is based on the school's values (e.g., Cooperation, Adaptability, Respect, Empathy) and develops leadership skills through service."
+    },
+    {
+        "sch_id": 138,
+        "alp_description": "The 'Inspiring Thinking Tinkerers @Clementi Primary' ALP is an interdisciplinary program. It fosters creativity and critical thinking by providing a hands-on 'tinkering' environment where students can invent and build solutions to various challenges.",
+        "llp_description": "The 'Instilling Lifelong Learning Through Visual Arts' LLP is a Visual Arts & Design program. It uses art education to develop students' creativity, aesthetic appreciation, and a persistent, positive attitude towards learning."
+    },
+    {
+        "sch_id": 139,
+        "alp_description": "The 'Developing 21st Century Competencies through Robotics' ALP is a STEM program. It uses robotics and coding as a platform to develop students' computational thinking, problem-solving, and collaboration skills.",
+        "llp_description": "The 'Developing Aesthetics Appreciation Through Music Empowerment' LLP is a Performing Arts program. It focuses on music to build students' confidence, creativity, and appreciation for the arts."
+    },
+    {
+        "sch_id": 140,
+        "alp_description": "The 'E3 (Enable, Enrich and Empower) Reasoning @ Concord' ALP is an interdisciplinary program. It focuses on developing students' critical thinking and logical reasoning skills across various subjects.",
+        "llp_description": "The 'Outdoor Education@Concord' LLP is a Sports & Outdoor Education program. It uses outdoor adventure activities and challenges to build students' character, resilience, and teamwork skills."
+    },
+    {
+        "sch_id": 141,
+        "alp_description": "The 'Urban Food Warriors' ALP is an interdisciplinary program on sustainability. Students learn about urban farming, food security, and environmental science, empowering them to become advocates for food sustainability.",
+        "llp_description": "The 'Creativity Through Dance' LLP is a Performing Arts program. It provides all students with exposure to various dance forms, aiming to develop their creativity, confidence, and physical expression."
+    },
+    {
+        "sch_id": 142,
+        "alp_description": "The 'Digital and Media Literacy through S.E.N.S.E@ Damai' ALP is an ICT & Media program. S.E.N.S.E (Search, Evaluate, Navigate, Share, Ethically) aims to develop students into safe, responsible, and discerning users of digital media.",
+        "llp_description": "The 'SPARKS@Play Programme' LLP is a Sports & Outdoor Education program. It focuses on developing character, resilience, and teamwork through active play and a variety of sports."
+    },
+    {
+        "sch_id": 143,
+        "alp_description": "The 'Green Makers@Dazhong' ALP is a STEM program focused on sustainability. It combines environmental (Green) education with hands-on (Maker) activities, where students create and invent solutions for environmental problems.",
+        "llp_description": "The 'Arts Education Programme (AEP) @ Dazhong' LLP is a Performing Arts program. It provides all students with a broad-based education in various art forms to foster creativity and aesthetic appreciation."
+    },
+    {
+        "sch_id": 144,
+        "alp_description": "The 'DISC in DLSS (Design.Innovate.Service.Community)' ALP is an Innovation & Enterprise program. It equips students with the Design Thinking framework, encouraging them to innovate and design solutions that serve the community.",
+        "llp_description": "The 'Nurturing Mindful Servant Leaders @ De La Salle' LLP is a Community Service & Student Leadership program. It focuses on developing students' leadership skills through the lens of servant leadership and mindfulness."
+    },
+    {
+        "sch_id": 145,
+        "alp_description": "The 'Digital Creativity @ ESPS' ALP is an ICT & Media program. It aims to develop students' 21st-century skills by teaching them to use digital tools (like coding and media creation) to express their creativity.",
+        "llp_description": "The 'SPRING for Life - Developing Character through Sports' LLP is a Sports & Outdoor Education program. It uses sports as a platform to instill values, build resilience, and develop positive character traits."
+    },
+    {
+        "sch_id": 146,
+        "alp_description": "The 'Environmental Science and Sustainability' ALP is a STEM program. It develops students into advocates for the environment through hands-on, inquiry-based projects focused on green issues and sustainability.",
+        "llp_description": "The 'Values Inculcation through Dance' LLP is a Performing Arts program. It provides all students with exposure to various dance forms, using it as a creative medium to instill discipline, confidence, and teamwork."
+    },
+    {
+        "sch_id": 147,
+        "alp_description": "The 'nuCLEAR@EPPS (nurturing Citizen Leaders with Empathy And Resilience)' ALP is an interdisciplinary program. It focuses on developing students into empathetic and resilient leaders through various project-based learning activities.",
+        "llp_description": "The 'Arts Creatively Expressed @ Elias (ACE@Elias)' LLP is a Performing Arts program. It aims to develop students' creativity, confidence, and aesthetic appreciation through a broad range of arts experiences."
+    },
+    {
+        "sch_id": 148,
+        "alp_description": "The 'Nurturing Thinking' ALP is an interdisciplinary program. It is designed to explicitly teach critical thinking, creative thinking, and metacognitive skills to develop students into effective and self-directed learners.",
+        "llp_description": "The 'Every Child A Performer (ECAP)' LLP is a Performing Arts program. It provides all students with the opportunity to learn and perform, building their confidence, self-expression, and collaborative skills."
+    },
+    {
+        "sch_id": 149,
+        "alp_description": "The 'Environmental Innovators and Agents of Change' ALP is a STEM program. It focuses on sustainability, empowering students to use scientific inquiry and innovative thinking to address environmental challenges.",
+        "llp_description": "The 'Learning Through The Arts & Learning In The Arts' LLP is a Performing Arts program. It provides a holistic arts education, aiming to develop students' creativity, character, and appreciation for different art forms."
+    },
+    {
+        "sch_id": 150,
+        "alp_description": "The 'Fairfield wRiters, Reporters and Ambassadors Programme (FR2AP)' ALP is a Languages program. It hones students' communication and writing skills, training them to be confident speakers and effective writers.",
+        "llp_description": "The 'HeARTS: Building Empathy and Social Awareness through the arts' LLP is a Performing and Visual Arts program. It uses various art forms as a platform to develop students' social-emotional skills and empathy for others."
+    },
+    {
+        "sch_id": 151,
+        "alp_description": "The 'Caring for the Community through Interdisciplinary Learning' ALP is an interdisciplinary program. It combines learning from various subjects, focusing on Design Thinking and service to develop solutions for the community.",
+        "llp_description": "The 'iCARE - Leaders of Tomorrow' LLP is a Community Service & Student Leadership program. It focuses on developing students' leadership skills and character through the school's iCARE values and active community service."
+    },
+    {
+        "sch_id": 152,
+        "alp_description": "The 'FGPS Maker Education' ALP is a STEM program focused on sustainability. It provides a 'maker' culture where students learn through hands-on tinkering and apply Design Thinking to create sustainable products.",
+        "llp_description": "The 'Get REAL!@FGPS (Relate, Explore, Acquire for Life)' LLP is a Sports & Outdoor Education program. It uses outdoor experiences to teach life skills, build resilience, and develop students' character."
+    },
+    {
+        "sch_id": 153,
+        "alp_description": "The 'Sustainability – Nurturing Environment Champions for a Sustainable Future' ALP is an interdisciplinary program. It aims to develop students' awareness of environmental issues and empower them to take action for a sustainable future.",
+        "llp_description": "The 'Anchored and Driven Leaders through Sports Excellence' LLP is a Sports & Outdoor Education program. It focuses on developing leadership, resilience, and character through active participation and excellence in sports."
+    },
+    {
+        "sch_id": 154,
+        "alp_description": "The 'Future Skills programme' ALP is a STEM program focused on sustainability. It equips students with skills in Design Thinking and technology to create innovative solutions for environmental challenges.",
+        "llp_description": "The 'Greenova - Innovation in our green efforts' LLP is a Community Service & Student Leadership program. It empowers students to become environmental leaders who innovate and lead green initiatives."
+    },
+    {
+        "sch_id": 155,
+        "alp_description": "The 'Literacy Through Photojournalism' ALP is an ICT & Media program. It develops students' communication and literacy skills by teaching them to tell compelling stories through photography and journalism.",
+        "llp_description": "The 'Character Building Through Outdoor Experiential Learning' LLP is a Sports & Outdoor Education program. It uses outdoor challenges and activities to build resilience, teamwork, and positive character traits."
+    },
+    {
+        "sch_id": 156,
+        "alp_description": "The 'Nurturing the Thinking F.A.C.E (Frontierers who are Adaptive, Communicative and Empowered)' ALP is an interdisciplinary program. It focuses on developing critical thinking and communication skills to build student empowerment.",
+        "llp_description": "The 'DANCEFRONT (LLP)' is a Performing Arts program. It provides all students with opportunities to learn and express themselves through dance, building confidence and creativity."
+    },
+    {
+        "sch_id": 157,
+        "alp_description": "The 'Speak Up!' ALP is a Languages program. It is designed to develop students into confident and effective communicators through various language arts activities like public speaking and drama.",
+        "llp_description": "The 'Aesthetically Responding To Shine (ARTS)' LLP is a Performing Arts program. It aims to develop students' appreciation for the arts and build their confidence through a broad-based arts education."
+    },
+    {
+        "sch_id": 158,
+        "alp_description": "The 'Students As Designers for the 21st Century' ALP is a STEM program. It uses Design Thinking and technology (e.g., related to transportation) to empower students to design and create solutions for real-world problems.",
+        "llp_description": "The 'Environmental Champions @ FHPS Programme' LLP is a Community Service & Student Leadership program. It trains students to become environmental advocates who lead and promote sustainability in the school community."
+    },
+    {
+        "sch_id": 159,
+        "alp_description": "The 'From Farm to Table' ALP is an interdisciplinary program. It teaches students about food sustainability, urban farming, and nutrition through hands-on, inquiry-based learning.",
+        "llp_description": "The 'For the Love of the Arts' LLP is a Performing Arts program. It provides all students with exposure to various art forms, nurturing their creativity, appreciation, and self-expression."
+    },
+    {
+        "sch_id": 160,
+        "alp_description": "The 'Competent, Confident and Empathetic Communicators in Speech and Writing' ALP is a Languages program. It focuses on developing students' oral and written communication skills, grounded in empathy.",
+        "llp_description": "The 'GM Earth Warriors Environment Education (EE)' LLP is a Community Service & Student Leadership program. It develops students as environmental leaders who 'Empathise, Enrich and Empower' to champion green causes."
+    },
+    {
+        "sch_id": 161,
+        "alp_description": "The 'Fluent Speakers Future Stars' ALP is a Languages program. It aims to develop students into effective and confident bilingual communicators through a variety of language and public speaking activities.",
+        "llp_description": "The 'S.O.A.R. (Sports Opportunities and Achievement pRogramme)' LLP is a Sports & Outdoor Education program. It aims to develop character, sportsmanship, and resilience through active participation in sports."
+    },
+    {
+        "sch_id": 162,
+        "alp_description": "The 'Learning by Design' ALP is an interdisciplinary program. It uses the Design Thinking framework across various subjects to nurture students into creative problem-solvers and innovators.",
+        "llp_description": "The 'Developing 21st Century Lifelong Learners through Outdoor Education' LLP is a Sports & Outdoor Education program. It uses outdoor adventure and challenges to build resilience, teamwork, and leadership."
+    },
+    {
+        "sch_id": 163,
+        "alp_description": "The 'C.O.D.E.R.S (Computational Thinking to Develop Empathetic, Resilient Solvers)' ALP is a STEM program. It uses coding and robotics to develop computational thinking and empathy as students design solutions for others.",
+        "llp_description": "The 'NE2+ (positive): Nurturing Ethical and Effective Leaders with Positive mind-sets' LLP is a Community Service & Student Leadership program. It focuses on developing leadership skills and a positive, ethical mindset."
+    },
+    {
+        "sch_id": 164,
+        "alp_description": "The 'Bilingual LIterature Appreciation Student Series (BLISS)' ALP is a Languages program. It aims to develop students' appreciation for literature and their communication skills in both English and Mother Tongue.",
+        "llp_description": "The 'We are Thinking, Inventive and Zealous KIdZ (WHIZZ) to serve the community' LLP is a Community Service & Student Leadership program. It focuses on developing innovative thinking and a passion for service."
+    },
+    {
+        "sch_id": 165,
+        "alp_description": "The 'Innovation and Service Learning through Integrated Project Work (IPW@HGS)' ALP is an interdisciplinary program. It uses project work to develop innovation, empathy, and problem-solving skills as students serve the community.",
+        "llp_description": "The 'Character and Leadership through the Performing and Visual Arts' LLP uses the arts as a platform to develop students' character, confidence, and leadership competencies."
+    },
+    {
+        "sch_id": 166,
+        "alp_description": "The 'HPPS ALP Sustainability Programme' is a STEM program. It develops students' understanding of sustainability through inquiry-based projects and hands-on activities related to environmental science.",
+        "llp_description": "The 'Sports4Life@HPPS' LLP is a Sports & Outdoor Education program. It aims to develop a lifelong passion for sports and a healthy lifestyle, while also building character and resilience."
+    },
+    {
+        "sch_id": 167,
+        "alp_description": "The 'Digiminds@HIPS' ALP is a STEM program focused on sustainability. It develops students' computational thinking and digital skills as they create solutions for environmental challenges.",
+        "llp_description": "The 'Artistry in Ceramic @ HIPS' LLP is a Visual Arts & Design program. It leverages the school's niche in ceramics to develop students' creativity, discipline, and aesthetic appreciation."
+    },
+    {
+        "sch_id": 168,
+        "alp_description": "The 'Innovative & Inventive Learners through Integration of Curriculum (I to I)' ALP is an interdisciplinary program. It focuses on developing 21st-century skills by integrating innovation and invention projects into the curriculum.",
+        "llp_description": "The 'Learning for Life Programme in Sports and Outdoor Education' LLP uses sports and outdoor adventure to build students' character, resilience, and teamwork skills."
+    },
+    {
+        "sch_id": 169,
+        "alp_description": "The 'Computational Thinking in Mathematics' ALP is a STEM program. It integrates coding and computational logic into the math curriculum to enhance students' problem-solving and critical thinking skills.",
+        "llp_description": "The 'A Whole-school Student Leadership Development Programme through CCE' LLP is a leadership program. It focuses on developing students' character and leadership skills through the Character and Citizenship Education (CCE) curriculum."
+    },
+    {
+        "sch_id": 170,
+        "alp_description": "The 'X-Cell@HGP' ALP is a STEM program focused on sustainability. It provides students with hands-on, inquiry-based learning experiences related to environmental science and conservation.",
+        "llp_description": "The 'Character Development through Outdoor Education' LLP is a Sports & Outdoor Education program. It uses outdoor challenges and adventure to build students' resilience, teamwork, and leadership."
+    },
+    {
+        "sch_id": 171,
+        "alp_description": "The 'Education for Sustainable Development (ESD @ Huamin)' ALP is an interdisciplinary program. It aims to develop students into globally responsible citizens who actively contribute to a sustainable future.",
+        "llp_description": "The 'Creative Arts Programme for Students (C.A.P.S.)' LLP is a Visual Arts & Design program. It provides students with broad exposure to various art forms, nurturing their creativity and self-expression."
+    },
+    {
+        "sch_id": 172,
+        "alp_description": "The 'Creative Problem Solving at Innova Primary School (CPS@IPS)' ALP is an interdisciplinary program. It explicitly teaches creative problem-solving skills and thinking routines to develop students into innovative thinkers.",
+        "llp_description": "The 'Leading Through Serving' LLP is a Community Service & Student Leadership program. It develops students' leadership skills by providing them with opportunities to lead and serve the community."
+    },
+    {
+        "sch_id": 173,
+        "alp_description": "The 'Journalist-in-Making (JiM)' ALP is a Languages program. It develops students' communication and critical thinking skills by training them in the fundamentals of journalism, research, and media creation.",
+        "llp_description": "The 'Aesthetics Alive' LLP is a Performing Arts program. It aims to build students' confidence and creativity by providing them with a wide range of experiences in music, dance, and drama."
+    },
+    {
+        "sch_id": 174,
+        "alp_description": "The 'Green Explorers @ JS' ALP is a STEM program focused on sustainability. It develops students' environmental awareness and scientific inquiry skills through hands-on projects related to nature and conservation.",
+        "llp_description": "The 'Flourish @ JS' LLP is a leadership program that focuses on positive education. It aims to build students' character, resilience, and well-being through practices like mindfulness and gratitude."
+    },
+    {
+        "sch_id": 175,
+        "alp_description": "The 'Developing Every Pupil into a Confident Communicator' ALP is a Languages program. It provides various platforms, such as public speaking and drama, to build students' confidence and eloquence in communication.",
+        "llp_description": "The 'Arts Alive!' LLP is a comprehensive Performing and Visual Arts program. It aims to develop students' creativity, aesthetic appreciation, and confidence through broad-based exposure to the arts."
+    },
+    {
+        "sch_id": 176,
+        "alp_description": "The 'PLAY@JPS (Passion, Learning, Adapt & Apply, asking whY)' ALP is an Innovation & Enterprise program. It develops students' curiosity and problem-solving skills through inquiry-based and hands-on maker activities.",
+        "llp_description": "The 'Every Child A Leader @ JPS (ECAL @ JPS)' LLP is a Community Service & Student Leadership program. It provides a tiered approach to leadership, aiming to develop the leader in every child through various roles and service projects."
+    },
+    {
+        "sch_id": 177,
+        "alp_description": "The 'Art of Communication for Personal Excellence' ALP is a Languages program. It focuses on developing students into confident and effective communicators through various language arts and public speaking activities.",
+        "llp_description": "The 'Experiential Learning of Lifeskills for Personal Excellence' LLP is a Sports & Outdoor Education program. It uses outdoor adventure and experiential learning to teach life skills, resilience, and teamwork."
+    },
+    {
+        "sch_id": 178,
+        "alp_description": "The 'I.N.S.P.I.R.E. the Scientist in Me' ALP is a STEM program. It develops students' passion for science by engaging them in inquiry-based projects, research, and hands-on experiments.",
+        "llp_description": "The 'Character Development through Sports' LLP is a Sports & Outdoor Education program. It uses a variety of sports to instill values such as sportsmanship, resilience, and discipline."
+    },
+    {
+        "sch_id": 179,
+        "alp_description": "The 'Eco-lution' ALP is a STEM program focused on sustainability. It empowers students to become environmental advocates by engaging them in projects related to conservation and green solutions.",
+        "llp_description": "The 'Student Voice & Advocacy (SVA)' LLP is a Community Service & Student Leadership program. It trains students to become confident leaders who can effectively represent their peers and advocate for positive change."
+    },
+    {
+        "sch_id": 180,
+        "alp_description": "The 'Every Kong Hwaian an Effective Communicator' ALP is a Languages program. It focuses on developing students' bilingual communication skills, confidence, and oracy through various language arts activities.",
+        "llp_description": "The 'Exposure-Experience-Excel through Sports' LLP is a Sports & Outdoor Education program. It provides broad-based exposure to various sports, aiming to develop character, resilience, and a lifelong passion for healthy living."
+    },
+    {
+        "sch_id": 181,
+        "alp_description": "The 'Nurturing Joyful Learners through Critical and Inventive Thinking' ALP is an interdisciplinary program. It focuses on explicitly teaching thinking routines and skills to develop students into curious and creative problem-solvers.",
+        "llp_description": "The 'Developing Champions in Life through Sports' LLP is a Sports & Outdoor Education program. It uses sports as a platform to build character, resilience, and a 'champion' mindset of excellence and perseverance."
+    },
+    {
+        "sch_id": 182,
+        "alp_description": "The 'E-Cube: Engage, Excite, Express' ALP is a Languages program. It aims to develop students' communication skills and confidence by engaging them in exciting language activities that encourage self-expression.",
+        "llp_description": "The 'Learning for Life Programme in Visual Art and Design - ‘Let’s Think Design!’' LLP is a Visual Arts & Design program. It integrates Design Thinking into the art curriculum, nurturing students' creativity and problem-solving skills."
+    },
+    {
+        "sch_id": 183,
+        "alp_description": "The 'ThInkers with Heart' ALP is an interdisciplinary program. It combines critical thinking ('ThInkers') with empathy and character development ('Heart'), encouraging students to create solutions that are both smart and compassionate.",
+        "llp_description": "The 'STARS witHeARTs' LLP is a Performing Arts program. It develops students into 'Thinkers and Responsible Leaders' (STARS) with empathy ('witHeARTs') through a holistic education in the performing arts."
+    },
+    {
+        "sch_id": 184,
+        "alp_description": "The 'Robotics, Information and Technology Education (RITE) @ Lianhua' ALP is a STEM program. It focuses on developing students' computational thinking and digital literacy skills through hands-on robotics and coding.",
+        "llp_description": "The 'CHAMP for Life' LLP is a Sports & Outdoor Education program. It aims to develop students' character, resilience, and leadership skills through active participation in sports and outdoor adventure."
+    },
+    {
+        "sch_id": 185,
+        "alp_description": "The 'ELECTRA@MBS' (Empathetic Listeners. Effective Communicators. Trailblazing Advocates) ALP is a Languages program. It develops students' communication skills, empathy, and confidence to advocate for causes they believe in.",
+        "llp_description": "The 'Learning through an Ethnic Arts Programme (LEAP)' LLP is a Performing Arts program. It provides students with an appreciation for Singapore's diverse cultures through exposure to various ethnic arts, music, and dance."
+    },
+    {
+        "sch_id": 186,
+        "alp_description": "The 'Materials Around Us' ALP is a STEM program. It nurtures students' scientific inquiry skills by having them investigate the properties and applications of different materials through hands-on experiments.",
+        "llp_description": "The 'Marist Sports & Life Skills Experience' LLP is a Sports & Outdoor Education program. It aims to build character, instill values, and teach important life skills through active participation in sports."
+    },
+    {
+        "sch_id": 187,
+        "alp_description": "The 'SPARKS@MPS' (Spark Ideas, Spark Interest, Spark Action: Igniting A Passion for Purposeful Storytelling) ALP is a Languages program. It aims to develop students into effective communicators and storytellers.",
+        "llp_description": "The 'LEAD (Learn, Engage, Absorb, Demonstrate) to Serve @ MPS' LLP is a Community Service & Student Leadership program. It focuses on developing students' leadership skills through active service to the community."
+    },
+    {
+        "sch_id": 188,
+        "alp_description": "The 'Grooming Compassionate and Confident Ladies to Advocate for Worthy Causes' ALP is a Languages program. It develops students' communication and advocacy skills, empowering them to speak confidently for social causes.",
+        "llp_description": "The 'Enhancing Holistic Health through Sports and Outdoor Education (SPOEEX) @ Marymount' LLP is a Sports & Outdoor Education program. It focuses on developing physical fitness, resilience, and character through sports."
+    },
+    {
+        "sch_id": 189,
+        "alp_description": "The 'STEM@MFPS' ALP is a STEM program focused on sustainability. It provides students with inquiry-based learning experiences to understand environmental issues and create STEM-based solutions.",
+        "llp_description": "The 'LLP@MFPS: Development of Character, Citizenship and 21CC through the Arts' LLP is a Visual Arts & Design program. It uses the arts as a platform to develop character, creative expression, and 21st-century skills."
+    },
+    {
+        "sch_id": 190,
+        "alp_description": "The 'A3 Eco-Citizens@MTS' (Aware, Able, Active) ALP is an interdisciplinary program. It aims to develop students into environmentally conscious citizens who are aware of sustainability issues and take active steps to address them.",
+        "llp_description": "The 'SENCE @ MTS (Sports Education Nurturing Character Excellence)' LLP is a Sports & Outdoor Education program. It uses sports as a platform to build character, resilience, and a sense of excellence."
+    },
+    {
+        "sch_id": 191,
+        "alp_description": "The 'Nurturing Future Learners, Citizens and Leaders through a whole school Interdisciplinary approach in Eco-Environmental Curriculum' ALP is an interdisciplinary program. It integrates environmental education across all subjects.",
+        "llp_description": "The 'Meridian Values-Based Student Leadership In Action For 21CC' LLP is a leadership program. It focuses on developing students' leadership skills and 21st-century competencies through values-based and service-oriented projects."
+    },
+    {
+        "sch_id": 192,
+        "alp_description": "The 'Communication through Service Learning' ALP is a Languages program. It uniquely combines the development of communication skills (like public speaking) with active service-learning projects in the community.",
+        "llp_description": "The 'Outdoor and Sports Programme at MGS' LLP is a Sports & Outdoor Education program. It provides a wide range of sports and outdoor activities to build students' physical robustness, resilience, and character."
+    },
+    {
+        "sch_id": 193,
+        "alp_description": "The 'Montfort STEAM ALP' is a STEM program focused on sustainability. It integrates Science, Technology, Engineering, Arts, and Math to develop students into creative problem-solvers for environmental challenges.",
+        "llp_description": "The 'Developing Montfortians with CHRISTE values through sports' LLP is a Sports & Outdoor Education program. It uses sports as the context to instill the school's core values, develop character, and build resilience."
+    },
+    {
+        "sch_id": 194,
+        "alp_description": "The 'Watch Me SOAR (WMS)' ALP is a STEM program focusing on Health Science. It develops students' scientific inquiry skills by having them explore health-related issues and design solutions using technology.",
+        "llp_description": "The 'EMPOWER@NCPS' LLP is a Community Service & Student Leadership program. It aims to develop students' character and leadership skills, empowering them to take initiative and serve the community."
+    },
+    {
+        "sch_id": 195,
+        "alp_description": "The 'NHPS Thinking Programme' is an interdisciplinary ALP. It is a school-wide program that explicitly teaches various thinking routines and dispositions to develop students into effective and critical thinkers.",
+        "llp_description": "The 'From ME to WE (MEWE)' LLP is a Community Service & Student Leadership program. It focuses on developing students' character and leadership, guiding them from personal leadership ('ME') to community leadership ('WE')."
+    },
+    {
+        "sch_id": 196,
+        "alp_description": "The 'Problem-Solving Through Maker Education' ALP is an Innovation & Enterprise program. It provides a 'maker' environment where students learn through hands-on tinkering and apply Design Thinking to create innovative solutions.",
+        "llp_description": "The 'Building Culture Quotient through Dance' LLP is a Performing Arts program. It uses dance as a medium to develop students' cultural awareness, confidence, and creative expression."
+    },
+    {
+        "sch_id": 197,
+        "alp_description": "The 'Constructionist Game Design' ALP is an interdisciplinary program. Students learn coding, logic, and design principles by creating their own games, fostering computational thinking and creativity.",
+        "llp_description": "The 'Holistic Outdoor Physical Education & Sports (HOPES) Programmes' LLP is a Sports & Outdoor Education program. It aims to develop students' physical fitness, character, and resilience through a variety of sports and outdoor activities."
+    },
+    {
+        "sch_id": 198,
+        "alp_description": "The 'scieNcE Alive@NEwTown' ALP is an interdisciplinary program. It aims to make science learning engaging and relevant by using hands-on experiments and inquiry-based projects related to real-world contexts.",
+        "llp_description": "The 'A Leader in Every Child' LLP is a Community Service & Student Leadership program. It is a school-wide initiative focused on nurturing the leadership potential in every student through various roles and responsibilities."
+    },
+    {
+        "sch_id": 199,
+        "alp_description": "The 'Sustainable Green' ALP is a STEM program. It focuses on environmental sustainability, with students engaging in projects related to gardening, conservation, and green technologies.",
+        "llp_description": "The 'GRACE (Graciousness through Arts, Creating Excellence) in Performing Arts Programme' LLP is a Performing Arts program. It aims to develop students' artistic talents, build their character, and foster graciousness."
+    },
+    {
+        "sch_id": 200,
+        "alp_description": "The 'Curriculum Integration through Innovation' ALP is an interdisciplinary program. It focuses on developing 21st-century skills by having students work on innovative projects that integrate learning from multiple subjects.",
+        "llp_description": "The 'SporTs, OutdooR Programme and Inculcation of Values Education (STRIVE) @ Northoaks' LLP is a Sports & Outdoor Education program. It uses sports to build character, resilience, and a healthy lifestyle."
+    },
+    {
+        "sch_id": 201,
+        "alp_description": "The school's ALP is listed as 'na' (not available) in the source data. No further information could be found.",
+        "llp_description": "The 'Outdoor Education and Caring for our Environment @ Northshore (OCE@N)' LLP is a Sports & Outdoor Education program. It combines outdoor adventure with environmental education, developing resilience and a sense of stewardship."
+    },
+    {
+        "sch_id": 202,
+        "alp_description": "The 'Maker’s Sustainability Education' ALP is a STEM program. It combines 'Maker' culture (hands-on building and tinkering) with environmental education, empowering students to create sustainable products.",
+        "llp_description": "The 'Play Your Hearts Out @ North Spring' LLP is a Sports & Outdoor Education program. It focuses on developing character, teamwork, and resilience through active participation in sports and play."
+    },
+    {
+        "sch_id": 203,
+        "alp_description": "The 'Sustainable Living Starts with Me' ALP is a STEM program. It aims to develop students' environmental consciousness and scientific inquiry skills through projects focused on sustainable living.",
+        "llp_description": "The 'Every Pupil a Confident Performer' LLP is a Performing Arts program. It provides all students with opportunities in drama, music, or dance to build their confidence, creativity, and self-expression."
+    },
+    {
+        "sch_id": 204,
+        "alp_description": "The 'Play. Create. Share' ALP is an ICT & Media program. It aims to develop students into confident and creative communicators by teaching them coding, media production, and responsible digital citizenship.",
+        "llp_description": "The 'ArtsALIVE@VISTA' LLP is a Visual Arts & Design program. It provides students with a wide range of experiences in both visual and performing arts, aiming to develop their creativity and aesthetic appreciation."
+    },
+    {
+        "sch_id": 205,
+        "alp_description": "The 'Applied Thinking Programme' is an interdisciplinary ALP. It focuses on explicitly teaching critical and creative thinking skills, embedding thinking routines across the curriculum to develop students into better problem-solvers.",
+        "llp_description": "The 'My Story, My Stage' LLP is a Performing Arts program. It uses drama, dance, and music to help students build confidence, develop their communication skills, and find their voice."
+    },
+    {
+        "sch_id": 206,
+        "alp_description": "The 'Nurturing Language Artisans through an Interdisciplinary Approach' ALP focuses on developing students' language and communication skills, integrating arts and humanities to build confident and creative communicators.",
+        "llp_description": "The 'Lead with a Heart, Changemakers for The Future' LLP is a Community Service & Student Leadership program. It aims to develop students' empathy and leadership skills, empowering them to become active changemakers."
+    },
+    {
+        "sch_id": 207,
+        "alp_description": "The 'Opera Goes Green (OPG)' ALP is a STEM program focused on sustainability. It develops students' environmental awareness and scientific inquiry skills through hands-on projects related to conservation and green practices.",
+        "llp_description": "The 'Ignite De Arts @ OEPS' LLP is a Performing Arts program. It provides all students with a broad-based education in music, dance, and drama to ignite their passion for the arts and build confidence."
+    },
+    {
+        "sch_id": 208,
+        "alp_description": "The 'Act-cellent Education through Drama' ALP is a Languages program. It uses drama techniques to enhance students' language, communication, and collaboration skills, building their confidence in self-expression.",
+        "llp_description": "The 'Palm View Challenge – A Leader, An Advocate, A Force For Good' LLP is a Community Service & Student Leadership program. It aims to develop students into proactive leaders and advocates through service-learning projects."
+    },
+    {
+        "sch_id": 209,
+        "alp_description": "The 'Innovation through Service and Leadership (iSL@PVPS)' ALP is an Innovation & Enterprise program. It combines Design Thinking with service-learning, guiding students to create innovative solutions that serve the community.",
+        "llp_description": "The 'Sports Experiential Programme' LLP is a Sports & Outdoor Education program. It provides broad-based exposure to various sports and outdoor activities to build character, resilience, and teamwork."
+    },
+    {
+        "sch_id": 210,
+        "alp_description": "The 'D2C@PRPS: Discover, Dream and Create Possibilities' ALP is an Innovation & Enterprise program. It fosters an entrepreneurial spirit by teaching students Design Thinking and innovation skills to create new possibilities.",
+        "llp_description": "The 'E3 in Sports@PRPS' (Exposure, Experience, Excellence) LLP is a Sports & Outdoor Education program. It aims to develop a lifelong passion for sports and build character through a tiered sports education."
+    },
+    {
+        "sch_id": 211,
+        "alp_description": "The 'MoveIT' ALP is a STEM program focused on transportation. It integrates coding, robotics, and engineering principles, allowing students to design and build solutions related to the future of mobility.",
+        "llp_description": "The 'Aesthetics Expressions @ PL' LLP is a comprehensive Performing and Visual Arts program. It aims to develop students' creativity, confidence, and cultural awareness through a wide range of arts experiences."
+    },
+    {
+        "sch_id": 212,
+        "alp_description": "The 'Bilingual Media Studies (BMS) Programme' ALP is a Languages program. It develops students into effective bilingual communicators and critical thinkers by teaching them media literacy and content creation skills.",
+        "llp_description": "The 'Pei Chun Leaders Programme (PCLP)' LLP is a Community Service & Student Leadership program. It provides a structured framework to develop students' character and leadership skills, grounded in the school's values."
+    },
+    {
+        "sch_id": 213,
+        "alp_description": "The 'Competent, Confident Communicators' ALP is a Languages program. It focuses on developing students' oracy, reading, and writing skills, empowering them to communicate their ideas effectively and confidently.",
+        "llp_description": "The 'Developing Character and Leadership through STAR' (Self-defence, Track & field, Adventure and Racquet games) LLP is a Sports & Outdoor Education program. It uses a variety of sports to build character and leadership."
+    },
+    {
+        "sch_id": 214,
+        "alp_description": "The 'PLANET (Pei Tong Learn and Nurture the Environment with Technology)' ALP is a STEM program. It focuses on sustainability, empowering students to use technology and inquiry skills to care for the environment.",
+        "llp_description": "The 'I’MADD' (I'm an Artist, Designer, and Developer) LLP is a Performing Arts program. It aims to develop students' creativity, confidence, and collaborative skills through a broad-based education in the arts."
+    },
+    {
+        "sch_id": 215,
+        "alp_description": "The 'Project THINK (Thinking Holistic Innovative Networked Kids) for Home Earth' ALP is an interdisciplinary program. It develops students into innovative thinkers who can apply their learning to real-world environmental challenges.",
+        "llp_description": "The 'Sports, Character Development and Adventure Learning Experiences @ Peiying (SCALE@PEIYING)' LLP is a Sports & Outdoor Education program. It uses sports and adventure to build character, resilience, and leadership."
+    },
+    {
+        "sch_id": 216,
+        "alp_description": "The 'Advocacy through Thinking' ALP is an interdisciplinary program. It focuses on developing students' critical thinking and communication skills, empowering them to become effective advocates for causes they believe in.",
+        "llp_description": "The 'Fitness and Graciousness Through Dance' LLP is a Performing Arts program. It provides all students with exposure to dance, aiming to develop physical fitness, confidence, and graciousness."
+    },
+    {
+        "sch_id": 217,
+        "alp_description": "The 'Developing a Bilingual and Effective Speaker and wriTer in every pupil (BEST)' ALP is a Languages program. It aims to develop students into confident and competent communicators in both English and Mother Tongue.",
+        "llp_description": "The 'D’ARTS@PCS' (Discovering ARTS@PCS) LLP is a Performing Arts program. It provides a broad-based arts education, allowing students to discover their talents in music, dance, and drama."
+    },
+    {
+        "sch_id": 218,
+        "alp_description": "The 'Designing For InclUsivity (Design4U)' ALP is an Innovation & Enterprise program. It uses the Design Thinking framework to nurture empathy, encouraging students to design and create solutions for a more inclusive society.",
+        "llp_description": "The 'LOVE (Learning Our Values through Empathy) Experience' LLP is a Community Service & Student Leadership program. It focuses on developing students' character and leadership skills through empathy-driven service to the community."
+    },
+    {
+        "sch_id": 219,
+        "alp_description": "The 'Holistic English Literacy Programme (HELP)' ALP is a Languages program. It focuses on developing strong literacy skills and a love for the English language through a variety of engaging, holistic activities.",
+        "llp_description": "The 'Grow Every Music Student (GEMS@PC)' LLP is a comprehensive Performing and Visual Arts program. It provides all students with a foundational music education to nurture creativity and appreciation."
+    },
+    {
+        "sch_id": 220,
+        "alp_description": "The 'Action for a Sustainable Future through Science (IGNITE)' ALP is a STEM program. It aims to develop students into innovators who apply scientific inquiry and Design Thinking to solve sustainability challenges.",
+        "llp_description": "The 'APPLE (Achieving Purpose and Performance in Leadership Excellence)' LLP is a Community Service & Student Leadership program. It provides a structured pathway to develop students' leadership potential and character."
+    },
+    {
+        "sch_id": 221,
+        "alp_description": "The 'GreeNovation' ALP is an interdisciplinary program. It combines 'Green' (sustainability) with 'Innovation,' empowering students to use Design Thinking and STEM skills to create solutions for environmental issues.",
+        "llp_description": "The 'S.T.A.R.S. (Social-emotional learning and character development Through Active paRticipation in Sports)' LLP is a Sports & Outdoor Education program. It uses sports to build character and social-emotional skills."
+    },
+    {
+        "sch_id": 222,
+        "alp_description": "The 'E2C@PGVP (Effective and Empathetic Communicators)' ALP is a Languages program. It aims to develop students into confident speakers and writers who can communicate their ideas effectively and with empathy.",
+        "llp_description": "The 'Building of Character through Outdoor Experiential Learning' LLP is a Sports & Outdoor Education program. It uses outdoor adventure and challenges to build resilience, teamwork, and leadership."
+    },
+    {
+        "sch_id": 223,
+        "alp_description": "The 'Effective Communication' ALP is a Languages program. It provides various platforms, such as public speaking, debate, and drama, to develop students into confident and articulate communicators.",
+        "llp_description": "The 'CHAMPS (CHAracter Moulding Programme through Sports)@Qifa' LLP is a Sports & Outdoor Education program. It uses sports as a platform to instill values, build resilience, and develop sportsmanship."
+    },
+    {
+        "sch_id": 224,
+        "alp_description": "The 'Inventive and Critical Thinking Skills through Innovation and Entrepreneurship Excellence Programme' ALP is an Innovation & Enterprise program. It aims to develop students' problem-solving skills and entrepreneurial mindset through hands-on projects.",
+        "llp_description": "The 'Promotion of School Values through Sports Development Programme (SDP)' LLP is a Sports & Outdoor Education program. It uses sports as a platform to instill school values, build character, and promote a healthy lifestyle."
+    },
+    {
+        "sch_id": 225,
+        "alp_description": "The 'Environmental Project-based Learning' ALP is an interdisciplinary program. It uses project-based learning to engage students in solving real-world environmental and sustainability challenges.",
+        "llp_description": "The 'Connecting the heARTs with ARTs' LLP is a Visual Arts & Design program. It aims to develop students' creativity, empathy, and social-emotional skills through a broad-based education in the visual arts."
+    },
+    {
+        "sch_id": 226,
+        "alp_description": "The 'Nurturing 21st Century Competencies through Computational Thinking With Design Thinking' ALP is a STEM program. It integrates logical thinking (Computational) with user-centric problem-solving (Design) through coding and maker activities.",
+        "llp_description": "The 'G.R.I.T@RMPS' (Growth Mindset.Resilience.Independence.Teamwork) LLP is a Sports & Outdoor Education program. It focuses on developing these key character traits through sports and outdoor challenges."
+    },
+    {
+        "sch_id": 227,
+        "alp_description": "The 'Nurturing Confident Communicators' ALP is a Languages program. It provides various platforms, such as public speaking, storytelling, and drama, to develop students' oracy skills and confidence.",
+        "llp_description": "The 'Developing Creativity Through Collaborative Music Making' LLP is a Performing Arts program. It focuses on music, encouraging students to collaborate and create, thereby building teamwork and creativity."
+    },
+    {
+        "sch_id": 228,
+        "alp_description": "The 'Tinkers to Thinkers (T2T) Programme' ALP is a STEM program. It develops students from hands-on 'tinkering' with technology (like robotics) to becoming critical 'thinkers' who can design and innovate solutions.",
+        "llp_description": "The 'Every RSS Student A Leader' LLP is a Community Service & Student Leadership program. It is a school-wide initiative that provides tiered training and opportunities for all students to develop their leadership potential."
+    },
+    {
+        "sch_id": 229,
+        "alp_description": "The 'Comms-IT Rt!' (Communicate-IT Right!) ALP is a Languages and ICT program. It develops students' digital literacy and communication skills, teaching them to create and communicate effectively using technology.",
+        "llp_description": "The 'Every RVian a Leader' LLP is a Community Service & Student Leadership program. It aims to develop the leadership competencies and character of every student through various roles, responsibilities, and service projects."
+    },
+    {
+        "sch_id": 230,
+        "alp_description": "The 'Playworks – Nurturing Critical and Inventive Thinkers' ALP is an interdisciplinary program. It uses 'play' and hands-on maker activities to develop students' creativity and critical thinking skills.",
+        "llp_description": "The 'PeerWorks - Building Self, Supporting One Another, Serving the Community Together' LLP is a Community Service & Student Leadership program. It focuses on developing peer support, teamwork, and leadership through service."
+    },
+    {
+        "sch_id": 231,
+        "alp_description": "The 'Multi-Literacy Programme (MLP)' ALP is a STEM program focused on sustainability. It develops students' understanding of environmental and digital literacies through inquiry-based projects.",
+        "llp_description": "The 'Dance and Fitness' LLP is a Performing Arts and Sports program. It promotes a healthy lifestyle and builds confidence, discipline, and creativity through exposure to dance and fitness activities."
+    },
+    {
+        "sch_id": 232,
+        "alp_description": "The 'Augmenting Science Learning through Innovation' ALP is a STEM program. It uses innovative technologies (like AR/VR) and hands-on projects to deepen students' understanding and passion for science.",
+        "llp_description": "The 'Programme for Aesthetics Integration@Rosyth (PAIR)' LLP is a Performing Arts program. It integrates various art forms into the student experience to develop creativity, confidence, and aesthetic appreciation."
+    },
+    {
+        "sch_id": 233,
+        "alp_description": "The 'Robotics for a Better World' ALP is a STEM program. It uses robotics as a platform to teach students coding, engineering, and problem-solving skills, challenging them to create robots that can solve real-world problems.",
+        "llp_description": "The 'Sports Teach Responsibility, Inventiveness, Values & Excellence (STRIVE) @ Rulang' LLP is a Sports & Outdoor Education program. It uses sports to instill values, build character, and promote excellence."
+    },
+    {
+        "sch_id": 234,
+        "alp_description": "The 'Environmental Science' ALP is a STEM program. It develops students' scientific inquiry skills and environmental awareness through hands-on projects related to sustainability and conservation.",
+        "llp_description": "The 'Nurturing Self Leaders, Community Leaders and Peer Leaders' LLP is a Community Service & Student Leadership program. It provides a tiered approach to leadership development, focusing on self-mastery, peer support, and community service."
+    },
+    {
+        "sch_id": 235,
+        "alp_description": "The 'Future Skills through Experiential Project Work' ALP is an interdisciplinary program. It focuses on developing 21st-century skills like collaboration and critical thinking through engaging, project-based learning.",
+        "llp_description": "The 'Fostering ICAR2E THROUGH THE ARTS' LLP is a Performing Arts program. It uses the arts as a platform to instill the school's values (e.g., Integrity, Care, Resilience) and develop students' creativity."
+    },
+    {
+        "sch_id": 236,
+        "alp_description": "The 'Enhanced Spoken English Programme' ALP is a Languages program. It aims to develop students into confident and effective communicators through various oracy, presentation, and drama activities.",
+        "llp_description": "The 'Developing Values and Leadership through Sports Education' LLP is a Sports & Outdoor Education program. It uses sports as a context to build character, instill values, and develop leadership skills."
+    },
+    {
+        "sch_id": 237,
+        "alp_description": "The 'Caring and Responsible Environmentalist (CaRE) Programme' ALP is an interdisciplinary program. It focuses on sustainability, empowering students to become responsible advocates for the environment.",
+        "llp_description": "The 'Character and Leadership development through ADventure (CLAD)' LLP is a Sports & Outdoor Education program. It uses outdoor adventure and challenges to build students' resilience, teamwork, and leadership."
+    },
+    {
+        "sch_id": 238,
+        "alp_description": "The 'Environmental Science Programme' ALP is a STEM program. It provides students with hands-on, inquiry-based learning experiences to understand environmental issues and sustainability.",
+        "llp_description": "The 'Community and Student Leadership' LLP is a Community Service & Student Leadership program. It focuses on developing students' character and leadership competencies through active service to the school and community."
+    },
+    {
+        "sch_id": 239,
+        "alp_description": "The 'Stories Opening Windows to the world' ALP is a Languages program. It uses narratives, storytelling, and drama to build students' communication skills, cultural awareness, and empathy.",
+        "llp_description": "The 'SCGS, Arts For ‘Ur’ Life (SC-ArtFUL)' LLP is a Performing Arts program. It provides a rich, broad-based arts education to develop students' creativity, confidence, and lifelong appreciation for the arts."
+    },
+    {
+        "sch_id": 240,
+        "alp_description": "The 'Sustaining Gaia' ALP is an ICT & Media program. It combines environmental education ('Gaia') with digital media, teaching students to use technology to create and advocate for sustainability solutions.",
+        "llp_description": "The 'Love Dance. Love Life!' LLP is a Performing Arts program. It provides all students with exposure to dance, aiming to develop their confidence, creative expression, and physical well-being."
+    },
+    {
+        "sch_id": 241,
+        "alp_description": "The 'Nurturing Empathetic Change Makers' ALP is an interdisciplinary program. It uses Design Thinking and project-based learning to empower students to identify community needs and create solutions with empathy.",
+        "llp_description": "The 'Nurturing Leaders with a Heart' LLP is a Community Service & Student Leadership program. It focuses on developing students' leadership skills, grounded in empathy and a strong sense of service to others."
+    },
+    {
+        "sch_id": 242,
+        "alp_description": "The 'Saints as Servant Leaders who Bring Life to the Nations' ALP is an interdisciplinary leadership program. It focuses on developing students' character and leadership skills through the principles of servant leadership and community service.",
+        "llp_description": "The 'Sports for Life' LLP is a Sports & Outdoor Education program. It aims to develop a lifelong passion for sports and a healthy lifestyle, while also building character, resilience, and sportsmanship."
+    },
+    {
+        "sch_id": 243,
+        "alp_description": "The 'Inno-Eco-Creator Programme' ALP is a STEM program. It combines 'Innovation' and 'Eco' (sustainability), empowering students to become 'Creators' who design and build solutions for environmental challenges.",
+        "llp_description": "The 'Building Leaders with a Heart for Others through Sports and Arts' LLP is an interdisciplinary program. It uses both sports and the arts as platforms to develop students' character, leadership, and empathy."
+    },
+    {
+        "sch_id": 244,
+        "alp_description": "The 'CODE@SAPS' ALP is a STEM program. It develops students' computational thinking and problem-solving skills through coding and robotics, allowing them to apply their learning in game design projects.",
+        "llp_description": "The 'SAPS Visual Arts Programme (SAPS VAP): Learn, Grow and Serve' LLP is a Visual Arts program. It aims to develop students' creativity and character, encouraging them to use their artistic talents to serve the community."
+    },
+    {
+        "sch_id": 245,
+        "alp_description": "The 'Hildan Ambassador Programme' ALP is a Languages program. It focuses on developing students into confident and effective communicators, training them in public speaking and ambassadorship skills.",
+        "llp_description": "The 'IMPRINTS Alive!' LLP is a comprehensive Performing and Visual Arts program. It aims to nurture creativity, cultural awareness, and leadership through a wide range of aesthetic experiences."
+    },
+    {
+        "sch_id": 246,
+        "alp_description": "The 'H.E.A.R.T of Communication' ALP is a Languages program. It focuses on developing students into empathetic and effective communicators through a tiered approach involving real-life application.",
+        "llp_description": "The 'Sports A. C. E' (Sports for All; Sports for Continuity & Character; Sports for Excellence) LLP is a Sports & Outdoor Education program. It provides a tiered approach to sports, building character and promoting a healthy lifestyle."
+    },
+    {
+        "sch_id": 247,
+        "alp_description": "The 'Smart, Selfless and Sustainability (SSS) Stewards' ALP is an interdisciplinary program. It integrates technology ('Smart') with values ('Selfless') to empower students to become advocates for environmental sustainability.",
+        "llp_description": "The 'Physical EducAtion and Sports for every StephenIAN (PASSIAN)' LLP is a Sports & Outdoor Education program. It aims to instill a lifelong love for sports and develop character through active participation."
+    },
+    {
+        "sch_id": 248,
+        "alp_description": "The 'Gabrielite Digital Literacy Programme (GDLP)' ALP is an ICT & Media program. It aims to develop students into safe, responsible, and competent users of digital technology, focusing on media literacy and cyber wellness.",
+        "llp_description": "The 'Montfortian Leadership Programme (MLP)' LLP is a Community Service & Student Leadership program. It develops students' character and leadership skills, grounded in the school's Montfortian values of service and compassion."
+    },
+    {
+        "sch_id": 249,
+        "alp_description": "The 'Observe - Reflect - Act (ORA @ SJI Junior)' ALP is an interdisciplinary program. It uses this three-step, inquiry-based process to develop students into empathetic and proactive problem-solvers for community issues.",
+        "llp_description": "The 'Sports Experience Reinforcing Values Education (Serve@SJIJ)' LLP is a Sports & Outdoor Education program. It uses sports and physical activities as a platform to reinforce school values, teamwork, and resilience."
+    },
+    {
+        "sch_id": 250,
+        "alp_description": "The 'I am a TNPS Influencer' ALP is a Languages program. It develops students' communication and digital literacy skills, empowering them to become positive influencers and responsible content creators.",
+        "llp_description": "The 'Green for Life (G4Life) Programme' LLP is a Community Service & Student Leadership program. It focuses on character building through environmental education, developing students as eco-leaders."
+    },
+    {
+        "sch_id": 251,
+        "alp_description": "The 'STAR ACTtituDE' ALP is a Languages program. It uses Drama in Education to develop students' confidence, creativity, and communication skills, fostering a positive 'attitude' for learning.",
+        "llp_description": "The 'Future-ready Citizens - Developing the Community Leader' LLP is a Community Service & Student Leadership program. It aims to develop students into active and responsible citizens who lead and serve their community."
+    },
+    {
+        "sch_id": 252,
+        "alp_description": "The 'D.R.I.V.E. - Developing Resilient Innovative Entrepreneurs' ALP is an Innovation & Enterprise program. It fosters an entrepreneurial mindset by teaching students Design Thinking, resilience, and problem-solving skills.",
+        "llp_description": "The 'Team Sports Excellence @ TKP' LLP is a Sports & Outdoor Education program. It focuses on developing character, teamwork, and leadership skills through active participation and excellence in team sports."
+    },
+    {
+        "sch_id": 253,
+        "alp_description": "The 'C3@TNS (Critical, Creative & Computational Thinking)' ALP is a STEM program. It integrates these three types of thinking skills through coding, robotics, and other hands-on STEM activities.",
+        "llp_description": "The 'ENRICH@TNS' (Experiential, Novel, Rigorous, ICT-based, Character-focused, Holistic) LLP is a Sports & Outdoor Education program. It provides a holistic experience to develop character, resilience, and a healthy lifestyle."
+    },
+    {
+        "sch_id": 254,
+        "alp_description": "The 'TinkeringG Stars' ALP is a STEM program focused on sustainability. It provides a 'tinkering' environment for students to explore, experiment, and invent solutions, fostering creativity and problem-solving.",
+        "llp_description": "The 'Art of Communication through Multimedia' LLP is a Visual Arts & Design program. It equips students with digital and communication skills, teaching them to convey ideas effectively through various multimedia platforms."
+    },
+    {
+        "sch_id": 255,
+        "alp_description": "The 'Media Whiz Kids! Nurturing Confident and Media Literate Communicators' ALP is a Languages program. It develops students' communication skills and critical thinking by teaching them to analyze and create media.",
+        "llp_description": "The 'I-LEAD, I-SERVE – Leadership through Service' LLP is a Community Service & Student Leadership program. It focuses on developing students' leadership skills, grounded in the belief that leaders serve their community."
+    },
+    {
+        "sch_id": 256,
+        "alp_description": "The 'Innovative Thinking through Coding and Robotics' ALP is a STEM program. It develops students' computational thinking and problem-solving skills through hands-on coding and robotics projects.",
+        "llp_description": "The 'Character Development through Team Sports' LLP is a Sports & Outdoor Education program. It uses a variety of team sports to instill values such as sportsmanship, resilience, and teamwork."
+    },
+    {
+        "sch_id": 257,
+        "alp_description": "The 'RoboALERT (Applicative Learning Experience through Robotics at Temasek)' ALP is a STEM program. It uses robotics as a platform to develop students' coding, engineering, and problem-solving skills in a hands-on environment.",
+        "llp_description": "The 'SOAR (Sports Opportunities for Active lifestyle and physical Resilience)' LLP is a Sports & Outdoor Education program. It aims to develop a lifelong passion for sports and build physical resilience through a variety of activities."
+    },
+    {
+        "sch_id": 258,
+        "alp_description": "The school's ALP is listed as 'na' (not available) in the source data. No further information could be found.",
+        "llp_description": "The 'iDARE through the ARTs' (Integrity, DAnce, REspect, Resilience, Empathy) LLP is a Performing Arts program. It uses the arts as a platform to instill school values and develop students' creativity and confidence."
+    },
+    {
+        "sch_id": 259,
+        "alp_description": "The 'Critical Thinking Accelerated Programme (CAPtivate)' ALP is a Languages program. It focuses on developing students' critical thinking and communication skills, enabling them to analyze information and articulate their ideas effectively.",
+        "llp_description": "The 'CharGE UP! (Character Development through Green & Experiential Learning @ Unity Primary)' LLP is a leadership program. It focuses on building character through environmental advocacy and experiential learning."
+    },
+    {
+        "sch_id": 260,
+        "alp_description": "The school's ALP is listed as 'na' (not available) in the source data. No further information could be found.",
+        "llp_description": "The 'Growing Kindness through the Outdoors' LLP is a Sports & Outdoor Education program. It uniquely combines outdoor adventure and activities with a focus on developing kindness, empathy, and positive character."
+    },
+    {
+        "sch_id": 261,
+        "alp_description": "The 'Orators@Waterway' ALP is a Languages program. It focuses on developing students into confident and persuasive speakers through various oracy, public speaking, and presentation skills training.",
+        "llp_description": "The 'Growth and Benefit Mindset @ Waterway' LLP is a leadership program. It focuses on developing students' personal leadership and resilience by instilling a growth mindset (believing abilities can be developed) and a benefit mindset (a desire to serve others)."
+    },
+    {
+        "sch_id": 262,
+        "alp_description": "The 'New Media and Artificial Intelligence For Us (AI4U)' ALP is an ICT & Media program. It equips students with future-ready skills in digital literacy, media creation, and the fundamentals of AI.",
+        "llp_description": "The 'Artivists with a HeART' LLP is a Performing Arts program. It combines 'Artist' with 'Activist,' empowering students to use the arts as a platform to advocate for social causes with empathy ('Heart')."
+    },
+    {
+        "sch_id": 263,
+        "alp_description": "The 'Empowered Emissary of the Environment (E3) Programme' ALP is an interdisciplinary program. It develops students into confident advocates for environmental sustainability through inquiry, problem-solving, and communication.",
+        "llp_description": "The 'Gracious Leaders' LLP is a Community Service & Student Leadership program. It focuses on developing students' leadership skills, grounded in the core value of graciousness and respect for others."
+    },
+    {
+        "sch_id": 264,
+        "alp_description": "The 'Sustaining the Earth with Applied Solutions (SEAS)' ALP is a STEM program. It focuses on sustainability, empowering students to apply scientific principles and Design Thinking to create solutions for environmental issues.",
+        "llp_description": "The 'Joyful ExperienC.E. @ West Spring' (ExperienC.E. – Experience Challenging Endeavours) LLP is a Sports & Outdoor Education program. It aims to build character and resilience through joyful and challenging outdoor experiences."
+    },
+    {
+        "sch_id": 265,
+        "alp_description": "The 'F.R.I.E.N.D of Earth' (Filter, Reduce, Innovate, Educate, Nurture, Defend) ALP is a STEM program. It focuses on sustainability, guiding students through an inquiry process to become active advocates for the environment.",
+        "llp_description": "The 'ACE the Arts (Appreciate, Create, Explore to Excel)' LLP is a Performing Arts program. It provides a broad-based arts education to develop students' creativity, confidence, and appreciation for various art forms."
+    },
+    {
+        "sch_id": 266,
+        "alp_description": "The 'Positive Design and Maker Education' ALP is an interdisciplinary program. It combines positive psychology principles with 'maker' education, encouraging students to design and create solutions that enhance well-being.",
+        "llp_description": "The 'Igniting Young Hearts with a Passion for the Community and Service Leadership' LLP is a leadership program. It focuses on developing empathy and a passion for service through active community leadership projects."
+    },
+    {
+        "sch_id": 267,
+        "alp_description": "The 'E³ journey (Excite, Enable, Excel)' ALP is an ICT & Media program. It aims to develop students' digital literacy and computational thinking skills, enabling them to excel in a technology-driven world.",
+        "llp_description": "The 'HeARTs @ WSPS (Heritage ART @ WSPS)' LLP is a Visual Arts & Design program. It focuses on developing students' appreciation for heritage and culture through various visual arts activities."
+    },
+    {
+        "sch_id": 268,
+        "alp_description": "The 'Effective Communication through Drama Pedagogies' ALP is a Languages program. It uses drama techniques as a primary tool to build students' confidence, oracy, and interpersonal communication skills.",
+        "llp_description": "The 'Shine and Succeed through Dance' LLP is a Performing Arts program. It provides all students with opportunities to learn and perform dance, aiming to build their confidence, discipline, and creativity."
+    },
+    {
+        "sch_id": 269,
+        "alp_description": "The 'Joy of Learning Languages (JOL2@WOODS)' ALP is a Languages program. It aims to foster a love for language learning (both English and Mother Tongue) through engaging and authentic activities like drama and storytelling.",
+        "llp_description": "The 'Sports Performance And Character Education (SPACE)' LLP is a Sports & Outdoor Education program. It focuses on developing students' physical skills, sportsmanship, and character through a variety of sports."
+    },
+    {
+        "sch_id": 270,
+        "alp_description": "The 'Be a deSign Thinker (B.E.S.T)' ALP is a STEM program. It equips students with the Design Thinking process, encouraging them to empathize, ideate, and create solutions for real-world challenges using coding and robotics.",
+        "llp_description": "The 'I can Soar Leadership Programme @WRP' LLP is a Community Service & Student Leadership program. It aims to develop students' leadership potential and confidence, empowering them to believe 'I can Soar'."
+    },
+    {
+        "sch_id": 271,
+        "alp_description": "The 'Environmental Education in Xinghua' ALP is an interdisciplinary program. It integrates environmental themes and sustainability practices across the curriculum to foster a sense of responsibility for the planet.",
+        "llp_description": "The 'Confidence Building and Critical Thinking through the Visual Arts' LLP is a Visual Arts program. It uses art creation and art appreciation as platforms to develop students' critical thinking and self-confidence."
+    },
+    {
+        "sch_id": 272,
+        "alp_description": "The 'Xingnan Explorers' ALP is a STEM program. It focuses on developing students' scientific inquiry skills by having them explore and experiment with concepts related to material science and technology.",
+        "llp_description": "The 'FLAIR@XINGNAN – An experience with Performing Arts' LLP is a Performing Arts program. It provides students with broad exposure to music, dance, and drama to develop their creativity and confidence."
+    },
+    {
+        "sch_id": 273,
+        "alp_description": "The 'GLOBE@Xinmin Pri Sch (Green Lifestyle Observed By Everyone)' ALP is an interdisciplinary program. It promotes environmental sustainability by empowering students to become advocates for a green lifestyle.",
+        "llp_description": "The 'Cultivating a Life of Values and Excellence (CLOVE)' LLP is a Community Service & Student Leadership program. It focuses on developing students' character and leadership skills, grounded in the school's values."
+    },
+    {
+        "sch_id": 274,
+        "alp_description": "The 'News Enrichment Xishanites Unitedly Share (NEXUS)' ALP is a Languages program. It develops students' critical thinking and communication skills by having them engage with, analyze, and present news.",
+        "llp_description": "The 'Developing Confident Leaders through Mental Skills Empowerment and Values In Action' LLP is a leadership program. It focuses on building resilience and mental toughness alongside leadership skills through service."
+    },
+    {
+        "sch_id": 275,
+        "alp_description": "The 'Future-Makers Eco-Champions (FMEC) @ YZ' ALP is an Innovation & Enterprise program. It combines 'maker' education with sustainability, empowering students to design and create innovative eco-friendly solutions.",
+        "llp_description": "The '4H Leadership @ YZPS' (Head, Heart, Hands, Health) LLP is a Community Service & Student Leadership program. It aims to develop well-rounded leaders by focusing on critical thinking (Head), character (Heart), service (Hands), and well-being (Health)."
+    },
+    {
+        "sch_id": 276,
+        "alp_description": "The 'D.R.E.A.M.@Yew Tee' (Developing Reflective Learners, Empowering Creative Minds) ALP is an interdisciplinary program. It focuses on developing students' creativity and metacognitive skills through inquiry-based projects.",
+        "llp_description": "The 'Holistic Enriching and Rewarding Outdoor Education & Sports (HEROES) @ YTPS' LLP is a Sports & Outdoor Education program. It aims to build character, resilience, and teamwork through a variety of sports and outdoor adventures."
+    },
+    {
+        "sch_id": 277,
+        "alp_description": "The 'ESTEM@YCKPS' (Environmental STEM-based applied learning) ALP is a STEM program. It uses the environment as a context for students to apply STEM skills, fostering a sense of scientific inquiry and sustainability.",
+        "llp_description": "The 'CREATE@YCKPS' (Confident, REsilient, Appreciative, Thinking, Expressive) LLP is a Performing Arts program. It aims to develop these key dispositions in students through broad-based exposure to the arts."
+    },
+    {
+        "sch_id": 278,
+        "alp_description": "The 'Be Environmentally Green, Don't Leave Your Footprint' ALP is a STEM program. It focuses on sustainability, developing students' environmental awareness and scientific inquiry skills through hands-on projects.",
+        "llp_description": "The 'Viva De Symphonie – Championing Values: Living, Learning and Growing through Music' LLP is a Performing Arts program. It uses music education as a platform to instill values, build character, and foster creativity."
+    },
+    {
+        "sch_id": 279,
+        "alp_description": "The 'Tech4Good' ALP is an ICT & Media program. It equips students with digital and media literacy skills, encouraging them to use technology for positive social change and to benefit the community.",
+        "llp_description": "The 'GOal GR3IT' (Growth, Resilience, Grit, Respect, Integrity, Teamwork) LLP is a Sports & Outdoor Education program. It focuses on developing these key character traits and a growth mindset through sports."
+    },
+    {
+        "sch_id": 280,
+        "alp_description": "The 'Think@Yuhua – Developing Critical and Creative Thinkers' ALP is an interdisciplinary program. It is a school-wide approach to explicitly teach thinking routines and develop students into effective problem-solvers.",
+        "llp_description": "The 'Building Good Character through Music and the Performing Arts' LLP is a Performing Arts program. It uses a broad-based arts education to instill values, build confidence, and foster creativity."
+    },
+    {
+        "sch_id": 281,
+        "alp_description": "The 'I3QUEST –Question, Imagine, Innovate, Inspire' ALP is a STEM program. It uses a 'maker' approach to develop students' curiosity and innovation, guiding them through an inquiry process to create new solutions.",
+        "llp_description": "The 'Developing Flourishing, Compassionate Yumin Champions' LLP is a leadership program. It focuses on positive education and service to develop students who are both successful and compassionate."
+    },
+    {
+        "sch_id": 282,
+        "alp_description": "The 'Developing Zhangde GIVER3S Values Through Environment Education' ALP is a STEM program. It integrates sustainability education with the school's 'GIVER' values, developing students into responsible eco-citizens.",
+        "llp_description": "The 'DARE@ZPS' (Discover, Adventure, Relationship building, Espirit de-Corps) LLP is a Sports & Outdoor Education program. It focuses on building confidence, teamwork, and resilience through outdoor adventure."
+    },
+    {
+        "sch_id": 283,
+        "alp_description": "The 'Advocates and Innovators for Sustainable Living' ALP is an interdisciplinary program. It empowers students to become proactive advocates for the environment by applying Design Thinking to sustainability issues.",
+        "llp_description": "The 'Creative Arts @ Zhenghua' LLP is a comprehensive Performing and Visual Arts program. It aims to develop students' creativity, aesthetic appreciation, and confidence through exposure to various art forms."
+    },
+    {
+        "sch_id": 284,
+        "alp_description": "The 'Thinknovate@ZPS' ALP is a STEM program. It combines 'Thinking' (critical/design thinking) with 'Innovation,' empowering students to apply STEM skills to create solutions for real-world problems.",
+        "llp_description": "The 'Green Education Movement @ Zhonghua Primary School (GEM@ZPS)' LLP is a Community Service & Student Leadership program. It focuses on developing students as environmental leaders who champion sustainability."
+    }
+]
+
