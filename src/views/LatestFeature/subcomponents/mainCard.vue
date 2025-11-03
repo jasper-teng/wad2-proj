@@ -111,8 +111,7 @@
     }
 
     .cardContent{
-        display: inline-block;
-
+        display: block;
     }
 
     .card-title {

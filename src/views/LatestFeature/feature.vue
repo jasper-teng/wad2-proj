@@ -4,6 +4,7 @@
     import accordion2 from './subcomponents/accordion2.vue';
     import filterCard from './subcomponents/filterCard.vue';
     import mainCard from './subcomponents/mainCard.vue';
+    import singleModal from './subcomponents/singleModal.vue';
 
 
 
@@ -55,7 +56,7 @@
     // --- END: Data Cleaning Function ---
 
     export default{
-        components: {accordion1,filterCard,mainCard,accordion2},
+        components: {accordion1,filterCard,mainCard,accordion2,singleModal},
         data(){
             return {
                 schools: [],
@@ -78,6 +79,7 @@
                 error: null,
 
                 summaryData: [],
+                alp_llp_data:[],
             }
         },
 
@@ -182,6 +184,16 @@
         },
 
         methods: {
+            async getAlpLlpData(){
+                try{
+                    let response = await axios.get('./src/views/LatestFeature/alp_llp_data.json')
+                    this.alp_llp_data = response.data
+                } catch (err){
+                    console.error("Failed to get data:",err)
+                    this.alp_llp_data = [];
+                }
+            },
+
             async getSummaries() {
                 try {
                     // Place 'data1.json' in your 'public' folder
@@ -390,12 +402,31 @@
                 // --- FIX HERE: Use item.Summary (capital S) ---
                 return summaryEntry ? summaryEntry.Summary : '(No summary available for this school yet.)';
             },
+
+            getSchoolAlp(schoolId){
+                if (!Array.isArray(this.alp_llp_data)){
+                    return '(Data are still loading)'
+                }
+
+                const alp_entry = this.alp_llp_data.find(item =>item.sch_id == schoolId)
+                return alp_entry ? alp_entry.alp_description : '(No description available for this school yet)'
+            },
+
+            getSchoolLlp(schoolId){
+                if (!Array.isArray(this.alp_llp_data)){
+                    return '(Data are still loading)'
+                }
+
+                const llp_entry = this.alp_llp_data.find(item =>item.sch_id == schoolId)
+                return llp_entry ? llp_entry.llp_description : '(No description available for this school yet)'
+            }
         },
 
         
         mounted(){
             this.getSchools()
             this.getSummaries()
+            this.getAlpLlpData()
         }
         
     }
@@ -473,47 +504,31 @@
         </div>
         <div v-if="isModalOpen">
             
-            <div class="modal fade show" style="display: block;" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" v-if="selectedSchool">{{ selectedSchool.name }}</h5>
-                            <button type="button" class="btn-close" @click="closeModal"></button>
-                        </div>
+            <singleModal v-bind:single-modal="selectedSchool" @close-modal="closeModal">
 
-                        <div class="modal-body" v-if="selectedSchool">
-                            <div v-if="selectedSchool.alp_domain">
-                                <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill me-2">ALP</span>
-                                <h4 class="modal-subtitle" >{{ selectedSchool.alp_domain }}</h4>
-                                <p class="modal-text">{{ selectedSchool.alp_title }}</p>
-                            </div>
-                            <div v-if="selectedSchool.llp_domain" class="mt-4">
-                                <span class="badge bg-success-subtle text-success-emphasis rounded-pill me-2">LLP</span>
-                                <h4 class="modal-subtitle">{{ selectedSchool.llp_domain }}</h4>
-                                <p class="modal-text">{{ selectedSchool.llp_title }}</p>
-                            </div>
-                            
-                            <hr>
-                            <h5 class="mt-4 aboutSchool">About the School</h5>
-                            <p class="modal-text">{{ getSchoolSummary(selectedSchool.id) }}</p>
-                        </div>
+                <template #slotSingleModal1>
+                    <p class="modal-text">{{ getSchoolAlp(selectedSchool.id) }}</p>
+                </template>
 
-                        <div class="modal-footer">
-                            
-                            <button 
-                                type="button" 
-                                class="btn btn-primary" 
-                                @click="addCompareAndClose"
-                                :disabled="selectedSchool && selectedSchool.isCompareDisabled"
-                            >
-                                {{ selectedSchool && selectedSchool.isCompareDisabled ? 'Compare List Full' : 'Add to Compare' }}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="modal-backdrop fade show"></div>
+                <template #slotSingleModal2>
+                    <p class="modal-text">{{ getSchoolLlp(selectedSchool.id)}}</p>
+                </template>
+
+                <template #slotSingleModal3>
+                    <p class="modal-text">{{ getSchoolSummary(selectedSchool.id) }}</p>
+                </template>
+
+                <template #slotSingleModal4>
+                    <button 
+                        type="button" 
+                        class="btn btn-primary" 
+                        @click="addCompareAndClose"
+                        :disabled="selectedSchool && selectedSchool.isCompareDisabled"
+                    >
+                        {{ selectedSchool && selectedSchool.isCompareDisabled ? 'Compare List Full' : 'Add to Compare' }}
+                    </button>
+                </template>
+            </singleModal>
         </div>
 
                 <!-- 
@@ -575,64 +590,81 @@
                             <button type="button" class="btn-close" @click="closeCompareModal"></button>
                         </div>
                         <div class="modal-body" v-if="compareList.length === 2">
-                            
-                            <!-- This is the side-by-side layout -->
-                            <div class="row">
-                                <!-- Column 1: School 1 -->
+                            <!-- School Names Header -->
+                            <div class="row mb-3">
                                 <div class="col-6">
-                                    <h5 class="fw-bold mb-3 border-bottom pb-2">{{ compareList[0].name }}</h5>
-                                    
-                                    <div v-if="compareList[0].alp_domain" style="min-height: 150px;">
-                                        <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill me-2">ALP</span>
-                                        <h4 class="modal-subtitle">{{ compareList[0].alp_domain }}</h4>
-                                        <p class="modal-text">{{ compareList[0].alp_title }}</p>
-                                    </div>
-                                    <div v-else style="min-height: 150px;">
-                                        <p class="modal-text fst-italic">No ALP information available.</p>
-                                    </div>
-
-                                    <div v-if="compareList[0].llp_domain" class="mt-4" style="min-height: 150px;">
-                                        <span class="badge bg-success-subtle text-success-emphasis rounded-pill me-2">LLP</span>
-                                        <h4 class="modal-subtitle">{{ compareList[0].llp_domain }}</h4>
-                                        <p class="modal-text">{{ compareList[0].llp_title }}</p>
-                                    </div>
-                                    <div v-else style="min-height: 150px;">
-                                        <p class="modal-text fst-italic">No LLP information available.</p>
-                                    </div>
-                                    
-                                    <hr>
-                                    <h5 class="mt-4 aboutSchool">About the School</h5>
-                                    <p class="modal-text">{{ getSchoolSummary(compareList[0].id) }}</p>
+                                    <h5 class="fw-bold border-bottom pb-2">{{ compareList[0].name }}</h5>
                                 </div>
-                                
-                                <!-- Column 2: School 2 -->
                                 <div class="col-6 border-start">
-                                    <h5 class="fw-bold mb-3 border-bottom pb-2">{{ compareList[1].name }}</h5>
-
-                                    <div v-if="compareList[1].alp_domain" style="min-height: 150px;">
-                                        <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill me-2">ALP</span>
-                                        <h4 class="modal-subtitle">{{ compareList[1].alp_domain }}</h4>
-                                        <p class="modal-text">{{ compareList[1].alp_title }}</p>
-                                    </div>
-                                    <div v-else style="min-height: 150px;">
-                                        <p class="modal-text fst-italic">No ALP information available.</p>
-                                    </div>
-
-                                    <div v-if="compareList[1].llp_domain" class="mt-4" style="min-height: 150px;">
-                                        <span class="badge bg-success-subtle text-success-emphasis rounded-pill me-2">LLP</span>
-                                        <h4 class="modal-subtitle">{{ compareList[1].llp_domain }}</h4>
-                                        <p class="modal-text">{{ compareList[1].llp_title }}</p>
-                                    </div>
-                                    <div v-else style="min-height: 150px;">
-                                        <p class="modal-text fst-italic">No LLP information available.</p>
-                                    </div>
-                                    
-                                    <hr>
-                                    <h5 class="mt-4 aboutSchool">About the School</h5>
-                                    <p class="modal-text">{{ getSchoolSummary(compareList[1].id) }}</p>
+                                    <h5 class="fw-bold border-bottom pb-2">{{ compareList[1].name }}</h5>
                                 </div>
                             </div>
 
+                            <!-- ALP Section (Side by Side) -->
+                            <div class="row mb-4">
+                                <div class="col-6">
+                                    <div v-if="compareList[0].alp_domain">
+                                        <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill me-2">ALP</span>
+                                        <h4 class="modal-subtitle">{{ compareList[0].alp_domain }}</h4>
+                                        <p class="modal-text">{{ compareList[0].alp_title }}</p>
+                                        <p class="modal-text">{{ getSchoolAlp(compareList[0].id) }}</p>
+                                    </div>
+                                    <div v-else>
+                                        <p class="modal-text fst-italic">No ALP information available.</p>
+                                    </div>
+                                </div>
+                                <div class="col-6 border-start">
+                                    <div v-if="compareList[1].alp_domain">
+                                        <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill me-2">ALP</span>
+                                        <h4 class="modal-subtitle">{{ compareList[1].alp_domain }}</h4>
+                                        <p class="modal-text">{{ compareList[1].alp_title }}</p>
+                                        <p class="modal-text">{{ getSchoolAlp(compareList[1].id) }}</p>
+                                    </div>
+                                    <div v-else>
+                                        <p class="modal-text fst-italic">No ALP information available.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- LLP Section (Side by Side) -->
+                            <div class="row mb-4">
+                                <div class="col-6">
+                                    <div v-if="compareList[0].llp_domain">
+                                        <span class="badge bg-success-subtle text-success-emphasis rounded-pill me-2">LLP</span>
+                                        <h4 class="modal-subtitle">{{ compareList[0].llp_domain }}</h4>
+                                        <p class="modal-text">{{ compareList[0].llp_title }}</p>
+                                        <p class="modal-text">{{ getSchoolLlp(compareList[0].id) }}</p>
+                                    </div>
+                                    <div v-else>
+                                        <p class="modal-text fst-italic">No LLP information available.</p>
+                                    </div>
+                                </div>
+                                <div class="col-6 border-start">
+                                    <div v-if="compareList[1].llp_domain">
+                                        <span class="badge bg-success-subtle text-success-emphasis rounded-pill me-2">LLP</span>
+                                        <h4 class="modal-subtitle">{{ compareList[1].llp_domain }}</h4>
+                                        <p class="modal-text">{{ compareList[1].llp_title }}</p>
+                                        <p class="modal-text">{{ getSchoolLlp(compareList[1].id) }}</p>
+                                    </div>
+                                    <div v-else>
+                                        <p class="modal-text fst-italic">No LLP information available.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <!-- About Section (Side by Side) -->
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="aboutSchool mb-3">About the School</h5>
+                                    <p class="modal-text">{{ getSchoolSummary(compareList[0].id) }}</p>
+                                </div>
+                                <div class="col-6 border-start">
+                                    <h5 class="aboutSchool mb-3">About the School</h5>
+                                    <p class="modal-text">{{ getSchoolSummary(compareList[1].id) }}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -652,7 +684,7 @@
 
                 <!-- Buttons -->
                 <nav>
-                    <ul class="pagination mb-0">
+                    <ul class="pagination mb-3">
                         <li class="page-item" :class="{ 'disabled': currentPage === 1 }">
                             <button class="page-link" @click="prevPage">Previous</button>
                         </li>
