@@ -684,7 +684,7 @@
 
                 <!-- Buttons -->
                 <nav>
-                    <ul class="pagination mb-0">
+                    <ul class="pagination mb-3">
                         <li class="page-item" :class="{ 'disabled': currentPage === 1 }">
                             <button class="page-link" @click="prevPage">Previous</button>
                         </li>
