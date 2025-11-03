@@ -12,6 +12,20 @@
   padding: 3rem 0;
 }
 
+
+.btn-clear {
+  background: #ffa18d; /* Solid color from the original gradient */
+  color: #fff;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+.btn-clear:hover, .btn-primary:focus {
+  background-color: #ffa18d; /* A slightly darker shade for hover */
+  color: #fff;
+  box-shadow: none;
+}
+
 /* ===== Glass Card Effects ===== */
 .glass-card {
   background: #ffffff;
@@ -40,7 +54,7 @@
 }
 
 .filter-header {
-  background: linear-gradient(135deg, #FFA18D 0%, #56bdb6 100%);
+  background: #ffa18d 0%;
   padding: 20px;
 }
 
@@ -49,7 +63,7 @@
   font-weight: 700;
   font-size: 22px;
   margin: 0;
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .filter-body {
@@ -61,18 +75,18 @@
   color: #313131;
   margin-bottom: 8px;
   font-size: 14px;
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .filter-select {
   width: 100%;
   padding: 10px 14px;
-  border: 2px solid #FFA18D;
+  border: 2px solid #ffa18d;
   border-radius: 10px;
   background: #ffffff;
   color: #313131;
   font-size: 15px;
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   outline: none;
   transition: all 0.3s ease;
 }
@@ -89,7 +103,7 @@
   border-radius: 10px;
   font-weight: 600;
   font-size: 14px;
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -97,11 +111,11 @@
 .filter-btn-clear {
   background: #ffffff;
   color: #313131;
-  border: 2px solid #FFA18D;
+  border: 2px solid #ffa18d;
 }
 
 .filter-btn-clear:hover {
-  background: #FFA18D;
+  background: #ffa18d;
   color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(255, 161, 141, 0.3);
@@ -125,7 +139,7 @@
   border: 2px solid rgba(255, 161, 141, 0.2);
   border-radius: 10px;
   color: #313131;
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .filter-detail {
@@ -141,11 +155,11 @@
   font-weight: 600;
   background: #999999;
   color: #fff;
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .filter-badge.active {
-  background: linear-gradient(135deg, #FFA18D 0%, #56bdb6 100%);
+  background: linear-gradient(135deg, #ffa18d 0%, #56bdb6 100%);
   animation: pulse 2s infinite;
 }
 
@@ -153,16 +167,16 @@
 .side-drawer {
   position: absolute;
   top: 0;
-  left: -350px;
+  left: -355px;
   width: 350px;
   height: 100%;
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(10px);
-  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
-  border-radius: 1rem 0 0 1rem;
+  background: #ffffff;
+  border-left: none;
+  box-shadow: 2px 0 15px rgba(255, 161, 141, 0.3);
   overflow: hidden;
   transition: left 0.3s ease;
   z-index: 1000;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .side-drawer.open {
@@ -177,10 +191,12 @@
 
 .drawer-title {
   font-weight: 700;
-  color: #1c1c1e;
+  color: #313131;
   margin-bottom: 1.5rem;
   padding-bottom: 0.75rem;
-  border-bottom: 2px solid #f0f0f0;
+  border-bottom: 3px solid #ffa18d;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1.3rem;
 }
 
 /* Drawer Toggle Button */
@@ -193,25 +209,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
-  border-radius: 10%;
-  background: #000;
-  color: white;
+  border: 3px solid #ffa18d;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #ffa18d;
   font-size: 1.2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(255, 161, 141, 0.3);
   cursor: pointer;
-  transition: left 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  transition:
+    left 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
   z-index: 1001;
 }
 
 .drawer-toggle-btn:hover {
   transform: scale(1.1);
-  background: #ff8c75 !important;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  background: #ffa18d !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 16px rgba(255, 161, 141, 0.4);
 }
 
 .drawer-toggle-btn.drawer-open {
-  left: 365px;
+  left: 360px;
 }
 
 .drawer-toggle-btn i {
@@ -235,77 +257,96 @@
 /* ===== Form Elements ===== */
 label {
   font-weight: 600;
-  color: #1c1c1e;
+  color: #999999;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 input.form-control {
   padding: 0.6rem 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 0.6rem;
-  background-color: #f9f9f9;
-  color: #111;
-  font-size: 1.05rem;
+  border: 2px solid #ffa18d;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #313131;
+  font-size: 1rem;
+  font-family: 'IBM Plex Sans', sans-serif;
   transition: all 0.3s ease;
 }
 
 input.form-control:focus {
-  border-color: #007aff;
+  border-color: #56bdb6;
   background-color: #fff;
-  color: #000;
-  box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.15);
+  color: #313131;
+  box-shadow: 0 0 0 3px rgba(86, 189, 182, 0.1);
 }
 
 select.form-select {
   padding: 0.5rem 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 0.6rem;
-  background-color: #f9f9f9;
-  color: #111;
+  border: 2px solid #ffa18d;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #313131;
   font-weight: 600;
+  font-family: 'IBM Plex Sans', sans-serif;
   transition: all 0.3s ease;
 }
 
 select.form-select:focus {
   border-color: #56bdb6;
-  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(86, 189, 182, 0.1);
 }
 
 /* ===== Buttons ===== */
 button.btn-primary {
   padding: 0.7rem 1.4rem;
   border: none;
-  border-radius: 0.7rem;
-  background-color: #000;
+  border-radius: 10px;
+  background: #56bdb6;
+  color: #fff;
   font-weight: 600;
-  font-size: 1.1rem;
-  transition: background-color 0.3s ease, transform 0.15s ease;
+  font-size: 1rem;
+  font-family: 'IBM Plex Sans', sans-serif;
+  transition:
+    background-color 0.3s ease,
+    transform 0.15s ease;
 }
 
 button.btn-primary:hover {
-  background-color: #1c1c1e;
-  transform: scale(1.02);
+  background-color: #4aa8a2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(86, 189, 182, 0.3);
 }
 
 button.btn-danger {
   border: none;
-  background-color: #ff3b30;
+  background: #ff4a5f;
+  color: #fff;
   font-weight: 600;
-  transition: opacity 0.3s ease;
+  font-family: 'IBM Plex Sans', sans-serif;
+  transition:
+    opacity 0.3s ease,
+    transform 0.15s ease;
 }
 
 button.btn-danger:hover {
   opacity: 0.85;
+  transform: translateY(-2px);
 }
 
 button.btn-secondary {
-  border: none;
-  background-color: #e5e5ea;
-  color: #111;
+  border: 2px solid #ffa18d;
+  background-color: #ffffff;
+  color: #313131;
   font-weight: 600;
+  font-family: 'IBM Plex Sans', sans-serif;
+  transition:
+    background-color 0.3s ease,
+    transform 0.15s ease;
 }
 
 button.btn-secondary:hover {
-  background-color: #d1d1d6;
+  background-color: #ffa18d;
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 /* ===== Distance Information ===== */
@@ -313,37 +354,42 @@ button.btn-secondary:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
+  gap: 0.75rem;
   flex-wrap: wrap;
   min-height: 70px;
-  margin-top: 1.5rem;
-  color: #1c1c1e;
-  font-size: 1rem;
+  margin-top: 1rem;
+  color: #313131;
+  font-size: 0.9rem;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .distance-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.65rem;
-  padding: 0.7rem 1.2rem;
-  background-color: #ffecf2;
-  border-radius: 0.75rem;
+  gap: 0.4rem;
+  padding: 0.6rem 0.8rem;
+  background-color: rgba(255, 161, 141, 0.1);
+  border: 2px solid #ffa18d;
+  border-radius: 10px;
   font-weight: 500;
-  color: #1c1c1e;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  color: #313131;
+  box-shadow: 0 2px 6px rgba(255, 161, 141, 0.2);
   animation: fadeIn 0.5s ease forwards;
-  transition: color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .distance-item:hover {
   background-color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 10px rgba(255, 161, 141, 0.3);
 }
 
 .icon {
   font-size: 1.5rem;
-  color: #FFA18D;
+  color: #ffa18d;
   animation: gentleBounce 1.8s ease-in-out infinite alternate;
   transition: color 0.3s ease;
 }
@@ -357,15 +403,14 @@ button.btn-secondary:hover {
 
 .distance-card {
   padding: 1rem;
-  background-color: #FFFCFF;
-  border: 2px solid #FFA18D;
+  background-color: #fffcff;
+  border: 2px solid #ffa18d;
   border-radius: 0.75rem;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
   transition: all 0.25s ease;
 }
 
 .distance-card:hover {
-  transform: translateY(-2px);
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
 }
 
@@ -383,17 +428,19 @@ button.btn-secondary:hover {
   align-items: center;
   justify-content: center;
   padding: 0.5rem;
+  margin-left: 5px;
+  margin-right: 5px;
+  flex: 1;
+  min-width: 0;
   color: #111;
-  font-weight: 500;
   border-radius: 0.5rem;
-  transition: background-color 0.2s ease, transform 0.15s ease;
+  transition: background-color 0.2s ease;
 }
 
 .distance-mode:hover {
-  background-color: #ffecf2;
-  transform: scale(1.05);
+  background-color: #FFE2DD;
 }
-
+/* 
 .distance-mode.walking:hover {
   border-color: orange;
   border-width: 2px;
@@ -410,15 +457,16 @@ button.btn-secondary:hover {
   border-color: red;
   border-width: 2px;
   border-style: solid;
-}
+} */
 
 .distance-mode i {
-  color: #FFA18D;
+  color: #ffa18d;
 }
 
 /* ===== Animations ===== */
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 0 0 rgba(255, 161, 141, 0.4);
   }
   50% {
@@ -479,11 +527,11 @@ button.btn-secondary:hover {
   /* Drawer adjustments */
   .side-drawer {
     width: 300px;
-    left: -300px;
+    left: -305px;
   }
 
   .drawer-toggle-btn.drawer-open {
-    left: 315px;
+    left: 310px;
   }
 }
 
@@ -522,7 +570,7 @@ button.btn-secondary:hover {
   /* Drawer adjustments */
   .side-drawer {
     width: 280px;
-    left: -280px;
+    left: -285px;
   }
 
   .drawer-content {
@@ -541,8 +589,11 @@ button.btn-secondary:hover {
   }
 
   .drawer-toggle-btn.drawer-open {
-    left: 295px;
+    left: 290px;
   }
+
+
+
 }
 
 /* ===== Hide Google Map UI Controls ===== */

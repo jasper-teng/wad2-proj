@@ -1000,7 +1000,7 @@ function removeRoute(routeKey) {
                 </div>
                 <div class="col-12 col-md-6 col-lg-8">
                   <div class="d-flex justify-content-md-end gap-2">
-                    <button class="btn btn-danger" @click="clearStorage">
+                    <button class="btn btn-clear" @click="clearStorage">
                       <i class="fas fa-trash-alt me-1"></i> Clear All
                     </button>
                     <button class="btn btn-secondary" @click="loadSavedRoutesFromSession">
