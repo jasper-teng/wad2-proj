@@ -14,14 +14,14 @@
 </script>
 
 <template>
-    <div class="accordion" id="accordionExample">
+    <div class="accordion" id="accordion2">
         <div class="accordion-item">
             <h2 class="accordion-header">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne">
                 What is the Learning Learning Programme (ALP)?
             </button>
             </h2>
-            <div id="collapseOne2" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div id="collapseOne2" class="accordion-collapse collapse" data-bs-parent="#accordion2">
                 
             <div class="accordion-body">
                 <p>{{ display_text_1 }}</p>
