@@ -6,6 +6,7 @@
     import mainCard from './subcomponents/mainCard.vue';
 
 
+
         // --- ADDED: Data Cleaning Function ---
     // This function will clean the data as it's fetched from the API
     function fixApiDataErrors(inputText) {
@@ -181,6 +182,18 @@
         },
 
         methods: {
+            async getSummaries() {
+                try {
+                    // Place 'data1.json' in your 'public' folder
+                    let response = await axios.get('/src/views/LatestFeature/schSummary.json'); 
+                    this.summaryData = response.data; // This puts the array into summaryData
+                } catch (err) {
+                    console.error("Failed to get summaries:", err);
+                    // Keep it as an array to prevent future .find() errors
+                    this.summaryData = []; 
+                }
+            },
+
             async getSchools(){
                 this.isLoading = true
                 this.error = null
@@ -364,15 +377,25 @@
                     }
                 });
             },
-                getSchoolSummary(schoolId) {
-                    const summaryEntry = this.summaryData.find(item => item.id === schoolId);
-                    return summaryEntry ? summaryEntry.Summary : '(No summary available for this school yet.)';
-                },
+
+            getSchoolSummary(schoolId) {
+                if (!Array.isArray(this.summaryData)) {
+                    return '(Summaries are still loading...)';
+                }
+
+                // --- FIX HERE: Use item._id instead of item.id ---
+                // Using == handles string vs number differences
+                const summaryEntry = this.summaryData.find(item => item._id == schoolId); 
+                
+                // --- FIX HERE: Use item.Summary (capital S) ---
+                return summaryEntry ? summaryEntry.Summary : '(No summary available for this school yet.)';
+            },
         },
 
         
         mounted(){
             this.getSchools()
+            this.getSummaries()
         }
         
     }

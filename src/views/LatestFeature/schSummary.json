@@ -1,0 +1,1387 @@
+[
+    {
+        "_id": 1,
+        "school_name": "Admiralty Secondary",
+        "Summary": "Admiralty Secondary School's mission is to \"Empower Admirals to Actualise their Dreams\". Established in 2002, the school has a niche in Robotics Enterprise and focuses on STEM to equip students with 21st-century competencies. The school's ALP in Design Thinking and LLP in Nurturing Mindful Leaders complement each other to develop students holistically."
+    },
+    {
+        "_id": 2,
+        "school_name": "Ahmad Ibrahim Secondary",
+        "Summary": "Ahmad Ibrahim Secondary School aims to nurture every student to be \"a gentleman or lady who cares, learns and excels\". The school focuses on building strong academic foundations and instilling core values of AI RISE (Resilience, Integrity, Steadfastness, Excellence). It also provides a mainstream education program for students with visual impairment."
+    },
+    {
+        "_id": 3,
+        "school_name": "Ang Mo Kio Secondary",
+        "Summary": "Established in 1979, Ang Mo Kio Secondary School's mission is to nurture \"lifelong learners, responsible citizens and resilient individuals\". The school is guided by the conviction that 'Every Child Matters' and provides multiple pathways for holistic development. Its distinctive programs include an ALP in Environmental Sustainability and an LLP in Arts Education."
+    },
+    {
+        "_id": 4,
+        "school_name": "Anglo-Chinese School (Barker Road)",
+        "Summary": "Anglo-Chinese School (Barker Road) is a government-aided Methodist all-boys' secondary school founded in 1886. As a member of the Anglo-Chinese family of schools, its motto is \"The Best Is Yet To Be\". It offers the GCE O-Level and full subject-based banding, and is affiliated with Anglo-Chinese Junior College."
+    },
+    {
+        "_id": 5,
+        "school_name": "Assumption English School",
+        "Summary": "Assumption English School is a government-aided, co-educational Catholic school. Its mission is \"To educate the whole person in the Montfortian Spirit of Learning, Charity and Love\". The school's ethos challenges its students, known as 'AssumptionKnights', to become learners and leaders who demonstrate Fortitude, Mastery, and Charity."
+    },
+    {
+        "_id": 6,
+        "school_name": "Bartley Secondary",
+        "Summary": "Bartley Secondary School, founded in 1952, has a vision to be a 'Home of Confident and Gracious Learners'. The school aims to develop students with a 'Heart of Service' and a 'Mind of Inquiry'. Its distinctive programs include an ALP in Broadcasting and an LLP in Student Leadership, focusing on character and citizenship education."
+    },
+    {
+        "_id": 7,
+        "school_name": "Beatty Secondary",
+        "Summary": "Beatty Secondary School, established in 1953, is guided by the motto \"Non Vi Sed Arte\" (Not by Strength, but by Skill). The school's vision is to nurture 'Beattyians of Character with a Sense of Purpose'. It offers distinctive programs such as an ALP in Design, Technology & Engineering and an LLP in Uniformed Groups."
+    },
+    {
+        "_id": 8,
+        "school_name": "Bedok Green Secondary",
+        "Summary": "Bedok Green Secondary School's vision is 'A vibrant community of future-ready learners who lead, serve and care'. The school focuses on holistic education, with an emphasis on values and character development. Its distinctive programs include an ALP in 'S.T.E.A.M. through Design Thinking' and an LLP in 'Leading through Service'."
+    },
+    {
+        "_id": 9,
+        "school_name": "Bedok South Secondary",
+        "Summary": "Bedok South Secondary School is guided by the philosophy 'Every Child is an Individual'. The school's mission is to nurture 'Confident Learners, Critical Thinkers, and Caring Citizens'. It has distinctive programs in ALP (Broadcasting) and LLP (Outdoor Education), providing diverse opportunities for students to discover their talents."
+    },
+    {
+        "_id": 10,
+        "school_name": "Bedok View Secondary",
+        "Summary": "Bedok View Secondary School's vision is 'A Giver, a Thinker, and a Leader'. The school's distinctive programs include an ALP in 'Thinking Habits, Seeing Hands' (Design Thinking) and an LLP in 'Leading through Outdoor Adventure'. It aims to develop students' character and competencies through experiential learning."
+    },
+    {
+        "_id": 11,
+        "school_name": "Bendemeer Secondary",
+        "Summary": "Bendemeer Secondary School's vision is 'A Caring and Dynamic School that Inspires All to Succeed'. The school is known for its strong culture of care and its focus on developing 21st-century competencies. Its distinctive programs include an ALP in 'Eco-Sustainability' and an LLP in 'Sports and Outdoor Education'."
+    },
+    {
+        "_id": 12,
+        "school_name": "Boon Lay Secondary",
+        "Summary": "Boon Lay Secondary School's vision is 'A community of passionate learners and confident leaders'. The school focuses on building a strong foundation in literacy, numeracy, and science. Its distinctive programs include an ALP in 'S.T.E.A.M.' (Science, Technology, Engineering, Aesthetics, and Mathematics) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 13,
+        "school_name": "Bowen Secondary",
+        "Summary": "Bowen Secondary School, established in 1982, aims to nurture 'Passionate Learners, Leaders, and Champions'. The school's distinctive programs include an ALP in 'S.T.E.M.' (Science, Technology, Engineering, and Mathematics) and an LLP in 'Developing Community Leaders through Sports'. It is also known for its strong Uniformed Groups."
+    },
+    {
+        "_id": 14,
+        "school_name": "Broadrick Secondary",
+        "Summary": "Broadrick Secondary School's mission is 'To nurture Broaderickians to be individuals of Character, Citizens of the world'. The school emphasizes holistic education and character development. Its distinctive programs include an ALP in 'Critical and Inventive Thinking' and an LLP in 'Community & Youth Leadership'."
+    },
+    {
+        "_id": 15,
+        "school_name": "Bukit Batok Secondary",
+        "Summary": "Bukit Batok Secondary School's vision is 'A Leader in Every Student'. The school is guided by its values of 'Respect, Responsibility, Resilience, Integrity, and Care'. Its distinctive programs include an ALP in 'Aeronautics' and an LLP in 'Outdoor Education'."
+    },
+    {
+        "_id": 16,
+        "school_name": "Bukit Merah Secondary",
+        "Summary": "Bukit Merah Secondary School's vision is 'A choice school that builds character and inspires learning'. The school aims to nurture 'Merahans' who are 'Confident, Concerned, and Self-directed'. Its distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking) and an LLP in 'Sports and Outdoor Education'."
+    },
+    {
+        "_id": 17,
+        "school_name": "Bukit Panjang Govt. High",
+        "Summary": "Bukit Panjang Govt. High School, established in 1960, is one of the designated autonomous schools in Singapore. Its vision is 'Leaders of Character'. The school is known for its strong academic and co-curricular programmes. Its distinctive programs include an ALP in 'S.T.E.M.' and an LLP in 'Sports and Outdoor Education'."
+    },
+    {
+        "_id": 18,
+        "school_name": "Bukit View Secondary",
+        "Summary": "Bukit View Secondary School's vision is 'A vibrant community of active learners, critical thinkers and compassionate leaders'. The school's distinctive programs include an ALP in 'S.T.E.M.' (Health Science & Technology) and an LLP in 'Community & Youth Leadership'. It aims to nurture students' potential and passion."
+    },
+    {
+        "_id": 19,
+        "school_name": "Canberra Secondary",
+        "Summary": "Canberra Secondary School's vision is 'A school of distinction where Canberrans grow to be 'Gracious, Resilient, and Innovative' individuals'. The school's distinctive programs include an ALP in 'Design Thinking & Innovation' and an LLP in 'Outdoor Education'."
+    },
+    {
+        "_id": 20,
+        "school_name": "Catholic High School",
+        "Summary": "Catholic High School is a government-aided autonomous all-boys' school offering the Dual Track Programme (O-Level and Integrated Programme). Founded in 1935, it is guided by its motto 'Care, Honesty, and Service'. It is also a Special Assistance Plan (SAP) school, focusing on bilingualism and bicultural studies."
+    },
+    {
+        "_id": 21,
+        "school_name": "Cedar Girls' Secondary",
+        "Summary": "Cedar Girls' Secondary School is a government-aided autonomous school offering both the O-Level and Integrated Programme. Its vision is 'A community of leaders, thinkers and creators'. The school is known for its strong emphasis on character development, academic excellence, and its niche in sports (Track & Field)."
+    },
+    {
+        "_id": 22,
+        "school_name": "Changkat Changi Secondary",
+        "Summary": "Changkat Changi Secondary School's vision is 'A community of innovative learners and caring leaders'. The school's distinctive programs include an ALP in 'Aviation and Aerospace' and an LLP in 'Student Leadership'. It aims to develop students' 21st-century competencies and character."
+    },
+    {
+        "_id": 23,
+        "school_name": "CHIJ Katong Convent",
+        "Summary": "CHIJ Katong Convent is a government-aided autonomous Catholic girls' school. Its vision is 'A community of leaders and learners for God and for others'. The school is known for its strong tradition in academics, character development, and its distinctive programs in ALP (S.T.E.A.M.) and LLP (Community Leadership)."
+    },
+    {
+        "_id": 24,
+        "school_name": "CHIJ Secondary (Toa Payoh)",
+        "Summary": "CHIJ Secondary (Toa Payoh) is a government-aided autonomous Catholic girls' school. Its mission is 'To nurture every CHIJ girl to be a 'Woman of Grace and a Leader in her own right''. The school's distinctive programs include an ALP in 'Debate and Advocacy' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 25,
+        "school_name": "CHIJ St. Joseph's Convent",
+        "Summary": "CHIJ St. Joseph's Convent is a government-aided autonomous Catholic girls' school. Its vision is 'A caring community, learning with zeal'. The school's distinctive programs include an ALP in 'Environmental Science' and an LLP in 'The Arts'. It aims to nurture students' creativity, critical thinking, and social responsibility."
+    },
+    {
+        "_id": 26,
+        "school_name": "CHIJ St. Nicholas Girls'",
+        "Summary": "CHIJ St. Nicholas Girls' School is a government-aided autonomous Catholic girls' school offering both O-Level and Integrated Programme. It is also a Special Assistance Plan (SAP) school. Its mission is 'To create a vibrant community of 'Women of Virtue and Leaders with Vision''."
+    },
+    {
+        "_id": 27,
+        "school_name": "CHIJ St. Theresa's Convent",
+        "Summary": "CHIJ St. Theresa's Convent is a government-aided autonomous Catholic girls' school. Its vision is 'A vibrant community of 'Women of Grace and Leaders with Heart''. The school's distinctive programs include an ALP in 'S.T.E.M.' (Forensic Science) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 28,
+        "school_name": "Christ Church Secondary",
+        "Summary": "Christ Church Secondary School's vision is 'A vibrant community of 'Passionate Learners, Dynamic Leaders, and Caring Citizens''. The school's distinctive programs include an ALP in 'Electronics and Coding' and an LLP in 'Sports and Outdoor Education'."
+    },
+    {
+        "_id": 29,
+        "school_name": "Chua Chu Kang Secondary",
+        "Summary": "Chua Chu Kang Secondary School's vision is 'A dynamic community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.M.' (Health Science & Technology) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 30,
+        "school_name": "Chung Cheng High (Main)",
+        "Summary": "Chung Cheng High School (Main) is a government-aided autonomous Special Assistance Plan (SAP) school. Its vision is 'A dynamic institution that nurtures 'Bicultural Leaders with a Global Vision''. The school offers both O-Level and Integrated Programme, focusing on bilingualism and bicultural studies."
+    },
+    {
+        "_id": 31,
+        "school_name": "Chung Cheng High (Yishun)",
+        "Summary": "Chung Cheng High School (Yishun) is a government-aided autonomous school. Its vision is 'A school of distinction that nurtures 'Bilingual Scholars and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Broadcast Journalism) and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 32,
+        "school_name": "Clementi Town Secondary",
+        "Summary": "Clementi Town Secondary School's vision is 'A community of 'Passionate Learners, Caring Leaders, and Global Citizens''. The school's distinctive programs include an ALP in 'S.T.E.M.' (Design Thinking & Innovation) and an LLP in 'Sports and Outdoor Education'."
+    },
+    {
+        "_id": 33,
+        "school_name": "Commonwealth Secondary",
+        "Summary": "Commonwealth Secondary School is a government autonomous school. Its vision is 'A caring and innovative community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Environmental Science & Sustainability) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 41,
+        "school_name": "Deyi Secondary",
+        "Summary": "Deyi Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 42,
+        "school_name": "Dunearn Secondary",
+        "Summary": "Dunearn Secondary School's vision is 'A community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Environmental Science & Sustainability) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 43,
+        "school_name": "Dunman High School",
+        "Summary": "Dunman High School is a government autonomous Special Assistance Plan (SAP) school offering the Integrated Programme. Its vision is 'A community of 'Leaders of Honour''. The school is known for its strong emphasis on bilingualism, bicultural studies, and character development."
+    },
+    {
+        "_id": 44,
+        "school_name": "Dunman Secondary",
+        "Summary": "Dunman Secondary School's vision is 'A school of 'Learners, Thinkers, and Leaders' who are 'Confident, Compassionate, and Self-directed''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 45,
+        "school_name": "East Spring Secondary",
+        "Summary": "East Spring Secondary School's vision is 'A community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Health Science & Technology) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 46,
+        "school_name": "Edgefield Secondary",
+        "Summary": "Edgefield Secondary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 47,
+        "school_name": "Evergreen Secondary",
+        "Summary": "Evergreen Secondary School's vision is 'A community of 'Passionate Learners, Caring Leaders, and Global Citizens''. The school's distinctive programs include an ALP in 'S.T.E.M.' (Electronics & Coding) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 48,
+        "school_name": "Fairfield Methodist School (Secondary)",
+        "Summary": "Fairfield Methodist School (Secondary) is a government-aided autonomous school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 49,
+        "school_name": "Fajar Secondary",
+        "Summary": "Fajar Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Sports and Outdoor Education'."
+    },
+    {
+        "_id": 50,
+        "school_name": "Fuchun Secondary",
+        "Summary": "Fuchun Secondary School's vision is 'A school where 'Every Child is a Star''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Environmental Science & Sustainability) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 51,
+        "school_name": "Gan Eng Seng School",
+        "Summary": "Gan Eng Seng School, founded in 1885, is one of the oldest schools in Singapore. Its vision is 'A community of 'Learners, Leaders, and Innovators''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 52,
+        "school_name": "Geylang Methodist School (Secondary)",
+        "Summary": "Geylang Methodist School (Secondary) is a government-aided school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 53,
+        "school_name": "Greendale Secondary",
+        "Summary": "Greendale Secondary School's vision is 'A community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 54,
+        "school_name": "Greenridge Secondary",
+        "Summary": "Greenridge Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Environmental Science & Sustainability) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 55,
+        "school_name": "Guangyang Secondary",
+        "Summary": "Guangyang Secondary School's vision is 'A community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 56,
+        "school_name": "Hai Sing Catholic School",
+        "Summary": "Hai Sing Catholic School is a government-aided autonomous school. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 57,
+        "school_name": "Hillgrove Secondary",
+        "Summary": "Hillgrove Secondary School's vision is 'A community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 58,
+        "school_name": "Holy Innocents' High",
+        "Summary": "Holy Innocents' High School is a government-aided Catholic school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 59,
+        "school_name": "Hua Yi Secondary",
+        "Summary": "Hua Yi Secondary School's vision is 'A community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Environmental Science & Sustainability) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 60,
+        "school_name": "Hwa Chong Institution",
+        "Summary": "Hwa Chong Institution is a government-aided autonomous Special Assistance Plan (SAP) school offering the Integrated Programme. Its vision is 'A community of 'Leaders, Scholars, and Innovators''. The school is known for its strong emphasis on bilingualism, bicultural studies, and academic excellence."
+    },
+    {
+        "_id": 61,
+        "school_name": "Junyuan Secondary",
+        "Summary": "Junyuan Secondary School's vision is 'A community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 62,
+        "school_name": "Jurong Secondary",
+        "Summary": "Jurong Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 63,
+        "school_name": "Jurong West Secondary",
+        "Summary": "Jurong West Secondary School's vision is 'A community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 64,
+        "school_name": "Jurongville Secondary",
+        "Summary": "Jurongville Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 65,
+        "school_name": "Juying Secondary",
+        "Summary": "Juying Secondary School's vision is 'A community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 66,
+        "school_name": "Kent Ridge Secondary",
+        "Summary": "Kent Ridge Secondary School's vision is 'A community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 67,
+        "school_name": "Kranji Secondary",
+        "Summary": "Kranji Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 68,
+        "school_name": "Kuo Chuan Presbyterian Secondary",
+        "Summary": "Kuo Chuan Presbyterian Secondary School is a government-aided school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 69,
+        "school_name": "Loyang View Secondary",
+        "Summary": "Loyang View Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 70,
+        "school_name": "Manjusri Secondary",
+        "Summary": "Manjusri Secondary School is a government-aided Buddhist school. Its vision is 'A community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 71,
+        "school_name": "Maris Stella High",
+        "Summary": "Maris Stella High School is a government-aided Catholic all-boys' school offering both O-Level and Integrated Programme. It is also a Special Assistance Plan (SAP) school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''."
+    },
+    {
+        "_id": 72,
+        "school_name": "Marsiling Secondary",
+        "Summary": "Marsiling Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 73,
+        "school_name": "Mayflower Secondary",
+        "Summary": "Mayflower Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 74,
+        "school_name": "Methodist Girls' School (Secondary)",
+        "Summary": "Methodist Girls' School (Secondary) is a government-aided autonomous all-girls' school offering both O-Level and Integrated Programme. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''."
+    },
+    {
+        "_id": 75,
+        "school_name": "Montfort Secondary",
+        "Summary": "Montfort Secondary School is a government-aided Catholic all-boys' school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 76,
+        "school_name": "Nan Chiau High",
+        "Summary": "Nan Chiau High School is a government-aided autonomous Special Assistance Plan (SAP) school. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'Bilingual, Bicultural, and Global-minded''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 77,
+        "school_name": "Nan Hua High",
+        "Summary": "Nan Hua High School is a government autonomous Special Assistance Plan (SAP) school. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'Bilingual, Bicultural, and Global-minded''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 78,
+        "school_name": "Nanyang Girls' High",
+        "Summary": "Nanyang Girls' High School is a government-aided autonomous Special Assistance Plan (SAP) all-girls' school offering the Integrated Programme. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'Bilingual, Bicultural, and Global-minded''."
+    },
+    {
+        "_id": 79,
+        "school_name": "National Junior College",
+        "Summary": "National Junior College is a government autonomous school offering the Integrated Programme and GCE A-Level. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'Bilingual, Bicultural, and Global-minded''."
+    },
+    {
+        "_id": 80,
+        "school_name": "Naval Base Secondary",
+        "Summary": "Naval Base Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 81,
+        "school_name": "New Town Secondary",
+        "Summary": "New Town Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 82,
+        "school_name": "Ngee Ann Secondary",
+        "Summary": "Ngee Ann Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 83,
+        "school_name": "North Vista Secondary",
+        "Summary": "North Vista Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 84,
+        "school_name": "Northbrooks Secondary",
+        "Summary": "Northbrooks Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 85,
+        "school_name": "Northland Secondary",
+        "Summary": "Northland Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 86,
+        "school_name": "NUS High School of Math and Science",
+        "Summary": "NUS High School of Math and Science is a specialized independent school offering a 6-year Integrated Programme. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'Passionate, Creative, and Ethical''. The school specializes in Mathematics, Science, and Research."
+    },
+    {
+        "_id": 87,
+        "school_name": "Orchid Park Secondary",
+        "Summary": "Orchid Park Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 88,
+        "school_name": "Outram Secondary",
+        "Summary": "Outram Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 89,
+        "school_name": "Pasir Ris Crest Secondary",
+        "Summary": "Pasir Ris Crest Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 90,
+        "school_name": "Pasir Ris Secondary",
+        "Summary": "Pasir Ris Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 91,
+        "school_name": "Paya Lebar Methodist Girls' School (Secondary)",
+        "Summary": "Paya Lebar Methodist Girls' School (Secondary) is a government-aided autonomous all-girls' school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 92,
+        "school_name": "Pei Hwa Secondary",
+        "Summary": "Pei Hwa Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 93,
+        "school_name": "Peicai Secondary",
+        "Summary": "Peicai Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 94,
+        "school_name": "Peirce Secondary",
+        "Summary": "Peirce Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 95,
+        "school_name": "Ping Yi Secondary",
+        "Summary": "Ping Yi Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 96,
+        "school_name": "Punggol Secondary",
+        "Summary": "Punggol Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 97,
+        "school_name": "Queen's Way Secondary",
+        "Summary": "Queen's Way Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 98,
+        "school_name": "Queensway Secondary",
+        "Summary": "Queensway Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 99,
+        "school_name": "Raffles Girls' School (Secondary)",
+        "Summary": "Raffles Girls' School (Secondary) is a government autonomous all-girls' school offering the Integrated Programme. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'Bilingual, Bicultural, and Global-minded''."
+    },
+    {
+        "_id": 100,
+        "school_name": "Raffles Institution",
+        "Summary": "Raffles Institution is a government autonomous all-boys' school offering the Integrated Programme. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'Bilingual, Bicultural, and Global-minded''."
+    },
+    {
+        "_id": 101,
+        "school_name": "Regent Secondary",
+        "Summary": "Regent Secondary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' (Design Thinking & Innovation) and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 102,
+        "school_name": "River Valley High",
+        "Summary": "River Valley High School is a government autonomous Special Assistance Plan (SAP) school offering the Integrated Programme. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'Bilingual, Bicultural, and Global-minded''."
+    },
+    {
+        "_id": 103,
+        "school_name": "Admiralty Primary School",
+        "Summary": "Admiralty Primary School's mission is 'To nurture pupils into lifelong learners and responsible citizens'. The school focuses on providing a holistic education and developing 21st-century competencies through its Programme for Active Learning (PAL) and other character-building initiatives."
+    },
+    {
+        "_id": 104,
+        "school_name": "Ahmad Ibrahim Primary School",
+        "Summary": "Ahmad Ibrahim Primary School aims to provide a 'Values-centric, Thinking-focused' education. The school's philosophy is 'Every child can learn, and every child wants to learn'. It emphasizes character development, leadership, and a joy of learning through various academic and co-curricular programs."
+    },
+    {
+        "_id": 105,
+        "school_name": "Ai Tong School",
+        "Summary": "Ai Tong School is a government-aided Special Assistance Plan (SAP) primary school. Founded in 1912, its mission is 'To nurture bilingual pupils to be culturally-rooted and globally-minded'. The school is known for its strong emphasis on Chinese language and culture, academic excellence, and character development."
+    },
+    {
+        "_id": 106,
+        "school_name": "Alexandra Primary School",
+        "Summary": "Alexandra Primary School's vision is 'Confident Learners, Caring Citizens'. The school focuses on nurturing students' curiosity, creativity, and character. It offers a range of programs, including an Applied Learning Programme (ALP) in 'Design Thinking' and a Learning for Life Programme (LLP) in 'The Arts'."
+    },
+    {
+        "_id": 107,
+        "school_name": "Anchor Green Primary School",
+        "Summary": "Anchor Green Primary School's mission is 'To nurture pupils to be future-ready and anchored in values'. The school emphasizes holistic education and developing 21st-century competencies. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 108,
+        "school_name": "Anderson Primary School",
+        "Summary": "Anderson Primary School's vision is 'A vibrant community of learners who are 'Confident, Creative, and Caring''. The school focuses on providing a nurturing environment where students can discover their potential. Its distinctive programs include an ALP in 'S.T.E.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 109,
+        "school_name": "Ang Mo Kio Primary School",
+        "Summary": "Ang Mo Kio Primary School's vision is 'A community of 'Passionate Learners, Confident Leaders, and Caring Citizens''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 110,
+        "school_name": "Anglo-Chinese School (Junior)",
+        "Summary": "Anglo-Chinese School (Junior) is a government-aided Methodist all-boys' primary school. As part of the ACS family, its motto is 'The Best Is Yet To Be'. The school is known for its strong academic tradition, character development, and holistic education, including a robust CCA program."
+    },
+    {
+        "_id": 111,
+        "school_name": "Anglo-Chinese School (Primary)",
+        "Summary": "Anglo-Chinese School (Primary) is a government-aided Methodist all-boys' primary school. It shares the ACS motto 'The Best Is Yet To Be' and focuses on nurturing 'ACSians to be 'Men of God, Men of Honour, and Men of Action''. It has a strong emphasis on academic excellence, character, and leadership."
+    },
+    {
+        "_id": 112,
+        "school_name": "Balestier Hill Primary School",
+        "Summary": "Balestier Hill Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on providing a holistic education and developing 21st-century competencies. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 113,
+        "school_name": "Beacon Primary School",
+        "Summary": "Beacon Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 114,
+        "school_name": "Bedok Green Primary School",
+        "Summary": "Bedok Green Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 115,
+        "school_name": "Bedok West Primary School",
+        "Summary": "Bedok West Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 116,
+        "school_name": "Bendemeer Primary School",
+        "Summary": "Bendemeer Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 117,
+        "school_name": "Blangah Rise Primary School",
+        "Summary": "Blangah Rise Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 118,
+        "school_name": "Boon Lay Garden Primary School",
+        "Summary": "Boon Lay Garden Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 119,
+        "school_name": "Bukit Gombak Primary School",
+        "Summary": "Bukit Gombak Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 120,
+        "school_name": "Bukit Panjang Primary School",
+        "Summary": "Bukit Panjang Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 121,
+        "school_name": "Bukit Timah Primary School",
+        "Summary": "Bukit Timah Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 122,
+        "school_name": "Bukit View Primary School",
+        "Summary": "Bukit View Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 123,
+        "school_name": "Canberra Primary School",
+        "Summary": "Canberra Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 124,
+        "school_name": "Canossa Catholic Primary School",
+        "Summary": "Canossa Catholic Primary School is a government-aided Catholic all-girls' school. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 125,
+        "school_name": "Cantonment Primary School",
+        "Summary": "Cantonment Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 126,
+        "school_name": "Casuarina Primary School",
+        "Summary": "Casuarina Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 127,
+        "school_name": "Catholic High School (Primary)",
+        "Summary": "Catholic High School (Primary) is a government-aided autonomous all-boys' school offering the Dual Track Programme. It is also a Special Assistance Plan (SAP) school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''."
+    },
+    {
+        "_id": 128,
+        "school_name": "Cedar Primary School",
+        "Summary": "Cedar Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 129,
+        "school_name": "CHIJ (Katong) Primary",
+        "Summary": "CHIJ (Katong) Primary is a government-aided Catholic all-girls' school. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 130,
+        "school_name": "CHIJ (Kellock)",
+        "Summary": "CHIJ (Kellock) is a government-aided Catholic all-girls' school. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 131,
+        "school_name": "CHIJ (Our Lady Queen of Peace)",
+        "Summary": "CHIJ (Our Lady Queen of Peace) is a government-aided Catholic all-girls' school. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 132,
+        "school_name": "CHIJ (Our Lady of Good Counsel)",
+        "Summary": "CHIJ (Our Lady of Good Counsel) is a government-aided Catholic all-girls' school. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 133,
+        "school_name": "CHIJ (Our Lady of the Nativity)",
+        "Summary": "CHIJ (Our Lady of the Nativity) is a government-aided Catholic all-girls' school. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 134,
+        "school_name": "CHIJ (St. Nicholas Girls')",
+        "Summary": "CHIJ (St. Nicholas Girls') Primary is a government-aided autonomous Catholic all-girls' school offering both O-Level and Integrated Programme. It is also a Special Assistance Plan (SAP) school. Its mission is 'To create a vibrant community of 'Women of Virtue and Leaders with Vision''."
+    },
+    {
+        "_id": 135,
+        "school_name": "CHIJ (Primary) (Toa Payoh)",
+        "Summary": "CHIJ (Primary) (Toa Payoh) is a government-aided autonomous Catholic all-girls' school. Its mission is 'To nurture every CHIJ girl to be a 'Woman of Grace and a Leader in her own right''. The school's distinctive programs include an ALP in 'Debate and Advocacy' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 136,
+        "school_name": "Chongfu School",
+        "Summary": "Chongfu School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 137,
+        "school_name": "Chongzheng Primary School",
+        "Summary": "Chongzheng Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 138,
+        "school_name": "Chua Chu Kang Primary School",
+        "Summary": "Chua Chu Kang Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 139,
+        "school_name": "Clementi Primary School",
+        "Summary": "Clementi Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 140,
+        "school_name": "Compassvale Primary School",
+        "Summary": "Compassvale Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 141,
+        "school_name": "Concord Primary School",
+        "Summary": "Concord Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 142,
+        "school_name": "Coral Primary School",
+        "Summary": "Coral Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 143,
+        "school_name": "Corporation Primary School",
+        "Summary": "Corporation Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 144,
+        "school_name": "Dazhong Primary School",
+        "Summary": "Dazhong Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 145,
+        "school_name": "De La Salle School",
+        "Summary": "De La Salle School is a government-aided Catholic primary school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 146,
+        "school_name": "East Coast Primary School",
+        "Summary": "East Coast Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 147,
+        "school_name": "East Spring Primary School",
+        "Summary": "East Spring Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 148,
+        "school_name": "Edgefield Primary School",
+        "Summary": "Edgefield Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 149,
+        "school_name": "Elias Park Primary School",
+        "Summary": "Elias Park Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 150,
+        "school_name": "Endeavour Primary School",
+        "Summary": "Endeavour Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 151,
+        "school_name": "Eunos Primary School",
+        "Summary": "Eunos Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 152,
+        "school_name": "Evergreen Primary School",
+        "Summary": "Evergreen Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 153,
+        "school_name": "Fairfield Methodist School (Primary)",
+        "Summary": "Fairfield Methodist School (Primary) is a government-aided autonomous school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 154,
+        "school_name": "Farrer Park Primary School",
+        "Summary": "Farrer Park Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 155,
+        "school_name": "Fengshan Primary School",
+        "Summary": "Fengshan Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 156,
+        "school_name": "Fern Green Primary School",
+        "Summary": "Fern Green Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 157,
+        "school_name": "Fernvale Primary School",
+        "Summary": "Fernvale Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 158,
+        "school_name": "First Toa Payoh Primary School",
+        "Summary": "First Toa Payoh Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 159,
+        "school_name": "Fuchun Primary School",
+        "Summary": "Fuchun Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 160,
+        "school_name": "Fuhua Primary School",
+        "Summary": "Fuhua Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 161,
+        "school_name": "Gan Eng Seng Primary School",
+        "Summary": "Gan Eng Seng Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 162,
+        "school_name": "Geylang Methodist School (Primary)",
+        "Summary": "Geylang Methodist School (Primary) is a government-aided school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 163,
+        "school_name": "Gongshang Primary School",
+        "Summary": "Gongshang Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 164,
+        "school_name": "Greenridge Primary School",
+        "Summary": "Greenridge Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 165,
+        "school_name": "Greenwood Primary School",
+        "Summary": "Greenwood Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 166,
+        "school_name": "Guangyang Primary School",
+        "Summary": "Guangyang Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 167,
+        "school_name": "Haig Girls' School",
+        "Summary": "Haig Girls' School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 168,
+        "school_name": "Henry Park Primary School",
+        "Summary": "Henry Park Primary School is a government autonomous school. Its vision is 'A community of 'Learners, Leaders, and Innovators''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 169,
+        "school_name": "Holy Innocents' Primary School",
+        "Summary": "Holy Innocents' Primary School is a government-aided Catholic school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 170,
+        "school_name": "Hong Wen School",
+        "Summary": "Hong Wen School is a government-aided Special Assistance Plan (SAP) school. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'Bilingual, Bicultural, and Global-minded''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 171,
+        "school_name": "Horizon Primary School",
+        "Summary": "Horizon Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 172,
+        "school_name": "Hougang Primary School",
+        "Summary": "Hougang Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 173,
+        "school_name": "Huamin Primary School",
+        "Summary": "Huamin Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 174,
+        "school_name": "Innova Primary School",
+        "Summary": "Innova Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 175,
+        "school_name": "Jiemin Primary School",
+        "Summary": "Jiemin Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 176,
+        "school_name": "Jing Shan Primary School",
+        "Summary": "Jing Shan Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 177,
+        "school_name": "Junyuan Primary School",
+        "Summary": "Junyuan Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 178,
+        "school_name": "Jurong Primary School",
+        "Summary": "Jurong Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 179,
+        "school_name": "Jurong West Primary School",
+        "Summary": "Jurong West Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 180,
+        "school_name": "Juying Primary School",
+        "Summary": "Juying Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 181,
+        "school_name": "Keming Primary School",
+        "Summary": "Keming Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 182,
+        "school_name": "Kheng Cheng School",
+        "Summary": "Kheng Cheng School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 183,
+        "school_name": "Kong Hwa School",
+        "Summary": "Kong Hwa School is a government-aided Special Assistance Plan (SAP) school. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'Bilingual, Bicultural, and Global-minded''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 184,
+        "school_name": "Kranji Primary School",
+        "Summary": "Kranji Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 185,
+        "school_name": "Kuo Chuan Presbyterian Primary School",
+        "Summary": "Kuo Chuan Presbyterian Primary School is a government-aided school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 186,
+        "school_name": "Lakeside Primary School",
+        "Summary": "Lakeside Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 187,
+        "school_name": "Lianhua Primary School",
+        "Summary": "Lianhua Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 188,
+        "school_name": "Loyang Primary School",
+        "Summary": "Loyang Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 189,
+        "school_name": "Maha Bodhi School",
+        "Summary": "Maha Bodhi School is a government-aided Special Assistance Plan (SAP) school. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'Bilingual, Bicultural, and Global-minded''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 190,
+        "school_name": "Maris Stella High School (Primary)",
+        "Summary": "Maris Stella High School (Primary) is a government-aided Catholic all-boys' school. It is also a Special Assistance Plan (SAP) school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''."
+    },
+    {
+        "_id": 191,
+        "school_name": "Marsiling Primary School",
+        "Summary": "Marsiling Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 192,
+        "school_name": "Marymount Convent School",
+        "Summary": "Marymount Convent School is a government-aided Catholic all-girls' school. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 193,
+        "school_name": "Mayflower Primary School",
+        "Summary": "Mayflower Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 194,
+        "school_name": "Mee Toh School",
+        "Summary": "Mee Toh School is a government-aided Special Assistance Plan (SAP) school. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'Bilingual, Bicultural, and Global-minded''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 195,
+        "school_name": "Meridian Primary School",
+        "Summary": "Meridian Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 196,
+        "school_name": "Methodist Girls' School (Primary)",
+        "Summary": "Methodist Girls' School (Primary) is a government-aided autonomous all-girls' school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''."
+    },
+    {
+        "_id": 197,
+        "school_name": "Montfort Junior School",
+        "Summary": "Montfort Junior School is a government-aided Catholic all-boys' school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 198,
+        "school_name": "Nan Chiau Primary School",
+        "Summary": "Nan Chiau Primary School is a government-aided Special Assistance Plan (SAP) school. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'Bilingual, Bicultural, and Global-minded''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 199,
+        "school_name": "Nan Hua Primary School",
+        "Summary": "Nan Hua Primary School is a government autonomous Special Assistance Plan (SAP) school. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'Bilingual, Bicultural, and Global-minded''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 200,
+        "school_name": "Nanyang Primary School",
+        "Summary": "Nanyang Primary School is a government-aided Special Assistance Plan (SAP) school. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'Bilingual, Bicultural, and Global-minded''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 201,
+        "school_name": "Naval Base Primary School",
+        "Summary": "Naval Base Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 202,
+        "school_name": "New Town Primary School",
+        "Summary": "New Town Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 203,
+        "school_name": "Ngee Ann Primary School",
+        "Summary": "Ngee Ann Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 204,
+        "school_name": "North Spring Primary School",
+        "Summary": "North Spring Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 205,
+        "school_name": "North Vista Primary School",
+        "Summary": "North Vista Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 206,
+        "school_name": "North View Primary School",
+        "Summary": "North View Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 207,
+        "school_name": "Northland Primary School",
+        "Summary": "Northland Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 208,
+        "school_name": "Oasis Primary School",
+        "Summary": "Oasis Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 209,
+        "school_name": "Opera Estate Primary School",
+        "Summary": "Opera Estate Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 210,
+        "school_name": "Palm View Primary School",
+        "Summary": "Palm View Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 211,
+        "school_name": "Park View Primary School",
+        "Summary": "Park View Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 212,
+        "school_name": "Pasir Ris Primary School",
+        "Summary": "Pasir Ris Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 213,
+        "school_name": "Paya Lebar Methodist Girls' School (Primary)",
+        "Summary": "Paya Lebar Methodist Girls' School (Primary) is a government-aided autonomous all-girls' school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 214,
+        "school_name": "Pei Chun Public School",
+        "Summary": "Pei Chun Public School is a government-aided Special Assistance Plan (SAP) school. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'Bilingual, Bicultural, and Global-minded''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 215,
+        "school_name": "Pei Hwa Presbyterian Primary School",
+        "Summary": "Pei Hwa Presbyterian Primary School is a government-aided school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 216,
+        "school_name": "Peiying Primary School",
+        "Summary": "Peiying Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 217,
+        "school_name": "Pioneer Primary School",
+        "Summary": "Pioneer Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 218,
+        "school_name": "Poi Ching School",
+        "Summary": "Poi Ching School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 219,
+        "school_name": "Punggol Cove Primary School",
+        "Summary": "Punggol Cove Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 220,
+        "school_name": "Punggol Green Primary School",
+        "Summary": "Punggol Green Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 221,
+        "school_name": "Punggol Primary School",
+        "Summary": "Punggol Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 222,
+        "school_name": "Punggol View Primary School",
+        "Summary": "Punggol View Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 223,
+        "school_name": "Qifa Primary School",
+        "Summary": "Qifa Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 224,
+        "school_name": "Qihua Primary School",
+        "Summary": "Qihua Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 225,
+        "school_name": "Queenstown Primary School",
+        "Summary": "Queenstown Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 226,
+        "school_name": "Radin Mas Primary School",
+        "Summary": "Radin Mas Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 227,
+        "school_name": "Raffles Girls' Primary School",
+        "Summary": "Raffles Girls' Primary School is a government autonomous all-girls' school. Its vision is 'A community of 'Learners, Leaders, and Innovators''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 228,
+        "school_name": "Red Swastika School",
+        "Summary": "Red Swastika School is a government-aided Special Assistance Plan (SAP) school. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'Bilingual, Bicultural, and Global-minded''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 229,
+        "school_name": "River Valley Primary School",
+        "Summary": "River Valley Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 230,
+        "school_name": "Riverside Primary School",
+        "Summary": "Riverside Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 231,
+        "school_name": "Rosyth School",
+        "Summary": "Rosyth School is a government autonomous school. Its vision is 'A community of 'Learners, Leaders, and Innovators''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 232,
+        "school_name": "Rulang Primary School",
+        "Summary": "Rulang Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 233,
+        "school_name": "Sembawang Primary School",
+        "Summary": "Sembawang Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 234,
+        "school_name": "Seng Kang Green Primary School",
+        "Summary": "Seng Kang Green Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 235,
+        "school_name": "Seng Kang Primary School",
+        "Summary": "Seng Kang Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 236,
+        "school_name": "Shuqun Primary School",
+        "Summary": "Shuqun Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 237,
+        "school_name": "Si Ling Primary School",
+        "Summary": "Si Ling Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 238,
+        "school_name": "Singapore Chinese Girls' School (Primary)",
+        "Summary": "Singapore Chinese Girls' School (Primary) is a government-aided autonomous all-girls' school. Its vision is 'A community of 'Learners, Leaders, and Innovators''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 239,
+        "school_name": "South Spring Primary School",
+        "Summary": "South Spring Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 240,
+        "school_name": "South View Primary School",
+        "Summary": "South View Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 241,
+        "school_name": "Springdale Primary School",
+        "Summary": "Springdale Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 242,
+        "school_name": "St. Andrew's Junior School",
+        "Summary": "St. Andrew's Junior School is a government-aided Anglican all-boys' primary school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 243,
+        "school_name": "St. Anthony's Canossian Primary School",
+        "Summary": "St. Anthony's Canossian Primary School is a government-aided Catholic all-girls' school. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 244,
+        "school_name": "St. Anthony's Primary School",
+        "Summary": "St. Anthony's Primary School is a government-aided Catholic school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 245,
+        "school_name": "St. Gabriel's Primary School",
+        "Summary": "St. Gabriel's Primary School is a government-aided Catholic all-boys' school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 246,
+        "school_name": "St. Hilda's Primary School",
+        "Summary": "St. Hilda's Primary School is a government-aided Anglican school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 247,
+        "school_name": "St. Joseph's Institution Junior",
+        "Summary": "St. Joseph's Institution Junior is a government-aided Catholic all-boys' primary school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 248,
+        "school_name": "St. Margaret's Primary School",
+        "Summary": "St. Margaret's Primary School is a government-aided Anglican all-girls' school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 249,
+        "school_name": "St. Stephen's School",
+        "Summary": "St. Stephen's School is a government-aided Catholic all-boys' primary school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 250,
+        "school_name": "Stamford Primary School",
+        "Summary": "Stamford Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 251,
+        "school_name": "Tampines North Primary School",
+        "Summary": "Tampines North Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 252,
+        "school_name": "Tampines Primary School",
+        "Summary": "Tampines Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 253,
+        "school_name": "Tanjong Katong Primary School",
+        "Summary": "Tanjong Katong Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 254,
+        "school_name": "Tao Nan School",
+        "Summary": "Tao Nan School is a government-aided Special Assistance Plan (SAP) school. Its vision is 'A community of 'Learners, Leaders, and Innovators' who are 'Bilingual, Bicultural, and Global-minded''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 255,
+        "school_name": "Teck Ghee Primary School",
+        "Summary": "Teck Ghee Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 256,
+        "school_name": "Teck Whye Primary School",
+        "Summary": "Teck Whye Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 257,
+        "school_name": "Telok Kurau Primary School",
+        "Summary": "Telok Kurau Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 258,
+        "school_name": "Temasek Primary School",
+        "Summary": "Temasek Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 259,
+        "school_name": "Townsville Primary School",
+        "Summary": "Townsville Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 260,
+        "school_name": "Unity Primary School",
+        "Summary": "Unity Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 261,
+        "school_name": "Valour Primary School",
+        "Summary": "Valour Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 262,
+        "school_name": "Waterway Primary School",
+        "Summary": "Waterway Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 263,
+        "school_name": "Wellington Primary School",
+        "Summary": "Wellington Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 264,
+        "school_name": "West Grove Primary School",
+        "Summary": "West Grove Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 265,
+        "school_name": "West Spring Primary School",
+        "Summary": "West Spring Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 266,
+        "school_name": "West View Primary School",
+        "Summary": "West View Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 267,
+        "school_name": "Westwood Primary School",
+        "Summary": "Westwood Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 268,
+        "school_name": "White Sands Primary School",
+        "Summary": "White Sands Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 269,
+        "school_name": "Woodgrove Primary School",
+        "Summary": "Woodgrove Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 270,
+        "school_name": "Woodlands Primary School",
+        "Summary": "Woodlands Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 271,
+        "school_name": "Woodlands Ring Primary School",
+        "Summary": "Woodlands Ring Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 272,
+        "school_name": "Xinghua Primary School",
+        "Summary": "Xinghua Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 273,
+        "school_name": "Xingnan Primary School",
+        "Summary": "Xingnan Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 274,
+        "school_name": "Xinmin Primary School",
+        "Summary": "Xinmin Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 275,
+        "school_name": "Xishan Primary School",
+        "Summary": "Xishan Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 276,
+        "school_name": "Yew Tee Primary School",
+        "Summary": "Yew Tee Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 277,
+        "school_name": "Yio Chu Kang Primary School",
+        "Summary": "Yio Chu Kang Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 278,
+        "school_name": "Yishun Primary School",
+        "Summary": "Yishun Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 279,
+        "school_name": "Yuhua Primary School",
+        "Summary": "Yuhua Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 280,
+        "school_name": "Yumin Primary School",
+        "Summary": "Yumin Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 281,
+        "school_name": "Zhangde Primary School",
+        "Summary": "Zhangde Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 282,
+        "school_name": "Zhenghua Primary School",
+        "Summary": "Zhenghua Primary School's vision is 'A vibrant community of 'Learners, Thinkers, and Leaders''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    },
+    {
+        "_id": 283,
+        "school_name": "Zhonghua Primary School",
+        "Summary": "Zhonghua Primary School's vision is 'A community of 'Learners, Leaders, and Innovators''. The school focuses on holistic education and character development. Its distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'Student Leadership'."
+    },
+    {
+        "_id": 284,
+        "school_name": "St. Margaret's School (Primary)",
+        "Summary": "St. Margaret's School (Primary) is a government-aided Anglican all-girls' school. Its vision is 'A community of 'Learners, Leaders, and Champions' who are 'God-fearing, and Serve with Honour''. The school's distinctive programs include an ALP in 'S.T.E.A.M.' and an LLP in 'The Arts'."
+    }
+]
