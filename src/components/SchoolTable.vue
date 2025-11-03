@@ -261,6 +261,8 @@ export default {
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  border: 0.2rem solid #FFA18D;
+  border-radius: 0.5rem;
 }
 
 .table thead th {

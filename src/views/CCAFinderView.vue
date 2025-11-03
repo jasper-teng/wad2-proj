@@ -189,7 +189,7 @@ onMounted(() => {
 <style scoped>
 .cca-finder-container {
   min-height: 100vh;
-  background-color: #f8f9fa;
+  background-color: none;
 }
 
 .header-section {
@@ -201,6 +201,8 @@ onMounted(() => {
   padding: 1.5rem;
   border-radius: 0.5rem;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  border: 0.2rem solid #FFA18D;
+  border-radius: 0.5rem;
 }
 
 .container {

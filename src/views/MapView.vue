@@ -805,6 +805,80 @@ function removeRoute(routeKey) {
   <!-- SchoolFinders (School distance mapping) from Nic -->
   <div id="bodybg">
     <div class="container">
+
+      <!-- Filters Section -->
+      <div class="row justify-content-center mb-4">
+        <div class="col-12 col-xl-11">
+          <div class="filter-card glass-card rounded-4 shadow">
+            <div class="filter-header">
+              <h5 class="mb-0 text-center">Filter Schools</h5>
+            </div>
+            <div class="filter-body">
+              <div class="row g-3 align-items-end">
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <label class="filter-label d-block">School Type</label>
+                  <select class="filter-select" v-model="sharedFilters.type" @change="updateMarkers">
+                    <option value="">All Types</option>
+                    <option value="Primary School">Primary School</option>
+                    <option value="Secondary School">Secondary School</option>
+                    <option value="Junior College">Junior College</option>
+                    <option value="Educational Institution">Other</option>
+                  </select>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <label class="filter-label d-block">Co-educational</label>
+                  <select class="filter-select" v-model="sharedFilters.coed" @change="updateMarkers">
+                    <option value="">All</option>
+                    <option value="true">Co-ed Only</option>
+                    <option value="false">Single Gender</option>
+                  </select>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <label class="filter-label d-block">Region</label>
+                  <select class="filter-select" v-model="sharedFilters.region" @change="updateMarkers">
+                    <option value="">All Regions</option>
+                    <option value="NORTH">North</option>
+                    <option value="SOUTH">South</option>
+                    <option value="EAST">East</option>
+                    <option value="WEST">West</option>
+                    <option value="CENTRAL">Central</option>
+                  </select>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <div class="d-flex gap-2">
+                    <button class="filter-btn filter-btn-clear flex-fill" @click="clearSharedFilters">
+                      Clear
+                    </button>
+                    <button class="filter-btn filter-btn-reset flex-fill" @click="resetSelections">
+                      Reset
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Filter Status -->
+              <div class="row mt-4">
+                <div class="col-12">
+                  <div class="filter-status text-center">
+                    <strong>Filtered Results:</strong> {{ filteredSchools.length }} schools
+                    <span v-if="hasActiveFilters" class="filter-detail">
+                      (from {{ allSchools.length }} total)
+                    </span>
+                    <div class="mt-2">
+                      <span v-if="hasActiveFilters" class="filter-badge active">Filters Active</span>
+                      <span v-else class="filter-badge">No Filters</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Map Section -->
       <div class="row justify-content-center mb-4">
         <div class="col-12 col-xl-11">
@@ -896,79 +970,6 @@ function removeRoute(routeKey) {
                     ref="inputMsg"
                     class="mt-3 d-flex flex-column gap-2"
                   ></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Filters Section -->
-      <div class="row justify-content-center mb-4">
-        <div class="col-12 col-xl-11">
-          <div class="filter-card glass-card rounded-4 shadow">
-            <div class="filter-header">
-              <h5 class="mb-0 text-center">Filter Schools</h5>
-            </div>
-            <div class="filter-body">
-              <div class="row g-3 align-items-end">
-                <div class="col-12 col-sm-6 col-lg-3">
-                  <label class="filter-label d-block">School Type</label>
-                  <select class="filter-select" v-model="sharedFilters.type" @change="updateMarkers">
-                    <option value="">All Types</option>
-                    <option value="Primary School">Primary School</option>
-                    <option value="Secondary School">Secondary School</option>
-                    <option value="Junior College">Junior College</option>
-                    <option value="Educational Institution">Other</option>
-                  </select>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-3">
-                  <label class="filter-label d-block">Co-educational</label>
-                  <select class="filter-select" v-model="sharedFilters.coed" @change="updateMarkers">
-                    <option value="">All</option>
-                    <option value="true">Co-ed Only</option>
-                    <option value="false">Single Gender</option>
-                  </select>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-3">
-                  <label class="filter-label d-block">Region</label>
-                  <select class="filter-select" v-model="sharedFilters.region" @change="updateMarkers">
-                    <option value="">All Regions</option>
-                    <option value="NORTH">North</option>
-                    <option value="SOUTH">South</option>
-                    <option value="EAST">East</option>
-                    <option value="WEST">West</option>
-                    <option value="CENTRAL">Central</option>
-                  </select>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-3">
-                  <div class="d-flex gap-2">
-                    <button class="filter-btn filter-btn-clear flex-fill" @click="clearSharedFilters">
-                      Clear
-                    </button>
-                    <button class="filter-btn filter-btn-reset flex-fill" @click="resetSelections">
-                      Reset
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Filter Status -->
-              <div class="row mt-4">
-                <div class="col-12">
-                  <div class="filter-status text-center">
-                    <strong>Filtered Results:</strong> {{ filteredSchools.length }} schools
-                    <span v-if="hasActiveFilters" class="filter-detail">
-                      (from {{ allSchools.length }} total)
-                    </span>
-                    <div class="mt-2">
-                      <span v-if="hasActiveFilters" class="filter-badge active">Filters Active</span>
-                      <span v-else class="filter-badge">No Filters</span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
