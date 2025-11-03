@@ -12,6 +12,10 @@ export default {
     currentSortOrder: {
       type: String,
       default: 'none'
+    },
+    selectedCcaFilter: {
+      type: String,
+      default: ''
     }
   },
 
@@ -19,17 +23,38 @@ export default {
     return {
       distanceService: null,
       schoolDistances: {},
-      isCalculatingDistances: false
+      isCalculatingDistances: false,
+      expandedRows: new Set(),
+      selectedSchools: []
     }
   },
 
   computed: {
+    consolidatedSchools() {
+      const schoolMap = new Map()
+
+      this.schools.forEach(school => {
+        const schoolName = school.school_name
+        if (!schoolMap.has(schoolName)) {
+          schoolMap.set(schoolName, {
+            school_name: schoolName,
+            school_section: school.school_section,
+            ccas: [],
+            _id: school._id
+          })
+        }
+        schoolMap.get(schoolName).ccas.push(school.cca)
+      })
+
+      return Array.from(schoolMap.values())
+    },
+
     sortedSchools() {
       if (this.currentSortOrder === 'none') {
-        return this.schools
+        return this.consolidatedSchools
       }
 
-      const schoolsWithDistance = this.schools.map((school) => ({
+      const schoolsWithDistance = this.consolidatedSchools.map((school) => ({
         ...school,
         distanceValue: this.getSchoolDistance(school)
       }))
@@ -77,7 +102,7 @@ export default {
     },
 
     async calculateDistances() {
-      if (!this.distanceService || !this.userLocation || this.schools.length === 0) {
+      if (!this.distanceService || !this.userLocation || this.consolidatedSchools.length === 0) {
         return
       }
 
@@ -88,8 +113,8 @@ export default {
       const batchSize = 25
       const batches = []
 
-      for (let i = 0; i < this.schools.length; i += batchSize) {
-        batches.push(this.schools.slice(i, i + batchSize))
+      for (let i = 0; i < this.consolidatedSchools.length; i += batchSize) {
+        batches.push(this.consolidatedSchools.slice(i, i + batchSize))
       }
 
       console.log(`Processing ${batches.length} batches of schools for distance calculation`)
@@ -190,6 +215,79 @@ export default {
       } else {
         return 'distance-far'
       }
+    },
+
+    toggleRow(schoolId) {
+      if (this.expandedRows.has(schoolId)) {
+        this.expandedRows.delete(schoolId)
+      } else {
+        this.expandedRows.add(schoolId)
+      }
+    },
+
+    isRowExpanded(schoolId) {
+      return this.expandedRows.has(schoolId)
+    },
+
+    getDisplayedCCAs(ccas, schoolId) {
+      if (this.isRowExpanded(schoolId)) {
+        return ccas
+      }
+      return ccas.slice(0, 3)
+    },
+
+    hasMoreCCAs(ccas) {
+      return ccas.length > 3
+    },
+
+    isSchoolSelected(schoolId) {
+      return this.selectedSchools.some(s => s._id === schoolId)
+    },
+
+    canSelectSchool(school) {
+      if (this.isSchoolSelected(school._id)) {
+        return true
+      }
+      const selectedFromLevel = this.selectedSchools.filter(s => s.school_section === school.school_section)
+      return selectedFromLevel.length < 4
+    },
+
+    toggleSchoolSelection(school) {
+      const index = this.selectedSchools.findIndex(s => s._id === school._id)
+
+      if (index > -1) {
+        this.selectedSchools.splice(index, 1)
+      } else {
+        const selectedFromLevel = this.selectedSchools.filter(s => s.school_section === school.school_section)
+        if (selectedFromLevel.length < 4) {
+          this.selectedSchools.push(school)
+        }
+      }
+    },
+
+    compareSchools() {
+      if (this.selectedSchools.length < 2) {
+        alert('Please select at least 2 schools to compare')
+        return
+      }
+
+      const schoolNames = this.selectedSchools.map(s => s.school_name)
+      const params = new URLSearchParams()
+      schoolNames.forEach((name, index) => {
+        params.set(`school${index + 1}`, name)
+      })
+
+      this.$router.push({
+        path: '/comparison',
+        query: Object.fromEntries(params)
+      })
+    },
+
+    getCCAClass(ccaName) {
+      if (this.selectedCcaFilter && this.selectedCcaFilter === ccaName) {
+        return 'cca-badge-highlighted'
+      }
+      return 'cca-badge'
     }
   },
 
@@ -206,6 +304,21 @@ export default {
       Calculating distances...
     </div>
 
+    <div class="comparison-action-bar mb-3">
+      <div class="comparison-content">
+        <button
+          @click="compareSchools"
+          class="btn btn-primary btn-compare"
+          :disabled="selectedSchools.length < 2"
+        >
+          Compare Schools
+        </button>
+        <span class="selection-counter ms-3">
+          {{ selectedSchools.length }}/4 schools selected
+        </span>
+      </div>
+    </div>
+
     <div v-if="schools.length === 0" class="text-center py-5">
       <p class="text-muted mb-0">No schools found matching your criteria.</p>
     </div>
@@ -214,11 +327,13 @@ export default {
       <table class="table table-striped mb-0">
         <thead>
           <tr>
-            <th>#</th>
-            <th>School Name</th>
-            <th>Level</th>
-            <th>CCA</th>
+            <th style="width: 60px;">Select</th>
+            <th style="width: 50px;">#</th>
+            <th style="width: 280px;">School Name</th>
+            <th style="width: 150px;">Level</th>
+            <th>CCAs</th>
             <th
+              style="width: 150px;"
               class="cursor-pointer"
               @click="toggleSort"
             >
@@ -228,10 +343,41 @@ export default {
         </thead>
         <tbody>
           <tr v-for="(school, index) in sortedSchools" :key="school._id">
+            <td>
+              <input
+                type="checkbox"
+                class="form-check-input"
+                :checked="isSchoolSelected(school._id)"
+                :disabled="!canSelectSchool(school)"
+                @change="toggleSchoolSelection(school)"
+              />
+            </td>
             <td>{{ index + 1 }}</td>
             <td>{{ school.school_name }}</td>
             <td>{{ school.school_section }}</td>
-            <td>{{ school.cca }}</td>
+            <td>
+              <div class="cca-container">
+                <span
+                  v-for="(cca, ccaIndex) in getDisplayedCCAs(school.ccas, school._id)"
+                  :key="ccaIndex"
+                  :class="getCCAClass(cca)"
+                >
+                  {{ cca }}
+                </span>
+                <button
+                  v-if="hasMoreCCAs(school.ccas)"
+                  @click="toggleRow(school._id)"
+                  class="btn btn-sm btn-link expand-btn"
+                >
+                  <span v-if="isRowExpanded(school._id)">
+                    Show less ▲
+                  </span>
+                  <span v-else>
+                    +{{ school.ccas.length - 3 }} more ▼
+                  </span>
+                </button>
+              </div>
+            </td>
             <td>
               <span v-if="userLocation && schoolDistances[school._id]" :class="getDistanceClass(school)">
                 {{ schoolDistances[school._id].text }}
@@ -297,5 +443,102 @@ export default {
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
   display: inline-block;
+}
+
+.cca-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.cca-badge {
+  background-color: #e9ecef;
+  color: #495057;
+  padding: 0.35rem 0.65rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid #ced4da;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.cca-badge:hover {
+  background-color: #dee2e6;
+  border-color: #adb5bd;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.cca-badge-highlighted {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  padding: 0.35rem 0.65rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 2px solid #198754;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(25, 135, 84, 0.2);
+}
+
+.cca-badge-highlighted:hover {
+  background-color: #badbcc;
+  border-color: #146c43;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(25, 135, 84, 0.3);
+}
+
+.expand-btn {
+  color: #6c757d;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.expand-btn:hover {
+  color: #495057;
+  background-color: #f8f9fa;
+  border-radius: 0.25rem;
+}
+
+.expand-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.25);
+}
+
+.comparison-action-bar {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+}
+
+.comparison-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.btn-compare {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+}
+
+.btn-compare:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.selection-counter {
+  color: #6c757d;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 </style>
