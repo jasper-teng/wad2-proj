@@ -66,16 +66,17 @@ const columnClass = computed(() => {
  */
 async function fetchPaginatedData(datasetId) {
   let allRecords = [];
-  let limit = 500; // Fetch in chunks of 500
+  let limit = 15000; // dont fetch in batches, fetch all at once
   let offset = 0;
   let total = Infinity;
 
   try {
     while (allRecords.length < total) {
       const url = `${DATA_GOV_BASE_URL}/${datasetId}/list-rows?limit=${limit}&offset=${offset}`;
+      
       const response = await axios.get(url);
       const data = response.data.data;
-
+      console.log(data);
       allRecords = allRecords.concat(data.rows);
       // Get the total count from the first response, if it's not already set
       if (total === Infinity) {
@@ -109,8 +110,6 @@ onMounted(async () => {
     allSchools.value = schools.sort((a, b) => a.school_name.localeCompare(b.school_name));
     allSubjectsData.value = subjects;
     allCcasData.value = ccas;
-
-    console.log(allSchools.value[0])
 
   } catch (err) {
     error.value = 'Could not load initial school data. Please refresh the page.';
@@ -206,7 +205,7 @@ const allOtherSelectedCCAs = computed(() => (slotId) => {
 
 function getFilteredSchoolList(slot) {
   if (!slot.schoolSearch) {
-    return allSchools.value.slice(0, 100); // Limit initial list for performance
+    return allSchools.value.slice(0, 400); // Limit initial list for performance
   }
   return allSchools.value.filter(school =>
     school.school_name.toLowerCase().includes(slot.schoolSearch.toLowerCase())
