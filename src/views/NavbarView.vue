@@ -1,9 +1,10 @@
 <script setup>
 import { ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router' // Import useRoute
 import logoImage from '../assets/schoolfinders black.png'
 
 const router = useRouter()
+const route = useRoute() // Get the current route object
 
 const handleLogout = () => {
   // Clear all authentication data from local storage
@@ -14,8 +15,16 @@ const handleLogout = () => {
 
 const isOverlayVisible = ref(false)
 
+// Modified function to navigate home or toggle overlay
 const toggleOverlay = () => {
-  isOverlayVisible.value = !isOverlayVisible.value
+  // If we are on any page OTHER than /simple-dashboard, navigate there
+  if (route.path !== '/simple-dashboard') {
+    router.push('/simple-dashboard')
+    isOverlayVisible.value = false // Ensure overlay is closed
+  } else {
+    // If we are ALREADY on /simple-dashboard, just toggle the overlay
+    isOverlayVisible.value = !isOverlayVisible.value
+  }
 }
 
 const navigateTo = (path) => {
@@ -123,3 +132,4 @@ const appGroups = ref([
     </div>
   </transition>
 </template>
+
