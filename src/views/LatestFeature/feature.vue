@@ -8,52 +8,61 @@
 
 
 
-        // --- ADDED: Data Cleaning Function ---
-    // This function will clean the data as it's fetched from the API
-    function fixApiDataErrors(inputText) {
-        if (typeof inputText !== 'string' || !inputText) {
-            return inputText;
-        }
-        let cleanedText = inputText;
-        const fixes = [
-            // --- Specific Fixes Targeting Encoding Errors from Doc ---
-
-            // 1. "Paying it Forward: WDL  s..." -> "Paying it Forward: WDL’s..."
-            [/Paying it Forward: WDL \uFFFD s Glocal Leadership Programme/g, "Paying it Forward: WDL’s Glocal Leadership Programme"],
-            
-            // 2. "St Hilda  s Secondary" -> "St. Hilda's Secondary School"
-            [/St Hilda \uFFFD s Secondary/g, "St. Hilda's Secondary School"],
-            
-            // 3. "St Andrew  s Secondary" -> "St Andrew's Secondary School"
-            [/St Andrew \uFFFD s Secondary/g, "St Andrew's Secondary School"],
-            
-            // 4. "Create    Connect    Innovate..." -> "Create – Connect – Innovate..."
-            [/Create\s+\uFFFD\s+Connect\s+\uFFFD\s+Innovate \(Emerging Technologies\)/g, "Create – Connect – Innovate (Emerging Technologies)"],
-            
-            // 5. "Becoming Persons for Others  Developing..." -> "Becoming Persons for Others – Developing..."
-            [/Becoming Persons for Others \uFFFD Developing Leadership through and for the Community/g, "Becoming Persons for Others – Developing Leadership through and for the Community"],
-            
-            // 6. "Game for Life (GfL)  Empowering..." -> "Game for Life (GfL) – “Empowering...”"
-            [/Game for Life \(GfL\) \uFFFD \uFFFD(Empowering our Active Sportsmen)\uFFFD/g, 'Game for Life (GfL) – “$1”'],
-            
-            // 7. "Made In Montfort  Design..." -> "Made In Montfort – Design..."
-            [/Made In Montfort \uFFFD Design, Code, Make/g, "Made In Montfort – Design, Code, Make"],
-            
-            // 8. "Its B.a.S.i.C!  Being..." -> "It’s B.a.S.i.C! – Being..."
-            [/It\uFFFDs B\.a\.S\.i\.C! \uFFFD Being a Servant Leader in the Community/g, "It’s B.a.S.i.C! – Being a Servant Leader in the Community"],
-            
-            // 9. "Education For Life  Developing..." -> "Education For Life – Developing..."
-            [/Education For Life \uFFFD Developing Portable Skills through and for Real World Problem Solving/g, "Education For Life – Developing Portable Skills through and for Real World Problem Solving"],
-            
-            // 10. "Beattys Leaders..." -> "Beatty’s Leaders..."
-            [/Beatty\uFFFDs Leaders for Life Programme/g, "Beatty’s Leaders for Life Programme"]
-        ];
-        for (const [regex, replacement] of fixes) {
-            cleanedText = cleanedText.replace(regex, replacement);
-        }
-        return cleanedText;
+function fixApiDataErrors(inputText) {
+    if (typeof inputText !== 'string' || !inputText) {
+        return inputText;
     }
-    // --- END: Data Cleaning Function ---
+
+    let cleanedText = inputText;
+
+    // This list targets the 10 errors based on the *actual* API data, not the Word doc.
+    const fixes = [
+        // 1. (ID 95) "Paying it Forward: WDLs..."
+        [/Paying it Forward: WDL\uFFFDs Glocal Leadership Programme/g, "Paying it Forward: WDL’s Glocal Leadership Programme"],
+
+        // 2. (ID 85) "St Hildas Secondary "
+        [/St Hilda\uFFFDs Secondary/g, "St. Hilda's Secondary School"],
+
+        // 3. (ID 83) "St Andrews Secondary"
+        [/St Andrew\uFFFDs Secondary/g, "St Andrew's Secondary School"],
+
+        // 4. (ID 76) "Create  Connect  Innovate..."
+        [/Create \uFFFD Connect \uFFFD Innovate \(Emerging Technologies\)/g, "Create – Connect – Innovate (Emerging Technologies)"],
+
+        // 5. (ID 70) "Becoming Persons for Others  Developing..."
+        [/Becoming Persons for Others \uFFFD Developing Leadership through and for the Community/g, "Becoming Persons for Others – Developing Leadership through and for the Community"],
+
+        // 6. (ID 64) "Game for Life (GfL)  Empowering..."
+        // This regex captures the text inside the quotes.
+        [/Game for Life \(GfL\) \uFFFD \uFFFD(Empowering our Active Sportsmen)\uFFFD/g, 'Game for Life (GfL) – “$1”'],
+
+        // 7. (ID 58) "Made In Montfort  Design..."
+        // Added .trim() to catch the trailing space in the data
+        [/Made In Montfort \uFFFD Design, Code, Make/g, "Made In Montfort – Design, Code, Make"],
+
+        // 8. (ID 52) "Its B.a.S.i.C!  Being..."
+        // Fixes both the apostrophe and the dash in one go.
+        [/It\uFFFDs B\.a\.S\.i\.C! \uFFFD Being a Servant Leader in the Community/g, "It’s B.a.S.i.C! – Being a Servant Leader in the Community"],
+
+        // 9. (ID 21) "Education For Life  Developing..."
+        [/Education For Life \uFFFD Developing Portable Skills through and for Real World Problem Solving/g, "Education For Life – Developing Portable Skills through and for Real World Problem Solving"],
+
+        // 10. (ID 7) "Beattys Leaders..."
+        [/Beatty\uFFFDs Leaders for Life Programme/g, "Beatty’s Leaders for Life Programme"],
+        
+        // 11. (ID 242) "St Andrew s Junior"
+        [/St Andrew\uFFFDs Junior/g, "St Andrew's Junior"],
+
+        // 12. (ID 182) "Learning for Life Programme... Let s Think Design!"
+        [/Learning for Life Programme in Visual Art and Design - \uFFFDLet\uFFFDs Think Design!\uFFFD/g, "Learning for Life Programme in Visual Art and Design - “Let’s Think Design!”"]
+    ];
+
+    for (const [regex, replacement] of fixes) {
+        cleanedText = cleanedText.replace(regex, replacement);
+    }
+
+    return cleanedText;
+}
 
     export default{
         components: {accordion1,filterCard,mainCard,accordion2,singleModal},
