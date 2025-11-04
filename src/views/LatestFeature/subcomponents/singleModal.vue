@@ -10,7 +10,7 @@
 
 <template>
                 <div class="modal fade show" style="display: block;" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" v-if="singleModal">{{ singleModal.name }}</h5>
@@ -40,19 +40,11 @@
 
                             <slot name="slotSingleModal3"></slot>
 
-                            <!-- <p class="modal-text">{{ getSchoolSummary(singleModal.id) }}</p> -->
                         </div>
 
                         <div class="modal-footer">
                             <slot name="slotSingleModal4"></slot>
-                            <!-- <button 
-                                type="button" 
-                                class="btn btn-primary" 
-                                @click="addCompareAndClose"
-                                :disabled="selectedSchool && selectedSchool.isCompareDisabled"
-                            >
-                                {{ selectedSchool && selectedSchool.isCompareDisabled ? 'Compare List Full' : 'Add to Compare' }}
-                            </button> -->
+
                         </div>
                     </div>
                 </div>

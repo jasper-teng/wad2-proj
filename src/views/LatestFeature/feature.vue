@@ -219,20 +219,18 @@ function fixApiDataErrors(inputText) {
                 this.isLoading = true
                 this.error = null
                 try {
-
                     let response = await axios.get(this.url)
-                    // console.log(response.data.result.records)
-    
                     let result = response.data.result.records
+                    
                     for (const data of result){
                         let school = {}
                         school.id = data._id
-                        school.name = fixApiDataErrors(data.school_name)
+                        // Trim to remove any leading/trailing spaces
+                        school.name = fixApiDataErrors(data.school_name).trim()
                         school.alp_domain = fixApiDataErrors(data.alp_domain)
                         school.alp_title = fixApiDataErrors(data.alp_title)
                         school.llp_domain = fixApiDataErrors(data.llp_domain1)
                         school.llp_title = fixApiDataErrors(data.llp_title)
-                        // --- END: Modification ---
                         school.isSaved = false
                         this.schools.push(school)
                     }
@@ -428,14 +426,175 @@ function fixApiDataErrors(inputText) {
 
                 const llp_entry = this.alp_llp_data.find(item =>item.sch_id == schoolId)
                 return llp_entry ? llp_entry.llp_description : '(No description available for this school yet)'
+            },
+
+            handleCompareAdd(school) {
+                console.log('Compare add:', school.name);
+                
+                if (this.compareList.length >= 2 || this.compareList.find(s => s.id === school.id)) {
+                    console.log('Compare list full or school already added.');
+                    return;
+                }
+                
+                this.compareList.push(school);
+                this.updateCompareDisabledState();
+                
+                // Update URL with compare parameters
+                this.updateCompareUrl();
+            },
+            
+            removeSchoolFromCompare(schoolId) {
+                this.compareList = this.compareList.filter(s => s.id !== schoolId);
+                this.updateCompareDisabledState();
+                
+                // Update URL when removing schools
+                this.updateCompareUrl();
+            },
+            
+            clearCompareList() {
+                this.compareList = [];
+                this.updateCompareDisabledState();
+                
+                // Clear URL parameters
+                this.updateCompareUrl();
+            },
+            
+            // New method to update URL
+            updateCompareUrl() {
+                const url = new URL(window.location);
+                
+                // Clear old parameters first
+                url.searchParams.delete('school1');
+                url.searchParams.delete('school2');
+                
+                if (this.compareList.length > 0) {
+                    url.searchParams.set('school1', this.compareList[0].name);
+                    if (this.compareList.length === 2) {
+                        url.searchParams.set('school2', this.compareList[1].name);
+                    }
+                }
+                
+                console.log('Updated URL:', url.toString()); // Debug
+                window.history.pushState({}, '', url);
+            },
+            
+            // New method to load compare list from URL
+            loadCompareFromUrl() {
+                const urlParams = new URLSearchParams(window.location.search);
+                
+                const school1Param = urlParams.get('school1');
+                const school2Param = urlParams.get('school2');
+                
+                console.log('URL Param school1:', school1Param);
+                console.log('URL Param school2:', school2Param);
+                
+                if (this.schools.length === 0) return;
+                
+                // Handle school1/school2 format
+                if (school1Param || school2Param) {
+                    const schoolNames = [school1Param, school2Param].filter(name => name);
+                    
+                    schoolNames.forEach(name => {
+                        // Trim both the URL param and compare with trimmed school names
+                        const decodedName = decodeURIComponent(name).trim();
+                        console.log('Looking for school:', `"${decodedName}"`);
+                        
+                        // Try exact match (case-insensitive)
+                        const school = this.schools.find(s => 
+                            s.name.toLowerCase() === decodedName.toLowerCase()
+                        );
+                        
+                        if (school && this.compareList.length < 2) {
+                            this.compareList.push(school);
+                            console.log('Successfully added:', school.name);
+                        } else if (!school) {
+                            console.log('Could not find school matching:', decodedName);
+                            // Log similar names to help debug
+                            const similar = this.schools.filter(s => 
+                                s.name.toLowerCase().includes(decodedName.toLowerCase())
+                            );
+                            console.log('Similar schools found:', similar.map(s => `"${s.name}"`));
+                        }
+                    });
+                }
+                
+                this.updateCompareDisabledState();
+                
+                console.log('Compare list length:', this.compareList.length);
+                console.log('Compare list schools:', this.compareList.map(s => s.name));
+                
+                if (this.compareList.length === 2) {
+                    this.$nextTick(() => {
+                        this.isCompareModalOpen = true;
+                        console.log('Modal should be open now');
+                    });
+                } else {
+                    console.log('Only found', this.compareList.length, 'school(s)');
+                }
+            },
+
+            shareCompareLink() {
+                const url = new URL(window.location.origin + window.location.pathname);
+                
+                if (this.compareList.length === 2) {
+                    // Properly encode school names
+                    url.searchParams.set('school1', this.compareList[0].name);
+                    url.searchParams.set('school2', this.compareList[1].name);
+                }
+                
+                const shareUrl = url.toString();
+                console.log('Share URL:', shareUrl); // Debug
+                
+                const shareData = {
+                    title: `Compare ${this.compareList[0].name} vs ${this.compareList[1].name}`,
+                    text: `Check out this school comparison:`,
+                    url: shareUrl
+                };
+
+                if (navigator.share) {
+                    navigator.share(shareData)
+                        .then(() => console.log('Successful share'))
+                        .catch((error) => console.log('Error sharing:', error));
+                } else {
+                    navigator.clipboard.writeText(shareUrl).then(() => {
+                        alert('Comparison link copied to clipboard!');
+                    }).catch(err => {
+                        console.error('Failed to copy text: ', err);
+                    });
+                }
+            },
+            loadSchoolFromUrl() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const schoolNameParam = urlParams.get('school_name');
+                
+                if (schoolNameParam && this.schools.length > 0) {
+                    const decodedName = decodeURIComponent(schoolNameParam).trim();
+                    console.log('Looking for school from URL:', decodedName);
+                    
+                    const school = this.schools.find(s => 
+                        s.name.toLowerCase() === decodedName.toLowerCase()
+                    );
+                    
+                    if (school) {
+                        console.log('Found school, opening modal:', school.name);
+                        this.$nextTick(() => {
+                            this.openModal(school);
+                        });
+                    } else {
+                        console.log('School not found:', decodedName);
+                    }
+                }
             }
         },
 
         
-        mounted(){
-            this.getSchools()
-            this.getSummaries()
-            this.getAlpLlpData()
+        async mounted() {
+            await this.getSchools();  // Wait for schools to load
+            await this.getSummaries();
+            await this.getAlpLlpData();
+            this.loadCompareFromUrl(); // Load compare list AFTER all data is ready
+            // Load single school from URL (if any)
+            this.loadSchoolFromUrl();
         }
         
     }
@@ -674,6 +833,14 @@ function fixApiDataErrors(inputText) {
                                     <p class="modal-text">{{ getSchoolSummary(compareList[1].id) }}</p>
                                 </div>
                             </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-outline-primary" @click="shareCompareLink">
+                                Share Comparison
+                            </button>
+                            <button class="btn btn-secondary" @click="closeCompareModal">
+                                Close
+                            </button>
                         </div>
                     </div>
                 </div>
