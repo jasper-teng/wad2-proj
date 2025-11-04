@@ -10,7 +10,7 @@ body {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 400;
   /* Animated dot background */
-  background-color: #f8f9fa;
+  background-color: #fff;
   background-image: radial-gradient(#FFA18D 3px, transparent 1px);
   background-size: 50px 50px;
 }

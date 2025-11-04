@@ -47,11 +47,11 @@
       <!-- Add example prompts -->
       <div class="example-prompts">
         <span>Try:</span>
-        <button class="example-prompt" @click="useExamplePrompt('show GES data for SMU, Information Systems')">
-          "show GES data for SMU, Information Systems"
+        <button class="example-prompt" @click="useExamplePrompt('Show GES data for SMU, Information Systems')">
+          Show GES data for SMU, Information Systems
         </button>
-        <button class="example-prompt" @click="useExamplePrompt('compare Ai Tong and Kong Hwa Primary Schools')">
-          "compare Ai Tong and Kong Hwa Primary Schools"
+        <button class="example-prompt" @click="useExamplePrompt('Compare Ai Tong and Kong Hwa Primary Schools')">
+          Compare Ai Tong and Kong Hwa Primary Schools
         </button>
       </div>
 
@@ -187,9 +187,9 @@ async function submitQuery() {
 }
 
 .example-prompt {
-  background: rgba(255, 161, 141, 0.1);
-  border: 1px solid rgba(255, 161, 141, 0.3);
-  color: #d81b60; /* A pinkish/reddish color to match theme */
+  background: #fff;
+  border: 1px solid #FFA18D;
+  color: #FFA18D;
   padding: 4px 10px;
   border-radius: 20px;
   font-family: "IBM Plex Sans", sans-serif;
@@ -201,7 +201,8 @@ async function submitQuery() {
 }
 
 .example-prompt:hover {
-  background: rgba(255, 161, 141, 0.2);
+  color: #fff;
+  background: #FFA18D;
   border-color: rgba(255, 161, 141, 0.5);
   transform: translateY(-1px);
 }
