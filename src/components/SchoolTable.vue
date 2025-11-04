@@ -1,4 +1,6 @@
 <script>
+import SCHOOL_COORDINATES from '../data/schoolCoordinates.json'
+
 export default {
   props: {
     schools: {
@@ -21,14 +23,15 @@ export default {
 
   data() {
     return {
-      distanceService: null,
       schoolDistances: {},
       isCalculatingDistances: false,
       expandedRows: new Set(),
       selectedSchools: []
     }
+  }, 
+  mounted() {
+    this.calculateDistances();
   },
-
   computed: {
     consolidatedSchools() {
       const schoolMap = new Map()
@@ -91,90 +94,63 @@ export default {
   },
 
   methods: {
-    initDistanceService() {
-      if (typeof google !== 'undefined' && google.maps) {
-        this.distanceService = new google.maps.DistanceMatrixService()
-        console.log('Distance Matrix Service initialized')
-      } else {
-        console.warn('Google Maps not loaded yet for distance calculation')
-        setTimeout(() => this.initDistanceService(), 500)
-      }
-    },
-
     async calculateDistances() {
-      if (!this.distanceService || !this.userLocation || this.consolidatedSchools.length === 0) {
+      if (!this.userLocation || this.consolidatedSchools.length === 0) {
         return
       }
 
       this.isCalculatingDistances = true
       this.schoolDistances = {}
 
-      const userOrigin = new google.maps.LatLng(this.userLocation.lat, this.userLocation.lng)
-      const batchSize = 25
-      const batches = []
+      const userLat = this.userLocation.lat;
+      const userLon = this.userLocation.lng;
 
-      for (let i = 0; i < this.consolidatedSchools.length; i += batchSize) {
-        batches.push(this.consolidatedSchools.slice(i, i + batchSize))
+      let schoolCoordinatesAPI = SCHOOL_COORDINATES;
+
+      const keys = Object.keys(schoolCoordinatesAPI).reverse();
+
+      let id = 1;
+      for (const schoolName of keys) {
+        schoolCoordinatesAPI[schoolName]._id = id++;
       }
 
-      console.log(`Processing ${batches.length} batches of schools for distance calculation`)
+      for (const [schoolName, school] of Object.entries(schoolCoordinatesAPI)) {
+        const distanceCalculated = this.calculateKmFromTwoCoordinates(
+          userLat,
+          userLon,
+          school.lat,
+          school.lng
+        );
 
-      for (let i = 0; i < batches.length; i++) {
-        await this.processBatch(batches[i], userOrigin)
-
-        if (i < batches.length - 1) {
-          await new Promise((resolve) => setTimeout(resolve, 1000))
-        }
+        this.schoolDistances[schoolName] = {
+          text: `${distanceCalculated.toFixed(2)} km`,
+          value: distanceCalculated,
+        };
       }
 
       this.isCalculatingDistances = false
       console.log('Distance calculation complete')
     },
 
-    processBatch(batch, userOrigin) {
-      return new Promise((resolve) => {
-        const destinations = batch.map((school) => school.school_name + ', Singapore')
+    calculateKmFromTwoCoordinates(lat1, lon1, lat2, lon2) {
+      const R = 6371000; // Earth radius in meters
+      const φ1 = lat1 * Math.PI / 180;
+      const φ2 = lat2 * Math.PI / 180;
+      const Δφ = (lat2 - lat1) * Math.PI / 180;
+      const Δλ = (lon2 - lon1) * Math.PI / 180;
 
-        this.distanceService.getDistanceMatrix(
-          {
-            origins: [userOrigin],
-            destinations: destinations,
-            travelMode: google.maps.TravelMode.DRIVING,
-            unitSystem: google.maps.UnitSystem.METRIC
-          },
-          (response, status) => {
-            if (status === 'OK') {
-              const results = response.rows[0].elements
+      const a = Math.sin(Δφ / 2) ** 2 +
+                Math.cos(φ1) * Math.cos(φ2) *
+                Math.sin(Δλ / 2) ** 2;
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
-              results.forEach((element, index) => {
-                const schoolKey = batch[index]._id
-
-                if (element.status === 'OK') {
-                  this.schoolDistances[schoolKey] = {
-                    text: element.distance.text,
-                    value: element.distance.value,
-                    duration: element.duration.text
-                  }
-                } else {
-                  this.schoolDistances[schoolKey] = {
-                    text: 'N/A',
-                    value: Infinity,
-                    duration: 'N/A'
-                  }
-                }
-              })
-            } else {
-              console.error('Distance Matrix request failed:', status)
-            }
-
-            resolve()
-          }
-        )
-      })
+      const d = R * c; 
+      return d / 1000;
     },
 
     getSchoolDistance(school) {
-      return this.schoolDistances[school._id]?.value || Infinity
+      console.log("value asssigned", this.schoolDistances[school.school_name])
+      return this.schoolDistances[school.school_name]?.value || Infinity
     },
 
     toggleSort() {
@@ -201,12 +177,12 @@ export default {
     },
 
     getDistanceClass(school) {
-      const distance = this.schoolDistances[school._id]
+      const distance = this.schoolDistances[school.school_name]
       if (!distance || distance.value === Infinity) {
         return ''
       }
 
-      const km = distance.value / 1000
+      const km = distance.value
 
       if (km <= 3) {
         return 'distance-near'
@@ -290,10 +266,6 @@ export default {
       return 'cca-badge'
     }
   },
-
-  mounted() {
-    this.initDistanceService()
-  }
 }
 </script>
 
@@ -379,8 +351,8 @@ export default {
               </div>
             </td>
             <td>
-              <span v-if="userLocation && schoolDistances[school._id]" :class="getDistanceClass(school)">
-                {{ schoolDistances[school._id].text }}
+              <span v-if="userLocation && schoolDistances[school.school_name]" :class="getDistanceClass(school)">
+                {{ schoolDistances[school.school_name].text }}
               </span>
               <span v-else>-</span>
             </td>

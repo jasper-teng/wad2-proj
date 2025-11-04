@@ -8,6 +8,15 @@ export default {
     }
   },
   methods: {
+    getSessionHomeAddress() {
+      const homeName = JSON.parse(sessionStorage.getItem("home name"));
+      const homeCoord = JSON.parse(sessionStorage.getItem("home"));
+      
+      if (homeName && addressInput && addressInput.value === "") {
+        this.addressInput = homeName;
+        this.$emit('location-change', homeCoord)
+      }
+    },
     initAutocomplete() {
       if (typeof google !== 'undefined' && google.maps) {
         const input = this.$refs.addressInput
@@ -52,7 +61,8 @@ export default {
   },
 
   mounted() {
-    this.initAutocomplete()
+    this.initAutocomplete();
+    this.getSessionHomeAddress();
   }
 }
 </script>
