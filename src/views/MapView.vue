@@ -806,6 +806,12 @@ function removeRoute(routeKey) {
   <div id="bodybg">
     <div class="container">
 
+      <!-- Page Header -->
+      <div class="text-center mb-4 pt-4">
+        <h1 class="mb-2">Map Viewer</h1>
+        <p class="text-muted">Visualize and track distances on an interactive map</p>
+      </div>
+
       <!-- Filters Section -->
       <div class="row justify-content-center mb-4">
         <div class="col-12 col-xl-11">

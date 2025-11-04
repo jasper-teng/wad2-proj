@@ -75,4 +75,20 @@ export default {
 </template>
 
 <style scoped>
+.form-control {
+  border: 2px solid #dee2e6;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.form-control:hover {
+  border-color: #FDA08C;
+  background-color: rgba(253, 160, 140, 0.05);
+}
+
+.form-control:focus {
+  border-color: #FDA08C;
+  box-shadow: 0 0 0 0.2rem rgba(253, 160, 140, 0.25);
+  background-color: white;
+}
 </style>

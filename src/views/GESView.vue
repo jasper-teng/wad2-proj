@@ -210,14 +210,14 @@ const calculateSchoolSummary = (degreeData) => {
     <!-- Main Content Area -->
     <main class="main-content" :class="{ 'sidebar-open': isSidebarOpen }">
       <div class="container-fluid py-4">
-        <div class="d-flex align-items-center mb-4">
-            <button @click="isSidebarOpen = !isSidebarOpen" class="btn btn-light me-3 d-lg-none">
+        <div class="d-flex justify-content-start mb-3 d-lg-none">
+            <button @click="isSidebarOpen = !isSidebarOpen" class="btn btn-light">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/></svg>
             </button>
-            <div>
-                <h1 class="mb-0">Graduate Employment Survey</h1>
-                <p class="text-muted mb-0">Select a university and school from the sidebar to view degree statistics.</p>
-            </div>
+        </div>
+        <div class="text-center mb-4">
+            <h1 class="mb-2">Graduate Employment Survey</h1>
+            <p class="text-muted mb-0">Select a university and school from the sidebar to view degree statistics</p>
         </div>
 
         <div v-if="error" class="alert alert-danger">{{ error }}</div>
@@ -293,21 +293,31 @@ const calculateSchoolSummary = (degreeData) => {
 </template>
 
 <style scoped>
+/* Sidebar */
 .sidebar {
   position: fixed;
-  top: 56px; /* Adjust for standard navbar height */
+  top: 56px;
   left: 0;
   bottom: 0;
   width: 300px;
-  background-color: #f8f9fa;
-  border-right: 1px solid #dee2e6;
+  background-color: #ffffff;
+  border-right: 3px solid var(--primary);
   overflow-y: auto;
-  z-index: 1030; /* Higher z-index for sidebar */
+  z-index: 1030;
   transition: transform 0.3s ease;
   transform: translateX(-100%);
+  font-family: "Inter", sans-serif;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.08);
 }
+
 .sidebar.open {
   transform: translateX(0);
+}
+
+.sidebar h5 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
 .backdrop {
@@ -316,14 +326,16 @@ const calculateSchoolSummary = (degreeData) => {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 1020; /* Below sidebar, above content */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1020;
 }
 
 .main-content {
   transition: margin-left 0.3s ease;
   padding: 0;
   margin-left: 0;
+  background-color: var(--bg-light);
+  min-height: 100vh;
 }
 
 @media (min-width: 992px) {
@@ -335,59 +347,205 @@ const calculateSchoolSummary = (degreeData) => {
   }
 }
 
+/* Sidebar List Items */
 .sidebar .list-group-item {
   background-color: transparent;
   border: none;
   padding: 0.75rem 1rem;
+  font-family: "Inter", sans-serif;
 }
+
 .sidebar .list-group-item a {
   text-decoration: none;
-  color: #212529;
+  color: var(--text-primary);
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
+
+.sidebar .list-group-item a:hover {
+  color: var(--primary);
+}
+
 .school-list {
   padding-left: 1rem;
-  border-left: 2px solid #e9ecef;
+  border-left: 2px solid var(--primary);
   margin-left: 0.5rem;
 }
+
 .school-item {
   font-size: 0.9rem;
   padding: 0.5rem 1rem !important;
   cursor: pointer;
-  border-radius: 0.25rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-family: "Inter", sans-serif;
 }
+
 .school-item:hover {
-  background-color: #e9ecef;
+  background-color: rgba(253, 160, 140, 0.1);
 }
+
 .school-item.active {
-  background-color: #0d6efd;
+  background-color: var(--primary);
   color: white;
-  border-color: #0d6efd;
+  border-color: var(--primary);
 }
+
 .arrow {
   transition: transform 0.2s ease;
   display: inline-block;
+  color: var(--primary);
+  font-size: 1.2rem;
 }
+
 .arrow.expanded {
   transform: rotate(90deg);
 }
 
-.degree-card {
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-.degree-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+/* Main Content */
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
-.stat-title {
-    font-size: 0.9rem;
-    color: #6c757d;
+h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: var(--text-primary);
 }
+
+.text-muted {
+  color: var(--text-subdued) !important;
+  font-family: "Inter", sans-serif;
+}
+
+/* Buttons */
+.btn-outline-secondary {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: #ffffff;
+  border-radius: 8px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.btn-light {
+  background: #ffffff;
+  border: 2px solid var(--primary);
+  color: var(--text-primary);
+  border-radius: 8px;
+  font-family: "DM Sans", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.btn-light:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Cards */
+.card {
+  background: #ffffff;
+  border: 3px solid var(--primary);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  font-family: "Inter", sans-serif;
+}
+
+.card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.card-subtitle {
+  font-family: "Inter", sans-serif;
+  color: var(--text-subdued);
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.bg-light {
+  background-color: rgba(253, 160, 140, 0.05) !important;
+}
+
+.border-primary {
+  border-color: var(--primary) !important;
+}
+
+/* Degree Cards */
+.degree-card {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.degree-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Statistics */
+.stat-title {
+  font-size: 0.9rem;
+  color: var(--text-subdued);
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
 .stat-value {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #212529;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  font-family: "Poppins", sans-serif;
+}
+
+/* List Group */
+.list-group-item {
+  border: 1px solid rgba(253, 160, 140, 0.2);
+  font-family: "Inter", sans-serif;
+  color: var(--text-primary);
+}
+
+.list-group-flush .list-group-item {
+  border-width: 0 0 1px;
+}
+
+/* Alerts */
+.alert-danger {
+  background-color: rgba(235, 166, 169, 0.1);
+  border: 2px solid var(--error);
+  color: var(--text-primary);
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+}
+
+/* Spinners */
+.spinner-border {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary) !important;
+}
+
+.text-primary {
+  color: var(--primary) !important;
 }
 </style>
 

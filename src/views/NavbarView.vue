@@ -17,12 +17,12 @@ const isOverlayVisible = ref(false)
 
 // Modified function to navigate home or toggle overlay
 const toggleOverlay = () => {
-  // If we are on any page OTHER than /simple-dashboard, navigate there
-  if (route.path !== '/simple-dashboard') {
-    router.push('/simple-dashboard')
+  // If we are on any page OTHER than /dashboard, navigate there
+  if (route.path !== '/dashboard') {
+    router.push('/dashboard')
     isOverlayVisible.value = false // Ensure overlay is closed
   } else {
-    // If we are ALREADY on /simple-dashboard, just toggle the overlay
+    // If we are ALREADY on /dashboard, just toggle the overlay
     isOverlayVisible.value = !isOverlayVisible.value
   }
 }

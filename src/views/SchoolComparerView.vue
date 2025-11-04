@@ -3,8 +3,8 @@
     <div class="container py-4">
       <!-- Header -->
       <div class="text-center mb-4">
-        <h2 class="display-6 fw-bold">🏫 School Comparison Tool</h2>
-        <p class="lead text-muted">Compare schools side-by-side to make informed decisions</p>
+        <h2 class="display-6 fw-bold tool-title">School Comparison Tool</h2>
+        <p class="lead text-muted tool-subtitle">Compare schools side-by-side to make informed decisions</p>
       </div>
 
       <!-- Shared Filters -->
@@ -89,7 +89,7 @@
       <div class="row mb-4">
         <div class="col-md-6">
           <div class="card">
-            <div class="card-header bg-primary text-white">
+            <div class="card-header bg-turquoise text-white">
               <h5 class="mb-0">Select First School</h5>
             </div>
             <div class="card-body">
@@ -109,7 +109,7 @@
                   v-for="school in filteredSchools1" 
                   :key="school.name"
                   class="school-item p-2 border rounded mb-2 cursor-pointer"
-                  :class="{ 'bg-primary text-white': selectedSchool1?.name === school.name }"
+                  :class="{ 'bg-turquoise text-white': selectedSchool1?.name === school.name }"
                   @click="selectSchool1(school)"
                 >
                   <div class="fw-bold">{{ school.name }}</div>
@@ -127,7 +127,7 @@
 
         <div class="col-md-6">
           <div class="card">
-            <div class="card-header bg-success text-white">
+            <div class="card-header bg-orange-pastel text-white">
               <h5 class="mb-0">Select Second School</h5>
             </div>
             <div class="card-body">
@@ -147,7 +147,7 @@
                   v-for="school in filteredSchools2" 
                   :key="school.name"
                   class="school-item p-2 border rounded mb-2 cursor-pointer"
-                  :class="{ 'bg-success text-white': selectedSchool2?.name === school.name }"
+                  :class="{ 'bg-orange-pastel text-white': selectedSchool2?.name === school.name }"
                   @click="selectSchool2(school)"
                 >
                   <div class="fw-bold">{{ school.name }}</div>
@@ -176,14 +176,14 @@
           <!-- School 1 Details -->
           <div class="col-md-6">
             <div class="card h-100">
-              <div class="card-header bg-primary text-white">
+              <div class="card-header bg-turquoise text-white">
                 <h4 class="mb-0">{{ selectedSchool1.name }}</h4>
               </div>
               <div class="card-body">
                 <div class="school-info">
                   <!-- Basic Information -->
                   <div class="info-section mb-4">
-                    <h6 class="text-primary">📋 Basic Information</h6>
+                    <h6 class="text-turquoise">📋 Basic Information</h6>
                     <div class="row">
                       <div class="col-6">
                         <strong>Type:</strong><br>
@@ -204,7 +204,7 @@
 
                   <!-- Academic Information -->
                   <div class="info-section mb-4">
-                    <h6 class="text-primary">🎓 Academic Information</h6>
+                    <h6 class="text-turquoise">🎓 Academic Information</h6>
                     <div class="row">
                       <div class="col-6">
                         <strong>Founded:</strong><br>
@@ -231,7 +231,7 @@
 
                   <!-- Facilities -->
                   <div class="info-section mb-4">
-                    <h6 class="text-primary">🏢 Facilities</h6>
+                    <h6 class="text-turquoise">🏢 Facilities</h6>
                     <div class="facilities">
                       <span 
                         v-for="facility in selectedSchool1.facilities" 
@@ -245,7 +245,7 @@
 
                   <!-- Location -->
                   <div class="info-section mb-4">
-                    <h6 class="text-primary">📍 Location</h6>
+                    <h6 class="text-turquoise">📍 Location</h6>
                     <div class="location-info">
                       <div><strong>Address:</strong> {{ selectedSchool1.address || 'N/A' }}</div>
                       <div><strong>Nearest MRT:</strong> {{ selectedSchool1.mrt || 'N/A' }}</div>
@@ -255,7 +255,7 @@
 
                   <!-- Contact Information -->
                   <div class="info-section">
-                    <h6 class="text-primary">📞 Contact Information</h6>
+                    <h6 class="text-turquoise">📞 Contact Information</h6>
                     <div class="contact-info">
                       <div><strong>Phone:</strong> {{ selectedSchool1.phone || 'N/A' }}</div>
                       <div><strong>Website:</strong> 
@@ -275,14 +275,14 @@
           <!-- School 2 Details -->
           <div class="col-md-6">
             <div class="card h-100">
-              <div class="card-header bg-success text-white">
+              <div class="card-header bg-orange-pastel text-white">
                 <h4 class="mb-0">{{ selectedSchool2.name }}</h4>
               </div>
               <div class="card-body">
                 <div class="school-info">
                   <!-- Basic Information -->
                   <div class="info-section mb-4">
-                    <h6 class="text-success">📋 Basic Information</h6>
+                    <h6 class="text-orange-pastel">📋 Basic Information</h6>
                     <div class="row">
                       <div class="col-6">
                         <strong>Type:</strong><br>
@@ -303,7 +303,7 @@
 
                   <!-- Academic Information -->
                   <div class="info-section mb-4">
-                    <h6 class="text-success">🎓 Academic Information</h6>
+                    <h6 class="text-orange-pastel">🎓 Academic Information</h6>
                     <div class="row">
                       <div class="col-6">
                         <strong>Founded:</strong><br>
@@ -330,7 +330,7 @@
 
                   <!-- Facilities -->
                   <div class="info-section mb-4">
-                    <h6 class="text-success">🏢 Facilities</h6>
+                    <h6 class="text-orange-pastel">🏢 Facilities</h6>
                     <div class="facilities">
                       <span 
                         v-for="facility in selectedSchool2.facilities" 
@@ -344,7 +344,7 @@
 
                   <!-- Location -->
                   <div class="info-section mb-4">
-                    <h6 class="text-success">📍 Location</h6>
+                    <h6 class="text-orange-pastel">📍 Location</h6>
                     <div class="location-info">
                       <div><strong>Address:</strong> {{ selectedSchool2.address || 'N/A' }}</div>
                       <div><strong>Nearest MRT:</strong> {{ selectedSchool2.mrt || 'N/A' }}</div>
@@ -354,7 +354,7 @@
 
                   <!-- Contact Information -->
                   <div class="info-section">
-                    <h6 class="text-success">📞 Contact Information</h6>
+                    <h6 class="text-orange-pastel">📞 Contact Information</h6>
                     <div class="contact-info">
                       <div><strong>Phone:</strong> {{ selectedSchool2.phone || 'N/A' }}</div>
                       <div><strong>Website:</strong> 
@@ -739,15 +739,66 @@ const filterSchools2 = () => {
   background-color: #f8f9fa;
 }
 
+.tool-title {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.tool-subtitle {
+  text-align: center;
+  font-size: 1.125rem;
+}
+
+/* Turquoise color scheme */
+.bg-turquoise {
+  background-color: #40E0D0 !important;
+}
+
+.text-turquoise {
+  color: #40E0D0 !important;
+}
+
+/* Orange Pastel color scheme */
+.bg-orange-pastel {
+  background-color: #FFB366 !important;
+}
+
+.text-orange-pastel {
+  color: #FFB366 !important;
+}
+
+/* School list items - always grey, pink on hover */
 .school-item {
   transition: all 0.2s ease;
   cursor: pointer;
+  background-color: #e9ecef !important;
+  color: #333 !important;
+  border: 1px solid #dee2e6;
 }
 
 .school-item:hover {
-  background-color: #e9ecef !important;
+  background-color: #FDA08C !important;
+  color: white !important;
   transform: translateY(-1px);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-color: #FDA08C;
+}
+
+.school-item:hover .text-muted {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Override selected state to also be grey */
+.school-item.bg-turquoise,
+.school-item.bg-orange-pastel {
+  background-color: #e9ecef !important;
+  color: #333 !important;
+}
+
+.school-item.bg-turquoise:hover,
+.school-item.bg-orange-pastel:hover {
+  background-color: #FDA08C !important;
+  color: white !important;
 }
 
 .cursor-pointer {
@@ -757,6 +808,32 @@ const filterSchools2 = () => {
 .info-section {
   border-left: 3px solid #dee2e6;
   padding-left: 15px;
+}
+
+/* Grey card headers with pink hover */
+.card-header.bg-turquoise,
+.card-header.bg-orange-pastel {
+  background-color: #e9ecef !important;
+  color: #333 !important;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.card:hover .card-header.bg-turquoise,
+.card:hover .card-header.bg-orange-pastel {
+  background-color: #FDA08C !important;
+  color: white !important;
+}
+
+/* Section headings in grey, pink on card hover */
+.text-turquoise,
+.text-orange-pastel {
+  color: #6c757d !important;
+  transition: color 0.3s ease;
+}
+
+.card:hover .text-turquoise,
+.card:hover .text-orange-pastel {
+  color: #FDA08C !important;
 }
 
 .programs, .facilities {
@@ -783,11 +860,14 @@ const filterSchools2 = () => {
 
 .card {
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
 }
 
 .card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 20px rgba(253, 160, 140, 0.3);
+  border-color: #FDA08C;
 }
 </style>

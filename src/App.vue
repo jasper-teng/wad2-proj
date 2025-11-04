@@ -56,7 +56,6 @@ watch(() => route.fullPath, checkAssistantMessage)
 </template>
 
 <style>
-/* A little custom transition for smoother route changes */
 .fade-enter-active, .fade-leave-active {
     transition: opacity 0.2s ease;
 }
@@ -65,7 +64,7 @@ watch(() => route.fullPath, checkAssistantMessage)
 }
 
 .content-with-navbar {
-  padding-top: 50px; /* Adjust this value to match your navbar's height */
+  padding-top: 70px;
 }
 
 body, #app {
@@ -77,38 +76,30 @@ body, #app {
     flex-shrink: 0;
 }
 
-/* --- Styles for the new AI Assistant Alert --- */
 .assistant-alert {
   position: fixed;
-  top: 80px; /* Below the navbar */
+  top: 80px;
   right: 20px;
-  z-index: 1056; /* Higher than Bootstrap's modal backdrop (1055) */
+  z-index: 1056;
   padding: 1rem 1.5rem;
-  background-color: #212529; /* Dark background */
-  color: #fff; /* White text */
-  border-radius: 0.5rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
+  background-color: var(--bg-dark);
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   gap: 1rem;
   max-width: 500px;
+  font-family: "Inter", sans-serif;
+  border: 2px solid var(--accent);
 }
 
 .assistant-alert .btn-close {
-  filter: invert(1) grayscale(100%) brightness(200%); /* Makes the 'x' white */
+  filter: invert(1) grayscale(100%) brightness(200%);
   opacity: 0.7;
+  transition: opacity 0.3s ease;
 }
 .assistant-alert .btn-close:hover {
   opacity: 1;
-}
-
-/* Fade transition for the alert */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
 }
 </style>

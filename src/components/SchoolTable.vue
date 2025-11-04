@@ -394,6 +394,11 @@ export default {
 <style scoped>
 .cursor-pointer {
   cursor: pointer;
+  user-select: none;
+}
+
+.cursor-pointer:hover {
+  color: var(--accent);
 }
 
 .spinner-border-sm {
@@ -403,142 +408,228 @@ export default {
 }
 
 .rounded-table {
-  border: 1px solid #dee2e6;
-  border-radius: 0.5rem;
+  border: 3px solid #dee2e6;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  border: 0.2rem solid #FFA18D;
-  border-radius: 0.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+.rounded-table:hover {
+  border-color: #FDA08C;
+  box-shadow: 0 6px 20px rgba(253, 160, 140, 0.3);
 }
 
 .table thead th {
-  background-color: #f8f9fa;
+  background-color: #e9ecef;
   border-bottom: 2px solid #dee2e6;
   font-weight: 600;
-  color: #495057;
+  color: #333;
+  font-family: "DM Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+  padding: 1rem 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.rounded-table:hover .table thead th {
+  background-color: #FDA08C;
+  color: white;
+  border-bottom-color: #FDA08C;
+}
+
+.table tbody td {
+  padding: 0.875rem 0.75rem;
+  vertical-align: middle;
+  background-color: white;
+  transition: all 0.2s ease;
+}
+
+.table tbody tr:hover td {
+  background-color: rgba(253, 160, 140, 0.1);
 }
 
 .distance-near {
-  background-color: #d4edda;
-  border: 1px solid #c3e6cb;
-  color: #155724;
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
+  background-color: var(--success);
+  border: 2px solid #9CC99C;
+  color: var(--text-primary);
+  padding: 0.375rem 0.75rem;
+  border-radius: 8px;
   display: inline-block;
+  font-weight: 600;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.875rem;
 }
 
 .distance-medium {
-  background-color: #fff3cd;
-  border: 1px solid #ffeaa7;
-  color: #856404;
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
+  background-color: var(--warning);
+  border: 2px solid #E8D889;
+  color: var(--text-primary);
+  padding: 0.375rem 0.75rem;
+  border-radius: 8px;
   display: inline-block;
+  font-weight: 600;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.875rem;
 }
 
 .distance-far {
-  background-color: #f8d7da;
-  border: 1px solid #f5c6cb;
-  color: #721c24;
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
+  background-color: var(--error);
+  border: 2px solid #DA8E91;
+  color: var(--text-primary);
+  padding: 0.375rem 0.75rem;
+  border-radius: 8px;
   display: inline-block;
+  font-weight: 600;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.875rem;
 }
 
 .cca-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.5rem;
   align-items: center;
 }
 
 .cca-badge {
-  background-color: #e9ecef;
-  color: #495057;
-  padding: 0.35rem 0.65rem;
-  border-radius: 1rem;
+  background-color: rgba(253, 160, 140, 0.15);
+  color: var(--text-primary);
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
   font-size: 0.875rem;
   font-weight: 500;
-  border: 1px solid #ced4da;
+  border: 2px solid rgba(253, 160, 140, 0.3);
   white-space: nowrap;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  font-family: "DM Sans", sans-serif;
 }
 
 .cca-badge:hover {
-  background-color: #dee2e6;
-  border-color: #adb5bd;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  background-color: #FDA08C;
+  color: white;
+  border-color: #FDA08C;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(253, 160, 140, 0.3);
 }
 
 .cca-badge-highlighted {
-  background-color: #d1e7dd;
-  color: #0f5132;
-  padding: 0.35rem 0.65rem;
-  border-radius: 1rem;
+  background-color: #FDA08C;
+  color: white;
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
   font-size: 0.875rem;
   font-weight: 600;
-  border: 2px solid #198754;
+  border: 2px solid #FDA08C;
   white-space: nowrap;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 6px rgba(25, 135, 84, 0.2);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(253, 160, 140, 0.3);
+  font-family: "DM Sans", sans-serif;
 }
 
 .cca-badge-highlighted:hover {
-  background-color: #badbcc;
-  border-color: #146c43;
-  transform: translateY(-1px);
-  box-shadow: 0 3px 8px rgba(25, 135, 84, 0.3);
+  background-color: #FF8C86;
+  border-color: #FF8C86;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(253, 160, 140, 0.5);
 }
 
 .expand-btn {
   color: #6c757d;
   text-decoration: none;
-  padding: 0.25rem 0.5rem;
+  padding: 0.375rem 0.625rem;
   font-size: 0.875rem;
   font-weight: 500;
   white-space: nowrap;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  font-family: "DM Sans", sans-serif;
+  border-radius: 6px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
 }
 
 .expand-btn:hover {
-  color: #495057;
-  background-color: #f8f9fa;
-  border-radius: 0.25rem;
+  color: white;
+  background-color: #FDA08C;
+  border-color: #FDA08C;
 }
 
 .expand-btn:focus {
   outline: none;
-  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(253, 160, 140, 0.25);
 }
 
 .comparison-action-bar {
   background: #f8f9fa;
-  border: 1px solid #dee2e6;
-  padding: 0.75rem 1rem;
-  border-radius: 0.375rem;
+  border: 2px solid #dee2e6;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.comparison-action-bar:hover {
+  border-color: #FDA08C;
+  box-shadow: 0 4px 12px rgba(253, 160, 140, 0.2);
 }
 
 .comparison-content {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .btn-compare {
   font-size: 0.9rem;
-  padding: 0.5rem 1rem;
+  padding: 0.625rem 1.5rem;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
 .btn-compare:disabled {
   cursor: not-allowed;
-  opacity: 0.6;
+  opacity: 0.5;
+}
+
+.btn-compare:not(:disabled):hover {
+  transform: translateY(-2px);
 }
 
 .selection-counter {
-  color: #6c757d;
-  font-size: 0.9rem;
-  font-weight: 500;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 2px solid #dee2e6;
+}
+
+.form-check-input {
+  cursor: pointer;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #dee2e6;
+  transition: all 0.3s ease;
+}
+
+.form-check-input:hover {
+  border-color: #FDA08C;
+}
+
+.form-check-input:checked {
+  background-color: #FDA08C;
+  border-color: #FDA08C;
+}
+
+.form-check-input:focus {
+  border-color: #FDA08C;
+  box-shadow: 0 0 0 0.2rem rgba(253, 160, 140, 0.25);
 }
 </style>

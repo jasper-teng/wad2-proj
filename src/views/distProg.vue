@@ -836,4 +836,70 @@ body {
 .share-btn svg {
     pointer-events: none;
 }
+
+/* Pink outline for ALL input fields - override Tailwind */
+select,
+input[type="text"],
+input[type="checkbox"] {
+    border-width: 2px !important;
+    border-style: solid !important;
+    border-color: #FDA08C !important;
+    transition: all 0.3s ease !important;
+}
+
+select:hover,
+input[type="text"]:hover {
+    border-color: #FF8C86 !important;
+    background-color: rgba(253, 160, 140, 0.05) !important;
+}
+
+select:focus,
+input[type="text"]:focus {
+    outline: none !important;
+    border-color: #FDA08C !important;
+    box-shadow: 0 0 0 3px rgba(253, 160, 140, 0.25) !important;
+    background-color: white !important;
+}
+
+/* Override Tailwind focus ring colors */
+select:focus-visible,
+input[type="text"]:focus-visible {
+    outline: none !important;
+    border-color: #FDA08C !important;
+    box-shadow: 0 0 0 3px rgba(253, 160, 140, 0.25) !important;
+    --tw-ring-color: rgba(253, 160, 140, 0.25) !important;
+}
+
+/* Pink hover effect on school cards - more specific */
+div[data-id] {
+    transition: all 0.3s ease !important;
+}
+
+div[data-id]:hover {
+    border-color: #FDA08C !important;
+    box-shadow: 0 6px 20px rgba(253, 160, 140, 0.3) !important;
+}
+
+/* Pink border for sticky filters card */
+.sticky {
+    border-width: 2px !important;
+    border-color: #FDA08C !important;
+    transition: all 0.3s ease !important;
+}
+
+.sticky:hover {
+    box-shadow: 0 6px 20px rgba(253, 160, 140, 0.3) !important;
+}
+
+/* Pink border for accordion items */
+.space-y-4 > div {
+    border-width: 2px !important;
+    border-color: #FDA08C !important;
+    transition: all 0.3s ease !important;
+}
+
+.space-y-4 > div:hover {
+    box-shadow: 0 6px 20px rgba(253, 160, 140, 0.3) !important;
+    border-color: #FF8C86 !important;
+}
 </style>

@@ -3,21 +3,28 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1051; /* Ensure it's above the overlay */
+  z-index: 1051;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
+  background: rgba(250, 250, 245, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .navbar {
-  /* Make the navbar completely transparent */
   background: transparent !important;
 }
 
 .navbar-logo {
   height: 45px;
   filter: none;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
 }
 
 .overlay-menu {
@@ -26,35 +33,23 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #f8f9fa;
-  background-image: radial-gradient(#FFA18D 3px, transparent 1px);
-  background-size: 50px 50px;
-  animation: move-dots 4s linear infinite;
-  background-color: #fff;
+  background-color: var(--bg-light);
   z-index: 1050;
   overflow-y: auto;
 }
 
-@keyframes move-dots {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 50px -50px; /* Creates a 45-degree angle movement */
-  }
-}
-
 .btn-outline {
-  position: relative; /* Needed for the pseudo-element */
-  z-index: 1; /* Ensure text is above the pseudo-element */
-  border: 2px solid #FFA18D;
+  position: relative;
+  z-index: 1;
+  border: 2px solid var(--accent);
   background-color: #fff;
-  color: #FFA18D;
-  overflow: hidden; /* Keeps the pseudo-element contained */
-  transition: border-color 0.4s ease;
-  border: 2px solid #FFA18D;
-  color: #FFA18D;
+  color: var(--accent);
+  overflow: hidden;
   transition: all 0.3s ease;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
 }
 
 .btn-outline::before {
@@ -64,16 +59,18 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: #FFA18D;
+  background: var(--accent);
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.3s ease;
   z-index: -1;
 }
 
 .btn-outline:hover,
 .btn-outline:focus {
   color: #fff;
+  border-color: var(--accent);
 }
+
 .btn-outline:hover::before,
 .btn-outline:focus::before {
   opacity: 1;
@@ -84,35 +81,43 @@
 }
 
 .navbaricon {
-  color: #FFA18D;
+  color: var(--accent);
   transition: color 0.3s ease;
 }
 
-
-.app-card{
-  border-color: #FFA18D;
-  transition: all 0.3s;
+.app-card {
+  border-color: var(--primary);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .app-card:hover .navbaricon {
-  color: #56bdb6;
+  color: var(--secondary);
 }
 
 .app-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-  cursor: pointer;
-  border-color: #56bdb6;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+  border-color: var(--secondary);
 }
 
-.app-card:not(hover){
-    transition: all 0.3s;
+.app-card h5 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.app-card p {
+  font-family: "Inter", sans-serif;
+  color: var(--text-subdued);
+  font-size: 0.9rem;
 }
 
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.3s ease;
 }
+
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;

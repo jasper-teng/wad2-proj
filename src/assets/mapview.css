@@ -14,28 +14,31 @@
 
 
 .btn-clear {
-  background: #ffa18d; /* Solid color from the original gradient */
+  background: var(--primary);
   color: #fff;
   transition: background-color 0.3s ease;
   border: none;
+  font-family: "DM Sans", sans-serif;
+  border-radius: 8px;
 }
 
 .btn-clear:hover, .btn-primary:focus {
-  background-color: #ffa18d; /* A slightly darker shade for hover */
+  background-color: var(--primary);
   color: #fff;
-  box-shadow: none;
+  box-shadow: 0 4px 12px rgba(253, 160, 140, 0.3);
 }
 
 /* ===== Glass Card Effects ===== */
 .glass-card {
   background: #ffffff;
-  border-radius: 1rem;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: box-shadow 0.3s ease;
+  border: 3px solid var(--primary);
 }
 
 .glass-card:hover {
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
 .map-only-container {
@@ -44,18 +47,21 @@
 }
 
 .map-only-container #map {
-  border-radius: 1rem;
+  border-radius: 16px;
   margin: 0;
 }
 
 /* ===== Filter Section ===== */
 .filter-card {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
 .filter-header {
-  background: #ffa18d 0%;
+  background: linear-gradient(135deg, #ffa18d 0%, #ffcba4 100%);
   padding: 20px;
+  border-radius: 13px 13px 0 0;
+  transition: all 0.3s ease;
 }
 
 .filter-header h5 {
@@ -63,7 +69,7 @@
   font-weight: 700;
   font-size: 22px;
   margin: 0;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .filter-body {
@@ -72,94 +78,98 @@
 
 .filter-label {
   font-weight: 600;
-  color: #313131;
+  color: var(--text-primary);
   margin-bottom: 8px;
   font-size: 14px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 
 .filter-select {
   width: 100%;
   padding: 10px 14px;
   border: 2px solid #ffa18d;
-  border-radius: 10px;
+  border-radius: 8px;
   background: #ffffff;
-  color: #313131;
+  color: var(--text-primary);
   font-size: 15px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "Inter", sans-serif;
   outline: none;
   transition: all 0.3s ease;
 }
 
+.filter-select:hover {
+  border-color: #ff8c7a;
+  box-shadow: 0 2px 8px rgba(255, 161, 141, 0.2);
+}
+
 .filter-select:focus {
-  border-color: #56bdb6;
-  box-shadow: 0 0 0 3px rgba(86, 189, 182, 0.1);
+  border-color: #ff8c7a;
+  box-shadow: 0 0 0 0.2rem rgba(255, 161, 141, 0.25);
 }
 
 /* Filter Buttons */
 .filter-btn {
   padding: 10px 20px;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   font-weight: 600;
   font-size: 14px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .filter-btn-clear {
-  background: #ffffff;
-  color: #313131;
-  border: 2px solid #ffa18d;
+  background: #56bdb6;
+  color: #fff;
+  border: none;
 }
 
 .filter-btn-clear:hover {
-  background: #ffa18d;
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 161, 141, 0.3);
-}
-
-.filter-btn-reset {
-  background: #56bdb6;
-  color: #fff;
-}
-
-.filter-btn-reset:hover {
   background: #4aa8a2;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(86, 189, 182, 0.3);
 }
 
+.filter-btn-reset {
+  background: var(--accent);
+  color: #fff;
+}
+
+.filter-btn-reset:hover {
+  background: #FF7A73;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 140, 134, 0.3);
+}
+
 /* Filter Status */
 .filter-status {
-  background: rgba(255, 161, 141, 0.05);
+  background: rgba(253, 160, 140, 0.05);
   padding: 16px;
-  border: 2px solid rgba(255, 161, 141, 0.2);
-  border-radius: 10px;
-  color: #313131;
-  font-family: 'IBM Plex Sans', sans-serif;
+  border: 2px solid rgba(253, 160, 140, 0.2);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: "Inter", sans-serif;
 }
 
 .filter-detail {
-  color: #56bdb6;
+  color: var(--secondary);
   font-weight: 500;
 }
 
 .filter-badge {
   display: inline-block;
   padding: 6px 16px;
-  border-radius: 20px;
+  border-radius: 8px;
   font-size: 13px;
   font-weight: 600;
-  background: #999999;
+  background: var(--text-subdued);
   color: #fff;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 
 .filter-badge.active {
-  background: linear-gradient(135deg, #ffa18d 0%, #56bdb6 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   animation: pulse 2s infinite;
 }
 
@@ -274,36 +284,36 @@ label {
 
 input.form-control {
   padding: 0.6rem 0.8rem;
-  border: 2px solid #ffa18d;
+  border: 2px solid #56bdb6;
   border-radius: 10px;
   background-color: #ffffff;
   color: #313131;
   font-size: 1rem;
   font-family: 'IBM Plex Sans', sans-serif;
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input.form-control:focus {
-  border-color: #56bdb6;
+  border-color: #ffa18d;
   background-color: #fff;
   color: #313131;
-  box-shadow: 0 0 0 3px rgba(86, 189, 182, 0.1);
+  box-shadow: 0 0 8px rgba(255, 161, 141, 0.5);
 }
 
 select.form-select {
   padding: 0.5rem 0.75rem;
-  border: 2px solid #ffa18d;
+  border: 2px solid #56bdb6;
   border-radius: 10px;
   background-color: #ffffff;
   color: #313131;
   font-weight: 600;
   font-family: 'IBM Plex Sans', sans-serif;
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 select.form-select:focus {
-  border-color: #56bdb6;
-  box-shadow: 0 0 0 3px rgba(86, 189, 182, 0.1);
+  border-color: #ffa18d;
+  box-shadow: 0 0 8px rgba(255, 161, 141, 0.5);
 }
 
 /* ===== Buttons ===== */
@@ -414,7 +424,7 @@ button.btn-secondary:hover {
 
 .distance-card {
   padding: 1rem;
-  background-color: #fffcff;
+  background-color: #fff;
   border: 2px solid #ffa18d;
   border-radius: 0.75rem;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
@@ -422,7 +432,7 @@ button.btn-secondary:hover {
 }
 
 .distance-card:hover {
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 12px rgba(255, 161, 141, 0.3);
 }
 
 .route-title {
@@ -449,9 +459,9 @@ button.btn-secondary:hover {
 }
 
 .distance-mode:hover {
-  background-color: #FFE2DD;
+  cursor: pointer;
 }
-/* 
+
 .distance-mode.walking:hover {
   border-color: orange;
   border-width: 2px;
@@ -468,7 +478,7 @@ button.btn-secondary:hover {
   border-color: red;
   border-width: 2px;
   border-style: solid;
-} */
+}
 
 .distance-mode i {
   color: #ffa18d;

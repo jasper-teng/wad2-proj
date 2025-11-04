@@ -211,20 +211,46 @@ onMounted(() => {
 <style scoped>
 .cca-finder-container {
   min-height: 100vh;
-  background-color: none;
+  background-color: transparent;
 }
 
 .header-section {
   text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header-section h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.header-section .text-muted {
+  font-family: "Nunito", sans-serif;
+  color: var(--text-subdued);
+  font-size: 1.1rem;
 }
 
 .content-card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  border: 0.2rem solid #FFA18D;
-  border-radius: 0.5rem;
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border: 3px solid #dee2e6;
+  transition: all 0.3s ease;
+}
+
+.content-card:hover {
+  box-shadow: 0 6px 20px rgba(253, 160, 140, 0.3);
+  border-color: #FDA08C;
+}
+
+.content-card h5 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
 }
 
 .container {

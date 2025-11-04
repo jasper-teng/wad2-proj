@@ -690,9 +690,9 @@ function renderPcScreen () {
   pcScreenTexture.needsUpdate = true
 }
 
-/* -------- Posters generated from groups (black text + embedded SVG) -------- */
+/* -------- Posters generated from groups (with background images) -------- */
 async function buildPostersFromGroups (groups) {
-  const frameMat = new THREE.MeshStandardMaterial({ color: 0x34495e, roughness: 0.8 })
+  const frameMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.3 })
   const apps = []
   groups.forEach(g => g.apps.forEach(a => apps.push({
     ...a,
@@ -738,51 +738,74 @@ async function buildPostersFromGroups (groups) {
 }
 
 async function makePosterTexture (app) {
-  const { name, description, iconForcedBlack } = app
+  const { name, description, path } = app
   const W = 1024, H = 768
   const canvas = document.createElement('canvas')
   canvas.width = W; canvas.height = H
   const ctx = canvas.getContext('2d')
 
-  ctx.fillStyle = '#ffffff'
-  ctx.fillRect(0, 0, W, H)
-  ctx.strokeStyle = '#d0d4da'
-  ctx.lineWidth = 8
-  roundRect(ctx, 16, 16, W - 32, H - 32, 24); ctx.stroke()
-
-  try {
-    const img = await svgStringToImage(
-      iconForcedBlack
-        .replace(/class="[^"]*"/g, '')
-        .replace(/width="[^"]*"/, 'width="128"')
-        .replace(/height="[^"]*"/, 'height="128"')
-    )
-    const ICON_SIZE = 180
-    ctx.drawImage(img, (W - ICON_SIZE) / 2, 120, ICON_SIZE, ICON_SIZE)
-  } catch {
-    ctx.fillStyle = '#111'; ctx.fillRect((W - 140) / 2, 150, 140, 140)
+  // Map app paths to image filenames
+  const imageMap = {
+    '/comparison': 'school comparison.jpg',
+    '/cca-finder': 'cca.jpg',
+    '/distinctProgramme': 'programmes.webp',
+    '/ges': 'graduation.jpg',
+    '/news': 'news.jpg',
+    '/map': 'maps.jpg'
   }
 
-  ctx.fillStyle = '#000'
-  ctx.font = 'bold 48px system-ui, -apple-system, Segoe UI, Roboto, sans-serif'
+  const imageName = imageMap[path]
+
+  // Load and draw background image
+  if (imageName) {
+    try {
+      const bgImage = await loadImage(`/src/assets/dashboard_images/${imageName}`)
+      ctx.drawImage(bgImage, 0, 0, W, H)
+
+      // Add dark overlay for text readability
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.4)'
+      ctx.fillRect(0, 0, W, H)
+    } catch {
+      ctx.fillStyle = '#ffffff'
+      ctx.fillRect(0, 0, W, H)
+    }
+  } else {
+    ctx.fillStyle = '#ffffff'
+    ctx.fillRect(0, 0, W, H)
+  }
+
+  // White text with shadow for readability
+  ctx.shadowColor = 'rgba(0, 0, 0, 0.8)'
+  ctx.shadowBlur = 20
+  ctx.shadowOffsetX = 0
+  ctx.shadowOffsetY = 4
+
+  ctx.fillStyle = '#ffffff'
+  ctx.font = 'bold 64px Poppins, system-ui, sans-serif'
   ctx.textAlign = 'center'
   ctx.textBaseline = 'middle'
-  wrapText(ctx, name || '', W / 2, 420, 820, 52)
+  wrapText(ctx, name || '', W / 2, H - 200, 900, 70)
 
-  ctx.fillStyle = '#111'
-  ctx.font = 'normal 28px system-ui, -apple-system, Segoe UI, Roboto, sans-serif'
-  wrapText(ctx, description || '', W / 2, 520, 860, 36)
+  ctx.font = 'normal 32px Inter, system-ui, sans-serif'
+  ctx.shadowBlur = 15
+  wrapText(ctx, description || '', W / 2, H - 80, 920, 40)
 
-  ctx.fillStyle = '#111'
-  roundRect(ctx, W/2 - 120, H - 130, 240, 56, 12); ctx.fill()
-  ctx.fillStyle = '#fff'
-  ctx.font = '600 26px system-ui, -apple-system, Segoe UI, Roboto, sans-serif'
-  ctx.fillText('Open', W / 2, H - 102)
+  ctx.shadowColor = 'transparent'
+  ctx.shadowBlur = 0
 
   const tex = new THREE.CanvasTexture(canvas)
   tex.anisotropy = renderer?.capabilities?.getMaxAnisotropy?.() || 1
   tex.needsUpdate = true
   return tex
+}
+
+function loadImage(src) {
+  return new Promise((resolve, reject) => {
+    const img = new Image()
+    img.onload = () => resolve(img)
+    img.onerror = reject
+    img.src = src
+  })
 }
 
 /* ---------------- Canvas helpers ---------------- */

@@ -4,10 +4,10 @@ import { useRouter } from 'vue-router'
 import axios from 'axios'
 import { Modal } from 'bootstrap'
 import { Line as LineChart, getElementAtEvent } from 'vue-chartjs'
-import { Chart as ChartJS, Title, Tooltip, Legend, LineElement, PointElement, CategoryScale, LinearScale } from 'chart.js'
+import { Chart as ChartJS, Title, Tooltip, Legend, LineElement, PointElement, CategoryScale, LinearScale, Filler } from 'chart.js'
 
-// Register the necessary components for Chart.js
-ChartJS.register(Title, Tooltip, Legend, LineElement, PointElement, CategoryScale, LinearScale)
+// Register the necessary components for Chart.js including Filler for gradient
+ChartJS.register(Title, Tooltip, Legend, LineElement, PointElement, CategoryScale, LinearScale, Filler)
 
 
 // --- STATE MANAGEMENT ---
@@ -52,13 +52,20 @@ const chartData = computed(() => {
   return {
     datasets: [{
       label: 'Sentiment Comparative Score',
-      backgroundColor: 'rgba(13, 110, 253, 0.5)',
+      backgroundColor: (context) => {
+        const ctx = context.chart.ctx;
+        const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+        gradient.addColorStop(0, 'rgba(13, 110, 253, 0.2)');
+        gradient.addColorStop(1, 'rgba(13, 110, 253, 0.02)');
+        return gradient;
+      },
       borderColor: 'rgba(13, 110, 253, 1)',
       data: analyzableArticles.map(article => ({
         x: new Date(article.publishedAt).toLocaleDateString('en-SG', { year: 'numeric', month: 'short', day: 'numeric' }),
         y: article.sentiment_comparative,
         article: article // Attach full article object for interactivity
       })),
+      fill: true,
       tension: 0.2
     }]
   };
@@ -213,12 +220,13 @@ function handleChartClick(event) {
 
 <template>
   <div class="container py-5">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1 class="mb-0">News Article Management</h1>
-        <div>
-            <button @click="fetchNews" class="btn btn-outline-secondary me-2">Refresh</button>
-            <button @click="uploadModalInstance.show()" class="btn btn-primary">Upload News</button>
-        </div>
+    <div class="text-center mb-4">
+        <h1 class="mb-3">News Article Management</h1>
+        <p class="text-muted">Upload, manage, and analyze news articles with sentiment analysis</p>
+    </div>
+    <div class="d-flex justify-content-center gap-2 mb-4">
+        <button @click="fetchNews" class="btn btn-outline-secondary">Refresh</button>
+        <button @click="uploadModalInstance.show()" class="btn btn-primary">Upload News</button>
     </div>
 
     <!-- Status Message Area -->
@@ -288,14 +296,14 @@ function handleChartClick(event) {
                     {{ article.sentiment_comparative !== undefined ? article.sentiment_comparative.toFixed(4) : 'N/A' }}
                 </td>
                 <td class="text-end">
-                    <button 
-                        v-if="article.sentiment_score === undefined" 
-                        @click.stop="runSentimentAnalysis(article._id)" 
+                    <button
+                        v-if="article.sentiment_score === undefined"
+                        @click.stop="runSentimentAnalysis(article._id)"
                         class="btn btn-info btn-sm me-2">
                         Analyze
                     </button>
-                    <a :href="article.url" target="_blank" rel="noopener noreferrer" @click.stop class="btn btn-outline-secondary btn-sm me-2">Link</a>
-                    <button @click.stop="confirmDelete(article._id)" class="btn btn-danger btn-sm">Delete</button>
+                    <a :href="article.url" target="_blank" rel="noopener noreferrer" @click.stop class="btn btn-outline-secondary btn-sm me-2 btn-fixed-width">Link</a>
+                    <button @click.stop="confirmDelete(article._id)" class="btn btn-danger btn-sm btn-fixed-width">Delete</button>
                 </td>
               </tr>
             </tbody>
@@ -317,12 +325,296 @@ function handleChartClick(event) {
 </template>
 
 <style scoped>
-.clickable-row {
-    cursor: pointer;
+/* Main Container */
+.container {
+  font-family: "Inter", sans-serif;
+  color: var(--text-primary);
+  background-color: var(--bg-light);
 }
+
+/* Headings */
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+h5 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #FF7A73;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 140, 134, 0.3);
+}
+
+.btn-outline-secondary {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: #ffffff;
+  border-radius: 8px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.btn-secondary {
+  background: #ffffff;
+  border: 2px solid var(--primary);
+  color: var(--text-primary);
+  border-radius: 8px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-danger {
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+  background: #FF7A73;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 140, 134, 0.3);
+}
+
+.btn-info {
+  background: var(--secondary);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-info:hover {
+  background: #8FD9CC;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(167, 230, 218, 0.3);
+}
+
 .btn-sm {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.875rem;
+  padding: 6px 12px;
+  font-size: 0.875rem;
+  border-radius: 6px;
+}
+
+/* Alerts */
+.alert {
+  border-radius: 8px;
+  border: 2px solid;
+  font-family: "Inter", sans-serif;
+}
+
+.alert-success {
+  background-color: rgba(183, 216, 183, 0.1);
+  border-color: var(--success);
+  color: var(--text-primary);
+}
+
+.alert-danger {
+  background-color: rgba(235, 166, 169, 0.1);
+  border-color: var(--error);
+  color: var(--text-primary);
+}
+
+.alert-info {
+  background-color: rgba(167, 230, 218, 0.1);
+  border-color: var(--secondary);
+  color: var(--text-primary);
+}
+
+/* Cards - Grey with pink hover */
+.card {
+  background: #f8f9fa;
+  border: 3px solid #dee2e6;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  font-family: "Inter", sans-serif;
+}
+
+.card:hover {
+  border-color: #FDA08C;
+  box-shadow: 0 6px 20px rgba(253, 160, 140, 0.3);
+}
+
+.card-header {
+  background: #e9ecef;
+  border-bottom: 2px solid #dee2e6;
+  border-radius: 13px 13px 0 0 !important;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.card:hover .card-header {
+  background-color: #FDA08C;
+  color: white;
+}
+
+.card-body {
+  padding: 24px;
+}
+
+/* Form Controls - Grey borders only, no hover background on card header inputs */
+.form-control, .form-select {
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.form-control:hover, .form-select:hover {
+  border-color: #FDA08C;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #FDA08C;
+  box-shadow: 0 0 0 0.2rem rgba(253, 160, 140, 0.25);
+  background-color: white;
+}
+
+/* Remove background color on hover for card-header inputs */
+.card-header .form-control:hover,
+.card-header .form-select:hover {
+  background-color: white;
+}
+
+.form-label {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+/* Table - Grey with pink hover */
+.table {
+  font-family: "Inter", sans-serif;
+  color: var(--text-primary);
+}
+
+.table thead {
+  background: #e9ecef !important;
+  color: #333 !important;
+  font-weight: 600;
+  font-family: "DM Sans", sans-serif;
+}
+
+.table thead th {
+  background: #e9ecef !important;
+  color: #333 !important;
+}
+
+.table-hover tbody tr:hover {
+  background: rgba(253, 160, 140, 0.1);
+}
+
+.clickable-row {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.text-success {
+  color: var(--success) !important;
+  font-weight: 600;
+}
+
+.text-danger {
+  color: var(--accent) !important;
+  font-weight: 600;
+}
+
+.text-muted {
+  color: var(--text-subdued) !important;
+}
+
+/* Modal */
+.modal-content {
+  border-radius: 16px;
+  border: 3px solid var(--primary);
+  font-family: "Inter", sans-serif;
+}
+
+.modal-header {
+  background: var(--primary);
+  color: #fff;
+  border-radius: 13px 13px 0 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.modal-title {
+  font-weight: 600;
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+.modal-footer {
+  border-top: 2px solid rgba(253, 160, 140, 0.2);
+  padding: 16px 24px;
+}
+
+.btn-close {
+  filter: brightness(0) invert(1);
+}
+
+/* Fixed width buttons for consistent sizing and alignment */
+.btn-fixed-width {
+  min-width: 70px;
+  width: 70px;
+  display: inline-block;
+  text-align: center;
+  padding: 6px 12px !important;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+/* Ensure actions column buttons are aligned */
+.text-end {
+  white-space: nowrap;
+}
+
+.text-end .btn {
+  vertical-align: middle;
+  margin-bottom: 0;
 }
 </style>
 

@@ -318,8 +318,11 @@ watch(
 
     <!-- Header and Controls (fixed part) -->
     <div class="flex-shrink-0 pt-4 pb-3">
-      <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
-        <h1 class="display-6 fw-bolder mb-0">School Comparison Tool</h1>
+      <div class="text-center mb-4">
+        <h1 class="display-6 fw-bolder mb-2">School Comparison Tool</h1>
+        <p class="text-muted mb-4">Compare multiple schools side-by-side to view their subjects, CCAs, and general information</p>
+      </div>
+      <div class="d-flex justify-content-center mb-4">
         <button
           @click="addComparisonSlot"
           class="btn btn-primary"
@@ -524,55 +527,245 @@ watch(
 <style scoped>
 /* Main container styles */
 .comparison-container {
-  /* Calculate height minus approx navbar height (adjust 56px if needed) */
-  height: calc(100vh - 56px); 
-  overflow: hidden; /* Prevent overall page scroll */
+  height: calc(100vh - 56px);
+  overflow: hidden;
+  background-color: var(--bg-light);
 }
 
-/* Make the grid itself scrollable if needed on smaller screens, although cards should handle it */
 .comparison-grid-scrollable {
-  overflow-y: auto; /* Allow the row to scroll if it overflows vertically */
-  /* Remove padding-bottom to use full height */
-   padding-bottom: 0 !important; 
+  overflow-y: auto;
+  padding-bottom: 0 !important;
 }
 
-/* Ensure cards take full height within their column */
+/* Card Styles */
 .card {
   height: 100%;
+  background: #f8f9fa;
+  border: 3px solid #dee2e6;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  font-family: "Inter", sans-serif;
+}
+
+.card:hover {
+  box-shadow: 0 6px 20px rgba(253, 160, 140, 0.3);
+  border-color: #FDA08C;
+}
+
+.card-header {
+  background: #e9ecef;
+  border-bottom: 2px solid #dee2e6;
+  border-radius: 13px 13px 0 0 !important;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.card:hover .card-header {
+  background: #FDA08C;
+  color: white;
+  border-bottom-color: #FDA08C;
 }
 
 .card-header .dropdown-menu {
-  width: 100%; /* Make dropdown menu match input width */
+  width: 100%;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: "Inter", sans-serif;
 }
 
-/* Make table scrollable if it gets too long */
+.card-body {
+  padding: 24px;
+  font-family: "Inter", sans-serif;
+  color: var(--text-primary);
+}
+
+/* Form Controls */
+.form-control {
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 0.2rem rgba(167, 230, 218, 0.25);
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #FF7A73;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 140, 134, 0.3);
+}
+
+.btn-secondary {
+  background: #ffffff;
+  border: 2px solid var(--primary);
+  color: var(--text-primary);
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Table Styles */
 .table-container {
-  max-height: 200px; /* Reduced height a bit */
+  max-height: 200px;
   overflow-y: auto;
+  border-radius: 8px;
 }
 
+.table {
+  font-family: "Inter", sans-serif;
+  color: var(--text-primary);
+}
+
+.table thead {
+  background: #e9ecef;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background: #FDA08C;
+  color: white;
+}
+
+.table tbody tr:hover .badge {
+  color: white !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* List Group */
 .list-group-item {
   font-size: 0.9rem;
-  /* Allow text to wrap */
   flex-wrap: wrap;
+  border: 1px solid #dee2e6;
+  font-family: "Inter", sans-serif;
+  color: var(--text-primary);
+  background-color: #f8f9fa;
+  transition: all 0.2s ease;
 }
+
+.list-group-item:hover {
+  background-color: #FDA08C;
+  color: white;
+  border-color: #FDA08C;
+}
+
 .list-group-item > span {
   text-align: right;
-  max-width: 100%; /* Allow span to take full width if needed */
+  max-width: 100%;
   word-break: break-word;
-  padding-left: 10px; /* Add spacing between key and value */
+  padding-left: 10px;
 }
 
-/* Ensure card body scrolls */
+/* Accordion */
+.accordion-item {
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+.accordion-item:hover {
+  border-color: #FDA08C;
+}
+
+.accordion-button {
+  background: #e9ecef;
+  color: var(--text-primary);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.accordion-button:hover {
+  background: #FDA08C;
+  color: white;
+}
+
+.accordion-button:not(.collapsed) {
+  background: #dee2e6;
+  color: var(--text-primary);
+}
+
+.accordion-button:not(.collapsed):hover {
+  background: #FDA08C;
+  color: white;
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(253, 160, 140, 0.25);
+}
+
+/* Badges */
+.badge {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.bg-primary {
+  background: var(--primary) !important;
+}
+
+.bg-secondary {
+  background: var(--secondary) !important;
+}
+
+.bg-success {
+  background: var(--success) !important;
+}
+
+/* Scrollable Areas */
 .card-body-scrollable {
   overflow-y: auto;
-  /* max-height is implicitly handled by flex-grow-1 */
 }
 
-/* Ensure the flex column layout works correctly for the card */
 .d-flex.flex-column > .card-body {
-    flex-grow: 1; /* Allow body to take up remaining space */
-    overflow-y: auto; /* Make the body itself scroll */
+  flex-grow: 1;
+  overflow-y: auto;
 }
 
+/* Input Groups */
+.input-group .form-control {
+  border-right: none;
+}
+
+.input-group .btn {
+  border-left: none;
+}
 </style>

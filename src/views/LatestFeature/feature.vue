@@ -714,48 +714,231 @@ function fixApiDataErrors(inputText) {
 </template>
 
 <style scoped>
+/* Main Container */
+.container-fluid {
+    font-family: "Inter", sans-serif;
+    color: var(--text-primary);
+    background-color: var(--bg-light);
+}
 
-    .modal-subtitle{
-        font-size: 16px; 
-        font-weight: 600; 
-        color: #374151; 
-        margin-top: 0.25rem;
-    }
+/* Headings */
+h1 {
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 700 !important;
+    color: var(--text-primary) !important;
+}
 
-    .modal-text{
-        font-size: 14px; 
-        color: #4b5563;
-    }
+h5 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: var(--text-primary);
+}
 
-    .aboutSchool{
-        font-size: 16px; 
-        font-weight: 600; 
-        color: #374151;
-    }
+p {
+    font-family: "Inter", sans-serif;
+}
 
-    .cards-grid {
+/* Buttons */
+.btn-primary {
+    background: var(--accent);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: #FF7A73;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 140, 134, 0.3);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn-outline-secondary {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    background: #ffffff;
+    border-radius: 8px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+
+/* Alerts */
+.alert-danger {
+    background-color: rgba(235, 166, 169, 0.1);
+    border: 2px solid var(--error);
+    color: var(--text-primary);
+    border-radius: 8px;
+    font-family: "Inter", sans-serif;
+}
+
+/* Badges */
+.badge {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+.bg-primary-subtle {
+    background-color: rgba(253, 160, 140, 0.1) !important;
+}
+
+.text-primary-emphasis {
+    color: var(--primary) !important;
+}
+
+.bg-success-subtle {
+    background-color: rgba(183, 216, 183, 0.1) !important;
+}
+
+.text-success-emphasis {
+    color: var(--success) !important;
+}
+
+/* Compare Bar */
+.fixed-bottom {
+    background: #ffffff;
+    border-top: 3px solid var(--primary);
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+    font-family: "Inter", sans-serif;
+}
+
+.fixed-bottom h5 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.bg-light {
+    background-color: rgba(253, 160, 140, 0.05) !important;
+}
+
+.text-muted {
+    color: var(--text-subdued) !important;
+}
+
+/* Modal */
+.modal-content {
+    border-radius: 16px;
+    border: 3px solid var(--primary);
+    font-family: "Inter", sans-serif;
+}
+
+.modal-header {
+    background: var(--primary);
+    color: #fff;
+    border-radius: 13px 13px 0 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.modal-title {
+    font-weight: 600;
+    color: #fff;
+}
+
+.modal-body {
+    padding: 24px;
+}
+
+.modal-subtitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 0.25rem;
+    font-family: "Poppins", sans-serif;
+}
+
+.modal-text {
+    font-size: 14px;
+    color: var(--text-subdued);
+    font-family: "Inter", sans-serif;
+}
+
+.aboutSchool {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-family: "Poppins", sans-serif;
+}
+
+.btn-close {
+    filter: brightness(0) invert(1);
+}
+
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Pagination */
+.pagination {
+    font-family: "DM Sans", sans-serif;
+}
+
+.page-link {
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin: 0 4px;
+}
+
+.page-link:hover {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+
+.page-item.active .page-link {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+}
+
+.page-item.disabled .page-link {
+    opacity: 0.6;
+    cursor: not-allowed;
+    border-color: var(--text-subdued);
+    color: var(--text-subdued);
+}
+
+/* Spinner */
+.spinner-border {
+    color: var(--primary);
+}
+
+/* Cards Grid */
+.cards-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 1.5rem;
-    }
+}
 
+/* Medium screens and up: 2 columns */
+@media (min-width: 768px) {
     .cards-grid {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        gap: 1.5rem;
+        grid-template-columns: repeat(2, 1fr);
     }
+}
 
-    /* Medium screens and up: 2 columns */
-    @media (min-width: 768px) {
-        .cards-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
+/* Large screens and up: 3 columns */
+@media (min-width: 992px) {
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
-
-    /* Large screens and up: 3 columns */
-    @media (min-width: 992px) {
-        .cards-grid {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
+}
 </style>
