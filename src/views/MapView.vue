@@ -71,11 +71,11 @@ import '@/assets/mapview.css'
   // Wait for Google Maps API to load
   function waitForGoogleMaps() {
     return new Promise((resolve) => {
-      if (window.google && window.google.maps) {
+      if (window.google && window.google.maps && window.google.maps.Map) {
         resolve()
       } else {
         const checkInterval = setInterval(() => {
-          if (window.google && window.google.maps) {
+          if (window.google && window.google.maps && window.google.maps.Map) {
             clearInterval(checkInterval)
             resolve()
           }
@@ -84,10 +84,34 @@ import '@/assets/mapview.css'
     })
   }
 
+  // Function to read and input them into the map
+  function readUrlParams() {
+    const urlParams = new URLSearchParams(window.location.search)
+    const params = {}
+
+    for (const [key, value] of urlParams.entries()) {
+      params[key] = value
+    }
+
+    console.log('URL Parameters:', params)
+    if(params.source && params.school){
+      source.value = params.source
+      destination.value = params.school
+      toggleDrawer()
+      // Don't call getDistanceOfTargets() here - the watcher will handle it
+    }
+
+    return
+
+  }
+
   // Initialize Google Maps when component is mounted
   onMounted(async () => {
     // Wait for Google Maps to load
     await waitForGoogleMaps()
+
+    // Read and log URL parameters
+    readUrlParams()
 
     // Load Google Maps script
     initMap()
@@ -320,7 +344,8 @@ import '@/assets/mapview.css'
       { mode: 'WALKING', color: 'pink', icon: 'person-walking' }
     ];
 
-    for (const { mode, color, icon } of travelModes) {
+    for (const { mode, color, icon } of travelModes) { 
+      console.log("test");
       directionsService.route(
         {
           origin: originPoint,
@@ -329,6 +354,7 @@ import '@/assets/mapview.css'
         },
         (response, status) => {
           if (status === 'OK') {
+            console.log(response);
             const renderer = new google.maps.DirectionsRenderer({
               map,
               polylineOptions: { strokeColor: color, strokeWeight: 5 }
