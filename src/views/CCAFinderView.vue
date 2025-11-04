@@ -9,6 +9,7 @@ const error = ref('')
 const allSchools = ref([])
 const userLocation = ref(null)
 const currentSortOrder = ref('none')
+const searchBar = ref(null)
 
 const selectedFilters = reactive({
   level: '',
@@ -138,6 +139,16 @@ function handleSortChange(sortOrder) {
   console.log('Sort order changed:', sortOrder)
 }
 
+function clearAllFilters() {
+  selectedFilters.level = ''
+  selectedFilters.category = ''
+  selectedFilters.cca = ''
+  userLocation.value = null
+  if (searchBar.value) {
+    searchBar.value.clearLocation()
+  }
+}
+
 onMounted(() => {
   loadSchoolData()
 })
@@ -153,7 +164,6 @@ onMounted(() => {
 
       <div class="content-card mb-4">
         <h5 class="mb-4">Filters</h5>
-        <SearchBar @location-change="handleLocationChange" />
         <FilterPanel
           :all-levels="allLevels"
           :all-categories="allCategories"
@@ -161,6 +171,17 @@ onMounted(() => {
           :selected-filters="selectedFilters"
           @filter-change="handleFilterChange"
         />
+        <SearchBar ref="searchBar" @location-change="handleLocationChange" />
+        <div class="mt-3">
+          <button
+            type="button"
+            class="btn btn-sm btn-outline-secondary"
+            @click="clearAllFilters"
+            :disabled="!selectedFilters.level && !selectedFilters.category && !selectedFilters.cca && !userLocation"
+          >
+            Clear All Filters
+          </button>
+        </div>
       </div>
 
       <div v-if="error" class="alert alert-danger shadow-sm" role="alert">
@@ -179,6 +200,7 @@ onMounted(() => {
           :schools="filteredSchools"
           :user-location="userLocation"
           :current-sort-order="currentSortOrder"
+          :selected-cca-filter="selectedFilters.cca"
           @sort-change="handleSortChange"
         />
       </div>

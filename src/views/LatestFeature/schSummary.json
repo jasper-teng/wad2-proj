@@ -1,0 +1,1422 @@
+[
+  {
+    "_id": 1,
+    "school_name": "Admiralty Secondary",
+    "Summary": "Admiralty Secondary School's mission is to \"Empower Admirals to Actualise their Dreams\". Established in 2002, the school has a niche in Robotics Enterprise and focuses on STEM to equip students with 21st-century competencies. The school's ALP in Design Thinking and LLP in Nurturing Mindful Leaders complement each other to develop students holistically."
+  },
+  {
+    "_id": 2,
+    "school_name": "Ahmad Ibrahim Secondary",
+    "Summary": "Ahmad Ibrahim Secondary School aims to nurture every student to be \"a gentleman or lady who cares, learns and excels\". The school focuses on building strong academic foundations and instilling core values of AI RISE (Resilience, Integrity, Steadfastness, Excellence). It also provides a mainstream education program for students with visual impairment."
+  },
+  {
+    "_id": 3,
+    "school_name": "Ang Mo Kio Secondary",
+    "Summary": "Established in 1979, Ang Mo Kio Secondary School's mission is to nurture \"lifelong learners, responsible citizens and resilient individuals\". The school is guided by the conviction that 'Every Child Matters' and provides multiple pathways for holistic development. Its distinctive programs include an ALP in Environmental Sustainability and an LLP in Arts Education."
+  },
+  {
+    "_id": 4,
+    "school_name": "Anglo-Chinese School (Barker Road)",
+    "Summary": "Anglo-Chinese School (Barker Road) is a government-aided Methodist all-boys' secondary school founded in 1886. As a member of the Anglo-Chinese family of schools, its motto is \"The Best Is Yet To Be\". It offers the GCE O-Level and full subject-based banding, and is affiliated with Anglo-Chinese Junior College."
+  },
+  {
+    "_id": 5,
+    "school_name": "Assumption English School",
+    "Summary": "Assumption English School is a government-aided, co-educational Catholic school. Its mission is \"To educate the whole person in the Montfortian Spirit of Learning, Charity and Love\". The school's ethos challenges its students, known as 'AssumptionKnights', to become learners and leaders who demonstrate Fortitude, Mastery, and Charity."
+  },
+  {
+    "_id": 6,
+    "school_name": "Bartley Secondary",
+    "Summary": "Bartley Secondary School's vision is to \"Empower every Bartleyan to lead with wisdom, serve with humility and learn with passion\". This government, co-educational school offers distinctive programs including an ALP in Chemical and Applied Sciences (with a focus on fragrance) and an LLP in Community Youth Leadership."
+  },
+  {
+    "_id": 7,
+    "school_name": "Beatty Secondary",
+    "Summary": "Beatty Secondary School is a government, co-educational school. It is also a designated mainstream school that provides specialized support for students diagnosed with hearing loss whose main mode of communication is sign language."
+  },
+  {
+    "_id": 8,
+    "school_name": "Bedok Green Secondary",
+    "Summary": "Bedok Green Secondary School's vision is to be \"A school of choice and a community of lifelong learners\". The school provides a nurturing environment to imbue students with sound values and a passion for learning. In 2023, it merged with Ping Yi Secondary School, retaining the English name \"Bedok Green\" and the Chinese name of \"Ping Yi\"."
+  },
+  {
+    "_id": 9,
+    "school_name": "Bedok South Secondary",
+    "Summary": "Bedok South Secondary School, established in 1980, is a co-educational government school. Its vision is to nurture \"Grateful, Gracious, and Growth-minded BDSians\". The school was one of the eight schools originally selected for the Ministry of Education's 'Teach Less, Learn More' initiative."
+  },
+  {
+    "_id": 10,
+    "school_name": "Bedok View Secondary",
+    "Summary": "Established in 1977, Bedok View Secondary was the first government secondary school built in Bedok New Town. The school's mission is to \"nurture Bedok Viewans to be passionate learners, confident leaders and responsible citizens\". It focuses on developing confident communicators and critical thinkers with a sense of global awareness through its distinctive programmes."
+  },
+  {
+    "_id": 11,
+    "school_name": "Bendemeer Secondary",
+    "Summary": "Bendemeer Secondary School is a government, co-educational school that seeks to nurture \"Confident Learners, Active Citizens, and Resilient Individuals\". The school promotes an inclusive community, offering support for students with Special Educational Needs (SEN), including those with learning, sensory, or physical needs, and provides access to assistive technology."
+  },
+  {
+    "_id": 12,
+    "school_name": "Boon Lay Secondary",
+    "Summary": "Boon Lay Secondary School is a government, co-educational school that has been recognized as an Apple Distinguished School. This highlights its focus on technology-enabled learning and innovation in education. The school's mission is to nurture students to become \"Learners. Thinkers. Leaders\"."
+  },
+  {
+    "_id": 13,
+    "school_name": "Bowen Secondary",
+    "Summary": "Bowen Secondary School is a government, co-educational school that was specially selected to pilot Full Subject-Based Banding (FSBB). Its mission is to \"develop Bowenians with robust character, seeking mind and generous heart\". The school's flagship \"ChANgeMakers Programme\" incorporates both service learning and design thinking to empower students."
+  },
+  {
+    "_id": 14,
+    "school_name": "Broadrick Secondary",
+    "Summary": "Broadrick Secondary School is a government, co-educational school. Its school crest symbolizes a continuous strive for progress (the cogwheel) and a commitment to life-long learning (the torch). The school's mission is to \"nurture Broadricians to be Resilient, Respectful and Responsible citizens\"."
+  },
+  {
+    "_id": 15,
+    "school_name": "Bukit Batok Secondary",
+    "Summary": "Bukit Batok Secondary School is a government, co-educational school with a mission to \"nurture BBSSians to be Future-Ready Learners and Leaders for the Community\". The school provides a holistic education with a focus on developing students to be proactive problem-solvers who care for the world."
+  },
+  {
+    "_id": 16,
+    "school_name": "Bukit Merah Secondary",
+    "Summary": "Bukit Merah Secondary School is a government, co-educational school. Its vision is to build \"A Gracious Community of Self-Directed Learners\". The school's \"Merahan Curriculum\" is designed to nurture students' academic and personal growth, underpinned by its Applied Learning and Learning for Life programmes."
+  },
+  {
+    "_id": 17,
+    "school_name": "Bukit View Secondary",
+    "Summary": "Bukit View Secondary School is a government, co-educational school established in 1986. The school has a strong culture of encouraging art and design, having produced numerous winners in the Young Designers Award. It underwent a major upgrading (PRIME) between 2005 and 2008 to enhance its campus and learning facilities."
+  },
+  {
+    "_id": 18,
+    "school_name": "Canberra Secondary",
+    "Summary": "Canberra Secondary School is a government, co-educational school located in Sembawang. The school's mission is \"To inspire Canberrans to take pride in their learning, be resilient and contribute to the community\". It has a strong focus on nurturing an appreciation for Mother Tongue languages and cultural heritage through creative and collaborative activities."
+  },
+  {
+    "_id": 19,
+    "school_name": "Changkat Changi Secondary",
+    "Summary": "Changkat Changi Secondary School, located a 2-minute walk from Simei MRT, has a mission to nurture \"respectful, responsible and resilient leaders of tomorrow\". The school implements Full Subject-Based Banding (FSBB) and has a key approach of Positive Education. Its distinctive ALP in Aerospace and Aviation prepares students for related industries, complemented by an LLP focused on service and leadership."
+  },
+  {
+    "_id": 20,
+    "school_name": "CHIJ St Joseph's Convent",
+    "Summary": "CHIJ St Joseph's Convent is a government-aided Catholic girls' secondary school in Sengkang, founded in 1938. Guided by the motto \"Simple in Virtue, Steadfast in Duty\", the school is one of 11 CHIJ schools in Singapore. It has been recognized with Best Practice Awards for teaching and learning, character education, and staff development, as well as the Lee Hsien Loong Award for Innovations in the Normal Course."
+  },
+  {
+    "_id": 21,
+    "school_name": "CHIJ St Theresa's Convent",
+    "Summary": "CHIJ St. Theresa's Convent is a government-aided Catholic girls' school in Bukit Merah, founded in 1933. Its mission is to create a Christ-centred community that promotes truth, justice, freedom, and love, with a special reference to the disadvantaged. The school, whose motto is \"Simple in Virtue, Steadfast in Duty\", has a niche in Hockey and has produced many national players."
+  },
+  {
+    "_id": 22,
+    "school_name": "Christ Church Secondary",
+    "Summary": "Christ Church Secondary School is a co-educational, government-aided Anglican school in Woodlands, founded in 1952. The school's mission is to be \"A place where students learn, grow and serve in a vibrant community, guided by Godly values\". It places great emphasis on character development and holistic education, with a niche in Outdoor Adventure Learning."
+  },
+  {
+    "_id": 23,
+    "school_name": "Chua Chu Kang Secondary",
+    "Summary": "Chua Chu Kang Secondary School is a co-educational government school founded in 1992. It offers secondary education under three academic streams. The school's vision is to nurture \"Passionate Learners, Confident Leaders, and Caring Citizens\", and it actively shares its student activities, from global connect trips to academic and CCA achievements, with its community."
+  },
+  {
+    "_id": 24,
+    "school_name": "Chung Cheng High School (Yishun)",
+    "Summary": "Chung Cheng High School (Yishun) began as the Chung Cheng High School (Branch) in 1939. It moved to its current Yishun campus in 2005. The school's mission is to \"nurture bilingual scholars, leaders and thinkers with a global perspective\". It was a pioneer school for the Learning for Life Programme (LLP), building character through traditional Chinese culture and arts."
+  },
+  {
+    "_id": 25,
+    "school_name": "Clementi Town Secondary",
+    "Summary": "Clementi Town Secondary School is a government, co-educational school founded in 1980, with the motto \"Aspire and Grow\". The school was a pioneer in student welfare, setting up one of the first in-school student centres in Singapore. Its vision is to develop \"Leaders of Character, Learners for Life\"."
+  },
+  {
+    "_id": 26,
+    "school_name": "Compassvale Secondary",
+    "Summary": "Compassvale Secondary School is a government, co-educational school in Sengkang, established in 2000. Its motto is \"Realising the Star Within\", and it refers to its students as \"North Stars\". The school's mission is \"Building a Vibrant and Uplifting Community where we Learn, Grow and Lead\" and it has been part of the Full Subject-Based Banding (Full SBB) initiative since 2023."
+  },
+  {
+    "_id": 27,
+    "school_name": "Damai Secondary",
+    "Summary": "Damai Secondary School is a government, co-educational school. Its vision is to nurture students into \"Confident Learners, Caring Leaders, and Innovative Thinkers\". The school focuses on holistic education, offering distinctive programmes such as an ALP in Environmental Sciences and an LLP in Character Development through Water and Adventure Sports, including a DSA for Canoeing."
+  },
+  {
+    "_id": 28,
+    "school_name": "Deyi Secondary",
+    "Summary": "Deyi Secondary School, formerly Teck Ghee Secondary, is a government, co-educational school in Ang Mo Kio. Guided by the motto \"Dedication and Integrity\", the school is remarked for its niche in the performing arts. It was recognized as a Centre of Excellence in the Performing Arts and offers signature programmes like Broadcast Journalism and drama-in-curriculum modules."
+  },
+  {
+    "_id": 29,
+    "school_name": "Dunearn Secondary",
+    "Summary": "Dunearn Secondary School is a government, co-educational school with a vision of nurturing \"Lifelong Learners, Caring Leaders\". Its mission is to nurture students to be future-ready, learning with passion and leading with purpose. The school also provides resources and support for students with moderate to profound visual impairment."
+  },
+  {
+    "_id": 30,
+    "school_name": "East Spring Secondary",
+    "Summary": "East Spring Secondary School's vision is to develop \"Creative Learners, Upright Leaders, Global Thinkers\". The school strives to nurture self-directed, compassionate citizens with a passion for excellence. It provides a holistic curriculum anchored on innovative teaching and character development, believing every student can be developed into a leader."
+  },
+  {
+    "_id": 31,
+    "school_name": "Edgefield Secondary",
+    "Summary": "Established in 2011, Edgefield Secondary School's vision is to nurture \"Collaborative Innovators, Compassionate Leaders\". Its mission, \"Growing Minds, Glowing Hearts\", reflects its focus on developing self-directed learners with strong social-emotional skills. The school's signature programmes include an ALP in entrepreneurship (G.E.M) and an LLP in character development anchored on Taekwondo."
+  },
+  {
+    "_id": 32,
+    "school_name": "Evergreen Secondary",
+    "Summary": "Evergreen Secondary School, established in 2000, is a government, co-educational school in Woodlands. Its mission is to \"nurture citizens of character with the passion to contribute and excel\". The school was a designated Centre of Excellence in National Education (NE) and has distinctive programmes in effective communication (ALP) and sports education (LLP)."
+  },
+  {
+    "_id": 33,
+    "school_name": "Fuchun Secondary",
+    "Summary": "Fuchun Secondary School is a government, co-educational school that believes \"Every Child Matters\". The school's Student Development framework is built on the core belief that motivation is key to success. It focuses on holistic development, nurturing students to become \"A Learner, A Leader, An Explorer\" through a supportive and disciplined environment."
+  },
+  {
+    "_id": 34,
+    "school_name": "Fuhua Secondary",
+    "Summary": "Fuhua Secondary School is a government, co-educational school in Jurong West, offering Full Subject-Based Banding (FSBB). Its vision is to be a \"Future-ready School that Inspires Learning, Develops Character and Builds Community\". The school offers distinctive programmes including an ALP in Forensic Science and an LLP in Leadership through Service."
+  },
+  {
+    "_id": 35,
+    "school_name": "Gan Eng Seng School",
+    "Summary": "Gan Eng Seng School is a government, co-educational school with the vision to nurture \"Gessians of Excellence, Standing and Significance\". Founded in 1885, it is one of the oldest schools in Singapore. Its mission is \"Nurturing the best in each & Striving ever onward\", guided by the core values of Integrity, Compassion, Resilience, Discipline, and Respect."
+  },
+  {
+    "_id": 36,
+    "school_name": "Geylang Methodist School (Secondary)",
+    "Summary": "Geylang Methodist School (Secondary) is a government-aided, co-educational school. Its mission is, \"With God's help, to be a beacon of light by connecting, nurturing and inspiring GEMS to make a difference\". The school's vision is to develop \"Passionate Learners, Courageous Leaders, and Caring Citizens\"."
+  },
+  {
+    "_id": 37,
+    "school_name": "Greendale Secondary",
+    "Summary": "Greendale Secondary School is a government, co-educational school in Punggol, established in January 2006. Its vision is \"Growing Hearts, Growing Minds\" and its motto is \"Serve.Lead.Excel\". The school's campus was previously a temporary site for Holy Innocents' High School before Greendale officially opened."
+  },
+  {
+    "_id": 38,
+    "school_name": "Greenridge Secondary",
+    "Summary": "Greenridge Secondary School believes that every child is unique and can grow to \"advocate a worthy cause for a brighter future\". Its mission is \"Shaping Character, Inspiring Learning\", guided by the RIDGE values (Respect, Integrity, Diligence, Grit, Empathy). The school's heritage includes an amalgamation with Fajar Secondary, combining strengths in uniformed groups, sports, and applied learning."
+  },
+  {
+    "_id": 39,
+    "school_name": "Guangyang Secondary",
+    "Summary": "Guangyang Secondary School is a government, co-educational school with the vision of \"Nurturing Thinkers, Inspiring Leaders, Empowering Advocates\". Its mission is to nurture students who lead, think, and advocate for themselves, their community, and the nation. The school's motto is \"Strong in Principles, Steadfast in Duty\"."
+  },
+  {
+    "_id": 40,
+    "school_name": "Hai Sing Catholic School",
+    "Summary": "Hai Sing Catholic School was founded in 1959 by the FMM Sisters as Hai Sing Girls' High School to serve families in the Serangoon and Punggol areas. It became a co-educational school in 1990 and moved to Pasir Ris. Guided by the motto \"To Truth Through Charity\", its mission is to help students find their true purpose in life and be a positive force in the world."
+  },
+  {
+    "_id": 41,
+    "school_name": "Hillgrove Secondary",
+    "Summary": "Hillgrove Secondary School is a government, co-educational school with a vision of \"Gracious Students, Resilient Individuals, Passionate Learners\". The school's mission is to \"nurture students to be upright citizens, ready for the future\". It has a distinctive ALP in Flight and Aerospace and an LLP focused on the arts."
+  },
+  {
+    "_id": 42,
+    "school_name": "Holy Innocents' High School",
+    "Summary": "Founded in 1892 as Tao Nan School, Holy Innocents' High School is one of the first Chinese mission schools in Singapore. It is a government-aided, co-educational Catholic school. Guided by the motto \"Sincerity and Charity\", the school has a rich heritage and attained Niche Status for its Journalism and Broadcasting Programme, which is now its ALP."
+  },
+  {
+    "_id": 43,
+    "school_name": "Hougang Secondary",
+    "Summary": "Hougang Secondary School is a government, co-educational school established in 2001. Its vision is \"Nurturing Empowered, Future-Ready Hougeans of Character and Purpose\", with a mission to \"Care. Lead. Inspire. Partner.\". The school's motto is \"Make The Difference\", and it places a strong emphasis on its core values of GRIT (Gratitude, Respect, Ingenuity, Trustworthiness and Grit)."
+  },
+  {
+    "_id": 44,
+    "school_name": "Hua Yi Secondary",
+    "Summary": "Hua Yi Secondary School is a government, co-educational school that embraces technology through its Personalised Digital Learning Programme (PDLP). The school focuses on cultivating self-directed learners and resilient leaders. Its vision is to nurture \"Scholars, Leaders, and Citizens\" who are \"Upright, Resilient, and Gracious\"."
+  },
+  {
+    "_id": 45,
+    "school_name": "Junyuan Secondary",
+    "Summary": "Junyuan Secondary School is a government, co-educational school in Tampines. Its vision is to nurture \"Passionate Learners, Resilient Leaders, Gracious Citizens\". The school's motto is \"Together We Will Succeed\", and it focuses on developing \"Junyuanites\" to be creative, confident, and caring individuals with a strong sense of purpose."
+  },
+  {
+    "_id": 46,
+    "school_name": "Jurong Secondary",
+    "Summary": "Jurong Secondary School's vision is to nurture \"Champions of Mind, Leaders with Heart\". The school aims to develop students who possess mental grit, are cognitively flexible, and persevere through adversity. It also seeks to cultivate concerned citizens who actively contribute to the community and possess the moral courage to be advocates for society."
+  },
+  {
+    "_id": 47,
+    "school_name": "Jurong West Secondary",
+    "Summary": "Jurong West Secondary School, established in 2001, aims to nurture \"Learners, Thinkers, Leaders of Tomorrow\". The school was recognized as a Niche School in Uniformed Groups and was a prototype school for Subject-Based Banding. It offers distinctive programmes like the Enhanced Art Programme (EAP), Computing, and Exercise and Sports Science."
+  },
+  {
+    "_id": 48,
+    "school_name": "Jurongville Secondary",
+    "Summary": "Jurongville Secondary School is a government, co-educational school. Its vision is to be a \"Choice School that Nurtures Men and Women of Character\". The school's mission is \"To Nurture Jurongvillites to be Passionate Learners, Innovative Leaders and Caring Citizens\". It offers an ALP in Electronics and an LLP in Sports for Life, along with barrier-free accessibility."
+  },
+  {
+    "_id": 49,
+    "school_name": "Juying Secondary",
+    "Summary": "Juying Secondary School is a government, co-educational school. Its vision is to build \"A Gracious Community of Resilient Learners and Caring Leaders\". The school's motto is \"Together We Excel\", and it focuses on developing students holistically through a range of level-specific programmes, including cohort camps, overseas trips, and career guidance."
+  },
+  {
+    "_id": 50,
+    "school_name": "Kent Ridge Secondary",
+    "Summary": "Kent Ridge Secondary School's vision is for every student to have \"a Heart of a Saint, Passion of an Inventor and the Will of an Olympian\". Its mission is to nurture students to become \"accomplished leaders with exemplary character\". The school is committed to a student-centric, values-driven education and offers DSA in sports and computational thinking."
+  },
+  {
+    "_id": 51,
+    "school_name": "Kranji Secondary",
+    "Summary": "Kranji Secondary School's vision for its students is to be \"Kranjians as community youth leaders of character\". The school's Character Education programme is central to its framework, aiming to develop leaders grounded in values. It adopts Kolb's experiential learning theory, and its VIA programme focuses on the themes of supporting the elderly and environmental sustainability."
+  },
+  {
+    "_id": 52,
+    "school_name": "Kuo Chuan Presbyterian Secondary",
+    "Summary": "Kuo Chuan Presbyterian Secondary School is a government-aided school. Its mission is to provide \"a holistic education that is grounded in Christian values to nurture... future-ready learners who embody a spirit of excellence\". The school believes every student is uniquely endowed and capable of growth, and it actively cultivates quality teacher-student relationships."
+  },
+  {
+    "_id": 53,
+    "school_name": "Loyang View Secondary",
+    "Summary": "Loyang View Secondary School is a government, co-educational school. Its vision for its English Language learners is to be \"effective and empathetic communicators who are future ready\". The school offers signature programmes such as a Creative Writing Programme and a Digital Reading Programme (LV e-Reads) to strengthen literacy and communication skills."
+  },
+  {
+    "_id": 54,
+    "school_name": "Manjusri Secondary",
+    "Summary": "Manjusri Secondary School is a government-aided, co-educational school. Its vision is \"A Vibrant Learning Community distinguished by Wisdom, Conduct, Benevolence and Aspiration\". The school is anchored in values of Respect, Integrity, Care, and Excellence, and its motto is \"Wisdom, Conduct, Benevolence, Aspiration\", reflecting its Buddhist roots."
+  },
+  {
+    "_id": 55,
+    "school_name": "Marsiling Secondary",
+    "Summary": "Marsiling Secondary School's vision is \"A Community of Dynamic, Confident and Caring Learners\", with a mission \"To nurture agile minds and build character through holistic education\". The school's culture is guided by \"G.R.I.T” (Growth, Resourcefulness, Innovation and Tenacity)\". A recipient of the President's Award for the Environment, its ALP in Eco-sustainability is a key distinctive programme."
+  },
+  {
+    "_id": 56,
+    "school_name": "Mayflower Secondary",
+    "Summary": "Mayflower Secondary School's motto is \"Mighty in Thought and Deed\". The school's promise is to develop \"Future Ready Mayflowerians with a zest for life, a curious mind and a generous spirit\". It provides a student-centred curriculum that uses inquiry-based approaches to promote active and self-regulated learning, supported by a dedicated staff of teachers."
+  },
+  {
+    "_id": 57,
+    "school_name": "Meridian Secondary",
+    "Summary": "Meridian Secondary School was formed in 2016 from the merger of Siglap Secondary and Coral Secondary. Its motto is \"Unite to Reach New Heights\". The school harnesses the historical strengths of both schools, including a renowned football programme and one of only nine Enhanced Art Programmes (EAP) in Singapore, which forms the basis of its Aesthetics ALP."
+  },
+  {
+    "_id": 58,
+    "school_name": "Montfort Secondary",
+    "Summary": "Montfort Secondary School is a government-aided, all-boys Catholic school run by the Brothers of St. Gabriel. Founded in 1916 as Holy Innocents' English School, it was renamed in 1959 to honor St. Louis Marie Grignion de Montfort. The school is committed to a quality holistic education and is affiliated with Montfort Junior School and Catholic Junior College."
+  },
+  {
+    "_id": 59,
+    "school_name": "Nan Chiau High School",
+    "Summary": "Nan Chiau High School is a government-aided, co-educational school with a vision to be a \"School of Distinction that nurtures bilingual scholars with a global perspective\". It is affiliated with the Singapore Hokkien Huay Kuan. The school is a Special Assistance Plan (SAP) school and offers the Language Elective Programme (LEP) for Chinese, as well as an Enhanced Art Programme."
+  },
+  {
+    "_id": 60,
+    "school_name": "Naval Base Secondary",
+    "Summary": "Naval Base Secondary School (NBSS) was founded in 1957 as a school for the children of British Navy employees. Now a government, co-educational school, its vision is to nurture \"Leaders of Character, Learners for Tomorrow\". It has a niche in Visual Arts and focuses on a proactive and developmental approach to student management, fostering a strong culture of care and excellence."
+  },
+  {
+    "_id": 61,
+    "school_name": "New Town Secondary",
+    "Summary": "New Town Secondary School is a government, co-educational school established in 1965, the same year as Singapore's independence. Its motto is \"To Forge a Better Life\". In 2023, the school merged with Tanglin Secondary School, retaining the New Town Secondary name but adopting a new logo and uniform. The school is located on Dover Road."
+  },
+  {
+    "_id": 62,
+    "school_name": "North Vista Secondary",
+    "Summary": "North Vista Secondary School's vision is to develop \"Vistarians of Character who Learn, Strive, Contribute For a Better Future\". The school's history traces back to 1956 as Gan Eng Seng Government Chinese Middle School, later becoming Thomson Secondary School. After relocating to Sengkang, it was renamed North Vista Secondary School, bringing with it a long and illustrious history."
+  },
+  {
+    "_id": 63,
+    "school_name": "Northbrooks Secondary",
+    "Summary": "Northbrooks Secondary School was founded in 2000. Its Chinese name, 思源 (sī yuán), is from the proverb 饮水思源 (yǐn shuǐ sī yuán), reminding students to be grateful for their roots. The school's vision is to develop \"Every Brooksian a Gracious Person, Creative Thinker and Lifelong Learner\". It has a distinctive ALP focusing on Aerospace."
+  },
+  {
+    "_id": 64,
+    "school_name": "Northland Secondary",
+    "Summary": "Northland Secondary School is a government, co-educational school. Its vision is to nurture \"Leaders of Character, Thinkers with G.R.I.T.\". The school's mission is to empower \"Northstars\" to learn with passion, serve with compassion, and lead with confidence."
+  },
+  {
+    "_id": 65,
+    "school_name": "Orchid Park Secondary",
+    "Summary": "Orchid Park Secondary School was established in 1999, guided by the motto \"Onward and Persevere\". The school is noted for its early emphasis on the visual and performing arts, launching its \"Arts Panache\" showcase and an Art Gallery. It also fostered entrepreneurship through student-run ventures like the \"Art Rock Café\" and \"Le Shoppe\"."
+  },
+  {
+    "_id": 66,
+    "school_name": "Outram Secondary",
+    "Summary": "Outram Secondary School is a government, co-educational school with a long history, founded in 1906. It provides support for students with moderate to profound hearing loss (Oral Approach). The school is currently located at York Hill and will be relocating to a new campus in Sengkang in 2026."
+  },
+  {
+    "_id": 67,
+    "school_name": "Pasir Ris Crest Secondary",
+    "Summary": "Pasir Ris Crest Secondary School was established in 2000. Its motto is \"Pursue and Realise Challenges\". The school is the East Zone Centre of Excellence for Music, a status conferred in 2000, which forms the basis of its LLP. Students identify as \"Crestian Overcomers\", reflecting a mindset of positive self-belief."
+  },
+  {
+    "_id": 68,
+    "school_name": "Pasir Ris Secondary",
+    "Summary": "Pasir Ris Secondary School's vision is to nurture \"Confident Learners, Caring & Resilient Citizens\". Its mission is \"Inspiring Lives, Nurturing Talents, Realising Dreams\". The school's curriculum is designed to be student-centric, catering to different learning needs to develop \"T-shaped Pasirians\" who have both a breadth of knowledge and depth of understanding."
+  },
+  {
+    "_id": 69,
+    "school_name": "Pei Hwa Secondary",
+    "Summary": "Pei Hwa Secondary School is a government-aided, co-educational school in Fernvale. It was re-established in 2005 but traces its history back to Pei Hwa Public School, founded in 1934. As a traditional Chinese school, it has a rich heritage and is supported by the Pei Hwa Foundation, a philanthropic organization run by its alumni."
+  },
+  {
+    "_id": 70,
+    "school_name": "Peicai Secondary",
+    "Summary": "Peicai Secondary School is a government, co-educational school committed to \"nurturing critical and independent learners with love for self, family and society\". The school's vision is \"A community of passionate learners, exemplary leaders and compassionate citizens\". It strongly believes in fostering a strong school-home partnership to support holistic education."
+  },
+  {
+    "_id": 71,
+    "school_name": "Peirce Secondary",
+    "Summary": "Peirce Secondary School is a government, co-educational school that began operations in 1994. Its vision is to be \"A Choice School that Nurtures the Best in Every Peircean\". The school's mission is \"To nurture Peirceans to be active learners and gracious citizens\". It offers an ALP in AI-Driven STEM and an LLP in community leadership through Uniformed Groups."
+  },
+  {
+    "_id": 72,
+    "school_name": "Presbyterian High School",
+    "Summary": "Presbyterian High School is a government-aided, co-educational school founded by the Presbyterian Church. Its vision is for every student to be \"A C.L.A.S.S. Leader - A Christ-Like Leader, A Lifelong Learner, An Active Citizen, A Servant Leader, and A Steward\". The school has implemented Full Subject-Based Banding (FSBB) since 2023."
+  },
+  {
+    "_id": 73,
+    "school_name": "Punggol Secondary",
+    "Summary": "Punggol Secondary School's vision is to be a \"Vibrant School for Engaged Learners\". The school focuses on nurturing students who are self-directed, adaptable, future-ready, and active contributors to their community. Its mission is to \"nurture Punggolites to be self-directed learners with the adaptability to meet future challenges\"."
+  },
+  {
+    "_id": 74,
+    "school_name": "Queenstown Secondary",
+    "Summary": "Queenstown Secondary School, founded in 1956 as a technical school, is a government, co-educational school. Its motto is \"Berani Berkhidmat\" ('Dare to Serve' in Malay). The school was selected to pilot Full Subject-Based Banding (Full SBB) in 2020, and its ALP in Environmental Sustainability is a key part of its curriculum."
+  },
+  {
+    "_id": 75,
+    "school_name": "Queensway Secondary",
+    "Summary": "Queensway Secondary School is a government, co-educational school. Its vision is to nurture \"Confident Learners, Caring Leaders, and Innovative Problem-solvers\". The school's mission is \"To nurture Queenswayans to be morally upright, resilient and future-ready\". It has been implementing the Personalised Digital Learning Programme (PDLP) since 2021, using Chromebooks as the designated device."
+  },
+  {
+    "_id": 76,
+    "school_name": "Regent Secondary",
+    "Summary": "Regent Secondary School is a government, co-educational school. Its vision is to nurture \"Leaders of Tomorrow, Regents of their Future\". The school's mission is \"To nurture Regents to be self-directed learners, confident communicators, and caring citizens\". It offers a wide range of academic and co-curricular programmes to develop students holistically."
+  },
+  {
+    "_id": 77,
+    "school_name": "Riverside Secondary",
+    "Summary": "Riverside Secondary School is a government, co-educational school in Woodlands. Its vision is to be \"A School of Distinction, Nurturing Riversidians to be Persons of Character, Leaders and Advocates for a Better World\". The school's motto is \"Learn, Grow, Excel\". It offers a wide range of distinctive programmes, including a STEM Education and Internationalisation Programme."
+  },
+  {
+    "_id": 78,
+    "school_name": "Sembawang Secondary",
+    "Summary": "Sembawang Secondary School is a government, co-educational school. Its vision is to develop \"Leaders and Change-makers\" who are \"Morally Upright, Self-Directed, and Resilient\". The school's mission is to \"nurture Sembawangians to be leaders and change-makers through a culture of care, learning and excellence\". It has implemented Full Subject-Based Banding (FSBB)."
+  },
+  {
+    "_id": 79,
+    "school_name": "Seng Kang Secondary",
+    "Summary": "Seng Kang Secondary School was established in 1999, making it the first secondary school in the Sengkang housing estate. Its school crest features an anchor, representing the Sengkang district's history as a harbour, and the motto \"Breakthrough\". The school's mission is \"To nurture and inspire students to be resilient, innovative and caring citizens\"."
+  },
+  {
+    "_id": 80,
+    "school_name": "Serangoon Garden Secondary",
+    "Summary": "Serangoon Garden Secondary School has a rich heritage, beginning as Lichfield Secondary School in 1959. After several mergers, including with Hwi Yoh Vocational School and Serangoon Garden Technical School, it continues to build on its history. The school's vision is to nurture \"Learners with Grit, Leaders with Heart\", guided by the motto \"Integrity and Diligence\"."
+  },
+  {
+    "_id": 81,
+    "school_name": "Serangoon Secondary",
+    "Summary": "Serangoon Secondary School, formerly Serangoon English School, was established in 1928. It was the only government co-educational school in Singapore at the time and served as a feeder school to Raffles Institution. Today, this government school's motto is \"Seek, Strive, Serve\", and it has a niche for its uniformed groups, which have consistently achieved gold awards."
+  },
+  {
+    "_id": 82,
+    "school_name": "Springfield Secondary",
+    "Summary": "Springfield Secondary School is a government, co-educational school guided by the motto \"Better Self for Better Tomorrow\". Its vision is to nurture \"Future-Ready Learners with a Caring Heart and the Confidence to Lead\". The school is committed to building a positive home-school partnership to develop students who are adaptable, resilient, and grounded in the school's STRIDE values."
+  },
+  {
+    "_id": 83,
+    "school_name": "St Andrews Secondary",
+    "Summary": "St. Andrew's Secondary School is a government-aided Anglican all-boys' school founded in 1862. It is part of the St. Andrew's Village, which also includes the Junior School and Junior College. The school's vision is to be a \"Home of servant leaders who bring life to the nations\", focusing on building character and developing life skills."
+  },
+  {
+    "_id": 84,
+    "school_name": "St Gabriel's Secondary",
+    "Summary": "St. Gabriel's Secondary School is a government-aided, all-boys Catholic school. As a Montfortian school, its mission is to be \"a community of learners growing in faith and wisdom, to serve God and the nation\". The school is affiliated with St. Gabriel's Primary School and Catholic Junior College."
+  },
+  {
+    "_id": 85,
+    "school_name": "St Hildas Secondary",
+    "Summary": "St. Hilda's Secondary School is a government-aided, co-educational Anglican school. It began as Bethel English School in 1929 and was renamed in 1938 after its patron saint, Princess Hilda of Whitby. The school's motto is \"Go Forward\". It relocated to Tampines in 1988 and is known for its rooftop hockey pitch."
+  },
+  {
+    "_id": 86,
+    "school_name": "St Patrick's School",
+    "Summary": "St. Patrick's School is a government-aided, all-boys Catholic secondary school founded in 1933. As one of the seven Lasallian schools in Singapore, its motto is \"Potest Qui Vult\" (He Who Wills, Can). Students and alumni are known as \"Patricians\". The school has a rich heritage and is affiliated with several other Catholic primary schools and Catholic Junior College."
+  },
+  {
+    "_id": 87,
+    "school_name": "Swiss Cottage Secondary",
+    "Summary": "Swiss Cottage Secondary School is a government, co-educational school founded in 1962. Its motto is \"Scientiae Patriaeque Gratia\" (For the Sake of Learning and For the State). The school's vision is to nurture \"Thoughtful Leaders\", and it is well-regarded for its dedicated teaching staff and strong partnerships with parents and the community."
+  },
+  {
+    "_id": 88,
+    "school_name": "Tampines Secondary",
+    "Summary": "Tampines Secondary School was established in 1986 to serve the new Tampines community. Its vision is \"A caring community of Learners, Thinkers and Leaders\". The school's original motto, \"Betterment of Self for Society\", remains a core aspiration. It has a niche in visual and performing arts and creative engineering, supported by its LLP and ALP respectively."
+  },
+  {
+    "_id": 89,
+    "school_name": "Unity Secondary",
+    "Summary": "Established in 2000, Unity Secondary School describes itself as a \"School of OpportUNITY\" that provides enriching, rigorous, and relevant programmes. It runs on a unique \"4+1\" curriculum, with four academic days and one day for character development. Teachers are known as \"Character Coaches\" to emphasize their focus on holistic student development."
+  },
+  {
+    "_id": 90,
+    "school_name": "West Spring Secondary",
+    "Summary": "West Spring Secondary School is a government, co-educational school. Its vision is to nurture \"Confident Learners, Caring and Resilient Citizens\". The school believes in the value of global exposure and provides various opportunities for students to participate in overseas learning trips to broaden their outlook and deepen their commitment to Singapore."
+  },
+  {
+    "_id": 91,
+    "school_name": "Westwood Secondary",
+    "Summary": "Westwood Secondary School's vision and mission are symbolized by a lighthouse, representing its commitment to guide students, provide a safe and nurturing environment, and build strength and resilience. The school's ALP fosters an innovative mindset through design thinking and social entrepreneurship, while its LLP, \"Arts for Life!\", cultivates a thriving arts culture."
+  },
+  {
+    "_id": 92,
+    "school_name": "Whitley Secondary",
+    "Summary": "Whitley Secondary School's vision is \"A Caring and Learning Community of Leaders\", with a mission \"To nurture Whitleyans to be Exemplary Leaders with the Heart to Care and the Will to Learn\". The school believes every student is a leader and develops them through a 3E1M approach (Expose, Empower, Excel, and Mentor), guided by the values of Perseverance, Respect, Integrity, Discipline, and Empathy."
+  },
+  {
+    "_id": 93,
+    "school_name": "Woodgrove Secondary",
+    "Summary": "Woodgrove Secondary School is a government, co-educational school. Its vision is to nurture \"Leaders of Character, Thinkers of Tomorrow\". The school's mission is \"To Nurture and Inspire Woodgrovians to be Future-Ready Citizens with a Heart to Serve\". It offers distinctive programmes in environmental sustainability and community leadership."
+  },
+  {
+    "_id": 94,
+    "school_name": "Woodlands Ring Secondary",
+    "Summary": "Woodlands Ring Secondary School's vision is that \"Every WRS Student is Worthy, Resilient and Selfless\", with a mission of \"Nurturing Self-directed, Confident and Caring Learners\". The school's motto is \"Work (hard and smart), Rise (to every challenge), Serve (the school and community)\". The school is currently at a temporary site while its permanent campus is being upgraded."
+  },
+  {
+    "_id": 95,
+    "school_name": "Woodlands Secondary",
+    "Summary": "Woodlands Secondary School is a government, co-educational school. Its vision is to nurture \"Courageous Learners, Compassionate Leaders, and Connected Citizens\". The school's mission is \"To provide a nurturing and challenging environment for all Woodlanders to achieve their personal best\". It has distinctive programmes in Health Science and Community Leadership."
+  },
+  {
+    "_id": 96,
+    "school_name": "Yio Chu Kang Secondary",
+    "Summary": "Yio Chu Kang Secondary School was established in 1965 as one of Singapore's first post-independence schools. In 2018, it merged with Chong Boon Secondary School, retaining its English name but adopting Chong Boon's Chinese name (崇文中学). The school has a niche status in Performing Arts and has a satellite partnership with Pathlight School."
+  },
+  {
+    "_id": 97,
+    "school_name": "Yishun Secondary",
+    "Summary": "Yishun Secondary School is a government, co-educational school. Its vision is to nurture \"Confident Learners, Active Citizens, and Leaders of Character\". The school's mission is to \"Nurture Yishunites with Character, Passion and Drive\". It offers distinctive programmes including an ALP in Sonic Arts (Music, Media & Technology) and an LLP in leadership through the arts."
+  },
+  {
+    "_id": 98,
+    "school_name": "Yuan Ching Secondary",
+    "Summary": "Yuan Ching Secondary School was established as an integrated English and Chinese school, officially opening in 1980. Its motto is \"Efforts Today, Rewards Tomorrow\". The school is student-centric and leverages technology for self-directed learning. It is also environmentally conscious, with solar panels generating an estimated 70% of its energy consumption."
+  },
+  {
+    "_id": 99,
+    "school_name": "Yuhua Secondary",
+    "Summary": "Yuhua Secondary School's vision is \"A Community Where Learners Flourish\". Its mission is to build every Yuhuan to \"Care, Connect and Contribute\". The school focuses on preparing students for the future by guarding against individualism and uncertainty, and promoting positive well-being. It has removed Mid-Year Exams to free up curriculum time for deeper, more engaging learning."
+  },
+  {
+    "_id": 100,
+    "school_name": "Yusof Ishak Secondary",
+    "Summary": "Yusof Ishak Secondary School is a government, co-educational school. Its vision is to nurture \"Leaders of Character, Learners for Life\". The school's mission is \"To inspire, nurture and empower every YISSian to be a future-ready leader who serves the community\". It offers barrier-free accessibility and support for students with special educational needs."
+  },
+  {
+    "_id": 101,
+    "school_name": "Yuying Secondary",
+    "Summary": "Yuying Secondary School is a government-aided school with a rich history, founded by the Hainanese community in 1910. Its Chinese name means to \"nurture heroes or talent\". The school's vision is to nurture \"Future-Ready Leaders and Gracious Citizens rooted in Values\". It has a strong heritage of resilience and community, and its uniform groups are highly decorated."
+  },
+  {
+    "_id": 102,
+    "school_name": "Zhenghua Secondary",
+    "Summary": "Zhenghua Secondary School was established in 1999 and is well-known in Bukit Panjang for its emphasis on character development and outdoor education. Its vision is to develop \"Dynamic Learners, Exemplary Leaders, Thoughtful Contributors\". The school's distinctive red and black uniform makes its students stand out as school ambassadors."
+  },
+  {
+    "_id": 103,
+    "school_name": "Admiralty Primary",
+    "Summary": "Admiralty Primary School was established in 1997 to serve the growing Woodlands community. Its mission is to nurture \"Good Citizens and Passionate Learners\". The school has been recognized for its National Education efforts and has a strong focus on developing a \"High Performance Mindset\" (LLP) and promoting environmental care through its \"Design Thinking for Sustainability\" ALP."
+  },
+  {
+    "_id": 104,
+    "school_name": "Ahmad Ibrahim Primary",
+    "Summary": "Ahmad Ibrahim Primary School opened in 1995, named after the former Health and Labour Minister, Mr. Ahmad Ibrahim. The school's vision is to develop \"Leaders of Character, Learners for Life\", guided by the motto \"Grow with Resilience\". It is built on the belief that every child can succeed and provides a holistic education with signature programmes in sustainability and student leadership."
+  },
+  {
+    "_id": 105,
+    "school_name": "Ai Tong School",
+    "Summary": "Ai Tong School is a government-aided, co-educational school. It is one of Singapore's Special Assistance Plan (SAP) primary schools, dedicated to nurturing students who are bicultural and bilingual in English and Chinese. The school's goal is to nurture students holistically, grounded in the values of Sincerity and Perseverance, to become \"Caring Leaders, Responsible Learners, Respectful Communicators, and Resilient Innovators\"."
+  },
+  {
+    "_id": 106,
+    "school_name": "Alexandra Primary",
+    "Summary": "Alexandra Primary School is a government, co-educational school. Its vision is to nurture students into \"Confident, Articulate and Resilient Achievers with a Zest for Life\". The school's mission is \"To provide a vibrant and caring environment to nurture the whole child\". It also offers support for students with special educational needs, including P1 TRANSIT for social and behavioural needs."
+  },
+  {
+    "_id": 107,
+    "school_name": "Anchor Green Primary",
+    "Summary": "Anchor Green Primary School's vision is to nurture \"Agile Learners, Gracious Citizens\". The school strives to develop \"rooted individuals who are anchored in moral values and driven to explore creative ideas for positive change\". It offers a holistic education with distinctive programmes focused on environmental activism (ALP) and the performing arts (LLP)."
+  },
+  {
+    "_id": 108,
+    "school_name": "Anderson Primary",
+    "Summary": "Anderson Primary School is a government, co-educational school. Its vision is to nurture students into \"Confident and Creative Learners with a Passion for Life\". The school's mission is \"To nurture and empower every child to be a future-ready leader with a heart of an Andersonian\". It offers a Learning for Life Programme (LLP) called \"VIVACE!\", which inculcates values through arts and creative experiences."
+  },
+  {
+    "_id": 109,
+    "school_name": "Angsana Primary",
+    "Summary": "Angsana Primary School, named after the majestic wayside tree, is a merged school formed from the former Qiaonan Primary (founded 1933) and Griffiths Primary (founded 1950). The school aims to nurture generations of good citizens, living up to the beauty and usefulness of the tree it is named after. Its ALP focuses on computational thinking and its LLP develops 21st-century leaders."
+  },
+  {
+    "_id": 110,
+    "school_name": "Ang Mo Kio Primary",
+    "Summary": "Ang Mo Kio Primary School's vision is \"Every Child, a Confident Person, a Joyful Learner and a Caring Citizen\". Guided by the motto \"Rise and Shine\", the school is committed to providing a safe, inclusive, and engaging environment. It focuses on nurturing students' individual strengths and passions to help them succeed academically and personally."
+  },
+  {
+    "_id": 111,
+    "school_name": "Anglo-Chinese School (Junior)",
+    "Summary": "Anglo-Chinese School (Junior) is a government-aided, single-session all-boys' Methodist school. As part of the ACS family, its vision is \"Every ACSian a young gentleman of character, ready for the future\". The school's mission is \"To provide a holistic education in an environment where boys grow in wisdom, stature, and in favour with God and man\". It is affiliated with ACS (Independent) and ACS (Barker Road)."
+  },
+  {
+    "_id": 112,
+    "school_name": "Anglo-Chinese School (Primary)",
+    "Summary": "Anglo-Chinese School (Primary) is a government-aided, all-boys' school founded in 1886 by Bishop William Fitzjames Oldham. The school provides a holistic education with a strong emphasis on academic performance, sporting excellence, and the performing arts. Its educational philosophy is encapsulated as A-Affective, C-Cognitive, S-Social, and P-Physical."
+  },
+  {
+    "_id": 113,
+    "school_name": "Beacon Primary",
+    "Summary": "Beacon Primary School is a government, co-educational school. Its vision is to nurture \"Confident Leaders, Passionate Innovators, and Caring Citizens\". The school's mission is \"To nurture and inspire students to be their best\", and it provides a range of special programmes and support for students with Special Educational Needs (SEN)."
+  },
+  {
+    "_id": 114,
+    "school_name": "Bedok Green Primary",
+    "Summary": "Bedok Green Primary School is a government, co-educational school. Its vision is to be \"A gracious community of lifelong learners with a passion for excellence\". The school's mission is \"To nurture the whole child in a vibrant and caring environment\". It has distinctive programmes in Environmental Education (ALP) and uses sports and aesthetics to reinforce values (LLP)."
+  },
+  {
+    "_id": 115,
+    "school_name": "Bendemeer Primary",
+    "Summary": "Bendemeer Primary School, established in 1977, has a rich history of mergers, including with Beng Wan Primary (2004) and Balestier Hill Primary (2019). Its current mission is \"To nurture and inspire every student to be the best that they can be\". The school is located on a historic plot of land once owned by Mr. Hoo Ah Kay (Whampoa)."
+  },
+  {
+    "_id": 116,
+    "school_name": "Blangah Rise Primary",
+    "Summary": "Blangah Rise Primary School's vision is \"A joyful school of confident learners and caring leaders\". The school provides a nurturing environment and inculcates virtues like care, respect, and empathy. It uniquely uses interactions with animals (like rabbits, fish, and insects) on campus to enrich learning, lift students' spirits, and foster responsibility."
+  },
+  {
+    "_id": 117,
+    "school_name": "Boon Lay Garden Primary",
+    "Summary": "Boon Lay Garden Primary School's vision is \"The Garden Where Diversity Blossoms\". Its mission is \"Together We Nurture for a Better Future\", aiming to empower students with skills and values to contribute to society. The school's LLP focuses on \"Empowering the next generation of Eco Stewards through Environment Education\"."
+  },
+  {
+    "_id": 118,
+    "school_name": "Bukit Panjang Primary",
+    "Summary": "Bukit Panjang Primary School, established in 1932, has a long history of academic and athletic excellence in northern Singapore. The school's ALP focuses on Critical & Appreciative Reading to Respond Empathetically (CAR²E), complementing its LLP, \"i2 Can Dance!\" It is committed to holistic development, with extensive facilities following its PERI upgrading."
+  },
+  {
+    "_id": 119,
+    "school_name": "Bukit Timah Primary",
+    "Summary": "Bukit Timah Primary School's mission is to \"create a vibrant learning environment that values diversity and builds community\". Its vision is to nurture an \"Adaptive Learner, Empathetic Leader and Future-Ready Citizen\", guided by the motto \"STRIVE FOR THE BEST\". The school emphasizes character building and life skills through its diverse CCA program."
+  },
+  {
+    "_id": 120,
+    "school_name": "Bukit View Primary",
+    "Summary": "Bukit View Primary School is a co-educational government school that is scheduled to relocate to Bukit Batok West in 2027. The school provides support for students with Special Educational Needs (SEN). Its distinctive programmes include \"IRIS\" (ALP) and \"Arts Alive!\" (LLP), both focusing on nurturing confident and reflective leaders through creative experiences."
+  },
+  {
+    "_id": 121,
+    "school_name": "Canberra Primary",
+    "Summary": "Canberra Primary School is a government, co-educational school that aims to provide a well-rounded educational experience. It has distinctive programmes focused on ICT and Media literacy across its foundation and orientation stages (ALP), and uses musical theatre education as its Learning for Life Programme."
+  },
+  {
+    "_id": 122,
+    "school_name": "Canossa Catholic Primary",
+    "Summary": "Canossa Catholic Primary School is a co-educational Catholic school, established in 1941, that centers its curriculum on the Canossian Education's \"Formation of the Heart\". The school's inclusive culture welcomes children of all faiths and races. It has been designated by MOE as a mainstream school supporting students with hearing loss (Oral approach), in partnership with Canossian School."
+  },
+  {
+    "_id": 123,
+    "school_name": "Cantonment Primary",
+    "Summary": "Cantonment Primary School is a government, co-educational school with barrier-free accessibility. The school's Applied Learning Programme (ALP) focuses on developing a \"Thinking Curriculum\" (TC@CPS). Its LLP, \"PAVE\", integrates Performing Arts for Values and Excellence to provide a holistic learning experience."
+  },
+  {
+    "_id": 124,
+    "school_name": "Casuarina Primary",
+    "Summary": "Casuarina Primary School is a government, co-educational school. It has established an MOE Kindergarten on its premises that began operations in 2024. The school's mission is to provide a holistic educational experience, with a focus on Nature-based Education (ALP) and holistic education through the arts (LLP)."
+  },
+  {
+    "_id": 125,
+    "school_name": "Catholic High School (Primary)",
+    "Summary": "Catholic High School (Primary) is a government-aided Special Assistance Plan (SAP) school, established in 1935. It aims to nurture a student who is a \"Leader, Gentleman, and Bilingual Scholar of high integrity and robust character\". The school motto is \"Care, Honesty, Service\" (亲爱, 忠诚, 敬业乐群), and it has a Gifted Education Programme (GEP) established since 1998."
+  },
+  {
+    "_id": 126,
+    "school_name": "Cedar Primary",
+    "Summary": "Cedar Primary School's vision is to nurture \"Joyful Learners, Responsible Citizens, Creative Leaders in a Connected Community\". The school aims to develop students who demonstrate kindness, integrity, resilience, and have the courage to innovate and solve challenges for the benefit of the community. It offers support for students with Special Educational Needs (SEN) and provides barrier-free accessibility."
+  },
+  {
+    "_id": 127,
+    "school_name": "Changkat Primary",
+    "Summary": "Changkat Primary School is a government, co-educational school. Its vision is to be \"A Leader in Every Student, A School for the Community\". The school provides support for students with Special Educational Needs (SEN) and recently celebrated its 60th anniversary. Its ALP focuses on environmental sustainability."
+  },
+  {
+    "_id": 128,
+    "school_name": "CHIJ (Katong) Primary",
+    "Summary": "CHIJ (Katong) Primary is a government-aided Catholic girls' school affiliated with CHIJ Katong Convent. The school is a Christ-Centred community where all work together for the promotion of truth, justice, freedom, and love, with a special reference to the disadvantaged. Its ALP develops confident, competent, and respectful communicators."
+  },
+  {
+    "_id": 129,
+    "school_name": "CHIJ (Kellock)",
+    "Summary": "CHIJ (Kellock) is a government-aided Catholic girls' primary school. The school believes in fostering a safe and orderly environment marked by graciousness, respect, and love. Its student-centric discipline approach focuses on cultivating self-awareness (I AM), self-management (I CAN, I WILL), and social awareness (I CARE)."
+  },
+  {
+    "_id": 130,
+    "school_name": "CHIJ Our Lady of Good Counsel",
+    "Summary": "CHIJ Our Lady of Good Counsel is a government-aided Catholic primary school that operates under the philosophy that every child is a unique child of God. The school is committed to creating a happy and nurturing learning environment that inspires the joy of learning. Its distinctive programmes include D'LitE (Drama and Literary Arts for LifE!) and the PROACTIVE Leader in Me Development Programme."
+  },
+  {
+    "_id": 131,
+    "school_name": "CHIJ Our Lady of the Nativity",
+    "Summary": "CHIJ Our Lady of the Nativity is a government-aided Catholic girls' school guided by the IJ motto \"Simple in Virtue, Steadfast in Duty\". Its vision is to nurture \"Girls of Today for Tomorrow\", placing emphasis on building strong character and developing leadership skills. The school's six values are Graciousness, Responsibility, Appreciation, Compassion, Integrity, and Adaptability (G.R.A.C.I.A.)."
+  },
+  {
+    "_id": 132,
+    "school_name": "CHIJ Our Lady Queen of Peace",
+    "Summary": "CHIJ Our Lady Queen of Peace is a government-aided Catholic primary school. It was formerly known as CHIJ Bukit Timah and was renamed in 2007. The school has been recognized for its dedication to environmental conservation, including winning the President's Award for the Environment. The school is a popular choice for Primary 1 admission in the Bukit Batok district."
+  },
+  {
+    "_id": 133,
+    "school_name": "CHIJ Primary (Toa Payoh)",
+    "Summary": "CHIJ Primary (Toa Payoh) is a government-aided Catholic girls' school. The school believes that education extends beyond textbooks and classrooms, focusing strongly on faith formation and holistic development. It continues the legacy of the CHIJ mission in a modern, nurturing environment."
+  },
+  {
+    "_id": 134,
+    "school_name": "CHIJ St Nicholas Girls' (Primary)",
+    "Summary": "CHIJ St. Nicholas Girls' School is a government-aided Special Assistance Plan (SAP) school. Founded in 1933 as a Chinese-medium school for girls, its motto is 德纯义坚 (\"Simple in virtue, steadfast in duty\"). It is affiliated with Eunoia Junior College for a six-year Integrated Programme."
+  },
+  {
+    "_id": 135,
+    "school_name": "Chongfu School",
+    "Summary": "Chongfu School is a government-aided, co-educational primary school. Its vision is to nurture \"Bilingual and Bicultural Leaders of Character\". The school’s philosophy is anchored on its values of Responsibility, Respect, Diligence, Care, and Integrity. It emphasizes bilingualism, with a focus on Chinese culture."
+  },
+  {
+    "_id": 136,
+    "school_name": "Chongzheng Primary",
+    "Summary": "Chongzheng Primary School's vision is \"A Vibrant Community of Innovative Thinkers and Exemplary Leaders\". Its mission is to \"nurture the leader in everyone with a heart to give and a mind to grow\". The government school provides a quality education that fosters intellectual curiosity, creativity, and holistic development."
+  },
+  {
+    "_id": 137,
+    "school_name": "Chua Chu Kang Primary",
+    "Summary": "Chua Chu Kang Primary School, established in 1994, has a mission to \"Bring out the best in each child\". The school's ALP focuses on Robotics for a Sustainable Environment. It is recognized as a Leader in Me school and uses Stephen Covey's seven habits to guide its character and leadership development based on its core values of Care, Respect, Teamwork, and Lifelong Learning."
+  },
+  {
+    "_id": 138,
+    "school_name": "Clementi Primary",
+    "Summary": "Clementi Primary School is a government, co-educational school. Its ALP, \"Inspiring Thinking Tinkerers @Clementi Primary\", adopts an interdisciplinary approach to develop critical thinking and communication skills. The school's LLP focuses on \"Instilling Lifelong Learning Through Visual Arts\", complementing its holistic education approach."
+  },
+  {
+    "_id": 139,
+    "school_name": "Compassvale Primary",
+    "Summary": "Compassvale Primary School's identity is encapsulated by \"THINKERS • LEADERS • CHAMPIONS\". The school believes that all students have the potential to shine. Its ALP focuses on developing 21st-Century Competencies through Robotics, and its LLP, \"Developing Aesthetics Appreciation Through Music Empowerment\", provides a comprehensive co-curricular experience."
+  },
+  {
+    "_id": 140,
+    "school_name": "Concord Primary",
+    "Summary": "Concord Primary School is a government, co-educational school with strong co-curricular programmes including a focus on Sports and Outdoor Education (LLP). Its ALP is \"E3 Reasoning @ Concord\", an interdisciplinary programme aiming to Enable, Enrich, and Empower students' reasoning skills. The school has support for students with Special Educational Needs (SEN)."
+  },
+  {
+    "_id": 141,
+    "school_name": "Corporation Primary",
+    "Summary": "Corporation Primary School is a government, co-educational school that aims to nurture \"Lifelong learners who thrive with resilience, curiosity, and confidence\". The school’s holistic education approach focuses on academic excellence, character building, and developing students' leadership potential. It has distinctive ALP and LLP programmes."
+  },
+  {
+    "_id": 142,
+    "school_name": "Damai Primary",
+    "Summary": "Damai Primary School's vision is to nurture \"Confident Individuals, Thinking Learners, Engaged Leaders\". The school is currently located in Bedok but is scheduled to relocate to the Tampines North area tentatively in 2029, and will temporarily cease P1 admissions from 2025 to 2027. Its values (Sincerity, Passion, Aspiration, Resilience, Kindness) guide its programmes."
+  },
+  {
+    "_id": 143,
+    "school_name": "Dazhong Primary",
+    "Summary": "Dazhong Primary School has a rich heritage dating back to 1938 and was the first school in Singapore to house a Ministry of Education Kindergarten (MK@Dazhong). The school boasts Singapore's only Junior Orchestra among primary schools. Its renowned Arts Education Programme (AEP) and ALP in \"Green Makers\" emphasize creativity and innovation alongside academic excellence."
+  },
+  {
+    "_id": 144,
+    "school_name": "De La Salle School",
+    "Summary": "De La Salle School is a government-aided Catholic school affiliated with the Lasallian institutions (including St. Joseph's Institution and St. Patrick's School). Its vision is to be a \"Nurturing Home for Servant Leaders\". The school is committed to forming a Christ-centred community where all staff and students work together for the promotion of faith and service."
+  },
+  {
+    "_id": 145,
+    "school_name": "East Spring Primary",
+    "Summary": "East Spring Primary School, established in 1999, has a vision of \"Gracious School, Life-long Learners\" and the motto \"Excellence for Success\". The school strongly upholds pupils' holistic education, fostering a culture of innovation and creativity that challenges students to find new ways of doing things. It was a pilot school for the Flexible Infrastructure (FlexSI) Scheme to transform its physical learning landscape."
+  },
+  {
+    "_id": 146,
+    "school_name": "Edgefield Primary",
+    "Summary": "Edgefield Primary School's vision is \"Lives Empowered, Lives Touched\". The school aims to develop active learners who make meaningful contributions and embrace artful living. Its core values are Integrity, Gratitude, Resilience, Unity, and Empathy, which guide its curriculum and signature programmes."
+  },
+  {
+    "_id": 147,
+    "school_name": "Elias Park Primary",
+    "Summary": "Elias Park Primary School, located in Pasir Ris, has a vision of \"Where Potential becomes Reality\" and a mission to develop students into \"Lifelong Learners, Future-Ready and Concerned Citizens\". The school's ALP, \"nuCLEAR@EPPS\", aims to nurture Citizen Leaders with Empathy and Resilience, complementing its LLP in the creative arts."
+  },
+  {
+    "_id": 148,
+    "school_name": "Endeavour Primary",
+    "Summary": "Endeavour Primary School is a government, co-educational school focused on providing a holistic education. The school aims to foster a strong foundation in values and competencies through its curriculum. Its LLP, \"Every Child A Performer (ECAP)\", highlights its dedication to developing confidence and talent in the aesthetic domain across the entire student population."
+  },
+  {
+    "_id": 149,
+    "school_name": "Evergreen Primary",
+    "Summary": "Evergreen Primary School's vision is \"Achievers . Learners . Leaders\", with a mission to \"Nurture Hearts, Cultivate Minds & Enrich Lives Through The Strength of Our Community\". The school is guided by its R3ICH values (Respect, Responsibility, Resilience, Integrity, Care, and Harmony), which are infused into its programmes, including its ALP in Environmental Innovations."
+  },
+  {
+    "_id": 150,
+    "school_name": "Fairfield Methodist School (Primary)",
+    "Summary": "Fairfield Methodist School (Primary) is a government-aided, co-educational Methodist school affiliated with Fairfield Methodist School (Secondary). The school provides a holistic education grounded in Christian values and is known for producing students with strong academic and non-academic performances."
+  },
+  {
+    "_id": 151,
+    "school_name": "Farrer Park Primary",
+    "Summary": "Farrer Park Primary School is a government, co-educational school. Its ALP focuses on \"Caring for the Community through Interdisciplinary Learning\", emphasizing social conscience and service. Its LLP, \"iCARE - Leaders of Tomorrow\", is designed to instill leadership qualities and compassion in students through community engagement."
+  },
+  {
+    "_id": 152,
+    "school_name": "Fern Green Primary",
+    "Summary": "Fern Green Primary School is a government, co-educational school that places importance on a balanced lifestyle, character development, and acquiring life skills. The school's extensive co-curricular activities (CCA) programme aims to integrate character development and camaraderie among students from diverse backgrounds."
+  },
+  {
+    "_id": 153,
+    "school_name": "Fengshan Primary",
+    "Summary": "Fengshan Primary School is a large government, co-educational primary school that resulted from a merger in 2001. The school is guided by the maxim \"Fengshan Heartbeat\", which promotes lifelong learning, continuous improvement, and community service. Its programmes, including its ALP in Sustainability, aim to nurture future environment champions."
+  },
+  {
+    "_id": 154,
+    "school_name": "Fernvale Primary",
+    "Summary": "Fernvale Primary School's mission is to nurture a passion for learning, develop diverse talents, and foster hearts to serve. The school's vision is to produce \"Global Learners of Tomorrow\". Its motto, \"Dare to Aspire, Courage to Excel,\" encourages students to be resilient in pursuing their goals. The LLP, \"Greenova\", emphasizes innovation in green efforts."
+  },
+  {
+    "_id": 155,
+    "school_name": "First Toa Payoh Primary",
+    "Summary": "First Toa Payoh Primary School, a pioneer institution of Toa Payoh, was established in 1968. Following a merger in 2002, the school champions a student-centric model focused on bilingualism and values. Its ALP in Literacy Through Photojournalism enhances communication skills, while its LLP uses outdoor experiential learning to build character and resilience."
+  },
+  {
+    "_id": 156,
+    "school_name": "Frontier Primary",
+    "Summary": "Frontier Primary School's motto is \"Make A Difference, Be The Difference\". Its vision is to produce \"Confident Thinkers, Adaptable Individuals, Passionate Leaders\". The school focuses on developing students' soft skills and fostering core values like Respect, Care, Responsibility, Integrity, Resilience, and Loyalty."
+  },
+  {
+    "_id": 157,
+    "school_name": "Fuchun Primary",
+    "Summary": "Fuchun Primary School was established in 1985 and is known in Woodlands for its strong culture of care. It was recognised as the Cluster Centre of Excellence (COE) for Music Education in 2005. The school has an LLP in Music Education and Performing Arts (\"ARTS\") and also offers a signature Home Skills Programme to teach life skills like cooking and sewing."
+  },
+  {
+    "_id": 158,
+    "school_name": "Fuhua Primary",
+    "Summary": "Fuhua Primary School is a government, co-educational school recognized as the West Zone Centre of Excellence for ICT in Teaching and Learning. The school actively promotes a reading culture, requiring students to bring story books daily. It adheres to the Healthy Meals in Schools Programme (HMSP) guidelines for its canteen vendors."
+  },
+  {
+    "_id": 159,
+    "school_name": "Gan Eng Seng Primary",
+    "Summary": "Gan Eng Seng Primary School's mission is to nurture all GESPians by providing a holistic education in a caring and positive learning environment. The school instills \"INSPIRE\" values (Integrity, Self-discipline, Perseverance, Inclusiveness, Respect, Empathy). Its ALP focuses on \"From Farm to Table\", indicating a hands-on, interdisciplinary approach to learning."
+  },
+  {
+    "_id": 160,
+    "school_name": "Geylang Methodist School (Primary)",
+    "Summary": "Geylang Methodist School (Primary) was started in 1924 as Geylang Methodist Girls' School. Today, it is a co-educational, government-aided school affiliated with Geylang Methodist School (Secondary). The school maintains a distinctive Christian culture and focuses on providing new opportunities in a joyful learning environment."
+  },
+  {
+    "_id": 161,
+    "school_name": "Gongshang Primary",
+    "Summary": "Gongshang Primary School has a deep history, established in 1920 as a night school for young Chinese migrants. Through the support of its founders, Board of Directors, and Old Boys' Association, the school overcame multiple financial difficulties. The school now focuses on developing effective communicators and future leaders through its ALP and LLP."
+  },
+  {
+    "_id": 162,
+    "school_name": "Greendale Primary",
+    "Summary": "Greendale Primary School is a government, co-educational school. It runs a Student Care Centre (SCC) operated by an external vendor to provide holistic development and supervised study time for students after school hours. The school emphasizes continuous improvement and provides support for students with Special Educational Needs (SEN)."
+  },
+  {
+    "_id": 163,
+    "school_name": "Greenridge Primary",
+    "Summary": "Greenridge Primary School, established in 1995, advocates for Positive Education to promote student well-being alongside academic excellence. Its ALP, C.O.D.E.R.S, focuses on Computational Thinking and coding to develop empathetic and resilient problem-solvers in health sciences. The school's LLP aims to nurture Ethical and Effective Leaders with Positive Mind-sets."
+  },
+  {
+    "_id": 164,
+    "school_name": "Greenwood Primary",
+    "Summary": "Greenwood Primary School's mission is to nurture lifelong learners and responsible citizens through a well-rounded education. Its vision is to develop students into motivated learners, critical thinkers, and leaders of character. The school is committed to fostering an inquisitive and reflective community that positively influences its peers and the wider community."
+  },
+  {
+    "_id": 165,
+    "school_name": "Haig Girls' School",
+    "Summary": "Haig Girls' School is one of only two government all-girls' primary schools in Singapore, established in 1951. The school is recognized for its excellence in arts education, character education, and curriculum innovation, with a long-standing emphasis on nurturing confident and creative young women leaders of character."
+  },
+  {
+    "_id": 166,
+    "school_name": "Henry Park Primary",
+    "Summary": "Henry Park Primary School is a Gifted Education Programme (GEP) Centre, one of nine in Singapore, established in 1997. Its mission is for pupils to \"lead with character and serve with their talents\". The school, founded in 1977, provides a holistic education to build essential skills and resilience, guided by its core values of Respect, Integrity, Care, and Excellence."
+  },
+  {
+    "_id": 167,
+    "school_name": "Holy Innocents' Primary",
+    "Summary": "Holy Innocents' Primary School is a Special Assistance Plan (SAP) school. The school's mission is \"To nurture students to be persons of Good Character, Self-Directed Learners and Active Contributors\". It is committed to bilingualism and Chinese culture, and its school rules emphasize respect for self, others, and the environment (The 3Rs Rule)."
+  },
+  {
+    "_id": 168,
+    "school_name": "Hong Wen School",
+    "Summary": "Hong Wen School is a government-aided Special Assistance Plan (SAP) school, founded in 1920 by the Hin Ann Huay Kuan. The school's philosophy is rooted in the importance of Chinese language, culture, and values. The community, including the Hin Ann dialect group, has consistently rallied to support the school's development and expansion."
+  },
+  {
+    "_id": 169,
+    "school_name": "Horizon Primary",
+    "Summary": "Horizon Primary School's vision is to nurture \"Confident Leaders, Responsible Citizens\". Its mission is \"To nurture every child to lead their lives responsibly and to contribute with joy\". The school believes that \"Every Child is a Leader!\" and aims to instil good habits for self-management and a meaningful life, teaching students to be effective communicators and inventive thinkers."
+  },
+  {
+    "_id": 170,
+    "school_name": "Hougang Primary",
+    "Summary": "Hougang Primary School, founded in 2000, is a school of choice in the North East region, recognized for its Outdoor Adventure Education (OAE) as its LLP. The school is also a designated Centre for Biodiversity for Schools (NParks) due to its rich flora and fauna. Its ALP in Science Education is anchored on environmental education."
+  },
+  {
+    "_id": 171,
+    "school_name": "Huamin Primary",
+    "Summary": "Huamin Primary School's vision is to produce \"Learners with Character, Leaders for Tomorrow\". The school is committed to nurturing every child to become a responsible and future-ready citizen through a vibrant and holistic education. Its distinctive programmes focus on Sustainable Development (ALP) and the Creative Arts (LLP)."
+  },
+  {
+    "_id": 172,
+    "school_name": "Innova Primary",
+    "Summary": "Innova Primary School is a government, co-educational school with a vision for its students to be \"champions of character, change and citizenry\". The school believes that \"Learning is an Adventure\", integrating its holistic curriculum with its core I-STAR values. Its LLP, \"Leading Through Serving\", and ALP in Creative Problem Solving are key components of the Innova experience."
+  },
+  {
+    "_id": 173,
+    "school_name": "Jiemin Primary",
+    "Summary": "Jiemin Primary School, established in 1985, is a government, co-educational school whose name originates from two traditional Chinese schools. Its motto is \"Strive to Succeed\". The school has a niche status in Media Literacy (ALP) and uses its LLP, \"Aesthetics Alive\", to develop students' critical thinking and confidence through the arts."
+  },
+  {
+    "_id": 174,
+    "school_name": "Jing Shan Primary",
+    "Summary": "Jing Shan Primary School, founded in 1944, is a merged school that honors its legacy while focusing on modern pedagogy. The school emphasizes values-driven education and has a special focus on mathematics. Its ALP, \"Green Explorers @ JS\", integrates hands-on environmental projects, and its LLP, \"Flourish @ JS\", promotes character strengths and mindfulness."
+  },
+  {
+    "_id": 175,
+    "school_name": "Junyuan Primary",
+    "Summary": "Junyuan Primary School is a government, co-educational school in Tampines that opened in 1988. Following its upgrading (PRIME), the school has innovatively utilized white spaces\" for experiential learning stations. The school is known for its good academic and non-academic track records and is considered a choice school in Tampines."
+  },
+  {
+    "_id": 176,
+    "school_name": "Jurong Primary",
+    "Summary": "Jurong Primary School's vision is \"A Joyful Community of Gracious Citizens and Future-ready Learners\". Its mission is to nurture all-rounded students of grace, distinction, and sound moral values. The school's motto, \"Reach in to reach out\", encapsulates its commitment to developing student potential and contributing to the community."
+  },
+  {
+    "_id": 177,
+    "school_name": "Jurong West Primary",
+    "Summary": "Jurong West Primary School is a government, co-educational school that places a strong focus on students' well-being and life skills. The school has dedicated CCE lessons to address cyber wellness and social-emotional learning, such as managing stress and fostering respectful conversations."
+  },
+  {
+    "_id": 178,
+    "school_name": "Keming Primary",
+    "Summary": "Keming Primary School, formerly Keok Ming Public School, traces its history back to 1935 when it was founded by generous pioneers. The school was officially opened in 1966 by the late Mr. Lee Kuan Yew. Its ALP, I.N.S.P.I.R.E., aims to nurture scientific inquiry, while its LLP focuses on character development through sports."
+  },
+  {
+    "_id": 179,
+    "school_name": "Kheng Cheng School",
+    "Summary": "Kheng Cheng School is a government-aided, co-educational school guided by the motto \"Uplift and Uphold\". The school's mission is to nurture a culture of learning and empower every child to lead and impact the community. It emphasizes the virtues of kindness, sincerity, courage, and diligence."
+  },
+  {
+    "_id": 180,
+    "school_name": "Kong Hwa School",
+    "Summary": "Kong Hwa School is a government-aided, co-educational school with a history dating back to 1920. The school's CCA programme is comprehensive, aiming to build discipline, teamwork, and strong character. Students are encouraged to pursue excellence and demonstrate the KHSPR²IDE values through their chosen activities."
+  },
+  {
+    "_id": 181,
+    "school_name": "Kranji Primary",
+    "Summary": "Kranji Primary School's vision is to nurture \"Joyful Learners, Gracious Citizens and Champions in Life\". The school will be relocating to the Tengah area tentatively in 2028. It focuses on a student-centric learning environment, providing a 1:1 learning experience with iPads for upper primary students and a CHAMPS Leadership Programme emphasizing self-leadership."
+  },
+  {
+    "_id": 182,
+    "school_name": "Kuo Chuan Presbyterian Primary",
+    "Summary": "Kuo Chuan Presbyterian Primary School was founded in 1924 by Christian missionaries. It is a government-aided school that is part of the Presbyterian Church in Singapore's family of schools. The school is guided by its ARISE\" values (Amazing Love"
+  },
+  {
+    "_id": 183,
+    "school_name": "Lakeside Primary",
+    "Summary": "Lakeside Primary School is a government, co-educational school. Its vision is to nurture \"Leaders of Character and Learners for Life\". The school's ALP, \"ThInkers with Heart\", and its LLP, \"STARS witHeARTs\", integrate academic learning with the performing arts to develop confident and responsible leaders."
+  },
+  {
+    "_id": 184,
+    "school_name": "Lianhua Primary",
+    "Summary": "Lianhua Primary School is a government, co-educational school. Its vision is to nurture \"Innovative Achievers, Gracious Citizens\". The school believes every child is a \"superhero\" with limitless potential. Its ALP focuses on Robotics, Information and Technology Education (RITE) to prepare students for a positive impact on the world."
+  },
+  {
+    "_id": 185,
+    "school_name": "Maha Bodhi School",
+    "Summary": "Maha Bodhi School is a government-aided Special Assistance Plan (SAP) school affiliated with Manjusri Secondary School. Its Buddhist ethos guides its core mission: to provide a holistic education in a caring, conducive environment. The school actively promotes cultural awareness through its Learning through an Ethnic Arts Programme (LEAP)."
+  },
+  {
+    "_id": 186,
+    "school_name": "Maris Stella High (Primary)",
+    "Summary": "Maris Stella High (Primary) is a government-aided Special Assistance Plan (SAP) school for boys. It is a Catholic school run by the Marist Brothers, committed to educating Gentlemen of Faith"
+  },
+  {
+    "_id": 187,
+    "school_name": "Marsiling Primary",
+    "Summary": "Marsiling Primary School is a government, co-educational school that operates as a single-session school. The school focuses on providing a nurturing and safe environment for learning and growth. Its LLP, LEAD to Serve"
+  },
+  {
+    "_id": 188,
+    "school_name": "Marymount Convent School",
+    "Summary": "Marymount Convent School is a government-aided Catholic girls' school founded in 1945 by the Good Shepherd Convent. The school motto is derived from the Mosaic command, \"Go forward\". It has a strong focus on holistic health and development, with a distinctive ALP aimed at grooming confident ladies to advocate for worthy causes."
+  },
+  {
+    "_id": 189,
+    "school_name": "Mayflower Primary",
+    "Summary": "Mayflower Primary School is a government, co-educational school that was established in 1979 and named after the former Mayflower Estate. The school also provides specialized support for students diagnosed with hearing loss (Signing Approach). Its holistic education is guided by the core values of Respect, Integrity, Care, and Excellence (RICE)."
+  },
+  {
+    "_id": 190,
+    "school_name": "Mee Toh School",
+    "Summary": "Mee Toh School is a government-aided, co-educational Buddhist school affiliated with Manjusri Secondary School. Established in 1954, its name means \"Eternal Brightness\". The school's CCE program is guided by core values of Compassion, Conscience, Purity, and Righteousness. The school emphasizes character development as akin to nurturing a seed into a thriving plant."
+  },
+  {
+    "_id": 191,
+    "school_name": "Meridian Primary",
+    "Summary": "Meridian Primary School is a government, co-educational school that aims to nurture students to be \"Future Learners, Citizens and Leaders\". The school focuses on a whole-school interdisciplinary approach in eco-environmental curriculum (ALP). Its LLP, \"Meridian Values-Based Student Leadership In Action\", is designed to empower students with leadership and 21st-century competencies."
+  },
+  {
+    "_id": 192,
+    "school_name": "Methodist Girls' School (Primary)",
+    "Summary": "Methodist Girls' School (Primary) is a section of the independent Methodist girls' school founded in 1887. The school's motto is \"To Master, To Grow, To Serve\". It is known for its history of academic, music, and sporting excellence, and its daily life is guided by Christian values, including daily prayers and devotions."
+  },
+  {
+    "_id": 193,
+    "school_name": "Montfort Junior",
+    "Summary": "Montfort Junior School is a government-aided, all-boys Catholic school affiliated with Montfort Secondary School. Founded in 1916 as Holy Innocents' English School, the school's current name honors St. Louis Marie De Montfort. The school is committed to the holistic development of its students, emphasizing sports and outdoor education to build character and leadership."
+  },
+  {
+    "_id": 194,
+    "school_name": "Nan Chiau Primary",
+    "Summary": "Nan Chiau Primary School is a government-aided Special Assistance Plan (SAP) school. The school's mission is \"To nurture students of character and distinction\". It focuses on bilingualism and character development. Its LLP, \"EMPOWER@NCPS\", aims to foster leadership and positive contributions to the community."
+  },
+  {
+    "_id": 195,
+    "school_name": "Nan Hua Primary",
+    "Summary": "Nan Hua Primary School is a government-aided Special Assistance Plan (SAP) school and a Gifted Education Programme (GEP) Centre. The school's mission is to \"nurture future-ready learners, gracious citizens and inspiring leaders\". It is committed to a holistic education, utilizing its \"NHPS Thinking Programme\" to develop critical and creative thinkers."
+  },
+  {
+    "_id": 196,
+    "school_name": "Nanyang Primary",
+    "Summary": "Nanyang Primary School is a distinguished government-aided Special Assistance Plan (SAP) school and a Gifted Education Programme (GEP) Centre, tracing its roots to 1917. Its philosophy is values-driven and student-centric, emphasizing bilingualism. The school's ALP focuses on Problem-Solving Through Maker Education."
+  },
+  {
+    "_id": 197,
+    "school_name": "Naval Base Primary",
+    "Summary": "Naval Base Primary School is a government, co-educational school. The school believes that Co-Curricular Activities (CCA) are an integral part of a student's education, emphasizing the building of character, team spirit, and responsibility. Its programmes are designed to promote social integration and inculcate national values and life skills."
+  },
+  {
+    "_id": 198,
+    "school_name": "New Town Primary",
+    "Summary": "New Town Primary School is a government, co-educational school. Its vision is to be a \"School of Excellence\". The school's mission is to \"nurture every child to be a leader\". It focuses on holistic development, promoting active learning, and encouraging students to achieve their full potential."
+  },
+  {
+    "_id": 199,
+    "school_name": "Ngee Ann Primary",
+    "Summary": "Ngee Ann Primary School is a government-aided, co-educational school affiliated with Ngee Ann Secondary School. Its mission is to nurture every child to their best potential, fostering resilience through a holistic education delivered in three phases: Experience, Explore, and Expand. The school also emphasizes the inculcation of core values and 21st-Century Competencies from Primary 1."
+  },
+  {
+    "_id": 200,
+    "school_name": "Northoaks Primary",
+    "Summary": "Northoaks Primary School is a government, co-educational school that believes in nurturing the whole child. Its curriculum focuses on Character and Citizenship Education (CCE), with a strong emphasis on developing students' critical and inventive thinking skills. The school's LLP, \"STRIVE\", promotes values education through sports and outdoor activities."
+  },
+  {
+    "_id": 201,
+    "school_name": "Northshore Primary",
+    "Summary": "Northshore Primary School is a new government school that welcomed its first batch of students in 2021. Leveraging its location near the Punggol Digital District, the school focuses on STEM education and utilizing outdoor spaces for authentic learning. Its LLP, OCE@N, aims to develop critical thinking and build character through experiential learning focused on environmental sustainability."
+  },
+  {
+    "_id": 202,
+    "school_name": "North Spring Primary",
+    "Summary": "North Spring Primary School is a government, co-educational school that believes every pupil has the aptitude to learn and develop confidence. The school's philosophy guides it to assist every pupil in becoming a self-directed and effective lifelong learner, striving for excellence. Its programmes, including its ALP in Maker’s Sustainability Education, emphasize respect and care in collaboration."
+  },
+  {
+    "_id": 203,
+    "school_name": "North View Primary",
+    "Summary": "North View Primary School, established in 1995, is a government, co-educational school that successfully completed PERI upgrading and welcomed its first MOE Kindergarten cohort in 2021. The school is committed to developing self-directed, confident, and morally upright students who are active contributors to the community."
+  },
+  {
+    "_id": 204,
+    "school_name": "North Vista Primary",
+    "Summary": "North Vista Primary School is a government, co-educational school that prioritizes student safety and holistic development. The school has structured dismissal procedures and promotes responsible behavior both within and outside school premises. The school's ALP and LLP aim to cultivate creativity, sharing, and artistic appreciation."
+  },
+  {
+    "_id": 205,
+    "school_name": "Northland Primary",
+    "Summary": "Northland Primary School, established in 1988, is a government, co-educational school in Yishun known for its innovative programmes and strong values. The school emphasizes building a firm foundation for every child to “grow, serve, and excel”, with notable achievements in national competitions for its International Chess Club."
+  },
+  {
+    "_id": 206,
+    "school_name": "Oasis Primary",
+    "Summary": "Oasis Primary School's vision is to produce \"Agile Learners, Gracious Citizens\". The school's mission is to be a \"Learning Oasis for Every Child\". It aims to develop individuals anchored in moral values, driven to explore creative ideas, and equipped with a heart to lead and serve the community."
+  },
+  {
+    "_id": 207,
+    "school_name": "Opera Estate Primary",
+    "Summary": "Opera Estate Primary School, founded in 1985 through a merger, is a government, co-educational school. It operates as a single-session school after a PRIME upgrading. The school focuses on developing a deep appreciation of the Arts and Music (LLP) and has been recognized for its efforts in promoting National Education."
+  },
+  {
+    "_id": 208,
+    "school_name": "Palm View Primary",
+    "Summary": "Palm View Primary School's vision is \"Curious Minds, Caring Hearts, Creative Spirits\", underpinned by a commitment to inspire excellence. The school has transitioned its ALP to a Maker Education STEM curriculum, \"Voyagers@PLVPS\", focusing on real-world problem-solving, digital making, and interdisciplinary collaboration to nurture future innovators and changemakers."
+  },
+  {
+    "_id": 209,
+    "school_name": "Park View Primary",
+    "Summary": "Park View Primary School's vision is to produce \"Respectful, Responsible, Resilient Leaders and Thinkers\". The school actively collaborates with its Parent Support Group (PSG) to ensure that all programmes and activities provide a holistic education, encouraging students to grow and bloom into confident, independent individuals."
+  },
+  {
+    "_id": 210,
+    "school_name": "Pasir Ris Primary",
+    "Summary": "Pasir Ris Primary School's mission is to \"nurture every Pasirian to their fullest potential\". The school’s desired student outcomes include producing Passionate Learners, Critical Thinkers, Compassionate Leaders, and Responsible Advocates. The school’s curriculum is customized to cater to different learning needs and profiles."
+  },
+  {
+    "_id": 211,
+    "school_name": "Paya Lebar Methodist Girls' School (Primary)",
+    "Summary": "Paya Lebar Methodist Girls' School (Primary) is a government-aided girls' school affiliated with Paya Lebar Methodist Girls' School (Secondary). Its vision is to be \"an outstanding school of choice producing women of fine character with a passion for life and learning\". The school ensures a balanced education that nurtures the whole person across five dimensions: cognitive, physical, moral, aesthetic, and social (affective)."
+  },
+  {
+    "_id": 212,
+    "school_name": "Pei Chun Public School",
+    "Summary": "Pei Chun Public School is a government-aided Special Assistance Plan (SAP) school established in 1933 by the Hainanese community. Its name signifies its intent as \"a school started by the community for the community\". After a major upgrading, the school now operates as a single session, with new facilities including an indoor playing field."
+  },
+  {
+    "_id": 213,
+    "school_name": "Pei Hwa Presbyterian Primary",
+    "Summary": "Pei Hwa Presbyterian Primary School (PHPPS) was founded in 1889 to provide free education to village children. It is a government-aided SAP school that strongly emphasizes bilingualism and biculturalism, particularly Chinese language and culture. The school aims to develop students of character with a zest to learn and a heart to serve."
+  },
+  {
+    "_id": 214,
+    "school_name": "Pei Tong Primary",
+    "Summary": "Pei Tong Primary School is a government, co-educational school that celebrated its 80th anniversary in 2025. The school is committed to nurturing students who are passionate learners, resilient individuals, and gracious citizens. Its core values, which include care, respect, and resilience, are actively lived out in and beyond the classroom."
+  },
+  {
+    "_id": 215,
+    "school_name": "Peiying Primary",
+    "Summary": "Peiying Primary School, established in 1919, has a mission of \"nurturing citizens for nation building\". Its ALP, \"Project T.H.I.N.K.\", cultivates environmental love and design thinking skills, contributing to a sustainable Singapore. The LLP, SCALE@PEIYING, develops ruggedness, resilience, and teamwork through outdoor adventure and sports."
+  },
+  {
+    "_id": 216,
+    "school_name": "Pioneer Primary",
+    "Summary": "Pioneer Primary School's vision is \"Passionate Learners, Confident Leaders, Gracious Citizens\", and its motto is \"Go for Excellence!\". The school is moving to a new campus at Tengah Garden Avenue in 2026. Its core values include Responsibility, Integrity, Innovation, Resilience, and Care, which guide students to be critical and reflective thinkers."
+  },
+  {
+    "_id": 217,
+    "school_name": "Poi Ching School",
+    "Summary": "Poi Ching School is a government-aided Special Assistance Plan (SAP) school in Tampines. The school focuses on providing a holistic education that encompasses academic, aesthetic, and moral development. Its ALP, \"BEST\", aims to develop students into effective bilingual communicators, complementing its LLP, \"D'ARTS@PCS\", in Music & Performing Arts."
+  },
+  {
+    "_id": 218,
+    "school_name": "Princess Elizabeth Primary",
+    "Summary": "Princess Elizabeth Primary School traces its history back to the Bukit Panjang Afternoon School, founded in 1952. The school's curriculum goal is to nurture every child to become an Engaged Learner, a Caring Citizen, and a Steadfast Leader, guided by its ASPIRE values (Ambition, Self-Discipline, Perseverance, Integrity, Respect, and Empathy). It uses a Positive Discipline approach (PBIS) for student development."
+  },
+  {
+    "_id": 219,
+    "school_name": "Punggol Cove Primary",
+    "Summary": "Punggol Cove Primary School is a government, co-educational school that offers barrier-free accessibility and support for students with Special Educational Needs (SEN). Its mission is to be a \"nurturing environment where our children develop their talents and achieve their potential\". The school’s ALP, HELP, focuses on holistic English literacy."
+  },
+  {
+    "_id": 220,
+    "school_name": "Punggol Green Primary",
+    "Summary": "Punggol Green Primary School is a government, co-educational school committed to developing students into \"Confident, Creative, and Compassionate Citizens\". The school's ALP, \"IGNITE\", drives action for a sustainable future through Science and STEM, while its LLP, \"APPLE\", focuses on student leadership excellence and community service."
+  },
+  {
+    "_id": 221,
+    "school_name": "Punggol Primary",
+    "Summary": "Punggol Primary School's vision is \"A Gracious Community of Confident and Innovative Life-long Learners\". Its mission is \"Igniting the Joy of Learning, Inspiring All to Care and Share\". The school believes in promoting innovation and a life-long learning mindset, viewing obstacles as opportunities to overcome challenges."
+  },
+  {
+    "_id": 222,
+    "school_name": "Punggol View Primary",
+    "Summary": "Punggol View Primary School is a government, co-educational school. Its ALP, E2C @ PGVP, is centered on developing Effective and Empathetic Communicators, recognizing oracy as the foundation for literacy. The school features a Star Studio, a media performance and recording facility that supports its efforts in journalism and broadcasting."
+  },
+  {
+    "_id": 223,
+    "school_name": "Qifa Primary",
+    "Summary": "Qifa Primary School traces its roots back to 1906, established by the Char Yong (Dabu) Association. Its motto is \"Strive to Excel, Flourish in All Domains\". The school is known for its academic rigour and values-driven approach. Its LLP, CHAMPS, blends sports and outdoor experiences with values-driven education to build life skills."
+  },
+  {
+    "_id": 224,
+    "school_name": "Qihua Primary",
+    "Summary": "Qihua Primary School was founded in 1938 by pioneer educators in Lim Chu Kang. The school's name, 'Qi Hua (启化)', means 'rousing the learning spirit'. It moved to its current Woodlands address in 1988 and became a government school. The school's mission is to nurture students to be \"Leaders with Character, Learners for Life and Citizens with Heart\"."
+  },
+  {
+    "_id": 225,
+    "school_name": "Queenstown Primary",
+    "Summary": "Queenstown Primary School was formed from the merger of three primary schools: Mei Chin, Queenstown, and Tanglin. The school's crest symbolizes this merger with three jewels on a crown. Its vision is to nurture \"Flourishing Individuals, Future-Ready Citizens\", with a mission to provide a holistic education to all students."
+  },
+  {
+    "_id": 226,
+    "school_name": "Radin Mas Primary",
+    "Summary": "Radin Mas Primary School is a government, co-educational school that aims to be a place where \"all work hard, play hard and make a mark\". The school's LLP, G.R.I.T@RMPS, fosters a Growth Mindset and core values like Resilience and Teamwork through sports and outdoor education. Its ALP focuses on developing 21st-century competencies through Computational Thinking and Design Thinking."
+  },
+  {
+    "_id": 227,
+    "school_name": "Raffles Girls' Primary",
+    "Summary": "Raffles Girls' Primary School (RGPS) is a long-established, prestigious government girls' school, founded in 1844. It is one of the first primary schools selected for the Gifted Education Programme (GEP). The school's mission is \"Nurturing Women of Excellence, Leaders of Character and Service\", and it maintains a strong reputation for academic excellence."
+  },
+  {
+    "_id": 228,
+    "school_name": "Red Swastika School",
+    "Summary": "Red Swastika School is a government-aided Special Assistance Plan (SAP) school, founded in 1951 by the World Red Swastika Society. It was one of the first schools to pilot bilingualism (English and Chinese) and is committed to nurturing joyful learners with exemplary character, guided by the motto of Graciousness, Magnanimity, Trustworthiness, and Diligence."
+  },
+  {
+    "_id": 229,
+    "school_name": "River Valley Primary",
+    "Summary": "River Valley Primary School is a government, co-educational school. The school's ALP, \"Comms-IT Rt!\", focuses on developing communication skills through technology. Its LLP, \"Every RVian a Leader\", is dedicated to nurturing student leadership and community service, reflecting its focus on developing well-rounded citizens."
+  },
+  {
+    "_id": 230,
+    "school_name": "Riverside Primary",
+    "Summary": "Riverside Primary School believes \"every child possesses unique potential waiting to be discovered and nurtured\". The school builds a strong foundation for life for its students (\"Riverians\") through a holistic, balanced, and creatively delivered curriculum. Its core SPARKLE values guide its programmes and ethos."
+  },
+  {
+    "_id": 231,
+    "school_name": "Rivervale Primary",
+    "Summary": "Rivervale Primary School's vision is \"The Rivervale - School of Excellence, Individuals of Character\". The school's mission is to inspire and develop \"Riverlites\" to be Caring, Adaptable and Confident. The school's core values include Respect, Responsibility, Resilience, Integrity, Care, Harmony, Excellence, and Teamwork."
+  },
+  {
+    "_id": 232,
+    "school_name": "Rosyth School",
+    "Summary": "Rosyth School, established in 1956, is one of the two original primary schools selected to host the Gifted Education Programme (GEP) in 1984. The school has a strong emphasis on values inculcation and aims for its students (\"Rosythians\") to become global citizens. Its ALP is focused on Augmenting Science Learning through Innovation."
+  },
+  {
+    "_id": 233,
+    "school_name": "Rulang Primary",
+    "Summary": "Rulang Primary School was originally founded in 1930 as Joo Long Public School. The school's current name is the Hanyu Pinyin of its original name. Rulang has achieved numerous national awards, including the School Excellence Award, and continues to be known for its commitment to holistic development and academic accomplishment."
+  },
+  {
+    "_id": 234,
+    "school_name": "Sembawang Primary",
+    "Summary": "Sembawang Primary School's mission is to develop \"Innovative Learners, Rooted in Values\". The school is a single-session government school that focuses on character, leadership, and positive change. It utilizes innovative methods, including metacognitive strategies and AI technology (like ChatGPT), to enhance its Mother Tongue Language program."
+  },
+  {
+    "_id": 235,
+    "school_name": "Sengkang Green Primary",
+    "Summary": "Sengkang Green Primary School's crest, inspired by the resilient Tembusu tree, symbolizes a growing child anchored in strong values, thriving in a fast-changing world. The school provides an all-round education by balancing the development of character and abilities. Its ALP focuses on future skills through experiential project work, complementing its LLP in the arts."
+  },
+  {
+    "_id": 236,
+    "school_name": "Seng Kang Primary",
+    "Summary": "Seng Kang Primary School's vision is \"Every Seng Kang Primary student an Inventive Thinker, a Confident Leader and a Gracious Citizen\". Its mission is \"Nurturing self-directed learners with inquiring minds, anchored on moral values to lead, care and serve\". The school's core values are Graciousness, Integrity, Confidence, and Resilience."
+  },
+  {
+    "_id": 237,
+    "school_name": "Shuqun Primary",
+    "Summary": "Shuqun Primary School's vision is \"A vibrant learning community, rooted in values with a heart to serve\". The school's ICARE values (Integrity, Care, Adaptability, Respect, Excellence) are central to its ethos. The school provides a student-centric and values-driven education, aiming to develop well-rounded students with strong character and leadership qualities."
+  },
+  {
+    "_id": 238,
+    "school_name": "Si Ling Primary",
+    "Summary": "Si Ling Primary School is a government, co-educational school that fosters an environment where \"learning comes alive\". The school's curriculum and signature programmes are geared towards nurturing a caring and learning community. It offers support for students with Special Educational Needs and promotes community and student leadership as its Learning for Life Programme."
+  },
+  {
+    "_id": 239,
+    "school_name": "Singapore Chinese Girls (Primary)",
+    "Summary": "Singapore Chinese Girls' School (Primary) is affiliated with its secondary section and is committed to providing a holistic and balanced education founded on timeless values and rich heritage. It is guided by Renzulli's Schoolwide Enrichment Model to help students discover and hone their talents in academics, arts, sports, and technology."
+  },
+  {
+    "_id": 240,
+    "school_name": "South View Primary",
+    "Summary": "South View Primary School is a popular government, co-educational school in Choa Chu Kang, with a high application rate. The school is recognized for its rigorous academic curriculum complemented by vibrant co-curricular activities. It offers a range of special programmes in sports, arts, and STEM, designed to nurture well-rounded students."
+  },
+  {
+    "_id": 241,
+    "school_name": "Springdale Primary",
+    "Summary": "Springdale Primary School focuses on \"Be a Better Me!\" and actively introduces practices like Whole Body Listening and Mindful Breathing to enhance students' focus, communication, and emotional regulation. The school has a fresh, vibrant physical environment and actively involves students in community service and environmental projects."
+  },
+  {
+    "_id": 242,
+    "school_name": "St Andrew’s Junior",
+    "Summary": "St. Andrew's Junior School is an Anglican Church School founded in 1862. It is sited within St. Andrew's Village and is committed to providing an all-round education molded in Christian principles. The school's vision is to nurture servant leaders who bring life to the nations, with a strong emphasis on effective bilingualism and high numeracy skills."
+  },
+  {
+    "_id": 243,
+    "school_name": "St Anthony's Canossian Primary",
+    "Summary": "St. Anthony's Canossian Primary School is a government-aided girls' school affiliated with St. Anthony's Canossian Secondary School. The school's educational approach focuses on the Canossian values and holistic development. It offers special support for students with Special Educational Needs (SEN)."
+  },
+  {
+    "_id": 244,
+    "school_name": "St Anthony's Primary",
+    "Summary": "St. Anthony's Primary School is a government-aided, co-educational Catholic and Lasallian school, founded in 1879 by the Catholic Portuguese Mission. The school's mission is to be \"a caring Lasallian community that nurtures every student to be a person of integrity, and a confident learner\". It is affiliated with St. Patrick's School and St. Joseph's Institution (Secondary)."
+  },
+  {
+    "_id": 245,
+    "school_name": "St Hilda's Primary",
+    "Summary": "St. Hilda's Primary School is a government-aided, co-educational Anglican school, affiliated with St. Hilda's Secondary School. The school's mission is to provide a balanced development of mind, body, and spirit, nurturing students to be God-fearing citizens. It is a Gifted Education Programme (GEP) Centre and follows its core values of Love, Live, Learn, Serve, and Strive."
+  },
+  {
+    "_id": 246,
+    "school_name": "St Margaret's School (Primary)",
+    "Summary": "St. Margaret's School is the oldest girls' school in Singapore and the Far East, founded in 1842 by Mrs. Maria Dyer. The school is guided by a fine tradition of service to the community. Its mission is the education and nurture of young girls to develop in body, soul, and spirit, growing and glowing for God."
+  },
+  {
+    "_id": 247,
+    "school_name": "St Stephen's Primary",
+    "Summary": "St. Stephen's School is a Catholic and Lasallian government-aided all-boys' school. Its ultimate goal is for each boy to \"enter to learn, and leave to serve, especially the last, lost and the least\". The school's core values are Faith, Service, and Community, which guide its strong emphasis on character development and servant leadership."
+  },
+  {
+    "_id": 248,
+    "school_name": "St Gabriel's Primary",
+    "Summary": "St. Gabriel's Primary School is a government-aided all-boys' Catholic mission school that is part of the Gabrielite family. The school motto is \"Labor Omnia Vincit\" (Labour conquers all things). It aims to develop young Gabrielites into gentlemen who uphold Christian values and are of service to God and Nation."
+  },
+  {
+    "_id": 249,
+    "school_name": "St Joseph's Institution Junior",
+    "Summary": "St. Joseph's Institution Junior (SJI Junior) is a Catholic, Lasallian boys' primary school, formerly known as St. Michael's School. Its motto is the Latin \"Ora et Labora\" (Pray and Work), which calls upon students to be guided by God through prayer and to work conscientiously in service to God. It aims to empower students to be \"men of integrity and men for others\"."
+  },
+  {
+    "_id": 250,
+    "school_name": "Tampines North Primary",
+    "Summary": "Tampines North Primary School's vision is \"Future Ready Learners, Responsible Citizens, and Caring Leaders\". The school focuses on a positive and proactive approach to discipline, emphasizing building self-discipline, good character, and strong relationships. Its LLP, G4Life, builds character through environmental education."
+  },
+  {
+    "_id": 251,
+    "school_name": "Tampines Primary",
+    "Summary": "Tampines Primary School, established in 1985, is committed to the core belief that every pupil can learn and excel. The school adopted the motto \"To Persevere and Succeed\". It is forward-looking and has an emphasis on the effective use of ICT to support teaching and learning, structuring collaborative learning experiences beyond the classroom."
+  },
+  {
+    "_id": 252,
+    "school_name": "Tanjong Katong Primary",
+    "Summary": "Tanjong Katong Primary School's mission is to nurture students so that they can excel in their pursuits and contribute to society. Its vision is to develop \"Passionate Learners, Caring Leaders, and Global Citizens\". The school's core values are encapsulated in the acronym PR2IDE (Perseverance, Respect, Responsibility, Integrity, Discipline, and Empathy)."
+  },
+  {
+    "_id": 253,
+    "school_name": "Tao Nan School",
+    "Summary": "Tao Nan School, established in 1906, is a government-aided Special Assistance Plan (SAP) school and one of the six Singapore Hokkien Huay Kuan schools. Its motto is \"Sincerity and Perseverance\". Historically, its original building now houses the Peranakan Museum. The school offers the Gifted Education Programme (GEP) and fosters a strong commitment to bilingualism and Chinese culture."
+  },
+  {
+    "_id": 254,
+    "school_name": "Teck Ghee Primary",
+    "Summary": "Teck Ghee Primary School is a government, co-educational school that offers a full range of academic subjects and support for students with Special Educational Needs (SEN). The school focuses on providing a holistic curriculum and is committed to developing well-rounded individuals. Its LLP, \"The Art of Communication through Multimedia\", emphasizes creative expression and digital literacy."
+  },
+  {
+    "_id": 255,
+    "school_name": "Teck Whye Primary",
+    "Summary": "Teck Whye Primary School's motto is \"Aspire and Achieve\". Its mission is \"To nurture every child to be a confident and creative leader, grounded in moral values and committed to serve the community\". The school's core values guide its programmes, which include an ALP focused on developing media literate communicators and an LLP in leadership through service."
+  },
+  {
+    "_id": 256,
+    "school_name": "Telok Kurau Primary",
+    "Summary": "Telok Kurau Primary School has a history dating back to 1926 and was attended by Singapore's late former Prime Minister Lee Kuan Yew and Malaysia's late former Prime Minister Datuk Hussein Onn. After several mergers and relocations, the school now focuses on a holistic education, utilizing its ALP in Coding and Robotics and its LLP in Character Development through Team Sports."
+  },
+  {
+    "_id": 257,
+    "school_name": "Temasek Primary",
+    "Summary": "Temasek Primary School's vision is to be a \"Vibrant Learning Campus where students Learn, Lead, Serve and Grow\". Its mission is to develop students into responsible and versatile individuals with a passion for life-long learning, guided by the motto \"Forward Together\". The school's corporate values prioritize Students, People, and Partners."
+  },
+  {
+    "_id": 258,
+    "school_name": "Townsville Primary",
+    "Summary": "Townsville Primary School's vision is \"A Vibrant School Leaders of Character, Learners for Life\". The school will be relocating to East Canberra (Sembawang) tentatively in 2029 and will temporarily cease P1 admissions from 2025 to 2027. The school's core values, iDARE2, emphasize Integrity, Diligence, Aspiration, Respect, Empathy, and Excellence."
+  },
+  {
+    "_id": 259,
+    "school_name": "Unity Primary",
+    "Summary": "Unity Primary School is a government, co-educational school. Its vision is to be a \"Gracious Community of Confident Learners and Responsible Citizens\". The school's LLP, \"CharGE UP!\", uses green and experiential learning for character development. The school is committed to nurturing leaders of good standing and character, who are able to apply critical thinking and communication skills."
+  },
+  {
+    "_id": 260,
+    "school_name": "Valour Primary",
+    "Summary": "Valour Primary School is a government, co-educational school. Its vision is to nurture \"Leaders of Integrity, Learners of Excellence and Citizens of Compassion\". The school’s red \"V\" in its crest symbolizes staff and students reaching out to the world with passion, courage, and confidence. It focuses on instilling knowledge and values to guide students to lead and serve."
+  },
+  {
+    "_id": 261,
+    "school_name": "Waterway Primary",
+    "Summary": "Waterway Primary School is a government, co-educational school committed to fostering \"a culture of care and excellence in a caring and enabling environment\". The school focuses on providing holistic learning experiences and distinctive programmes to develop its students' potential and pride."
+  },
+  {
+    "_id": 262,
+    "school_name": "Wellington Primary",
+    "Summary": "Wellington Primary School, established in 2001, has a vision to be \"an excellent institution that grows future-ready leaders\". The school empowers students to make responsible decisions based on its RICE² values (Respect, Responsibility, Integrity, Innovation, Care, and Community). It uses a whole-school educative process called the Personal Mastery Board to teach values and develop self-discipline."
+  },
+  {
+    "_id": 263,
+    "school_name": "West Grove Primary",
+    "Summary": "West Grove Primary School is a government, co-educational school. Its mission is to be a \"Learning Community that Nurtures the Whole Child\". The school is committed to developing gracious leaders and emphasizes a culture of care and inclusiveness, offering support for students with special educational needs."
+  },
+  {
+    "_id": 264,
+    "school_name": "West Spring Primary",
+    "Summary": "West Spring Primary School's vision is to nurture \"Leaders, Learners, and Individuals of Character\". The school is committed to providing a conducive environment where every student achieves academic excellence, character excellence, and realizes their potential. It promotes a holistic educational experience through its distinctive ALP and LLP."
+  },
+  {
+    "_id": 265,
+    "school_name": "West View Primary",
+    "Summary": "West View Primary School is a government, co-educational school in Bukit Panjang. Its mission is to inspire learning, nurture TALENT values, and build strong home-school bonds. The school has a focus on environmental sustainability (ALP) and encourages students to appreciate, create, explore, and excel in the arts (LLP)."
+  },
+  {
+    "_id": 266,
+    "school_name": "Westwood Primary",
+    "Summary": "Westwood Primary School is a \"Positive Education School\" dedicated to nurturing thriving teachers and flourishing pupils. The school’s approach focuses on instilling a love for the community and service leadership through positive education principles, helping students grow into confident, independent individuals."
+  },
+  {
+    "_id": 267,
+    "school_name": "White Sands Primary",
+    "Summary": "White Sands Primary School was established in 1998 and later merged with Coral Primary School in 2019. The school's motto is \"Learn, Grow and Excel Together\". This single-session, co-educational school offers an enhanced learning experience, integrating its ALP in Coding and Computational Thinking and its LLP in Visual Arts."
+  },
+  {
+    "_id": 268,
+    "school_name": "Woodgrove Primary",
+    "Summary": "Woodgrove Primary School's motto is \"Seizing Opportunities, Aspirations Realised\". The school believes that every student can be a successful learner, steadfast leader, stable contributor, and staunch citizen. It is guided by its iGR3ACE values (Integrity, Gratefulness, Respect, Responsibility, Resilience, Adaptability, Courage, and Empathy) to promote holistic development."
+  },
+  {
+    "_id": 269,
+    "school_name": "Woodlands Primary",
+    "Summary": "Woodlands Primary School is a government, co-educational school with a vision to nurture \"Gracious Woodlanders with the Zest to Excel\". The school emphasizes innovative pedagogies and play-based learning to foster an engaging and dynamic learning experience. Its ALP, \"Joy of Learning Languages\", aims to empower students to be confident communicators."
+  },
+  {
+    "_id": 270,
+    "school_name": "Woodlands Ring Primary",
+    "Summary": "Woodlands Ring Primary School's vision is \"Passionate Learners and Gracious Citizens\", guided by the motto \"We do our best\". The school places students at the heart of all its endeavors, providing a vibrant learning environment with diverse programmes to hone skills and apply them in different contexts."
+  },
+  {
+    "_id": 271,
+    "school_name": "Xinghua Primary",
+    "Summary": "Xinghua Primary School has a long history, founded in 1930 as Sing Hua Public School. The school embodies a resilient spirit, having overcome major setbacks throughout its history. Its motto is \"Towards Excellence\". It focuses on nurturing students into resilient achievers and thoughtful citizens, with distinctive programmes in Environmental Education (ALP) and Visual Arts (LLP)."
+  },
+  {
+    "_id": 272,
+    "school_name": "Xingnan Primary",
+    "Summary": "Xingnan Primary School's vision is \"Xingnanians: Passion to Learn, Will to Overcome, Attitude to Excel and Spirit to Serve\". The school believes in providing opportunities for students to excel in areas of interest beyond the classrooms. Its ALP, \"IXORA\", inspires students to be responsible individuals and advocates of sustainable living. The school's CCAs are central to developing leadership and social skills."
+  },
+  {
+    "_id": 273,
+    "school_name": "Xinmin Primary",
+    "Summary": "Xinmin Primary School's vision is \"Every Xinminite, a confident citizen of character, ready for the future\". The school focuses on teaching pupils how to learn, inspiring them to think, and kindling their imagination to enlarge their vision. It provides an environment where every student matters, is unique, and has the ability to reach their fullest potential."
+  },
+  {
+    "_id": 274,
+    "school_name": "Xishan Primary",
+    "Summary": "Xishan Primary School is a government, co-educational school that offers support for students with Special Educational Needs (SEN). The school's mission is to be \"A Leader, A Learner, A Citizen, Nurturing Xishanites for Life and Future\". It emphasizes developing confident leaders through mental skills empowerment and its ALP, NEXUS, focuses on communication and news enrichment."
+  },
+  {
+    "_id": 275,
+    "school_name": "Yangzheng Primary",
+    "Summary": "Yangzheng Primary School's vision is \"Every Yangzhengnite - a Passionate Learner, a Caring Friend and a Responsible Citizen\". The school is committed to providing a supportive environment to help every student develop their physical, intellectual, emotional, social, and aesthetic capabilities to their fullest potential. Its motto is \"From Each His Finest Effort\"."
+  },
+  {
+    "_id": 276,
+    "school_name": "Yew Tee Primary",
+    "Summary": "Yew Tee Primary School's vision is to nurture \"Reflective Learners, Empowered Leaders, Persons of Character\". The school focuses on developing adaptable, confident, and reflective learners who are guided by values such as Integrity, Responsibility, Respect, Perseverance, and Care. The ALP, D.R.E.A.M., aims to develop creative minds through reflection and empowerment."
+  },
+  {
+    "_id": 277,
+    "school_name": "Yio Chu Kang Primary",
+    "Summary": "Yio Chu Kang Primary School is a government, co-educational school that provides a well-rounded education. The school aims to provide a safe, disciplined, and enriching learning environment. Its distinctive programmes include an ALP in Environmental STEM-based applied learning and an LLP focused on the arts, media, and design."
+  },
+  {
+    "_id": 278,
+    "school_name": "Yishun Primary",
+    "Summary": "Yishun Primary School believes every child can learn and grow through a holistic education in a caring and nurturing environment. The school is committed to nurturing leaders of character guided by values such as Gratitude, Care, and Resilience. It places great emphasis on empowering students with a Growth Mindset to view challenges as opportunities for growth."
+  },
+  {
+    "_id": 279,
+    "school_name": "Yu Neng Primary",
+    "Summary": "Yu Neng Primary School, founded in 1935 as Yeu Nerng School, is a government, co-educational school. Its core philosophy revolves around values-driven bilingualism and an inclusive approach. The school’s ALP in Digital Making and Tech4Good integrates technology with real-world applications to foster innovation and problem-solving."
+  },
+  {
+    "_id": 280,
+    "school_name": "Yuhua Primary",
+    "Summary": "Yuhua Primary School is a government, co-educational school. Its mission is to \"Grow Our Hearts and Minds\", focusing on building good character and nurturing a passion for learning. Its vision is for every student to \"Care, Share and Contribute; Learn, Think and Innovate\". The school's ALP, \"Think@Yuhua\", is interdisciplinary, and its LLP uses music and the performing arts for character development."
+  },
+  {
+    "_id": 281,
+    "school_name": "Yumin Primary",
+    "Summary": "Yumin Primary School has its roots in two Chinese village schools from the 1940s that merged and were later renamed. Its vision is to nurture \"Flourishing Champions, Future-Ready Learners, Gracious Citizens\". The school's mission is to enable students to experience the joy of learning and challenge their minds to develop their fullest potential."
+  },
+  {
+    "_id": 282,
+    "school_name": "Zhangde Primary",
+    "Summary": "Zhangde Primary School's vision is a \"Learning School With A GIVER3S Heart\", guided by a mission to nurture thinking individuals and gracious citizens. The school places a strong emphasis on Environment Education (ALP) and provides themed gardens for rich, authentic learning. Its LLP uses adventure and sports to instil resilience and collaboration."
+  },
+  {
+    "_id": 283,
+    "school_name": "Zhenghua Primary",
+    "Summary": "Zhenghua Primary School is a government, co-educational school that believes every child is special and talented. Its vision is to nurture \"Leaders of Character, Critical and Creative Thinkers, Lifelong Learners\". The school focuses on a whole-child approach, emphasizing moral, aesthetic, physical, intellectual, emotional, and social capacity."
+  },
+  {
+    "_id": 284,
+    "school_name": "Zhonghua Primary",
+    "Summary": "Zhonghua Primary School's history is tied to Chung Hwa Girls' School, the first Chinese-medium girls' school in Singapore, founded in 1911. Its motto is \"Diligence Before Success\". The school’s mission is to \"Ignite Passion For Learning, Nurture Strength of Character\", aiming to develop students who are learners, thinkers, and leaders."
+  }
+]

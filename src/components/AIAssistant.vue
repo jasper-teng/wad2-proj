@@ -43,6 +43,18 @@
           {{ loading ? 'Searching...' : 'Search' }}
         </button>
       </div>
+
+      <!-- Add example prompts -->
+      <div class="example-prompts">
+        <span>Try:</span>
+        <button class="example-prompt" @click="useExamplePrompt('show GES data for SMU, Information Systems')">
+          "show GES data for SMU, Information Systems"
+        </button>
+        <button class="example-prompt" @click="useExamplePrompt('compare Ai Tong and Kong Hwa Primary Schools')">
+          "compare Ai Tong and Kong Hwa Primary Schools"
+        </button>
+      </div>
+
     </div>
   </div>
 </template>
@@ -77,6 +89,11 @@ async function scrollToBottom() {
   if (chatLogRef.value) {
     chatLogRef.value.scrollTop = chatLogRef.value.scrollHeight
   }
+}
+
+// --- New function to use an example prompt ---
+function useExamplePrompt(promptText) {
+  chatInput.value = promptText
 }
 
 async function submitQuery() {
@@ -156,3 +173,37 @@ async function submitQuery() {
   }
 }
 </script>
+
+<!-- Add scoped styles for the new elements -->
+<style scoped>
+.example-prompts {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #999999;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.example-prompt {
+  background: rgba(255, 161, 141, 0.1);
+  border: 1px solid rgba(255, 161, 141, 0.3);
+  color: #d81b60; /* A pinkish/reddish color to match theme */
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left; /* Ensure text aligns left if it wraps */
+}
+
+.example-prompt:hover {
+  background: rgba(255, 161, 141, 0.2);
+  border-color: rgba(255, 161, 141, 0.5);
+  transform: translateY(-1px);
+}
+</style>
+

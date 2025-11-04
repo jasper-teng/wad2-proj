@@ -111,6 +111,24 @@ onMounted(async () => {
     allSubjectsData.value = subjects;
     allCcasData.value = ccas;
 
+    // Auto-populate from URL query params
+    for (let i = 1; i <= MAX_COMPARISON; i++) {
+      const schoolName = route.query[`school${i}`];
+      if (schoolName && comparisonSlots.value[i - 1]) {
+        const school = allSchools.value.find(s => s.school_name === schoolName);
+        if (school) {
+          await handleSchoolSelect(comparisonSlots.value[i - 1], school);
+        }
+      } else if (schoolName && i > comparisonSlots.value.length) {
+        // Add slot if needed
+        addComparisonSlot();
+        const school = allSchools.value.find(s => s.school_name === schoolName);
+        if (school) {
+          await handleSchoolSelect(comparisonSlots.value[i - 1], school);
+        }
+      }
+    }
+
   } catch (err) {
     error.value = 'Could not load initial school data. Please refresh the page.';
   } finally {
@@ -558,4 +576,3 @@ watch(
 }
 
 </style>
-
