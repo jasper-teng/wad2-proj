@@ -4,7 +4,7 @@ import { useRoute } from 'vue-router'
 import NavbarView from './views/NavbarView.vue'
 
 const route = useRoute()
-const isAuthPage = computed(() => route.path === '/login' || route.path === '/signup')
+const isAuthPage = computed(() => route.path === '/login' || route.path === '/signup' || route.path === '/LandingPage' || route.meta.hideNavbar)
 
 // --- AI Assistant Alert State ---
 const assistantMessage = ref('')

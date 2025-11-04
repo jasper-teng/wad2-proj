@@ -6,7 +6,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/login'
+      redirect: '/LandingPage'
     },
     {
       path: '/login',
@@ -84,6 +84,12 @@ const router = createRouter({
         component: () => import('../views/LatestFeature/feature.vue'),
         meta: { requiresAuth: true }
     },
+    {
+        path: '/LandingPage',
+        name: 'LandingPage',
+        component: () => import('../views/LandingPageView.vue'),
+        meta: { guestOnly: true, hideNavbar: true }
+    },
     // Catch-all redirect
     {
         path: '/:pathMatch(.*)*',
@@ -96,12 +102,19 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
     const isAuthenticated = !!localStorage.getItem('authToken');
 
+    // Redirect authenticated users trying to access LandingPage
+    if (to.path === '/LandingPage' && isAuthenticated) {
+        next('/simple-dashboard');
+        return;
+    }
+
+
     if (to.meta.requiresAuth && !isAuthenticated) {
-        // If route requires auth and user is not logged in, redirect to login
-        next('/login');
+        // If route requires auth and user is not logged in, redirect to LandingPage
+        next('/LandingPage');
     } else if (to.meta.guestOnly && isAuthenticated) {
         // If route is for guests only and user is logged in, redirect to dashboard
-        next('/dashboard');
+        next('/simple-dashboard');
     } else {
         // Otherwise, proceed
         next();

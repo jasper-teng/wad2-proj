@@ -94,7 +94,7 @@ export default {
 
     toggleCCADropdown() {
       this.ccaDropdownOpen = !this.ccaDropdownOpen
-      if (this.ccaDropdownOpen) {
+      if (this.ccaDrsopdownOpen) {
         this.$nextTick(() => {
           this.$refs.ccaSearchInput?.focus()
         })

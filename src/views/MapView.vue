@@ -36,12 +36,10 @@ import '@/assets/mapview.css'
   // ==========Function to set active input (source/destination)==========
   function setActiveInput(id) {
     activeInputId.value = id
-    if (id === 'source') {
-      sourceInput.value.style.border = '2px solid pink'
-      destinationInput.value.style.border = ''
-    } else {
+    if (id === 'destination') {
       destinationInput.value.style.border = '2px solid pink'
-      sourceInput.value.style.border = ''
+    } else {
+      destinationInput.value.style.border = ''
     }
   }
 
@@ -372,6 +370,12 @@ import '@/assets/mapview.css'
 
   // ==========Function to load the homes address if present in session==========
   function loadHomeCoords() {
+    if (sessionStorage.getItem("home")){
+      source.value = JSON.parse(sessionStorage.getItem("home name"))
+      sourceInput.value = JSON.parse(sessionStorage.getItem("home name"))
+      showHomeForm.value = false;
+    }
+
     const homeItem = sessionStorage.getItem("home")
     const homeName = sessionStorage.getItem("home name")
     if (!homeItem) return
@@ -398,9 +402,6 @@ import '@/assets/mapview.css'
       if (activeInputId.value) {
         const activeInput = activeInputId.value === 'source' ? source : destination
         activeInput.value = homeAddressName
-        if (source.value && destination.value) {
-          getDistanceOfTargets()
-        }
       }
     })
   }
@@ -448,9 +449,6 @@ import '@/assets/mapview.css'
           if (activeInputId.value) {
             const activeInput = activeInputId.value === 'source' ? source : destination
             activeInput.value = address
-            if (source.value && destination.value) {
-              getDistanceOfTargets()
-            }
           }
         })
 
@@ -473,6 +471,7 @@ import '@/assets/mapview.css'
   // Group distances by "source → destination"
   const selectedTravelMode = ref('WALKING')
 
+  // Function to sort
   const sortedGroupedDistances = computed(() => {
     const grouped = {}
     distances.value.forEach(item => {
@@ -493,18 +492,41 @@ import '@/assets/mapview.css'
 
     // Sort groups by selected mode's duration ascending; put those missing mode at end
     groupedEntries.sort((a, b) => {
-      const aRecords = a[1]
-      const bRecords = b[1]
-      const mode = selectedTravelMode.value.toUpperCase()
+      const routeA = (a[0] || '').toString();
+      const routeB = (b[0] || '').toString();
+      const src = (source.value || '').toString().toLowerCase();
 
-      const aMatch = aRecords.find(r => r.mode.toUpperCase() === mode)
-      const bMatch = bRecords.find(r => r.mode.toUpperCase() === mode)
+      // 1) Prioritise entries whose route name includes the current source.value
+      //    (case-insensitive). If source is empty, this step is skipped.
+      if (src) {
+        const aHasSource = routeA.toLowerCase().includes(src);
+        const bHasSource = routeB.toLowerCase().includes(src);
+        if (aHasSource && !bHasSource) return -1;
+        if (bHasSource && !aHasSource) return 1;
+        // if both have or both don't have source, continue to next criteria
+      }
 
-      if (!aMatch) return 1 // put a after b if a doesn't have mode
-      if (!bMatch) return -1 // put b after a if b doesn't have mode
+      // 2) Then sort by whether the selected travel mode exists for the group
+      const aRecords = a[1];
+      const bRecords = b[1];
+      const mode = (selectedTravelMode.value || '').toUpperCase();
 
-      return parseDurationToMinutes(aMatch.duration) - parseDurationToMinutes(bMatch.duration)
-    })
+      const aMatch = aRecords.find(r => (r.mode || '').toUpperCase() === mode);
+      const bMatch = bRecords.find(r => (r.mode || '').toUpperCase() === mode);
+
+      if (!aMatch && bMatch) return 1;  // put a after b if a doesn't have the mode
+      if (!bMatch && aMatch) return -1; // put b after a if b doesn't have the mode
+
+      // 3) Finally, if both have the mode, sort by parsed duration (ascending)
+      if (aMatch && bMatch) {
+        const aMinutes = parseDurationToMinutes(aMatch.duration || '');
+        const bMinutes = parseDurationToMinutes(bMatch.duration || '');
+        return aMinutes - bMinutes;
+      }
+
+      // 4) Otherwise keep original order
+      return 0;
+    });
 
     // Convert back to object for template iteration keeping grouping structure
     const sortedGrouped = {}
@@ -586,17 +608,34 @@ import '@/assets/mapview.css'
 
     // Display distance cards
     const icons = { WALKING: 'person-walking', DRIVING: 'car', TRANSIT: 'subway' };
+    inputMsg.value.innerHTML = '';
+    
     matchingRoutes.forEach(item => {
       const icon = icons[item.mode?.toUpperCase()] || 'question';
-      inputMsg.value.innerHTML += `
-        <div class="distance-item">
-          <i class="fas fa-${icon} icon"></i>
+      inputMsg.value.innerHTML = `
+        <div class="distance-item d-inline-block text-center m-2 p-3 border rounded shadow-sm" style="min-width: 180px;">
+          <i class="fas fa-${icon} icon mb-2"></i>
           <div class="distance-text">
             ${item.mode} distance: <strong>${item.distance} (${item.duration})</strong>
           </div>
         </div>
       `;
     });
+
+    // Saving previous distance cards code for future testing
+    // // Display distance cards
+    // const icons = { WALKING: 'person-walking', DRIVING: 'car', TRANSIT: 'subway' };
+    // matchingRoutes.forEach(item => {
+    //   const icon = icons[item.mode?.toUpperCase()] || 'question';
+    //   inputMsg.value.innerHTML += `
+    //     <div class="distance-item">
+    //       <i class="fas fa-${icon} icon"></i>
+    //       <div class="distance-text">
+    //         ${item.mode} distance: <strong>${item.distance} (${item.duration})</strong>
+    //       </div>
+    //     </div>
+    //   `;
+    // });
 
     // Scroll to map
     const mapEl = document.getElementById('map'); 
@@ -944,8 +983,8 @@ function removeRoute(routeKey) {
                       class="form-control"
                       ref="sourceInput"
                       v-model="source"
-                      @focus="setActiveInput('source')"
-                      placeholder="Choose a source!"
+                      placeholder="Home Address"
+                      readonly
                     />
                   </div>
 
@@ -960,7 +999,8 @@ function removeRoute(routeKey) {
                       ref="destinationInput"
                       v-model="destination"
                       @focus="setActiveInput('destination')"
-                      placeholder="Choose a destination!"
+                      placeholder="Click here to select a school marker!"
+                      readonly
                     />
                   </div>
 
