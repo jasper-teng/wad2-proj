@@ -32,8 +32,8 @@
     "lng": 103.869346048848
   },
   "ZHONGHUA PRIMARY SCHOOL": {
-    "lat": 25.2831834,
-    "lng": 110.2968119
+    "lat": 1.3599,
+    "lng": 103.8696
   },
   "ZHENGHUA SECONDARY SCHOOL": {
     "lat": 1.3895029,
@@ -116,12 +116,12 @@
     "lng": 103.882928182226
   },
   "XINMIN PRIMARY SCHOOL": {
-    "lat": 22.10000225,
-    "lng": 112.637694989614
+    "lat": 1.3714,
+    "lng": 103.8831
   },
   "XINGNAN PRIMARY SCHOOL": {
-    "lat": 24.980021,
-    "lng": 121.2163845
+    "lat": 1.34,
+    "lng": 103.69
   },
   "XINGHUA PRIMARY SCHOOL": {
     "lat": 1.3580028,
@@ -516,8 +516,8 @@
     "lng": 103.935486787369
   },
   "PIONEER PRIMARY SCHOOL": {
-    "lat": 0.3609,
-    "lng": 32.569
+    "lat": 1.3384,
+    "lng": 103.6881
   },
   "PEIYING PRIMARY SCHOOL": {
     "lat": 1.4177946,
@@ -1364,17 +1364,14 @@
     "lng": 103.830054856667
   },
   "AHMAD IBRAHIM PRIMARY SCHOOL": {
-    "_id": 3,
     "lat": 1.4338487,
     "lng": 103.832709776836
   },
   "ADMIRALTY SECONDARY SCHOOL": {
-    "_id": 2,
     "lat": 1.44591185,
     "lng": 103.802908054132
   },
   "ADMIRALTY PRIMARY SCHOOL": {
-    "_id": 1,
     "lat": 1.4429414,
     "lng": 103.800345067448
   }
