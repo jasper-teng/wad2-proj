@@ -17,7 +17,7 @@
     <div class="accordion" id="accordion1">
         <div class="accordion-item">
             <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                 What is the Applied Learning Programme (ALP)?
             </button>
             </h2>
@@ -51,4 +51,5 @@
         margin-bottom: 25px;
         text-align: left;
     }
+    
 </style>

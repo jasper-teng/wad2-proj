@@ -442,7 +442,7 @@ function fixApiDataErrors(inputText) {
 </script>
 
 <template>
-
+    <div class="page-content">
     <!-- Loading State -->
     <div v-if="isLoading" class="text-center py-5">
         <div class="spinner-border text-primary" role="status">
@@ -710,7 +710,7 @@ function fixApiDataErrors(inputText) {
         <!-- --- END: Pagination Controls --- -->
 
     </div>
-
+</div>
 </template>
 
 <style scoped>
@@ -756,6 +756,105 @@ function fixApiDataErrors(inputText) {
     @media (min-width: 992px) {
         .cards-grid {
             grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .pagination .page-link {
+        color: #374151;
+        border: 1px solid #e5e7eb;
+        padding: 0.5rem 1rem;
+        transition: all 0.2s;
+    }
+
+    .pagination .page-link:hover:not(.disabled .page-link) {
+        background-color: #FFA18D;
+        color: white;
+        border-color: #FFA18D;
+    }
+
+    .pagination .page-item.active .page-link {
+        background-color: #FFA18D;
+        border-color: #FFA18D;
+        color: white;
+    }
+
+    .pagination .page-item.disabled .page-link {
+        color: #9ca3af;
+        cursor: not-allowed;
+    }
+
+    h1 {
+        font-size: 2.25rem;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 0.5rem;
+    }
+
+    h1 + p {
+        font-size: 1.125rem;
+        color: #6b7280;
+        margin-bottom: 2rem;
+    }
+
+    .fixed-bottom {
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+    .fixed-bottom .btn-primary {
+        background-color: #FFA18D;
+        border-color: #FFA18D;
+    }
+
+    .fixed-bottom .btn-primary:hover:not(:disabled) {
+        background-color: #ff8a70;
+        border-color: #ff8a70;
+    }
+
+    .fixed-bottom .btn-outline-secondary:hover {
+        background-color: #f3f4f6;
+    }
+
+
+
+    /* Add this if your mainCard component accepts it */
+    ::v-deep .card {
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    ::v-deep .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .pagination .page-link:focus:not(:focus-visible) {
+        box-shadow: none;
+        outline: none;
+    }
+
+    .page-content {
+        padding-top: 30px;
+        min-height: 100vh;
+    }
+
+@media (max-width: 768px) {
+    .page-content {
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-content {
+            padding-top: 10px;
         }
     }
 </style>
