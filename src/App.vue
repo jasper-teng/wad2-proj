@@ -58,7 +58,7 @@ watch(() => route.fullPath, checkAssistantMessage)
 <style>
 /* A little custom transition for smoother route changes */
 .fade-enter-active, .fade-leave-active {
-    transition: opacity 0.2s ease;
+    transition: opacity 0.3s ease;
 }
 .fade-enter-from, .fade-leave-to {
     opacity: 0;

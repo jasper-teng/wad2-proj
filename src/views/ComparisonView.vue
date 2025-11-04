@@ -274,7 +274,7 @@ const getFilteredCCAs = (slot) => {
 
 // --- Helper Functions ---
 function formatIndicator(value) {
-  return value === 'Yes' ? '✅ Yes' : (value === 'No' ? '❌ No' : 'N/A');
+  return value === 'Yes' ? '✅' : (value === 'No' ? '❌' : 'N/A');
 }
 
 function formatMotherTongue(info) {
@@ -317,7 +317,7 @@ watch(
   <div class="comparison-container container-fluid px-lg-5 d-flex flex-column">
 
     <!-- Header and Controls (fixed part) -->
-    <div class="flex-shrink-0 pt-4 pb-3">
+    <div class="flex-shrink-0 pt-5 pb-3">
       <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
         <h1 class="display-6 fw-bolder mb-0">School Comparison Tool</h1>
         <button
@@ -372,16 +372,13 @@ watch(
                     </ul>
                   </div>
                 </div>
-                <div v-else class="d-flex align-items-center">
-                  <span class="fw-bold fs-5">{{ slot.schoolName }}</span>
+                <div v-else class="d-flex align-items-center px-2 pt-2">
+                  <span class="fw-bold fs-4">{{ slot.schoolName }}</span>
                 </div>
               </div>
 
               <!-- Clear Slot Button -->
-              <button v-if="slot.schoolName" @click="clearSlot(slot)" class="btn btn-sm btn-outline-secondary" title="Clear School">
-                Clear
-                <i class="bi bi-arrow-counterclockwise"></i>
-              </button>
+              <button v-if="slot.schoolName" @click="clearSlot(slot)" class="btn-close me-2" title="Clear School" aria-label="Clear School"></button>
 
               <!-- Remove Column Button -->
               <button
@@ -428,7 +425,7 @@ watch(
                       <li class="list-group-item d-flex justify-content-between"><strong>Mother Tongues:</strong> <span>{{ formatMotherTongue(slot.genInfo) }}</span></li>
                       <li class="list-group-item">
                         <strong>Indicators:</strong>
-                        <div class="d-flex flex-wrap gap-2 mt-1">
+                        <div class="d-flex flex-wrap gap-2 mt-1 h5">
                           <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill">SAP: {{ formatIndicator(slot.genInfo.sap_ind) }}</span>
                           <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill">Gifted: {{ formatIndicator(slot.genInfo.gifted_ind) }}</span>
                           <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill">IP: {{ formatIndicator(slot.genInfo.ip_ind) }}</span>
@@ -456,14 +453,14 @@ watch(
                   <table class="table table-sm table-striped table-hover">
                     <thead>
                       <tr>
-                        <th>Subject</th>
-                        <th>Status</th>
+                        <th class="subject-col">Subject</th>
+                        <th class="status-col text-end">Status</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr v-for="subject in getFilteredSubjects(slot)" :key="subject.name">
-                        <td>{{ subject.name }}</td>
-                        <td>
+                        <td class="subject-col">{{ subject.name }}</td>
+                        <td class="status-col text-end">
                           <span v-if="subject.isUnique" class="badge bg-success-subtle text-success-emphasis rounded-pill">Unique</span>
                           <span v-else class="badge bg-secondary-subtle text-secondary-emphasis rounded-pill">Common</span>
                         </td>
@@ -492,14 +489,14 @@ watch(
                   <table class="table table-sm table-striped table-hover">
                     <thead>
                       <tr>
-                        <th>CCA</th>
-                        <th>Status</th>
+                        <th class="subject-col">CCA</th>
+                        <th class="status-col text-end">Status</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr v-for="cca in getFilteredCCAs(slot)" :key="cca.name">
-                        <td>{{ cca.name }}</td>
-                        <td>
+                        <td class="subject-col">{{ cca.name }}</td>
+                        <td class="status-col text-end">
                           <span v-if="cca.isUnique" class="badge bg-success-subtle text-success-emphasis rounded-pill">Unique</span>
                           <span v-else class="badge bg-secondary-subtle text-secondary-emphasis rounded-pill">Common</span>
                         </td>
@@ -525,7 +522,7 @@ watch(
 /* Main container styles */
 .comparison-container {
   /* Calculate height minus approx navbar height (adjust 56px if needed) */
-  height: calc(100vh - 56px); 
+  height: calc(100vh - 56px);
   overflow: hidden; /* Prevent overall page scroll */
 }
 
@@ -533,34 +530,133 @@ watch(
 .comparison-grid-scrollable {
   overflow-y: auto; /* Allow the row to scroll if it overflows vertically */
   /* Remove padding-bottom to use full height */
-   padding-bottom: 0 !important; 
+   padding-bottom: 0 !important;
 }
 
 /* Ensure cards take full height within their column */
 .card {
   height: 100%;
+  background: #ffffff;
+  border: 5px solid #FFA18D;
+  border-radius: 0 30px 0 30px;
+  box-shadow: none;
+}
+
+.card-header {
+  background-color: #ffffff;
+  border-bottom: 0px solid #FFA18D;
+  border-radius: 0 25px 0 0;
 }
 
 .card-header .dropdown-menu {
   width: 100%; /* Make dropdown menu match input width */
+  border: 2px solid #FFA18D;
+  border-radius: 10px;
+}
+
+.card-header .dropdown-menu .dropdown-item:hover {
+  background-color: rgba(255, 161, 141, 0.2);
 }
 
 /* Make table scrollable if it gets too long */
 .table-container {
   max-height: 200px; /* Reduced height a bit */
   overflow-y: auto;
+  border-radius: 5px;
+}
+
+.table {
+  color: #313131;
+}
+
+.table thead {
+  background-color: rgba(255, 161, 141, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(255, 161, 141, 0.05);
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(255, 161, 141, 0.15);
+}
+
+/* Table column sizing */
+.subject-col {
+  width: 65%;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.status-col {
+  width: 35%;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 .list-group-item {
   font-size: 0.9rem;
   /* Allow text to wrap */
   flex-wrap: wrap;
+  border-color: rgba(255, 161, 141, 0.3);
+  color: #313131;
 }
+
+.list-group-item strong {
+  color: #313131;
+}
+
 .list-group-item > span {
   text-align: right;
   max-width: 100%; /* Allow span to take full width if needed */
   word-break: break-word;
   padding-left: 10px; /* Add spacing between key and value */
+}
+
+/* Accordion styling */
+.accordion-button {
+  background-color: #ffffff;
+  color: #313131;
+  font-weight: 500;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: rgba(255, 161, 141, 0.1);
+  color: #313131;
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  border-color: #FFA18D;
+  box-shadow: none;
+}
+
+/* Badge styling to match color scheme */
+.badge.bg-primary-subtle {
+  background-color: rgba(86, 189, 182, 0.2) !important;
+  color: #56bdb6 !important;
+  border: 1px solid #56bdb6;
+}
+
+.badge.bg-success-subtle {
+  background-color: rgba(86, 189, 182, 0.2) !important;
+  color: #56bdb6 !important;
+  border: 1px solid #56bdb6;
+}
+
+.badge.bg-secondary-subtle {
+  background-color: rgba(255, 161, 141, 0.2) !important;
+  color: #FFA18D !important;
+  border: 1px solid #FFA18D;
+}
+
+/* Form control styling */
+.form-control:focus {
+  border-color: #56bdb6;
+  box-shadow: 0 0 0 0.2rem rgba(86, 189, 182, 0.25);
 }
 
 /* Ensure card body scrolls */
@@ -573,6 +669,19 @@ watch(
 .d-flex.flex-column > .card-body {
     flex-grow: 1; /* Allow body to take up remaining space */
     overflow-y: auto; /* Make the body itself scroll */
+}
+
+/* Search input styling */
+.input-group-text {
+  background-color: rgba(255, 161, 141, 0.1);
+  border-color: #FFA18D;
+  color: #313131;
+}
+
+/* Horizontal rules */
+hr {
+  border-color: rgba(255, 161, 141, 0.3);
+  opacity: 1;
 }
 
 </style>
