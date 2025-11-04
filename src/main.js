@@ -9,7 +9,7 @@ import './assets/navbar.css'
 /* Google Maps API */
 (function() {
   const script = document.createElement('script');
-  script.src = `https://maps.googleapis.com/maps/api/js?key=${import.meta.env.VITE_GOOGLE_MAP_API_KEY}&libraries=places,marker&v=weekly&callback=Function.prototype`;
+  script.src = `https://maps.googleapis.com/maps/api/js?key=${import.meta.env.VITE_GOOGLE_MAP_API_KEY}&libraries=places,marker&v=weekly&callback=Function.prototype&loading=async`;
   script.async = true;
   script.defer = true;
   document.head.appendChild(script);

@@ -284,10 +284,10 @@ input.form-control {
 }
 
 input.form-control:focus {
-  border-color: #56bdb6;
-  background-color: #fff;
-  color: #313131;
-  box-shadow: 0 0 0 3px rgba(86, 189, 182, 0.1);
+  border-color: #56bdb6 !important;
+  background-color: #fff !important;
+  color: #313131 !important;
+  box-shadow: 0 0 0 3px rgba(86, 189, 182, 0.1) !important;
 }
 
 select.form-select {
@@ -602,9 +602,6 @@ button.btn-secondary:hover {
   .drawer-toggle-btn.drawer-open {
     left: 290px;
   }
-
-
-
 }
 
 /* ===== Hide Google Map UI Controls ===== */
