@@ -1,11 +1,16 @@
 <script setup>
+// ============================================================================
+// IMPORTS
+// ============================================================================
 import { ref, reactive, onMounted, onUnmounted, computed } from 'vue';
 import { useRouter } from 'vue-router';
 import axios from 'axios';
 
 const router = useRouter();
 
-// --- STATE MANAGEMENT ---
+// ============================================================================
+// STATE MANAGEMENT
+// ============================================================================
 const universities = ref([]);
 const schools = ref({}); // Using an object to cache schools by university
 const degrees = ref([]);
@@ -16,7 +21,9 @@ const isLoading = reactive({ universities: false, schools: false, degrees: false
 const error = ref(null);
 const isSidebarOpen = ref(true);
 
-// --- API CONFIGURATION ---
+// ============================================================================
+// API CONFIGURATION
+// ============================================================================
 const getApiConfig = () => {
   const token = localStorage.getItem('authToken');
   if (!token) {
@@ -29,7 +36,9 @@ const getApiConfig = () => {
   };
 };
 
-// --- DATA FETCHING & STATE LOGIC ---
+// ============================================================================
+// DATA FETCHING FUNCTIONS
+// ============================================================================
 async function fetchUniversities() {
   const config = getApiConfig();
   if (!config) return;
@@ -94,6 +103,9 @@ async function handleSchoolClick(university, school) {
   }
 }
 
+// ============================================================================
+// NAVIGATION FUNCTIONS
+// ============================================================================
 function viewDegreeHistory(degree) {
   sessionStorage.setItem('ges_selectedUniversity', selectedUniversity.value);
   sessionStorage.setItem('ges_selectedSchool', selectedSchool.value);
@@ -116,7 +128,9 @@ function clearSelections() {
     schoolSummary.value = null;
 }
 
-// --- LIFECYCLE HOOKS ---
+// ============================================================================
+// LIFECYCLE HOOKS
+// ============================================================================
 onMounted(async () => {
   const savedUni = sessionStorage.getItem('ges_selectedUniversity');
   const savedSchool = sessionStorage.getItem('ges_selectedSchool');
@@ -140,7 +154,9 @@ onMounted(async () => {
   });
 });
 
-// --- HELPER & CALCULATION FUNCTIONS ---
+// ============================================================================
+// HELPER & CALCULATION FUNCTIONS
+// ============================================================================
 const formatCurrency = (value) => {
     if (isNaN(parseFloat(value)) || value === 'na' || value === null) return 'N/A';
     return new Intl.NumberFormat('en-SG', { style: 'currency', currency: 'SGD', minimumFractionDigits: 0 }).format(value);

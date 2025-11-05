@@ -307,12 +307,63 @@ function handleChartClick(event) {
 
   <!-- Upload Modal -->
   <div class="modal fade" ref="uploadModalEl" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="uploadModalLabel">Upload a News Article</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><form @submit.prevent="handleUpload"><div class="mb-3"><label for="articleTitle" class="form-label">Title</label><input v-model="newArticle.title" type="text" class="form-control" id="articleTitle" required></div><div class="mb-3"><label for="articleDescription" class="form-label">Description</label><textarea v-model="newArticle.description" class="form-control" id="articleDescription" rows="3"></textarea></div><div class="row"><div class="col-md-6 mb-3"><label for="articleUrl" class="form-label">Article URL</label><input v-model="newArticle.url" type="url" class="form-control" id="articleUrl" required></div><div class="col-md-6 mb-3"><label for="articleSource" class="form-label">Source Name</label><input v-model="newArticle.source_name" type="text" class="form-control" id="articleSource"></div></div><div class="mb-3"><label for="articlePublishedAt" class="form-label">Published Date & Time</label><input v-model="newArticle.publishedAt" type="datetime-local" class="form-control" id="articlePublishedAt" required></div></form></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" @click="handleUpload" class="btn btn-primary">Upload Article</button></div></div></div>
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="uploadModalLabel">Upload a News Article</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form @submit.prevent="handleUpload">
+            <div class="mb-3">
+              <label for="articleTitle" class="form-label">Title</label>
+              <input v-model="newArticle.title" type="text" class="form-control" id="articleTitle" required>
+            </div>
+            <div class="mb-3">
+              <label for="articleDescription" class="form-label">Description</label>
+              <textarea v-model="newArticle.description" class="form-control" id="articleDescription" rows="3"></textarea>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="articleUrl" class="form-label">Article URL</label>
+                <input v-model="newArticle.url" type="url" class="form-control" id="articleUrl" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="articleSource" class="form-label">Source Name</label>
+                <input v-model="newArticle.source_name" type="text" class="form-control" id="articleSource">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="articlePublishedAt" class="form-label">Published Date & Time</label>
+              <input v-model="newArticle.publishedAt" type="datetime-local" class="form-control" id="articlePublishedAt" required>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" @click="handleUpload" class="btn btn-primary">Upload Article</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Delete Confirmation Modal -->
   <div class="modal fade" ref="deleteModalEl" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-    <div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">Are you sure you want to delete this news article? This action cannot be undone.</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button><button type="button" @click="executeDelete" class="btn btn-danger">Confirm Delete</button></div></div></div>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to delete this news article? This action cannot be undone.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" @click="executeDelete" class="btn btn-danger">Confirm Delete</button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

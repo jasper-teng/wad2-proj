@@ -1,13 +1,17 @@
 <script setup>
+// ============================================================================
+// IMPORTS
+// ============================================================================
 import { ref, computed, onMounted, watch } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
-
 import axios from 'axios';
 
 const router = useRouter();
 const route = useRoute();
 
-// --- Constants ---
+// ============================================================================
+// CONSTANTS
+// ============================================================================
 const DATA_GOV_BASE_URL = 'https://api-production.data.gov.sg/v2/public/api/datasets';
 const DATASET_ID = {
   GENERAL: 'd_688b934f82c1059ed0a6993d2a829089',
@@ -16,7 +20,9 @@ const DATASET_ID = {
 };
 const MAX_COMPARISON = 4;
 
-// --- State ---
+// ============================================================================
+// STATE MANAGEMENT
+// ============================================================================
 const allSchools = ref([]); // Master list of all schools
 const allSubjectsData = ref([]); // Master list of all subjects
 const allCcasData = ref([]); // Master list of all CCAs
@@ -47,7 +53,9 @@ const comparisonSlots = ref([
   createEmptySlot(2)
 ]);
 
-// --- Layout ---
+// ============================================================================
+// LAYOUT CONFIGURATION
+// ============================================================================
 const columnClass = computed(() => {
   const count = comparisonSlots.value.length;
   switch (count) {
@@ -58,7 +66,9 @@ const columnClass = computed(() => {
   }
 });
 
-// --- Data Fetching ---
+// ============================================================================
+// DATA FETCHING FUNCTIONS
+// ============================================================================
 
 /**
  * Recursively fetches all data from a paginated data.gov.sg dataset.
@@ -181,7 +191,9 @@ async function handleSchoolSelect(slot, school) {
   slot.isLoading = false; // All operations are synchronous now
 }
 
-// --- Slot Management ---
+// ============================================================================
+// SLOT MANAGEMENT FUNCTIONS
+// ============================================================================
 function addComparisonSlot() {
   if (comparisonSlots.value.length < MAX_COMPARISON) {
     comparisonSlots.value.push(createEmptySlot(Date.now()));
@@ -200,7 +212,9 @@ function clearSlot(slot) {
   });
 }
 
-// --- Computed Data for Display ---
+// ============================================================================
+// COMPUTED PROPERTIES FOR DISPLAY
+// ============================================================================
 const allOtherSelectedSubjects = computed(() => (slotId) => {
   const otherSubjects = new Set();
   comparisonSlots.value.forEach(slot => {
@@ -272,7 +286,9 @@ const getFilteredCCAs = (slot) => {
     });
 };
 
-// --- Helper Functions ---
+// ============================================================================
+// HELPER FUNCTIONS
+// ============================================================================
 function formatIndicator(value) {
   return value === 'Yes' ? '✅' : (value === 'No' ? '❌' : 'N/A');
 }
