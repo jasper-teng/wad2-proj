@@ -79,29 +79,48 @@
     }
 
     .filterCardSub {
-        border: 1px solid #e5e7eb;
-        width: 250px;
-        padding: 0.8rem;
+        border: 2px solid #FFA18D;
+        width: 100%;
+        max-width: 300px;
+        padding: 0.75rem 1rem;
         outline: none;
-        border-radius: 8px;
-        transition: border-color 0.2s;
+        border-radius: 10px;
+        transition: all 0.2s;
         background-color: white;
+        color: #313131;
+        font-size: 0.95rem;
+        cursor: pointer;
+    }
+
+    .filterCardSub:hover {
+        border-color: #ff8a70;
+        box-shadow: 0 2px 8px rgba(255, 161, 141, 0.15);
     }
 
     .filterCardSub:focus {
         border-color: #FFA18D;
-        box-shadow: 0 0 0 3px rgba(255, 161, 141, 0.1);
+        box-shadow: 0 0 0 3px rgba(255, 161, 141, 0.2);
     }
 
     .filterCardSub::placeholder {
         color: #9ca3af;
     }
 
+    select.filterCardSub {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23313131' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.75rem center;
+        background-size: 16px;
+        padding-right: 2.5rem;
+    }
+
     .filterCardMain{
         padding: 24px;
-        border: 2px solid #FFA18D;
-        border-radius: 25px;
+        border: 5px solid #FFA18D;
+        border-radius: 0 30px 0 30px;
         margin-bottom: 32px;
+        background-color: white;
     }
 
     .filterCardMain .row:not(:last-child) {
@@ -109,25 +128,28 @@
     }
     
     .clearBtn {
-        padding: 0.6rem 1.25rem;
-        border: 1px solid #FFA18D;
+        padding: 0.65rem 1.5rem;
+        border: 2px solid #FFA18D;
         background-color: white;
         color: #FFA18D;
-        border-radius: 8px;
+        border-radius: 10px;
         cursor: pointer;
-        font-weight: 500;
+        font-weight: 600;
+        font-size: 0.9rem;
         transition: all 0.2s;
+        white-space: nowrap;
     }
 
     .clearBtn:hover {
         background-color: #FFA18D;
         color: white;
-        transform: translateY(-1px);
-        box-shadow: 0 2px 8px rgba(255, 161, 141, 0.3);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(255, 161, 141, 0.35);
     }
 
     .clearBtn:active {
         transform: translateY(0);
+        box-shadow: 0 2px 6px rgba(255, 161, 141, 0.25);
     }
 
     @media (max-width: 768px) {
@@ -145,16 +167,34 @@
     }
     
     #save-check {
-        height: 1rem;
-        width: 1rem;
+        height: 1.25rem;
+        width: 1.25rem;
         cursor: pointer;
-        accent-color: #FFA18D; /* Changes checkbox color when checked */
+        accent-color: #FFA18D;
+        border: 2px solid #FFA18D;
+        border-radius: 4px;
+        transition: all 0.2s;
+    }
+
+    #save-check:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 3px rgba(255, 161, 141, 0.15);
+    }
+
+    #save-check:checked {
+        background-color: #FFA18D;
     }
 
     #save-check + label {
         cursor: pointer;
-        margin-left: 8px;
-        font-weight: 400;
+        margin-left: 10px;
+        font-weight: 500;
+        color: #313131;
+        user-select: none;
+    }
+
+    #save-check + label:hover {
+        color: #FFA18D;
     }
 
     label {
