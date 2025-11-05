@@ -706,10 +706,6 @@ function copyToClipboard(text) {
 </script>
 
 <style scoped>
-.container {
-  max-width: 1200px;
-}
-
 .content-card {
   background: #ffffff;
   padding: 1.5rem;

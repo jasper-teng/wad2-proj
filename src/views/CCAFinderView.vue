@@ -236,10 +236,6 @@ onMounted(() => {
   box-shadow: none;
 }
 
-.container {
-  max-width: 1200px;
-}
-
 /* Alert styling to match ComparisonView */
 .alert-danger {
   border-color: rgba(255, 161, 141, 0.5);
