@@ -22,13 +22,12 @@
 
 <template>
     <div class="filterCardMain bg-white">
-        <div class="row">
-            <div class="col" style="text-align: left;">
-                <label for="dropdownSchool">
+        <div class="row g-3">
+            <div class="col-12 col-md-6">
+                <label for="dropdownSchool" class="d-block mb-2">
                     School Level
                 </label>
-
-                <select name="dropdownSchool" id="" class="filterCardSub" style="display: block;"
+                <select name="dropdownSchool" id="dropdownSchool" class="filterCardSub w-100"
                     :value="filterLevel"
                     @change="$emit('update:filterLevel', $event.target.value)">
                     <option value="all">All levels</option>
@@ -37,34 +36,30 @@
                 </select>
             </div>
 
-            <div class="col" style="text-align: left;">
-                <label for="" style="display: block;">
+            <div class="col-12 col-md-6">
+                <label for="searchInput" class="d-block mb-2">
                     Search By School or Programme
                 </label>
-
-                <input type="text" class="filterCardSub" placeholder="e.g., 'Clementi' or 'STEM'"
+                <input type="text" class="filterCardSub w-100" placeholder="e.g., 'Clementi' or 'STEM'"
                     id="searchInput"
                     :value="searchQuery"
                     @input="$emit('update:searchQuery', $event.target.value)">
             </div>
         </div>
 
-        <div class="row">
-            <div class="col filterSaved">
-                <input type="checkbox"  id="save-check" style="height: 1rem; width: 1rem;"
-                :checked="showSaved"
-                @change="$emit('update:showSaved', $event.target.checked)"
-                > 
-
-                <label for="save-check">
+        <div class="row mt-3">
+            <div class="col-12 col-md-6 d-flex align-items-center">
+                <input type="checkbox" id="save-check"
+                    :checked="showSaved"
+                    @change="$emit('update:showSaved', $event.target.checked)">
+                <label for="save-check" class="mb-0">
                     Show Saved Schools Only
-                    
-                </label> 
-                    <div class="col" style="text-align: right;">
-                        <button @click="clearFilters" class="clearBtn">
-                            Clear Filters
-                        </button>
-                    </div>
+                </label>
+            </div>
+            <div class="col-12 col-md-6 d-flex justify-content-md-end justify-content-start mt-3 mt-md-0">
+                <button @click="clearFilters" class="clearBtn">
+                    Clear Filters
+                </button>
             </div>
         </div>
     </div>
@@ -72,16 +67,8 @@
 
 <style scoped>
 
-    .filterSaved{
-        display: flex;
-        justify-content: end;
-        align-items: center;
-    }
-
     .filterCardSub {
         border: 2px solid #FFA18D;
-        width: 100%;
-        max-width: 300px;
         padding: 0.75rem 1rem;
         outline: none;
         border-radius: 10px;
@@ -122,10 +109,6 @@
         margin-bottom: 32px;
         background-color: white;
     }
-
-    .filterCardMain .row:not(:last-child) {
-        margin-bottom: 1.5rem;
-    }
     
     .clearBtn {
         padding: 0.65rem 1.5rem;
@@ -153,16 +136,8 @@
     }
 
     @media (max-width: 768px) {
-        .filterCardSub {
-            width: 100%;
-        }
-        
-        .filterCardMain .col {
-            margin-bottom: 1rem;
-        }
-        
-        .filterSaved {
-            justify-content: flex-start !important;
+        .filterCardMain {
+            padding: 20px;
         }
     }
     
@@ -187,20 +162,20 @@
 
     #save-check + label {
         cursor: pointer;
-        margin-left: 10px;
+        margin-left: 12px;
         font-weight: 500;
         color: #313131;
         user-select: none;
+        line-height: 1.25rem;
     }
 
     #save-check + label:hover {
         color: #FFA18D;
     }
 
-    label {
+    label:not(#save-check + label) {
         font-weight: 500;
         color: #313131;
-        margin-bottom: 0.5rem;
-        font-size: 0.875rem;
+        font-size: 0.9rem;
     }
 </style>
