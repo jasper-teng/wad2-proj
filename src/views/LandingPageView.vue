@@ -42,6 +42,10 @@ const goSignup = () => router.push('/signup')
   margin-top: 1rem;
 }
 
+.display-6, .lead {
+  color: #313131;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 /* Floating text effect */
 .float-text {
   text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.25);
