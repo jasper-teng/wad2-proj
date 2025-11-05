@@ -36,11 +36,6 @@ import '@/assets/mapview.css'
   // ==========Function to set active input (source/destination)==========
   function setActiveInput(id) {
     activeInputId.value = id
-    if (id === 'destination') {
-      destinationInput.value.style.border = '2px solid pink'
-    } else {
-      destinationInput.value.style.border = ''
-    }
   }
 
   // ==========Function to close active input when clicking outside==========
@@ -273,8 +268,19 @@ import '@/assets/mapview.css'
                 // Close all other info windows
                 allInfoWindows.forEach(({ infoW }) => infoW.close())
 
-                // If an input (school / destination) is active, set its value to the school name
-                if (activeInputId.value) {
+                // If home is set (!showHomeForm), automatically set as destination
+                if (!showHomeForm.value) {
+                  destination.value = school.school_name
+
+                  // Close other info windows 
+                  allInfoWindows.forEach(({ name, infoW }) => {
+                    if (name !== source.value && name !== destination.value) {
+                      infoW.close()
+                    }
+                  })
+                }
+                // If an input is explicitly active, set that input
+                else if (activeInputId.value) {
                   const activeInput = activeInputId.value === 'source' ? source : destination
                   activeInput.value = school.school_name
 
@@ -285,6 +291,7 @@ import '@/assets/mapview.css'
                     }
                   })
                 }
+
                 // Open the info window
                 infoWindow.open({ anchor: marker, map })
               })
@@ -1000,7 +1007,7 @@ function removeRoute(routeKey) {
                   </button>
 
                   <!-- Source Input -->
-                  <div class="mb-3">
+                  <div v-if="!showHomeForm" class="mb-3">
                     <label for="source" class="form-label">Source</label>
                     <input
                       type="text"
@@ -1015,17 +1022,18 @@ function removeRoute(routeKey) {
                   </div>
 
                   <!-- Destination Input -->
-                  <div class="mb-3">
+                  <div v-if="!showHomeForm" class="mb-3">
                     <label for="destination" class="form-label">Destination</label>
                     <input
                       type="text"
                       id="destination"
                       name="destination"
-                      class="form-control"
+                      class="form-control active-input"
                       ref="destinationInput"
                       v-model="destination"
                       @focus="setActiveInput('destination')"
                       placeholder="Click here to select a school marker!"
+                      :autofocus="!showHomeForm"
                       readonly
                     />
                   </div>
