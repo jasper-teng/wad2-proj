@@ -4,10 +4,10 @@ import LoginView from '../views/LoginView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: '/',
-      redirect: '/LandingPage'
-    },
+    // {
+    //   path: '/',
+    //   redirect: '/LandingPage'
+    // },
     {
       path: '/login',
       name: 'login',
@@ -85,7 +85,7 @@ const router = createRouter({
         meta: { requiresAuth: true }
     },
     {
-        path: '/LandingPage',
+        path: '/',
         name: 'LandingPage',
         component: () => import('../views/LandingPageView.vue'),
         meta: { guestOnly: true, hideNavbar: true }
@@ -103,7 +103,7 @@ router.beforeEach((to, from, next) => {
     const isAuthenticated = !!localStorage.getItem('authToken');
 
     // Redirect authenticated users trying to access LandingPage
-    if (to.path === '/LandingPage' && isAuthenticated) {
+    if (to.path === '/' && isAuthenticated) {
         next('/simple-dashboard');
         return;
     }
@@ -111,7 +111,7 @@ router.beforeEach((to, from, next) => {
 
     if (to.meta.requiresAuth && !isAuthenticated) {
         // If route requires auth and user is not logged in, redirect to LandingPage
-        next('/LandingPage');
+        next('/');
     } else if (to.meta.guestOnly && isAuthenticated) {
         // If route is for guests only and user is logged in, redirect to dashboard
         next('/simple-dashboard');

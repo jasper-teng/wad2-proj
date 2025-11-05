@@ -70,6 +70,12 @@
         <button class="example-prompt" @click="useExamplePrompt('Compare Ai Tong and Kong Hwa Primary Schools')">
           Compare Ai Tong and Kong Hwa Primary Schools
         </button>
+        <button class="example-prompt" @click="useExamplePrompt('Where is Broadrick Secondary')">
+          Where is Broadrick Secondary
+        </button>
+        <button class="example-prompt" @click="useExamplePrompt('Show me distinct programs between Admiralty Secondary and Ang Mo Kio Secondary')">
+          Show me distinct programs between Admiralty Secondary and Ang Mo Kio Secondary
+        </button>
       </div>
 
     </div>
@@ -215,8 +221,13 @@ async function submitQuery() {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
-  text-align: left; /* Ensure text aligns left if it wraps */
+  text-align: left;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
+
 
 .example-prompt:hover {
   color: #fff;
