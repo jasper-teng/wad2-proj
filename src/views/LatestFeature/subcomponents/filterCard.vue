@@ -148,7 +148,7 @@
         height: 1rem;
         width: 1rem;
         cursor: pointer;
-        accent-color: #FFA18D; /* Changes checkbox color when checked */
+        accent-color: #FFA18D;
     }
 
     #save-check + label {

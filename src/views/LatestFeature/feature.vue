@@ -14,8 +14,6 @@ function fixApiDataErrors(inputText) {
     }
 
     let cleanedText = inputText;
-
-    // This list targets the 10 errors based on the *actual* API data, not the Word doc.
     const fixes = [
         // 1. (ID 95) "Paying it Forward: WDLs..."
         [/Paying it Forward: WDL\uFFFDs Glocal Leadership Programme/g, "Paying it Forward: WDL’s Glocal Leadership Programme"],
@@ -77,13 +75,11 @@ function fixApiDataErrors(inputText) {
                 suggestionPool: new Set(),
 
                 // --- NEW: State for Filtering & Pagination ---
-                searchQuery: '',       // You can connect this to your filterCard
-                filterLevel: 'all',    // You can connect this to your filterCard
+                searchQuery: '',       
+                filterLevel: 'all',    
                 currentPage: 1,
                 itemsPerPage: 9, // 9 items = 3 rows on your 3-column grid
-                // --- ADDED: showSaved state ---
                 showSaved: false,
-                // --- NEW: Added loading and error states ---
                 isLoading: true,
                 error: null,
 
@@ -129,7 +125,7 @@ function fixApiDataErrors(inputText) {
 
                 // 3. Apply "Show Saved" Filter
                 if (this.showSaved) {
-                    filtered = filtered.filter(school => school.isSaved); // Assumes you've added 'isSaved' to your school object
+                    filtered = filtered.filter(school => school.isSaved); 
                 }
 
                 return filtered;
@@ -205,12 +201,10 @@ function fixApiDataErrors(inputText) {
 
             async getSummaries() {
                 try {
-                    // Place 'data1.json' in your 'public' folder
                     let response = await axios.get('/src/views/LatestFeature/schSummary.json'); 
-                    this.summaryData = response.data; // This puts the array into summaryData
+                    this.summaryData = response.data; 
                 } catch (err) {
                     console.error("Failed to get summaries:", err);
-                    // Keep it as an array to prevent future .find() errors
                     this.summaryData = []; 
                 }
             },
@@ -235,7 +229,7 @@ function fixApiDataErrors(inputText) {
                         this.schools.push(school)
                     }
                 
-                    console.log(this.schools)
+                    // console.log(this.schools)
 
                 } catch(err){
                     console.log("Failed to get schools:", err)
@@ -265,7 +259,7 @@ function fixApiDataErrors(inputText) {
             },
 
             handleCompareAdd(school) {
-                console.log('Compare add:', school.name);
+                // console.log('Compare add:', school.name);
                 
                 // Don't add if list is full or school is already in
                 if (this.compareList.length >= 2 || this.compareList.find(s => s.id === school.id)) {
@@ -274,15 +268,11 @@ function fixApiDataErrors(inputText) {
                 }
                 
                 this.compareList.push(school);
-                
-                // Update isCompareDisabled for all schools
                 this.updateCompareDisabledState();
             },
 
-
-            // --- UPDATED: handleShareClick with navigator.share ---
             handleShareClick(school) {
-                console.log('Share:', school.name);
+                // console.log('Share:', school.name);
                 const baseUrl = window.location.origin + window.location.pathname;
                 const shareUrl = `${baseUrl}?school_name=${encodeURIComponent(school.name)}`;
                 
@@ -308,7 +298,6 @@ function fixApiDataErrors(inputText) {
                 }
             },
 
-            // --- NEW: Helper method to update disabled state ---
             updateCompareDisabledState() {
                 const isFull = this.compareList.length >= 2;
                 this.schools = this.schools.map(s => {
@@ -318,7 +307,6 @@ function fixApiDataErrors(inputText) {
                 });
             },
 
-            // --- NEW: Add to compare from modal button ---
             addCompareAndClose() {
                 if (this.selectedSchool) {
                     this.handleCompareAdd(this.selectedSchool);
@@ -348,7 +336,6 @@ function fixApiDataErrors(inputText) {
                 this.updateCompareDisabledState();
             },
 
-            // --- ADDED: Pagination Methods ---
             nextPage() {
                 if (this.currentPage < this.totalPages) {
                     this.currentPage++;
@@ -362,7 +349,6 @@ function fixApiDataErrors(inputText) {
             goToPage(page) {
                 if (page >= 1 && page <= this.totalPages) {
                     this.currentPage = page;
-                    // Scroll to top of results
                     this.scrollToCards();
                 }
             },
@@ -402,11 +388,8 @@ function fixApiDataErrors(inputText) {
                     return '(Summaries are still loading...)';
                 }
 
-                // --- FIX HERE: Use item._id instead of item.id ---
                 // Using == handles string vs number differences
                 const summaryEntry = this.summaryData.find(item => item._id == schoolId); 
-                
-                // --- FIX HERE: Use item.Summary (capital S) ---
                 return summaryEntry ? summaryEntry.Summary : '(No summary available for this school yet.)';
             },
 
@@ -429,7 +412,7 @@ function fixApiDataErrors(inputText) {
             },
 
             handleCompareAdd(school) {
-                console.log('Compare add:', school.name);
+                // console.log('Compare add:', school.name);
                 
                 if (this.compareList.length >= 2 || this.compareList.find(s => s.id === school.id)) {
                     console.log('Compare list full or school already added.');
@@ -438,16 +421,12 @@ function fixApiDataErrors(inputText) {
                 
                 this.compareList.push(school);
                 this.updateCompareDisabledState();
-                
-                // Update URL with compare parameters
                 this.updateCompareUrl();
             },
             
             removeSchoolFromCompare(schoolId) {
                 this.compareList = this.compareList.filter(s => s.id !== schoolId);
                 this.updateCompareDisabledState();
-                
-                // Update URL when removing schools
                 this.updateCompareUrl();
             },
             
@@ -459,7 +438,6 @@ function fixApiDataErrors(inputText) {
                 this.updateCompareUrl();
             },
             
-            // New method to update URL
             updateCompareUrl() {
                 const url = new URL(window.location);
                 
@@ -474,19 +452,18 @@ function fixApiDataErrors(inputText) {
                     }
                 }
                 
-                console.log('Updated URL:', url.toString()); // Debug
+                // console.log('Updated URL:', url.toString()); // Debug
                 window.history.pushState({}, '', url);
             },
             
-            // New method to load compare list from URL
             loadCompareFromUrl() {
                 const urlParams = new URLSearchParams(window.location.search);
                 
                 const school1Param = urlParams.get('school1');
                 const school2Param = urlParams.get('school2');
                 
-                console.log('URL Param school1:', school1Param);
-                console.log('URL Param school2:', school2Param);
+                // console.log('URL Param school1:', school1Param);
+                // console.log('URL Param school2:', school2Param);
                 
                 if (this.schools.length === 0) return;
                 
@@ -497,7 +474,7 @@ function fixApiDataErrors(inputText) {
                     schoolNames.forEach(name => {
                         // Trim both the URL param and compare with trimmed school names
                         const decodedName = decodeURIComponent(name).trim();
-                        console.log('Looking for school:', `"${decodedName}"`);
+                        // console.log('Looking for school:', `"${decodedName}"`);
                         
                         // Try exact match (case-insensitive)
                         const school = this.schools.find(s => 
@@ -506,7 +483,7 @@ function fixApiDataErrors(inputText) {
                         
                         if (school && this.compareList.length < 2) {
                             this.compareList.push(school);
-                            console.log('Successfully added:', school.name);
+                            // console.log('Successfully added:', school.name);
                         } else if (!school) {
                             console.log('Could not find school matching:', decodedName);
                             // Log similar names to help debug
@@ -520,16 +497,16 @@ function fixApiDataErrors(inputText) {
                 
                 this.updateCompareDisabledState();
                 
-                console.log('Compare list length:', this.compareList.length);
-                console.log('Compare list schools:', this.compareList.map(s => s.name));
+                // console.log('Compare list length:', this.compareList.length);
+                // console.log('Compare list schools:', this.compareList.map(s => s.name));
                 
                 if (this.compareList.length === 2) {
                     this.$nextTick(() => {
                         this.isCompareModalOpen = true;
-                        console.log('Modal should be open now');
+                        // console.log('Modal should be open now');
                     });
                 } else {
-                    console.log('Only found', this.compareList.length, 'school(s)');
+                    // console.log('Only found', this.compareList.length, 'school(s)');
                 }
             },
 
@@ -543,7 +520,7 @@ function fixApiDataErrors(inputText) {
                 }
                 
                 const shareUrl = url.toString();
-                console.log('Share URL:', shareUrl); // Debug
+                // console.log('Share URL:', shareUrl); // Debug
                 
                 const shareData = {
                     title: `Compare ${this.compareList[0].name} vs ${this.compareList[1].name}`,
@@ -569,14 +546,14 @@ function fixApiDataErrors(inputText) {
                 
                 if (schoolNameParam && this.schools.length > 0) {
                     const decodedName = decodeURIComponent(schoolNameParam).trim();
-                    console.log('Looking for school from URL:', decodedName);
+                    // console.log('Looking for school from URL:', decodedName);
                     
                     const school = this.schools.find(s => 
                         s.name.toLowerCase() === decodedName.toLowerCase()
                     );
                     
                     if (school) {
-                        console.log('Found school, opening modal:', school.name);
+                        // console.log('Found school, opening modal:', school.name);
                         this.$nextTick(() => {
                             this.openModal(school);
                         });
@@ -699,10 +676,7 @@ function fixApiDataErrors(inputText) {
             </singleModal>
         </div>
 
-                <!-- 
-          --- NEW: Compare Bar ---
-          Shows at the bottom when compareList has items
-        -->
+        <!-- Compare Bar -->
         <div v-if="compareList.length > 0" class="fixed-bottom bg-white border-top shadow-lg p-3">
             <div class="container-fluid px-3">
                 <div class="row align-items-end">
@@ -744,13 +718,10 @@ function fixApiDataErrors(inputText) {
             </div>
         </div>
 
-                <!-- 
-          --- NEW: Compare Modal ("Compare Table") ---
-        -->
+        <!-- Compare Table -->
         <div v-if="isCompareModalOpen">
             <!-- Modal Container -->
             <div class="modal fade show" style="display: block;" tabindex="-1">
-                <!-- MODAL-LG makes it wider -->
                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -849,7 +820,7 @@ function fixApiDataErrors(inputText) {
 
         </div>
 
-        <!-- --- ADDED: Pagination Controls --- -->
+        <!-- Pageination -->
         <div v-if="totalResults > 0" class="row mt-5">
             <div class="col-12 d-flex flex-column flex-md-row justify-content-between align-items-center">
                 
@@ -874,7 +845,6 @@ function fixApiDataErrors(inputText) {
                 </nav>
             </div>
         </div>
-        <!-- --- END: Pagination Controls --- -->
 
     </div>
 </div>
@@ -992,8 +962,6 @@ function fixApiDataErrors(inputText) {
     }
 
 
-
-    /* Add this if your mainCard component accepts it */
     ::v-deep .card {
         transition: transform 0.2s, box-shadow 0.2s;
     }

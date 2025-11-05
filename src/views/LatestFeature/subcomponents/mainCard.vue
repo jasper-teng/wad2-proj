@@ -88,7 +88,7 @@
         border: 5px solid #FFA18D; 
         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); 
         transition: box-shadow 0.3s ease;
-        cursor: pointer; /* ⭐ ADD THIS: Makes it clear the card is clickable */
+        cursor: pointer; 
         
     }
 
