@@ -87,6 +87,7 @@ async function loadSchoolData() {
   error.value = ''
 
   try {
+    console.log("fetch data");
     const datasetId = 'd_9aba12b5527843afb0b2e8e4ed6ac6bd'
     const apiUrl = `https://data.gov.sg/api/action/datastore_search?resource_id=${datasetId}&limit=10000`
 
@@ -159,7 +160,7 @@ onMounted(() => {
     <div class="container py-5">
       <div class="header-section mb-5">
         <h1 class="display-5 fw-bold mb-2">Singapore School CCA Finder</h1>
-        <p class="text-muted">Find schools based on Co-Curricular Activities and location</p>
+        <p>Find schools based on Co-Curricular Activities and location</p>
       </div>
 
       <div class="content-card mb-4">
@@ -175,7 +176,7 @@ onMounted(() => {
         <div class="mt-3">
           <button
             type="button"
-            class="btn btn-sm btn-outline-secondary"
+            class="btn btn-outline-secondary"
             @click="clearAllFilters"
             :disabled="!selectedFilters.level && !selectedFilters.category && !selectedFilters.cca && !userLocation"
           >
@@ -216,18 +217,105 @@ onMounted(() => {
 
 .header-section {
   text-align: center;
+  color: #313131;
+}
+
+.header-section h1 {
+  color: #313131;
+}
+
+.header-section .text-muted {
+  color: #6c757d !important;
 }
 
 .content-card {
-  background: white;
+  background: #ffffff;
   padding: 1.5rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  border: 0.2rem solid #FFA18D;
-  border-radius: 0.5rem;
+  border: 5px solid #FFA18D;
+  border-radius: 0 30px 0 30px;
+  box-shadow: none;
 }
 
 .container {
   max-width: 1200px;
+}
+
+/* Alert styling to match ComparisonView */
+.alert-danger {
+  border-color: rgba(255, 161, 141, 0.5);
+  background-color: rgba(255, 161, 141, 0.1);
+  color: #313131;
+}
+
+/* Spinner styling */
+.spinner-border.text-primary {
+  color: #56bdb6 !important;
+}
+
+/* Button styling */
+.btn-outline-secondary {
+  border-color: #FFA18D;
+  color: #FFA18D;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #FFA18D;
+  border-color: #FFA18D;
+  color: #ffffff;
+}
+
+.btn-outline-secondary:disabled {
+  border-color: rgba(255, 161, 141, 0.5);
+  color: rgba(255, 161, 141, 0.5);
+}
+
+/* Form control styling */
+:deep(.form-control:focus),
+:deep(.form-select:focus) {
+  border-color: #56bdb6;
+  box-shadow: 0 0 0 0.2rem rgba(86, 189, 182, 0.25);
+}
+
+/* Badge styling to match ComparisonView */
+:deep(.badge.bg-primary-subtle) {
+  background-color: rgba(86, 189, 182, 0.2) !important;
+  color: #56bdb6 !important;
+  border: 1px solid #56bdb6;
+}
+
+:deep(.badge.bg-success-subtle) {
+  background-color: rgba(86, 189, 182, 0.2) !important;
+  color: #56bdb6 !important;
+  border: 1px solid #56bdb6;
+}
+
+:deep(.badge.bg-secondary-subtle) {
+  background-color: rgba(255, 161, 141, 0.2) !important;
+  color: #FFA18D !important;
+  border: 1px solid #FFA18D;
+}
+
+/* Table styling to match ComparisonView */
+:deep(.table) {
+  color: #313131;
+}
+
+:deep(.table thead) {
+  background-color: rgba(255, 161, 141, 0.2);
+}
+
+:deep(.table-striped tbody tr:nth-of-type(odd)) {
+  background-color: rgba(255, 161, 141, 0.05);
+}
+
+:deep(.table-hover tbody tr:hover) {
+  background-color: rgba(255, 161, 141, 0.15);
+}
+
+/* Input group styling */
+:deep(.input-group-text) {
+  background-color: rgba(255, 161, 141, 0.1);
+  border-color: #FFA18D;
+  color: #313131;
 }
 </style>

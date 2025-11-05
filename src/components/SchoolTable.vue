@@ -224,8 +224,7 @@ export default {
       if (this.isSchoolSelected(school._id)) {
         return true
       }
-      const selectedFromLevel = this.selectedSchools.filter(s => s.school_section === school.school_section)
-      return selectedFromLevel.length < 4
+      return this.selectedSchools.length < 4
     },
 
     toggleSchoolSelection(school) {
@@ -234,8 +233,7 @@ export default {
       if (index > -1) {
         this.selectedSchools.splice(index, 1)
       } else {
-        const selectedFromLevel = this.selectedSchools.filter(s => s.school_section === school.school_section)
-        if (selectedFromLevel.length < 4) {
+        if (this.selectedSchools.length < 4) {
           this.selectedSchools.push(school)
         }
       }
@@ -277,7 +275,31 @@ export default {
     </div>
 
     <div class="comparison-action-bar mb-3">
-      <div class="comparison-content">
+      <!-- Row 1: Counter -->
+      <div class="selection-counter mb-2">
+        {{ selectedSchools.length }}/4 schools selected
+      </div>
+
+      <!-- Row 2: School Badges -->
+      <div v-if="selectedSchools.length > 0" class="selected-schools-list mb-3">
+        <span
+          v-for="school in selectedSchools"
+          :key="school._id"
+          class="selected-school-badge"
+        >
+          <span class="badge-text">{{ school.school_name }}</span>
+          <button
+            class="badge-close-btn"
+            @click="toggleSchoolSelection(school)"
+            aria-label="Remove school"
+          >
+            ×
+          </button>
+        </span>
+      </div>
+
+      <!-- Row 3: Compare Button -->
+      <div class="button-row">
         <button
           @click="compareSchools"
           class="btn btn-primary btn-compare"
@@ -285,9 +307,6 @@ export default {
         >
           Compare Schools
         </button>
-        <span class="selection-counter ms-3">
-          {{ selectedSchools.length }}/4 schools selected
-        </span>
       </div>
     </div>
 
@@ -366,55 +385,87 @@ export default {
 <style scoped>
 .cursor-pointer {
   cursor: pointer;
+  user-select: none;
+}
+
+.cursor-pointer:hover {
+  color: #56bdb6;
 }
 
 .spinner-border-sm {
   width: 1rem;
   height: 1rem;
   border-width: 0.15em;
+  color: #56bdb6;
 }
 
 .rounded-table {
-  border: 1px solid #dee2e6;
-  border-radius: 0.5rem;
+  border: 5px solid #FFA18D;
+  border-radius: 0 30px 0 30px;
   overflow: hidden;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  border: 0.2rem solid #FFA18D;
-  border-radius: 0.5rem;
+  box-shadow: none;
+  background: #ffffff;
+}
+
+.table {
+  color: #313131;
+  margin-bottom: 0;
 }
 
 .table thead th {
-  background-color: #f8f9fa;
-  border-bottom: 2px solid #dee2e6;
+  background-color: rgba(255, 161, 141, 0.2);
+  border-bottom: 2px solid rgba(255, 161, 141, 0.3);
   font-weight: 600;
-  color: #495057;
+  color: #313131;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
+.table tbody tr {
+  border-color: rgba(255, 161, 141, 0.2);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(255, 161, 141, 0.05);
+}
+
+.table tbody tr:hover {
+  background-color: rgba(255, 161, 141, 0.15);
+}
+
+/* Distance badges with teal/coral theme */
 .distance-near {
-  background-color: #d4edda;
-  border: 1px solid #c3e6cb;
-  color: #155724;
+  background-color: rgba(86, 189, 182, 0.2);
+  border: 1px solid #56bdb6;
+  color: #56bdb6;
   padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
+  border-radius: 1rem;
   display: inline-block;
+  font-weight: 500;
+  font-size: 0.875rem;
 }
 
 .distance-medium {
-  background-color: #fff3cd;
-  border: 1px solid #ffeaa7;
-  color: #856404;
+  background-color: rgba(255, 161, 141, 0.2);
+  border: 1px solid #FFA18D;
+  color: #FFA18D;
   padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
+  border-radius: 1rem;
   display: inline-block;
+  font-weight: 500;
+  font-size: 0.875rem;
 }
 
 .distance-far {
-  background-color: #f8d7da;
-  border: 1px solid #f5c6cb;
-  color: #721c24;
+  background-color: rgba(220, 53, 69, 0.15);
+  border: 1px solid #dc3545;
+  color: #dc3545;
   padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
+  border-radius: 1rem;
   display: inline-block;
+  font-weight: 500;
+  font-size: 0.875rem;
 }
 
 .cca-container {
@@ -424,47 +475,48 @@ export default {
   align-items: center;
 }
 
+/* CCA badges with updated styling */
 .cca-badge {
-  background-color: #e9ecef;
-  color: #495057;
+  background-color: rgba(255, 161, 141, 0.1);
+  color: #313131;
   padding: 0.35rem 0.65rem;
   border-radius: 1rem;
   font-size: 0.875rem;
   font-weight: 500;
-  border: 1px solid #ced4da;
+  border: 1px solid rgba(255, 161, 141, 0.3);
   white-space: nowrap;
   transition: all 0.2s ease;
 }
 
 .cca-badge:hover {
-  background-color: #dee2e6;
-  border-color: #adb5bd;
+  background-color: rgba(255, 161, 141, 0.2);
+  border-color: #FFA18D;
   transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 4px rgba(255, 161, 141, 0.3);
 }
 
 .cca-badge-highlighted {
-  background-color: #d1e7dd;
-  color: #0f5132;
+  background-color: rgba(86, 189, 182, 0.2);
+  color: #56bdb6;
   padding: 0.35rem 0.65rem;
   border-radius: 1rem;
   font-size: 0.875rem;
   font-weight: 600;
-  border: 2px solid #198754;
+  border: 2px solid #56bdb6;
   white-space: nowrap;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 6px rgba(25, 135, 84, 0.2);
+  box-shadow: 0 2px 6px rgba(86, 189, 182, 0.2);
 }
 
 .cca-badge-highlighted:hover {
-  background-color: #badbcc;
-  border-color: #146c43;
+  background-color: rgba(86, 189, 182, 0.3);
+  border-color: #56bdb6;
   transform: translateY(-1px);
-  box-shadow: 0 3px 8px rgba(25, 135, 84, 0.3);
+  box-shadow: 0 3px 8px rgba(86, 189, 182, 0.3);
 }
 
 .expand-btn {
-  color: #6c757d;
+  color: #56bdb6;
   text-decoration: none;
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
@@ -474,43 +526,228 @@ export default {
 }
 
 .expand-btn:hover {
-  color: #495057;
-  background-color: #f8f9fa;
-  border-radius: 0.25rem;
+  color: #56bdb6;
+  background-color: rgba(86, 189, 182, 0.1);
+  border-radius: 0.5rem;
 }
 
 .expand-btn:focus {
   outline: none;
-  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(86, 189, 182, 0.25);
 }
 
 .comparison-action-bar {
-  background: #f8f9fa;
-  border: 1px solid #dee2e6;
-  padding: 0.75rem 1rem;
-  border-radius: 0.375rem;
+  background: #ffffff;
+  border: 5px solid #FFA18D;
+  padding: 1rem;
+  border-radius: 0 15px 0 15px;
 }
 
-.comparison-content {
+.button-row {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  justify-content: center;
+  width: 100%;
 }
 
 .btn-compare {
   font-size: 0.9rem;
   padding: 0.5rem 1rem;
+  background-color: #56bdb6;
+  border-color: #56bdb6;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-compare:hover {
+  background-color: #4aa9a3;
+  border-color: #4aa9a3;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(86, 189, 182, 0.3);
 }
 
 .btn-compare:disabled {
   cursor: not-allowed;
-  opacity: 0.6;
+  opacity: 0.5;
+  background-color: rgba(86, 189, 182, 0.5);
+  border-color: rgba(86, 189, 182, 0.5);
 }
 
 .selection-counter {
-  color: #6c757d;
-  font-size: 0.9rem;
+  color: #313131;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  display: block;
+}
+
+.selected-schools-list {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  width: 100%;
+}
+
+.selected-school-badge {
+  background-color: rgba(86, 189, 182, 0.15);
+  color: #56bdb6;
+  padding: 0.35rem 0.5rem 0.35rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.85rem;
   font-weight: 500;
+  border: 1px solid #56bdb6;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.badge-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: center;
+}
+
+.badge-close-btn {
+  background: none;
+  border: none;
+  color: #56bdb6;
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  font-weight: 400;
+}
+
+.badge-close-btn:hover {
+  background-color: rgba(86, 189, 182, 0.3);
+  color: #4aa9a3;
+}
+
+.badge-close-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(86, 189, 182, 0.4);
+}
+
+/* Mobile: Allow 2 rows with wrapping */
+@media (max-width: 767px) {
+  .selected-schools-list {
+    flex-wrap: wrap;
+  }
+
+  .selected-school-badge {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.4rem 0.3rem 0.55rem;
+    gap: 0.3rem;
+    flex: 0 1 calc(50% - 0.2rem); /* Two badges per row */
+    max-width: calc(50% - 0.2rem);
+  }
+
+  .badge-close-btn {
+    font-size: 1.1rem;
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  /* If odd number of badges, let last one take full width */
+  .selected-school-badge:last-child:nth-child(odd) {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/* Tablet and Desktop: Single row with dynamic sizing */
+@media (min-width: 768px) {
+  .selected-schools-list {
+    flex-wrap: nowrap;
+  }
+
+  .selected-school-badge {
+    flex: 1 1 0;
+    max-width: 25%; /* Maximum width for 4 schools */
+  }
+
+  /* Adjust sizing based on number of schools */
+  .selected-schools-list:has(.selected-school-badge:nth-child(4)) .selected-school-badge {
+    font-size: 0.7rem;
+    padding: 0.28rem 0.4rem 0.28rem 0.5rem;
+    gap: 0.3rem;
+  }
+
+  .selected-schools-list:has(.selected-school-badge:nth-child(4)) .badge-close-btn {
+    font-size: 1.1rem;
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .selected-schools-list:has(.selected-school-badge:nth-child(3)) .selected-school-badge {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.45rem 0.3rem 0.6rem;
+    max-width: 33.33%;
+  }
+
+  .selected-schools-list:has(.selected-school-badge:nth-child(2)):not(:has(.selected-school-badge:nth-child(3))) .selected-school-badge {
+    font-size: 0.8rem;
+    padding: 0.32rem 0.48rem 0.32rem 0.65rem;
+    max-width: 50%;
+  }
+
+  .selected-schools-list:has(.selected-school-badge:only-child) .selected-school-badge {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.5rem 0.35rem 0.75rem;
+    max-width: 100%;
+  }
+}
+
+/* Checkbox styling */
+.form-check-input {
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+  margin: 0;
+}
+
+.form-check-input:checked {
+  background-color: #56bdb6;
+  border-color: #56bdb6;
+}
+
+.form-check-input:focus {
+  border-color: #56bdb6;
+  box-shadow: 0 0 0 0.2rem rgba(86, 189, 182, 0.25);
+}
+
+.form-check-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.form-check-input:hover:not(:disabled) {
+  border-color: #56bdb6;
+  cursor: pointer;
+}
+
+/* Center align checkboxes in table cells */
+.table tbody td:first-child {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table tbody td {
+  vertical-align: middle;
 }
 </style>

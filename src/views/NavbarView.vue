@@ -83,29 +83,23 @@ const appGroups = ref([
       <div class="container-fluid">
         <div class="navbar-collapse">
           <ul class="navbar-nav">
-            <li
-              v-for="group in appGroups"
-              :key="group.name"
-              class="nav-item dropdown"
-              @mouseenter="$event.currentTarget.classList.add('show')"
-              @mouseleave="$event.currentTarget.classList.remove('show')"
-            >
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                @click.prevent
-              >
-                {{ group.name }}
-              </a>
-              <ul class="dropdown-menu">
-                <li v-for="app in group.apps" :key="app.name">
-                  <a class="dropdown-item" href="#" @click.prevent="navigateTo(app.path)">
-                    {{ app.name }}
-                  </a>
-                </li>
-              </ul>
-            </li>
+            <template v-for="group in appGroups" :key="group.name">
+              <li v-if="group.apps.length > 1" class="nav-item dropdown" @mouseenter="$event.currentTarget.classList.add('show')" @mouseleave="$event.currentTarget.classList.remove('show')">
+                <a class="nav-link dropdown-toggle" href="#" role="button" @click.prevent>
+                  {{ group.name }}
+                </a>
+                <ul class="dropdown-menu">
+                  <li v-for="app in group.apps" :key="app.name">
+                    <a class="dropdown-item" href="#" @click.prevent="navigateTo(app.path)">
+                      {{ app.name }}
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li v-else class="nav-item">
+                <a class="nav-link" href="#" @click.prevent="navigateTo(group.apps[0].path)">{{ group.name }}</a>
+              </li>
+            </template>
           </ul>
         </div>
       </div>
