@@ -273,7 +273,7 @@ const formatPercentage = (value) => {
 
 <template>
   <div class="container py-5">
-    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+    <div class="d-flex justify-content-between align-items-center mb-4">
       <div>
         <h1 class="display-6 fw-bolder">{{ degree }}</h1>
         <p class="text-muted mb-0">{{ school }}, {{ university }}</p>
@@ -561,5 +561,3 @@ hr {
   font-weight: 700;
 }
 </style>
-
-

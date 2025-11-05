@@ -192,7 +192,7 @@ const calculateSchoolSummary = (degreeData) => {
 
     <!-- Floating Sidebar -->
     <div :class="['sidebar', { 'open': isSidebarOpen }]">
-      <div class="px-3 pt-3 d-flex justify-content-between align-items-center">
+      <div class="px-3 pt-5 d-flex justify-content-between align-items-center">
         <h5 class="mb-0">GES Explorer</h5>
         <button class="btn btn-sm btn-outline-secondary" @click="clearSelections" title="Clear Selections">Reset</button>
       </div>
@@ -224,7 +224,7 @@ const calculateSchoolSummary = (degreeData) => {
     </div>
 
     <!-- Main Content Area -->
-    <main class="main-content" :class="{ 'sidebar-open': isSidebarOpen }">
+    <main class="main-content mt-3" :class="{ 'sidebar-open': isSidebarOpen }">
       <div class="container py-4">
         <div class="d-flex align-items-center mb-4">
             <button @click="isSidebarOpen = !isSidebarOpen" class="btn btn-light me-3 d-lg-none">
@@ -323,6 +323,11 @@ const calculateSchoolSummary = (degreeData) => {
   transform: translateX(-100%);
   box-shadow: 2px 0 10px rgba(255, 161, 141, 0.1);
 }
+/* Hide scrollbar for Chrome, Safari and Opera */
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
 
 .sidebar h5 {
   color: #313131;
@@ -425,7 +430,7 @@ h1 {
 .summary-card {
   border: 5px solid #FFA18D;
   border-radius: 0 30px 0 30px;
-  background: linear-gradient(135deg, #fff 0%, #fff5f3 100%);
+  background: #fff;
   box-shadow: 0 4px 12px rgba(255, 161, 141, 0.15);
 }
 
@@ -510,4 +515,3 @@ h1 {
   color: #313131;
 }
 </style>
-
