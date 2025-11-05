@@ -19,7 +19,7 @@
 
                         <div class="modal-body" v-if="singleModal">
                             <div v-if="singleModal.alp_domain">
-                                <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill me-2">ALP</span>
+                                <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill me-2 mb-2">ALP</span>
                                 <h4 class="modal-subtitle" >{{ singleModal.alp_domain }}</h4>
                                 <p class="modal-text">{{ singleModal.alp_title }}</p>
 
@@ -27,7 +27,7 @@
 
                             </div>
                             <div v-if="singleModal.llp_domain" class="mt-4">
-                                <span class="badge bg-success-subtle text-success-emphasis rounded-pill me-2">LLP</span>
+                                <span class="badge bg-success-subtle text-success-emphasis rounded-pill me-2 mb-2">LLP</span>
                                 <h4 class="modal-subtitle">{{ singleModal.llp_domain }}</h4>
                                 <p class="modal-text">{{ singleModal.llp_title }}</p>
 
@@ -65,6 +65,7 @@
         background-color: #FFA18D;
         color: white;
         border-bottom: none;
+        border-radius: 0 0px 0 0px;
         padding: 1.25rem 1.5rem;
     }
 
@@ -87,6 +88,7 @@
     .modal-body {
         padding: 1.5rem;
         background-color: white;
+        border-bottom: none;
     }
 
     .modal-subtitle {
@@ -109,13 +111,12 @@
     }
 
     .modal-footer {
-        background-color: #f8f9fa;
-        border-top: 2px solid #FFA18D;
+        border: none;
         padding: 1rem 1.5rem;
     }
 
     .modal-backdrop {
-        backdrop-filter: blur(8px);
+        backdrop-filter: blur(30px);
         background-color: rgba(0, 0, 0, 0.5);
     }
 
