@@ -5,6 +5,8 @@
     import filterCard from './subcomponents/filterCard.vue';
     import mainCard from './subcomponents/mainCard.vue';
     import singleModal from './subcomponents/singleModal.vue';
+    import alpLlpDataImport from './alp_llp_data.json';
+    import schSummaryDataImport from './schSummary.json';
 
 
 
@@ -193,25 +195,24 @@ function fixApiDataErrors(inputText) {
         },
 
         methods: {
-            async getAlpLlpData(){
+            getAlpLlpData(){
                 try{
-                    let response = await axios.get('./src/views/LatestFeature/alp_llp_data.json')
-                    this.alp_llp_data = response.data
+                    // Use imported JSON data directly instead of fetching
+                    this.alp_llp_data = alpLlpDataImport
                 } catch (err){
                     console.error("Failed to get data:",err)
                     this.alp_llp_data = [];
                 }
             },
 
-            async getSummaries() {
+            getSummaries() {
                 try {
-                    // Place 'data1.json' in your 'public' folder
-                    let response = await axios.get('/src/views/LatestFeature/schSummary.json'); 
-                    this.summaryData = response.data; // This puts the array into summaryData
+                    // Use imported JSON data directly instead of fetching
+                    this.summaryData = schSummaryDataImport;
                 } catch (err) {
                     console.error("Failed to get summaries:", err);
                     // Keep it as an array to prevent future .find() errors
-                    this.summaryData = []; 
+                    this.summaryData = [];
                 }
             },
 
@@ -587,13 +588,17 @@ function fixApiDataErrors(inputText) {
             }
         },
 
-        
+
         async mounted() {
-            await this.getSchools();  // Wait for schools to load
-            await this.getSummaries();
-            await this.getAlpLlpData();
-            this.loadCompareFromUrl(); // Load compare list AFTER all data is ready
-            // Load single school from URL (if any)
+            // Load JSON data synchronously (no need to await)
+            this.getSummaries();
+            this.getAlpLlpData();
+
+            // Wait for schools to load from API
+            await this.getSchools();
+
+            // Load compare list and single school from URL AFTER all data is ready
+            this.loadCompareFromUrl();
             this.loadSchoolFromUrl();
         }
         
