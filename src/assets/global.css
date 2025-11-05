@@ -12,7 +12,8 @@ body {
   /* Animated dot background */
   background-color: #fff;
   background-image: radial-gradient(#FFA18D 3px, transparent 1px);
-  background-size: 50px 50px;
+  background-size: 60px 60px;
+  background-position-y: 1px;
 }
 
 label {
