@@ -700,4 +700,9 @@ hr {
   opacity: 1;
 }
 
+/* Spinner styling */
+.spinner-border {
+  color: #56bdb6 !important;
+}
+
 </style>

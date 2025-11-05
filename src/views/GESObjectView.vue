@@ -584,7 +584,7 @@ h1.display-6 {
 }
 
 .spinner-border {
-  color: #FFA18D !important;
+  color: #56bdb6 !important;
 }
 
 .alert-danger {
