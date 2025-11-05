@@ -13,7 +13,7 @@ const goSignup = () => router.push('/signup')
     <img :src="logoImage" alt="Schoolfinders logo" class="logo mb-4" />
 
     <h1 class="display-6 fw-bold mb-2">Welcome to SchoolFinders</h1>
-    <p class="lead mb-4 text-muted" style="max-width:720px">
+    <p class="lead mb-4" style="max-width:720px">
       Explore schools, compare programs and track travel distances — all in one place.
       Create an account or sign in to get started.
     </p>
@@ -23,7 +23,7 @@ const goSignup = () => router.push('/signup')
       <button class="btn btn-outline btn-lg" @click="goLogin">Sign In</button>
     </div>
 
-    <p class="small text-muted mt-4">From the lovely developers of Group 5!</p>
+    <p class="small lead text-muted mt-4">From the lovely developers of Group 5!</p>
   </div>
 </template>
 
@@ -40,6 +40,11 @@ const goSignup = () => router.push('/signup')
   height: auto;
   filter: none;
   margin-top: 1rem;
+}
+
+.display-6, .lead {
+  color: #313131;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary {
