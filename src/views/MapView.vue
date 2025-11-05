@@ -89,10 +89,15 @@ import '@/assets/mapview.css'
     }
 
     console.log('URL Parameters:', params)
-    if(params.source && params.school){
-      source.value = params.source
-      destination.value = params.school
-      toggleDrawer()
+    if(params.school){
+  		destination.value = params.school
+        // If a source is *also* provided in the URL, use it.
+        // If not, the `source.value` from `loadHomeCoords()` (which runs first) will be used.
+        if (params.source) {
+            source.value = params.source
+        }
+  		
+  		toggleDrawer()
       // Don't call getDistanceOfTargets() here - the watcher will handle it
     }
 
