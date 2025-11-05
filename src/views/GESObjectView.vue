@@ -58,14 +58,14 @@ const chartData = computed(() => {
       datasets: [
         {
           label: 'Gross Monthly Mean',
-          backgroundColor: '#0d6efd',
-          borderColor: '#0d6efd',
+          backgroundColor: '#FFA18D',
+          borderColor: '#FFA18D',
           data: processDataPoint('gross_monthly_mean'),
         },
         {
           label: 'Basic Monthly Mean',
-          backgroundColor: '#6c757d',
-          borderColor: '#6c757d',
+          backgroundColor: '#56bdb6',
+          borderColor: '#56bdb6',
           data: processDataPoint('basic_monthly_mean'),
         }
       ]
@@ -75,12 +75,12 @@ const chartData = computed(() => {
       datasets: [
         {
           label: 'Overall Employment Rate',
-          backgroundColor: '#198754',
+          backgroundColor: '#FFA18D',
           data: processDataPoint('employment_rate_overall'),
         },
         {
           label: 'Full-Time Permanent Rate',
-          backgroundColor: '#ffc107',
+          backgroundColor: '#56bdb6',
           data: processDataPoint('employment_rate_ft_perm'),
         }
       ]
@@ -108,15 +108,15 @@ const forecastChartData = computed(() => {
       {
         label: 'Historical Median Salary',
         data: historicalSalaries,
-        borderColor: '#0d6efd',
-        backgroundColor: '#0d6efd',
+        borderColor: '#56bdb6',
+        backgroundColor: '#56bdb6',
         tension: 0.1
       },
       {
         label: 'Predicted Median Salary',
         data: forecastSalaries,
-        borderColor: '#dc3545',
-        backgroundColor: '#dc3545',
+        borderColor: '#FFA18D',
+        backgroundColor: '#FFA18D',
         borderDash: [5, 5], // Dashed line for forecast
         tension: 0.1
       }
@@ -273,17 +273,21 @@ const formatPercentage = (value) => {
 
 <template>
   <div class="container py-5">
-    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
-      <div>
-        <h1 class="display-6 fw-bolder">{{ degree }}</h1>
+    <div class="row mb-4 align-items-center">
+      <div class="col-12 col-lg-8 mb-3 mb-lg-0">
+        <h1 class="display-6 fw-bolder mb-2">{{ degree }}</h1>
         <p class="text-muted mb-0">{{ school }}, {{ university }}</p>
       </div>
-      <div class="mt-2 mt-md-0">
-        <button @click="router.back()" class="btn btn-outline-secondary me-2">Back to GES</button>
-        <button @click="runForecast" class="btn btn-primary" :disabled="isForecasting">
-          <span v-if="isForecasting" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-          {{ isForecasting ? 'Running...' : 'Run Forecast' }}
-        </button>
+      <div class="col-12 col-lg-4">
+        <div class="d-flex gap-2 flex-wrap justify-content-lg-end">
+          <button @click="runForecast" class="btn btn-primary flex-fill flex-sm-grow-0" :disabled="isForecasting">
+            <span v-if="isForecasting" class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span>
+            {{ isForecasting ? 'Running...' : 'Run Forecast' }}
+          </button>
+          <button @click="router.back()" class="btn btn-outline-secondary flex-fill flex-sm-grow-0">
+            Back to GES
+          </button>
+        </div>
       </div>
     </div>
 
@@ -293,23 +297,23 @@ const formatPercentage = (value) => {
     <div v-else-if="error" class="alert alert-danger">{{ error }}</div>
     <div v-else-if="latestRecord">
       <!-- Latest Data Summary -->
-      <div class="card mb-4 bg-light border-0">
+      <div class="card mb-4 summary-card">
         <div class="card-body">
           <h5 class="card-title">Most Recent Data ({{ latestRecord.year }})</h5>
-          <div class="row text-center">
-            <div class="col-md-3 col-6 mb-3 mb-md-0">
+          <div class="row text-center g-3">
+            <div class="col-6 col-md-3">
               <div class="stat-title">Overall Employment</div>
               <div class="stat-value">{{ formatPercentage(latestRecord.employment_rate_overall) }}</div>
             </div>
-            <div class="col-md-3 col-6 mb-3 mb-md-0">
+            <div class="col-6 col-md-3">
               <div class="stat-title">Full-Time Perm.</div>
               <div class="stat-value">{{ formatPercentage(latestRecord.employment_rate_ft_perm) }}</div>
             </div>
-            <div class="col-md-3 col-6">
+            <div class="col-6 col-md-3">
               <div class="stat-title">Mean Gross Salary</div>
               <div class="stat-value">{{ formatCurrency(latestRecord.gross_monthly_mean) }}</div>
             </div>
-            <div class="col-md-3 col-6">
+            <div class="col-6 col-md-3">
               <div class="stat-title">Mean Basic Salary</div>
               <div class="stat-value">{{ formatCurrency(latestRecord.basic_monthly_mean) }}</div>
             </div>
@@ -328,7 +332,7 @@ const formatPercentage = (value) => {
         <h2 class="mb-4 text-center">Forecast & Model Insights</h2>
         
         <!-- Forecast Chart -->
-        <div class="card mb-4">
+        <div class="card mb-4 data-card">
           <div class="card-body">
             <h5 class="card-title">Salary Trends & Forecast</h5>
             <div class="chart-container">
@@ -340,7 +344,7 @@ const formatPercentage = (value) => {
         <div class="row">
           <div class="col-lg-5 mb-4">
             <!-- Forecast Table -->
-            <div class="card h-100">
+            <div class="card h-100 data-card">
               <div class="card-body">
                 <h5 class="card-title">3-Year Salary Forecast</h5>
                 <table class="table table-sm">
@@ -359,7 +363,7 @@ const formatPercentage = (value) => {
           </div>
           <div class="col-lg-7 mb-4">
             <!-- Model Details -->
-            <div class="card h-100">
+            <div class="card h-100 data-card">
               <div class="card-body">
                 <h5 class="card-title">Model Details</h5>
                 <ul class="list-group list-group-flush">
@@ -380,7 +384,7 @@ const formatPercentage = (value) => {
         </div>
 
         <!-- Historical Economic Data Table -->
-        <div class="card mt-4">
+        <div class="card mt-4 data-card">
           <div class="card-body">
             <h5 class="card-title">Historical Economic Data Used in Model</h5>
             <div classs="table-responsive">
@@ -413,7 +417,7 @@ const formatPercentage = (value) => {
       <!-- Historical Charts -->
       <div class="row">
         <div class="col-lg-6 mb-4">
-          <div class="card h-100">
+          <div class="card h-100 data-card">
             <div class="card-body">
               <h5 class="card-title">Historical Salary Trends (Mean)</h5>
               <div class="chart-container">
@@ -423,7 +427,7 @@ const formatPercentage = (value) => {
           </div>
         </div>
         <div class="col-lg-6 mb-4">
-          <div class="card h-100">
+          <div class="card h-100 data-card">
             <div class="card-body">
               <h5 class="card-title">Historical Employment Rate Trends</h5>
               <div class="chart-container">
@@ -441,18 +445,212 @@ const formatPercentage = (value) => {
 </template>
 
 <style scoped>
-.stat-title {
-  font-size: 0.9rem;
-  color: #6c757d;
+h1, h2, h3, h5 {
+  color: #313131;
+  font-weight: 700;
 }
-.stat-value {
+
+h1.display-6 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  h1.display-6 {
+    font-size: 2.5rem;
+  }
+}
+
+.summary-card {
+  border: 5px solid #FFA18D;
+  border-radius: 0 30px 0 30px;
+  background: linear-gradient(135deg, #fff 0%, #fff5f3 100%);
+  box-shadow: 0 4px 12px rgba(255, 161, 141, 0.15);
+}
+
+.summary-card .card-title {
+  color: #FFA18D;
   font-size: 1.5rem;
-  font-weight: bold;
-  color: #212529;
+  margin-bottom: 1.5rem;
 }
+
+.data-card {
+  border: 3px solid #FFA18D;
+  border-radius: 0 20px 0 20px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.data-card:hover {
+  box-shadow: 0 6px 16px rgba(255, 161, 141, 0.2);
+  transform: translateY(-2px);
+}
+
+.data-card .card-title {
+  color: #313131;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.data-card .list-group-item {
+  border-color: rgba(255, 161, 141, 0.2);
+  color: #313131;
+}
+
+.stat-title {
+  font-size: 0.75rem;
+  color: #6c757d;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (min-width: 576px) {
+  .stat-title {
+    font-size: 0.85rem;
+  }
+}
+
+.stat-value {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #313131;
+  margin-top: 0.5rem;
+  word-break: break-word;
+}
+
+@media (min-width: 576px) {
+  .stat-value {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .stat-value {
+    font-size: 1.8rem;
+  }
+}
+
 .chart-container {
-  height: 350px;
+  height: 250px;
+}
+
+@media (min-width: 576px) {
+  .chart-container {
+    height: 300px;
+  }
+}
+
+@media (min-width: 768px) {
+  .chart-container {
+    height: 350px;
+  }
+}
+
+.btn {
+  white-space: nowrap;
+  padding: 0.5rem 1rem;
+}
+
+@media (max-width: 575px) {
+  .btn {
+    font-size: 0.9rem;
+  }
+}
+
+.btn-outline-secondary {
+  border-color: #FFA18D;
+  color: #FFA18D;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #FFA18D;
+  border-color: #FFA18D;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #FFA18D;
+  border-color: #FFA18D;
+}
+
+.btn-primary:hover {
+  background-color: #ff8a70;
+  border-color: #ff8a70;
+}
+
+.btn-primary:disabled {
+  background-color: #ffcab8;
+  border-color: #ffcab8;
+}
+
+.spinner-border {
+  color: #56bdb6 !important;
+}
+
+.alert-danger {
+  background-color: #fff5f3;
+  border-color: #FFA18D;
+  color: #313131;
+}
+
+.alert-warning {
+  background-color: #fff5f3;
+  border-color: #FFA18D;
+  color: #313131;
+}
+
+hr {
+  border-color: #FFA18D;
+  opacity: 0.3;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(255, 161, 141, 0.05);
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(255, 161, 141, 0.1);
+}
+
+.table thead th {
+  color: #313131;
+  font-weight: 700;
+}
+
+.table {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 767px) {
+  .table {
+    font-size: 0.85rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.5rem;
+  }
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .card-body {
+    padding: 1.5rem;
+  }
+}
+
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 </style>
-
-

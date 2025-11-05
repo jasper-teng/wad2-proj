@@ -18,4 +18,8 @@ export default {
     text-align: center;
     padding: 3rem;
 }
+
+.spinner-border {
+    color: #56bdb6 !important;
+}
 </style>
