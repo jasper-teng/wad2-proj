@@ -225,7 +225,7 @@ const calculateSchoolSummary = (degreeData) => {
 
     <!-- Main Content Area -->
     <main class="main-content" :class="{ 'sidebar-open': isSidebarOpen }">
-      <div class="container-fluid py-4">
+      <div class="container py-4">
         <div class="d-flex align-items-center mb-4">
             <button @click="isSidebarOpen = !isSidebarOpen" class="btn btn-light me-3 d-lg-none">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/></svg>
@@ -247,9 +247,9 @@ const calculateSchoolSummary = (degreeData) => {
         <div v-else-if="degrees.length > 0">
             <h3 class="mb-3">{{ selectedSchool }}</h3>
             <!-- School Summary Card -->
-            <div v-if="schoolSummary" class="card mb-4 bg-light border-primary">
+            <div v-if="schoolSummary" class="card mb-4 summary-card">
                 <div class="card-body">
-                    <h5 class="card-title text-primary">School Summary</h5>
+                    <h5 class="card-title">School Summary</h5>
                      <div class="row text-center">
                         <div class="col-md-4">
                             <div class="stat-title">Degrees Offered</div>
@@ -311,17 +311,24 @@ const calculateSchoolSummary = (degreeData) => {
 <style scoped>
 .sidebar {
   position: fixed;
-  top: 56px; /* Adjust for standard navbar height */
+  top: 56px;
   left: 0;
   bottom: 0;
   width: 300px;
-  background-color: #f8f9fa;
-  border-right: 1px solid #dee2e6;
+  background-color: #fff;
+  border-right: 3px solid #FFA18D;
   overflow-y: auto;
-  z-index: 1030; /* Higher z-index for sidebar */
+  z-index: 1030;
   transition: transform 0.3s ease;
   transform: translateX(-100%);
+  box-shadow: 2px 0 10px rgba(255, 161, 141, 0.1);
 }
+
+.sidebar h5 {
+  color: #313131;
+  font-weight: 700;
+}
+
 .sidebar.open {
   transform: translateX(0);
 }
@@ -332,8 +339,9 @@ const calculateSchoolSummary = (degreeData) => {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 1020; /* Below sidebar, above content */
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1020;
 }
 
 .main-content {
@@ -356,54 +364,150 @@ const calculateSchoolSummary = (degreeData) => {
   border: none;
   padding: 0.75rem 1rem;
 }
+
 .sidebar .list-group-item a {
   text-decoration: none;
-  color: #212529;
+  color: #313131;
+  font-weight: 600;
 }
+
+.sidebar .list-group-item a:hover {
+  color: #FFA18D;
+}
+
 .school-list {
   padding-left: 1rem;
-  border-left: 2px solid #e9ecef;
+  border-left: 3px solid #FFA18D;
   margin-left: 0.5rem;
 }
+
 .school-item {
   font-size: 0.9rem;
   padding: 0.5rem 1rem !important;
   cursor: pointer;
-  border-radius: 0.25rem;
+  border-radius: 8px;
+  transition: all 0.2s;
+  color: #313131;
 }
+
 .school-item:hover {
-  background-color: #e9ecef;
+  background-color: rgba(255, 161, 141, 0.1);
+  transform: translateX(4px);
 }
+
 .school-item.active {
-  background-color: #0d6efd;
+  background-color: #FFA18D;
   color: white;
-  border-color: #0d6efd;
+  font-weight: 600;
 }
+
 .arrow {
   transition: transform 0.2s ease;
   display: inline-block;
+  color: #FFA18D;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
+
 .arrow.expanded {
   transform: rotate(90deg);
 }
 
-.degree-card {
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+h1 {
+  color: #313131;
+  font-weight: 700;
 }
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+.summary-card {
+  border: 5px solid #FFA18D;
+  border-radius: 0 30px 0 30px;
+  background: linear-gradient(135deg, #fff 0%, #fff5f3 100%);
+  box-shadow: 0 4px 12px rgba(255, 161, 141, 0.15);
+}
+
+.summary-card .card-title {
+  color: #FFA18D;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.degree-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 3px solid #FFA18D;
+  border-radius: 0 20px 0 20px;
+  overflow: hidden;
+}
+
 .degree-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(255, 161, 141, 0.3) !important;
+  border-color: #ff8a70;
+}
+
+.degree-card .card-title {
+  color: #313131;
+  font-weight: 700;
+}
+
+.degree-card .card-subtitle {
+  color: #6c757d;
+}
+
+.degree-card .list-group-item {
+  border-color: rgba(255, 161, 141, 0.2);
+  color: #313131;
 }
 
 .stat-title {
-    font-size: 0.9rem;
-    color: #6c757d;
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
+
 .stat-value {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #212529;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #313131;
+  margin-top: 0.5rem;
+}
+
+.btn-outline-secondary {
+  border-color: #FFA18D;
+  color: #FFA18D;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #FFA18D;
+  border-color: #FFA18D;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #FFA18D;
+  border-color: #FFA18D;
+}
+
+.btn-primary:hover {
+  background-color: #ff8a70;
+  border-color: #ff8a70;
+}
+
+.spinner-border {
+  color: #FFA18D !important;
+}
+
+.alert-danger {
+  background-color: #fff5f3;
+  border-color: #FFA18D;
+  color: #313131;
 }
 </style>
 

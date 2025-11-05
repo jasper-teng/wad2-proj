@@ -52,8 +52,8 @@ const chartData = computed(() => {
   return {
     datasets: [{
       label: 'Sentiment Comparative Score',
-      backgroundColor: 'rgba(13, 110, 253, 0.5)',
-      borderColor: 'rgba(13, 110, 253, 1)',
+      backgroundColor: 'rgba(255, 161, 141, 0.5)',
+      borderColor: 'rgba(255, 161, 141, 1)',
       data: analyzableArticles.map(article => ({
         x: new Date(article.publishedAt).toLocaleDateString('en-SG', { year: 'numeric', month: 'short', day: 'numeric' }),
         y: article.sentiment_comparative,
@@ -227,7 +227,7 @@ function handleChartClick(event) {
     </div>
 
     <!-- Chart Card -->
-    <div class="card mb-4">
+    <div class="card mb-4 data-card">
         <div class="card-header">
             Sentiment Analysis Trend
         </div>
@@ -247,7 +247,7 @@ function handleChartClick(event) {
     </div>
     
     <!-- Articles Table Card -->
-    <div class="card">
+    <div class="card data-card">
         <div class="card-header">
             <div class="row g-2 align-items-center">
                 <div class="col-sm-8">
@@ -268,7 +268,7 @@ function handleChartClick(event) {
         </div>
         <div v-else class="table-responsive">
           <table class="table table-hover align-middle">
-            <thead class="table-light">
+            <thead>
               <tr>
                 <th>Title</th>
                 <th>Description</th>
@@ -368,12 +368,163 @@ function handleChartClick(event) {
 </template>
 
 <style scoped>
-.clickable-row {
-    cursor: pointer;
+h1, h2 {
+  color: #313131;
+  font-weight: 700;
 }
+
+.data-card {
+  border: 3px solid #FFA18D;
+  border-radius: 0 20px 0 20px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.data-card .card-header {
+  background-color: #FFA18D;
+  color: white;
+  font-weight: 700;
+  border-bottom: none;
+  padding: 1rem 1.25rem;
+}
+
+.data-card .card-body {
+  padding: 1.5rem;
+}
+
+.clickable-row {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.clickable-row:hover {
+  background-color: rgba(255, 161, 141, 0.1) !important;
+}
+
+.table thead th {
+  background-color: rgba(255, 161, 141, 0.1);
+  color: #313131;
+  font-weight: 700;
+  border-bottom: 2px solid #FFA18D;
+}
+
+.btn-primary {
+  background-color: #FFA18D;
+  border-color: #FFA18D;
+}
+
+.btn-primary:hover {
+  background-color: #ff8a70;
+  border-color: #ff8a70;
+}
+
+.btn-outline-secondary {
+  border-color: #FFA18D;
+  color: #FFA18D;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #FFA18D;
+  border-color: #FFA18D;
+  color: white;
+}
+
+.btn-info {
+  background-color: #56bdb6;
+  border-color: #56bdb6;
+  color: white;
+}
+
+.btn-info:hover {
+  background-color: #48a8a2;
+  border-color: #48a8a2;
+}
+
+.btn-danger {
+  background-color: #ff6b6b;
+  border-color: #ff6b6b;
+}
+
+.btn-danger:hover {
+  background-color: #ff5252;
+  border-color: #ff5252;
+}
+
 .btn-sm {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.alert-success {
+  background-color: #e6f7f5;
+  border-color: #56bdb6;
+  color: #313131;
+}
+
+.alert-danger {
+  background-color: #fff5f3;
+  border-color: #FFA18D;
+  color: #313131;
+}
+
+.alert-info {
+  background-color: #e6f7f5;
+  border-color: #56bdb6;
+  color: #313131;
+}
+
+/* Modal Styling */
+.modal-content {
+  border: 5px solid #FFA18D;
+  border-radius: 0 30px 0 30px;
+  overflow: hidden;
+}
+
+.modal-header {
+  background-color: #FFA18D;
+  color: white;
+  border-bottom: none;
+  padding: 1.25rem 1.5rem;
+}
+
+.modal-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.modal-header .btn-close {
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+.modal-header .btn-close:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-footer {
+  background-color: #f8f9fa;
+  border-top: 2px solid #FFA18D;
+  padding: 1rem 1.5rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #FFA18D;
+  box-shadow: 0 0 0 0.25rem rgba(255, 161, 141, 0.25);
+}
+
+.text-success {
+  color: #56bdb6 !important;
+}
+
+.text-danger {
+  color: #ff6b6b !important;
 }
 </style>
 
