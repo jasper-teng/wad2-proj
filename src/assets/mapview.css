@@ -306,6 +306,38 @@ select.form-select:focus {
   box-shadow: 0 0 0 3px rgba(86, 189, 182, 0.1);
 }
 
+.form-control.active-input {
+  border-color: #56bdb6 !important;
+  background-color: #fff !important;
+  color: #313131 !important;
+  box-shadow: 0 0 0 3px rgba(86, 189, 182, 0.1) !important;
+  outline: none !important;
+}
+
+.form-control.active-input:focus {
+  border-color: #56bdb6 !important;
+  background-color: #fff !important;
+  color: #313131 !important;
+  box-shadow: 0 0 0 3px rgba(86, 189, 182, 0.1) !important;
+}
+
+/* Pulsing effect for active destination input */
+@keyframes softPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(86, 189, 182, 0.2);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(86, 189, 182, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(86, 189, 182, 0);
+  }
+}
+
+.form-control.active-input {
+  animation: softPulse 2s infinite;
+}
+
 /* ===== Buttons ===== */
 button.btn-primary {
   padding: 0.7rem 1.4rem;

@@ -12,8 +12,8 @@ const goSignup = () => router.push('/signup')
   <div class="landing d-flex flex-column align-items-center justify-content-center vh-100 text-center p-4">
     <img :src="logoImage" alt="Schoolfinders logo" class="logo mb-4" />
 
-    <h1 class="display-6 fw-bold mb-2">Welcome to SchoolFinders</h1>
-    <p class="lead mb-4 text-muted" style="max-width:720px">
+    <h1 class="display-6 fw-bold mb-2 float-text">Welcome to SchoolFinders</h1>
+    <p class="lead mb-4 text-muted float-text" style="max-width:720px">
       Explore schools, compare programs and track travel distances — all in one place.
       Create an account or sign in to get started.
     </p>
@@ -23,7 +23,7 @@ const goSignup = () => router.push('/signup')
       <button class="btn btn-outline btn-lg" @click="goLogin">Sign In</button>
     </div>
 
-    <p class="small text-muted mt-4">From the lovely developers of Group 5!</p>
+    <p class="small text-muted mt-4 float-text">From the lovely developers of Group 5!</p>
   </div>
 </template>
 
@@ -40,6 +40,12 @@ const goSignup = () => router.push('/signup')
   height: auto;
   filter: none;
   margin-top: 1rem;
+}
+
+/* Floating text effect */
+.float-text {
+  text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
 
 .btn-primary {
