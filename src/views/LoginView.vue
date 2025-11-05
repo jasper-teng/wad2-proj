@@ -33,6 +33,12 @@ const handleLogin = async () => {
     loginError.value = err.response?.data?.message || 'Invalid credentials or server error.'
   }
 }
+
+// --- Prefill Test User Function ---
+const prefillTestUser = () => {
+  loginForm.email = 'testuser@example.com'
+  loginForm.password = 'testuser'
+}
 </script>
 
 <template>
@@ -69,6 +75,13 @@ const handleLogin = async () => {
           <label for="password">Password</label>
         </div>
 
+        <!-- Prefill Button -->
+        <div class="text-center mb-3">
+          <button type="button" class="btn btn-sm btn-outline" @click="prefillTestUser">
+            Use Test User
+          </button>
+        </div>
+
         <div v-if="loginError" class="alert alert-danger text-center p-2">{{ loginError }}</div>
         <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
 
@@ -86,5 +99,47 @@ const handleLogin = async () => {
   max-width: 300px;
   height: auto;
   margin-bottom: 1rem;
+}
+
+/* Copied from NavbarView.vue for the prefill button */
+.btn-outline {
+  position: relative; /* Needed for the pseudo-element */
+  z-index: 1; /* Ensure text is above the pseudo-element */
+  border: 2px solid #FFA18D;
+  background-color: #fff;
+  color: #FFA18D;
+  overflow: hidden; /* Keeps the pseudo-element contained */
+  transition: border-color 0.4s ease;
+  border: 2px solid #FFA18D;
+  color: #FFA18D;
+  transition: all 0.3s ease;
+}
+
+.btn-outline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #FFA18D;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.btn-outline:hover,
+.btn-outline:focus {
+  color: #fff;
+}
+.btn-outline:hover::before,
+.btn-outline:focus::before {
+  opacity: 1;
+}
+
+/* Ensure btn-sm is sized appropriately */
+.btn-sm.btn-outline {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
 }
 </style>

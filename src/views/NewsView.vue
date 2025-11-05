@@ -55,7 +55,7 @@ const chartData = computed(() => {
       backgroundColor: 'rgba(255, 161, 141, 0.5)',
       borderColor: 'rgba(255, 161, 141, 1)',
       data: analyzableArticles.map(article => ({
-        x: new Date(article.publishedAt).toLocaleDateString('en-SG', { year: 'numeric', month: 'short', day: 'numeric' }),
+        x: new Date(article.publishedAt).toLocaleDateString('en-SG', { day: '2-digit', month: '2-digit' }), // Simplified date format
         y: article.sentiment_comparative,
         article: article // Attach full article object for interactivity
       })),
@@ -78,7 +78,18 @@ const chartOptions = {
     }
   },
   scales: {
-    x: { title: { display: true, text: 'Publication Date' } },
+    x: {
+      title: { display: true, text: 'Publication Date' },
+      ticks: {
+        autoSkip: true,
+        maxRotation: 0,
+        minRotation: 0,
+        padding: 10,
+        font: {
+          size: 10
+        }
+      }
+    },
     y: { title: { display: true, text: 'Sentiment Comparative' } }
   }
 };
