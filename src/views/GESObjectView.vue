@@ -1,9 +1,12 @@
 <script setup>
+// ============================================================================
+// IMPORTS
+// ============================================================================
 import { ref, onMounted, computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import axios from 'axios';
 import { Bar, Line } from 'vue-chartjs';
-import ChartDataLabels from 'chartjs-plugin-datalabels'; // 1. Import the plugin
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 import {
   Chart as ChartJS,
   Title,
@@ -16,10 +19,12 @@ import {
   LineElement
 } from 'chart.js';
 
-// 2. Register the plugin
+// Register Chart.js plugins
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, PointElement, LineElement, ChartDataLabels);
 
-// --- STATE MANAGEMENT ---
+// ============================================================================
+// STATE MANAGEMENT
+// ============================================================================
 const route = useRoute();
 const router = useRouter();
 const historyData = ref([]);
@@ -32,7 +37,9 @@ const forecastError = ref(null);
 
 const { university, school, degree } = route.params;
 
-// --- COMPUTED PROPERTIES FOR LATEST DATA & CHARTS ---
+// ============================================================================
+// COMPUTED PROPERTIES FOR CHARTS & DATA DISPLAY
+// ============================================================================
 const latestRecord = computed(() => {
   if (!historyData.value || historyData.value.length === 0) return null;
   // Sort by year descending and take the first element
@@ -117,8 +124,9 @@ const forecastChartData = computed(() => {
   };
 });
 
-
-// 3. Update chartOptions to include datalabels configuration
+// ============================================================================
+// CHART CONFIGURATION
+// ============================================================================
 const chartOptions = {
   responsive: true,
   maintainAspectRatio: false,
@@ -188,8 +196,9 @@ const chartOptions = {
   }
 };
 
-
-// --- API CONFIGURATION & CALLS ---
+// ============================================================================
+// API CONFIGURATION & DATA FETCHING
+// ============================================================================
 const getApiConfig = () => {
   const token = localStorage.getItem('authToken');
   if (!token) {
@@ -242,10 +251,14 @@ async function runForecast() {
   }
 }
 
-// --- LIFECYCLE HOOKS ---
+// ============================================================================
+// LIFECYCLE HOOKS
+// ============================================================================
 onMounted(fetchHistory);
 
-// --- HELPER FUNCTIONS ---
+// ============================================================================
+// HELPER FUNCTIONS
+// ============================================================================
 const formatCurrency = (value) => {
   if (isNaN(parseFloat(value)) || value === 'na') return 'N/A';
   return new Intl.NumberFormat('en-SG', { style: 'currency', currency: 'SGD', minimumFractionDigits: 0 }).format(value);
