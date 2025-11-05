@@ -280,12 +280,12 @@ const formatPercentage = (value) => {
       </div>
       <div class="col-12 col-lg-4">
         <div class="d-flex gap-2 flex-wrap justify-content-lg-end">
-          <button @click="router.back()" class="btn btn-outline-secondary flex-fill flex-sm-grow-0">
-            Back to GES
-          </button>
           <button @click="runForecast" class="btn btn-primary flex-fill flex-sm-grow-0" :disabled="isForecasting">
             <span v-if="isForecasting" class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span>
             {{ isForecasting ? 'Running...' : 'Run Forecast' }}
+          </button>
+          <button @click="router.back()" class="btn btn-outline-secondary flex-fill flex-sm-grow-0">
+            Back to GES
           </button>
         </div>
       </div>

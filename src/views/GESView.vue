@@ -192,11 +192,10 @@ const calculateSchoolSummary = (degreeData) => {
 
     <!-- Floating Sidebar -->
     <div :class="['sidebar', { 'open': isSidebarOpen }]">
-      <div class="px-3 pt-5 d-flex justify-content-between align-items-center">
+      <div class="px-3 pt-5 d-flex justify-content-between align-items-center mb-3">
         <h5 class="mb-0">GES Explorer</h5>
         <button class="btn btn-sm btn-outline-secondary" @click="clearSelections" title="Clear Selections">Reset</button>
       </div>
-      <hr>
       <div v-if="isLoading.universities" class="text-center p-3">
           <div class="spinner-border spinner-border-sm" role="status"></div>
       </div>
