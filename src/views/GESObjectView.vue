@@ -273,17 +273,21 @@ const formatPercentage = (value) => {
 
 <template>
   <div class="container py-5">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-      <div>
-        <h1 class="display-6 fw-bolder">{{ degree }}</h1>
+    <div class="row mb-4 align-items-center">
+      <div class="col-12 col-lg-8 mb-3 mb-lg-0">
+        <h1 class="display-6 fw-bolder mb-2">{{ degree }}</h1>
         <p class="text-muted mb-0">{{ school }}, {{ university }}</p>
       </div>
-      <div class="mt-2 mt-md-0">
-        <button @click="router.back()" class="btn btn-outline-secondary me-2">Back to GES</button>
-        <button @click="runForecast" class="btn btn-primary" :disabled="isForecasting">
-          <span v-if="isForecasting" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-          {{ isForecasting ? 'Running...' : 'Run Forecast' }}
-        </button>
+      <div class="col-12 col-lg-4">
+        <div class="d-flex gap-2 flex-wrap justify-content-lg-end">
+          <button @click="router.back()" class="btn btn-outline-secondary flex-fill flex-sm-grow-0">
+            Back to GES
+          </button>
+          <button @click="runForecast" class="btn btn-primary flex-fill flex-sm-grow-0" :disabled="isForecasting">
+            <span v-if="isForecasting" class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span>
+            {{ isForecasting ? 'Running...' : 'Run Forecast' }}
+          </button>
+        </div>
       </div>
     </div>
 
@@ -296,20 +300,20 @@ const formatPercentage = (value) => {
       <div class="card mb-4 summary-card">
         <div class="card-body">
           <h5 class="card-title">Most Recent Data ({{ latestRecord.year }})</h5>
-          <div class="row text-center">
-            <div class="col-md-3 col-6 mb-3 mb-md-0">
+          <div class="row text-center g-3">
+            <div class="col-6 col-md-3">
               <div class="stat-title">Overall Employment</div>
               <div class="stat-value">{{ formatPercentage(latestRecord.employment_rate_overall) }}</div>
             </div>
-            <div class="col-md-3 col-6 mb-3 mb-md-0">
+            <div class="col-6 col-md-3">
               <div class="stat-title">Full-Time Perm.</div>
               <div class="stat-value">{{ formatPercentage(latestRecord.employment_rate_ft_perm) }}</div>
             </div>
-            <div class="col-md-3 col-6">
+            <div class="col-6 col-md-3">
               <div class="stat-title">Mean Gross Salary</div>
               <div class="stat-value">{{ formatCurrency(latestRecord.gross_monthly_mean) }}</div>
             </div>
-            <div class="col-md-3 col-6">
+            <div class="col-6 col-md-3">
               <div class="stat-title">Mean Basic Salary</div>
               <div class="stat-value">{{ formatCurrency(latestRecord.basic_monthly_mean) }}</div>
             </div>
@@ -446,6 +450,16 @@ h1, h2, h3, h5 {
   font-weight: 700;
 }
 
+h1.display-6 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  h1.display-6 {
+    font-size: 2.5rem;
+  }
+}
+
 .summary-card {
   border: 5px solid #FFA18D;
   border-radius: 0 30px 0 30px;
@@ -483,22 +497,64 @@ h1, h2, h3, h5 {
 }
 
 .stat-title {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: #6c757d;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
+@media (min-width: 576px) {
+  .stat-title {
+    font-size: 0.85rem;
+  }
+}
+
 .stat-value {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   font-weight: bold;
   color: #313131;
   margin-top: 0.5rem;
+  word-break: break-word;
+}
+
+@media (min-width: 576px) {
+  .stat-value {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .stat-value {
+    font-size: 1.8rem;
+  }
 }
 
 .chart-container {
-  height: 350px;
+  height: 250px;
+}
+
+@media (min-width: 576px) {
+  .chart-container {
+    height: 300px;
+  }
+}
+
+@media (min-width: 768px) {
+  .chart-container {
+    height: 350px;
+  }
+}
+
+.btn {
+  white-space: nowrap;
+  padding: 0.5rem 1rem;
+}
+
+@media (max-width: 575px) {
+  .btn {
+    font-size: 0.9rem;
+  }
 }
 
 .btn-outline-secondary {
@@ -559,5 +615,42 @@ hr {
 .table thead th {
   color: #313131;
   font-weight: 700;
+}
+
+.table {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 767px) {
+  .table {
+    font-size: 0.85rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.5rem;
+  }
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .card-body {
+    padding: 1.5rem;
+  }
+}
+
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 </style>
