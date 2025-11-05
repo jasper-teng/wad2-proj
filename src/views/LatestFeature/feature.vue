@@ -632,14 +632,12 @@ function fixApiDataErrors(inputText) {
             <accordion2></accordion2>
         </div>
 
-        <div class="row">
-            <filterCard 
-            v-model:filterLevel="filterLevel" 
+        <filterCard
+            v-model:filterLevel="filterLevel"
             v-model:showSaved="showSaved"
             v-model:searchQuery="searchQuery"
-            ></filterCard>
-        </div>
-        
+        ></filterCard>
+
         <div class="cards-grid" ref="schoolCardsGrid">
             <mainCard v-for="school in paginatedSchools" 
                 v-bind:mainCard="school" 

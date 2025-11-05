@@ -159,7 +159,7 @@
 
     label {
         font-weight: 500;
-        color: #374151;
+        color: #313131;
         margin-bottom: 0.5rem;
         font-size: 0.875rem;
     }
