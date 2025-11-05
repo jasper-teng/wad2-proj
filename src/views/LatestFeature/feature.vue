@@ -621,9 +621,9 @@ function fixApiDataErrors(inputText) {
         <p class="text-muted">No schools match your filters.</p>
     </div>
 
-    <div class="container-fluid px-3 my-4 my-md-5">
+    <div class="container my-4 my-md-5">
         <h1 style="font-size: 2.25rem;">Distinctive Programmes</h1>
-        <p style="font-size: 1.125rem;  color: rgb(75 85 99);">Find programmes in Primary and Secondary Schools</p>
+        <p style="font-size: 1.125rem; color: #6b7280;">Find programmes in Primary and Secondary Schools</p>
         <div class="row">
             <accordion1></accordion1>
         </div>
@@ -704,7 +704,7 @@ function fixApiDataErrors(inputText) {
           Shows at the bottom when compareList has items
         -->
         <div v-if="compareList.length > 0" class="fixed-bottom bg-white border-top shadow-lg p-3">
-            <div class="container-fluid px-3">
+            <div class="container">
                 <div class="row align-items-end">
                     <!-- Title -->
                     <div class="col-12 col-md-auto">
@@ -883,21 +883,21 @@ function fixApiDataErrors(inputText) {
 <style scoped>
 
     .modal-subtitle{
-        font-size: 16px; 
-        font-weight: 600; 
-        color: #374151; 
+        font-size: 16px;
+        font-weight: 600;
+        color: #313131;
         margin-top: 0.25rem;
     }
 
     .modal-text{
-        font-size: 14px; 
-        color: #4b5563;
+        font-size: 14px;
+        color: #313131;
     }
 
     .aboutSchool{
-        font-size: 16px; 
-        font-weight: 600; 
-        color: #374151;
+        font-size: 16px;
+        font-weight: 600;
+        color: #313131;
     }
 
     .cards-grid {
@@ -927,7 +927,7 @@ function fixApiDataErrors(inputText) {
     }
 
     .pagination .page-link {
-        color: #374151;
+        color: #313131;
         border: 1px solid #e5e7eb;
         padding: 0.5rem 1rem;
         transition: all 0.2s;
@@ -953,13 +953,13 @@ function fixApiDataErrors(inputText) {
     h1 {
         font-size: 2.25rem;
         font-weight: 700;
-        color: #1f2937;
+        color: #313131;
         margin-bottom: 0.5rem;
     }
 
     h1 + p {
         font-size: 1.125rem;
-        color: #6b7280;
+        color: #313131;
         margin-bottom: 2rem;
     }
 
