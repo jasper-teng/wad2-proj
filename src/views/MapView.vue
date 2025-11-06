@@ -193,11 +193,17 @@ import '@/assets/mapview.css'
       allInfoWindows.forEach(({ infoW }) => infoW.close())
     })
 
+    // Bankend Url to bypass CORS
+    const backendUrl = 'https://wad2-backend.onrender.com/api/fetch-schools';
+
+    // test cors with localhost backend
+    const localhostBackendUrl = 'http://localhost:5050/api/fetch-schools'
+
     // Fetch and display school markers from gov.data.sg API
     const datasetId = 'd_688b934f82c1059ed0a6993d2a829089'
     const url = `https://data.gov.sg/api/action/datastore_search?resource_id=${datasetId}&limit=500`
 
-    fetch(url)
+    fetch(backendUrl)
       .then(res => res.json())
       .then(data => {
         allSchools.value = data.result.records;
