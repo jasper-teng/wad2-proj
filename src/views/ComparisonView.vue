@@ -394,7 +394,7 @@ watch(
               </div>
 
               <!-- Clear Slot Button -->
-              <button v-if="slot.schoolName" @click="clearSlot(slot)" class="btn-close me-2" title="Clear School" aria-label="Clear School"></button>
+              <button v-if="slot.schoolName" @click="clearSlot(slot)" class="btn-clear-school me-2" title="Clear School" aria-label="Clear School">Clear</button>
 
               <!-- Remove Column Button -->
               <button
@@ -535,6 +535,22 @@ watch(
 </template>
 
 <style scoped>
+
+.btn-clear-school {
+  background-color: #f8f9fa;
+  color: #dc3545; 
+  border: 1px solid #dc3545; 
+  border-radius: 6px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
 /* Main container styles */
 .comparison-container {
   /* Calculate height minus approx navbar height (adjust 56px if needed) */
