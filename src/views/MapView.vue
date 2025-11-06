@@ -193,8 +193,8 @@ import '@/assets/mapview.css'
       allInfoWindows.forEach(({ infoW }) => infoW.close())
     })
 
-    // Bankend Url to bypass CORS (Quick fix)
-    const backendUrl = 'https://wad2-backend-nic-2.onrender.com/api/fetch-schools';
+    // Bankend Url to bypass CORS
+    const backendUrl = 'https://wad2-backend.onrender.com/api/fetch-schools';
 
     // test cors with localhost backend
     const localhostBackendUrl = 'http://localhost:5050/api/fetch-schools'
